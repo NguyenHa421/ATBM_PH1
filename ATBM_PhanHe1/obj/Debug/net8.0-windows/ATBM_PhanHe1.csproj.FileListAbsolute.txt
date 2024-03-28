@@ -14,3 +14,24 @@ D:\Tài liệu\Năm 3-2\ATBM_PhanHe1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_
 D:\Tài liệu\Năm 3-2\ATBM_PhanHe1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.genruntimeconfig.cache
 D:\Tài liệu\Năm 3-2\ATBM_PhanHe1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ref\ATBM_PhanHe1.dll
 D:\Tài liệu\Năm 3-2\ATBM_PhanHe1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Home_Login.Login.resources
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\ATBM_PhanHe1.exe
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\ATBM_PhanHe1.deps.json
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\ATBM_PhanHe1.runtimeconfig.json
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\ATBM_PhanHe1.dll
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\ATBM_PhanHe1.pdb
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Oracle.ManagedDataAccess.dll
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.csproj.AssemblyReference.cache
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Home_Login.Login.resources
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Interface.Homepage.resources
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.csproj.GenerateResource.cache
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.AssemblyInfoInputs.cache
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.AssemblyInfo.cs
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.csproj.CoreCompileInputs.cache
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.sourcelink.json
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_Pha.17EE6612.Up2Date
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.dll
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\refint\ATBM_PhanHe1.dll
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.pdb
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.genruntimeconfig.cache
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ref\ATBM_PhanHe1.dll

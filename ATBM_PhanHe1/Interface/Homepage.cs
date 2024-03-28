@@ -26,5 +26,10 @@ namespace ATBM_PhanHe1.Interface
         {
 
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
