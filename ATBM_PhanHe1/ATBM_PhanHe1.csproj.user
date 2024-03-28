@@ -7,5 +7,11 @@
     <Compile Update="Interface\Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Interface\Permission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\User_Role.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
