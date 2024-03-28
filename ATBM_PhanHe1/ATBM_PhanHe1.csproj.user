@@ -4,5 +4,8 @@
     <Compile Update="Home_Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Interface\Homepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
