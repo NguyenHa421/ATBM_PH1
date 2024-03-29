@@ -229,7 +229,6 @@
             Name = "Homepage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản Lý Người Dùng";
-            Load += Homepage_Load_1;
             pn_main.ResumeLayout(false);
             pn_main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtGrid_main).EndInit();

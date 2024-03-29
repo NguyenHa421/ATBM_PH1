@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic.ApplicationServices;
 using Oracle.ManagedDataAccess.Client;
-
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace ATBM_PhanHe1.DAO
 {
     public class DataProvider
     {
         private static DataProvider instance;
 
-        private string  connectionStr = "User Id=sys;Password=Phucdat11;Data Source=localhost:1521/QLSinhVien_DoAn;";
+        private string connectionStr = "Data Source = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = xe))); Password=Phucdat11;User ID =sys;";
         public static DataProvider Instance
         {
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
