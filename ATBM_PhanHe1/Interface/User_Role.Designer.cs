@@ -28,62 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel2 = new Panel();
+            pn_dstk = new Panel();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
-            panel3 = new Panel();
+            pic_khtn = new PictureBox();
+            pn_qlur = new Panel();
             label3 = new Label();
-            pictureBox2 = new PictureBox();
-            panel4 = new Panel();
+            pic_logout = new PictureBox();
+            pn_qlq = new Panel();
             label4 = new Label();
-            label1 = new Label();
-            panel1 = new Panel();
-            tabControl1 = new TabControl();
+            lab_ttur = new Label();
+            pn_main = new Panel();
+            tbCtrl_main = new TabControl();
             tabPage1 = new TabPage();
-            dataGridView1 = new DataGridView();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            dtGrid_user = new DataGridView();
+            btn_update_user = new Button();
+            btn_delete_user = new Button();
+            btn_create_user = new Button();
+            btn_inspect_user = new Button();
             panel5 = new Panel();
-            textBox1 = new TextBox();
-            pictureBox3 = new PictureBox();
-            btn_search = new Button();
+            tb_search_user = new TextBox();
+            pic_search_user = new PictureBox();
+            btn_search_user = new Button();
             tabPage2 = new TabPage();
-            dataGridView2 = new DataGridView();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
+            dtGrid_role = new DataGridView();
+            btn_update_role = new Button();
+            btn_delete_role = new Button();
+            btn_create_role = new Button();
+            btn_inspect_role = new Button();
             panel6 = new Panel();
-            textBox2 = new TextBox();
-            pictureBox4 = new PictureBox();
-            button9 = new Button();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel4.SuspendLayout();
-            panel1.SuspendLayout();
-            tabControl1.SuspendLayout();
+            tb_search_role = new TextBox();
+            pic_search_role = new PictureBox();
+            btn_search_role = new Button();
+            pn_dstk.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_khtn).BeginInit();
+            pn_qlur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_logout).BeginInit();
+            pn_qlq.SuspendLayout();
+            pn_main.SuspendLayout();
+            tbCtrl_main.SuspendLayout();
             tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_user).BeginInit();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_search_user).BeginInit();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_role).BeginInit();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_search_role).BeginInit();
             SuspendLayout();
             // 
-            // panel2
+            // pn_dstk
             // 
-            panel2.BackColor = Color.FromArgb(42, 107, 167);
-            panel2.Controls.Add(label2);
-            panel2.Location = new Point(0, 254);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(220, 76);
-            panel2.TabIndex = 7;
+            pn_dstk.BackColor = Color.FromArgb(42, 107, 167);
+            pn_dstk.Controls.Add(label2);
+            pn_dstk.Location = new Point(0, 254);
+            pn_dstk.Name = "pn_dstk";
+            pn_dstk.Size = new Size(220, 76);
+            pn_dstk.TabIndex = 7;
             // 
             // label2
             // 
@@ -96,24 +96,24 @@
             label2.TabIndex = 0;
             label2.Text = "Danh sách tài khoản";
             // 
-            // pictureBox1
+            // pic_khtn
             // 
-            pictureBox1.Image = Properties.Resources.logo2;
-            pictureBox1.Location = new Point(28, 28);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(170, 155);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            pic_khtn.Image = Properties.Resources.logo2;
+            pic_khtn.Location = new Point(28, 28);
+            pic_khtn.Name = "pic_khtn";
+            pic_khtn.Size = new Size(170, 155);
+            pic_khtn.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_khtn.TabIndex = 6;
+            pic_khtn.TabStop = false;
             // 
-            // panel3
+            // pn_qlur
             // 
-            panel3.BackColor = Color.FromArgb(177, 213, 246);
-            panel3.Controls.Add(label3);
-            panel3.Location = new Point(0, 331);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(220, 76);
-            panel3.TabIndex = 8;
+            pn_qlur.BackColor = Color.FromArgb(177, 213, 246);
+            pn_qlur.Controls.Add(label3);
+            pn_qlur.Location = new Point(0, 331);
+            pn_qlur.Name = "pn_qlur";
+            pn_qlur.Size = new Size(220, 76);
+            pn_qlur.TabIndex = 8;
             // 
             // label3
             // 
@@ -126,24 +126,24 @@
             label3.TabIndex = 0;
             label3.Text = "Quản lý User/Role";
             // 
-            // pictureBox2
+            // pic_logout
             // 
-            pictureBox2.Image = Properties.Resources.Exit;
-            pictureBox2.Location = new Point(902, 9);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(43, 36);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 9;
-            pictureBox2.TabStop = false;
+            pic_logout.Image = Properties.Resources.Exit;
+            pic_logout.Location = new Point(902, 9);
+            pic_logout.Name = "pic_logout";
+            pic_logout.Size = new Size(43, 36);
+            pic_logout.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_logout.TabIndex = 9;
+            pic_logout.TabStop = false;
             // 
-            // panel4
+            // pn_qlq
             // 
-            panel4.BackColor = Color.FromArgb(42, 107, 167);
-            panel4.Controls.Add(label4);
-            panel4.Location = new Point(0, 408);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(220, 76);
-            panel4.TabIndex = 10;
+            pn_qlq.BackColor = Color.FromArgb(42, 107, 167);
+            pn_qlq.Controls.Add(label4);
+            pn_qlq.Location = new Point(0, 408);
+            pn_qlq.Name = "pn_qlq";
+            pn_qlq.Size = new Size(220, 76);
+            pn_qlq.TabIndex = 10;
             // 
             // label4
             // 
@@ -156,50 +156,50 @@
             label4.TabIndex = 0;
             label4.Text = "Quản lý quyền";
             // 
-            // label1
+            // lab_ttur
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label1.Location = new Point(227, 13);
-            label1.Name = "label1";
-            label1.Size = new Size(275, 31);
-            label1.TabIndex = 0;
-            label1.Text = "THÔNG TIN USER - ROLE";
-            label1.TextAlign = ContentAlignment.TopCenter;
+            lab_ttur.AutoSize = true;
+            lab_ttur.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            lab_ttur.Location = new Point(227, 13);
+            lab_ttur.Name = "lab_ttur";
+            lab_ttur.Size = new Size(275, 31);
+            lab_ttur.TabIndex = 0;
+            lab_ttur.Text = "THÔNG TIN USER - ROLE";
+            lab_ttur.TextAlign = ContentAlignment.TopCenter;
             // 
-            // panel1
+            // pn_main
             // 
-            panel1.BackColor = SystemColors.Window;
-            panel1.Controls.Add(tabControl1);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(220, 54);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(739, 536);
-            panel1.TabIndex = 5;
+            pn_main.BackColor = SystemColors.Window;
+            pn_main.Controls.Add(tbCtrl_main);
+            pn_main.Controls.Add(lab_ttur);
+            pn_main.Location = new Point(220, 54);
+            pn_main.Name = "pn_main";
+            pn_main.Size = new Size(739, 536);
+            pn_main.TabIndex = 5;
             // 
-            // tabControl1
+            // tbCtrl_main
             // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tabControl1.Location = new Point(24, 47);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(701, 477);
-            tabControl1.TabIndex = 1;
+            tbCtrl_main.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbCtrl_main.Controls.Add(tabPage1);
+            tbCtrl_main.Controls.Add(tabPage2);
+            tbCtrl_main.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbCtrl_main.Location = new Point(24, 47);
+            tbCtrl_main.Name = "tbCtrl_main";
+            tbCtrl_main.SelectedIndex = 0;
+            tbCtrl_main.Size = new Size(701, 477);
+            tbCtrl_main.TabIndex = 1;
             // 
             // tabPage1
             // 
             tabPage1.BackColor = Color.FromArgb(237, 248, 243);
             tabPage1.BorderStyle = BorderStyle.FixedSingle;
-            tabPage1.Controls.Add(dataGridView1);
-            tabPage1.Controls.Add(button4);
-            tabPage1.Controls.Add(button3);
-            tabPage1.Controls.Add(button2);
-            tabPage1.Controls.Add(button1);
+            tabPage1.Controls.Add(dtGrid_user);
+            tabPage1.Controls.Add(btn_update_user);
+            tabPage1.Controls.Add(btn_delete_user);
+            tabPage1.Controls.Add(btn_create_user);
+            tabPage1.Controls.Add(btn_inspect_user);
             tabPage1.Controls.Add(panel5);
-            tabPage1.Controls.Add(btn_search);
+            tabPage1.Controls.Add(btn_search_user);
             tabPage1.ForeColor = Color.Black;
             tabPage1.Location = new Point(4, 32);
             tabPage1.Name = "tabPage1";
@@ -208,134 +208,134 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "User";
             // 
-            // dataGridView1
+            // dtGrid_user
             // 
-            dataGridView1.BackgroundColor = Color.WhiteSmoke;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 59);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(676, 318);
-            dataGridView1.TabIndex = 10;
+            dtGrid_user.BackgroundColor = Color.WhiteSmoke;
+            dtGrid_user.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGrid_user.Location = new Point(6, 59);
+            dtGrid_user.Name = "dtGrid_user";
+            dtGrid_user.RowHeadersWidth = 51;
+            dtGrid_user.Size = new Size(676, 318);
+            dtGrid_user.TabIndex = 10;
             // 
-            // button4
+            // btn_update_user
             // 
-            button4.BackColor = Color.White;
-            button4.BackgroundImage = Properties.Resources.button_round2;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            button4.ForeColor = SystemColors.Window;
-            button4.Location = new Point(591, 391);
-            button4.Name = "button4";
-            button4.Size = new Size(91, 38);
-            button4.TabIndex = 9;
-            button4.Text = "Chỉnh sửa";
-            button4.UseVisualStyleBackColor = false;
+            btn_update_user.BackColor = Color.White;
+            btn_update_user.BackgroundImage = Properties.Resources.button_round2;
+            btn_update_user.FlatAppearance.BorderSize = 0;
+            btn_update_user.FlatStyle = FlatStyle.Flat;
+            btn_update_user.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_update_user.ForeColor = SystemColors.Window;
+            btn_update_user.Location = new Point(591, 391);
+            btn_update_user.Name = "btn_update_user";
+            btn_update_user.Size = new Size(91, 38);
+            btn_update_user.TabIndex = 9;
+            btn_update_user.Text = "Chỉnh sửa";
+            btn_update_user.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_delete_user
             // 
-            button3.BackColor = Color.White;
-            button3.BackgroundImage = Properties.Resources.button_round2;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            button3.ForeColor = SystemColors.Window;
-            button3.Location = new Point(402, 391);
-            button3.Name = "button3";
-            button3.Size = new Size(91, 38);
-            button3.TabIndex = 8;
-            button3.Text = "Xóa user";
-            button3.UseVisualStyleBackColor = false;
+            btn_delete_user.BackColor = Color.White;
+            btn_delete_user.BackgroundImage = Properties.Resources.button_round2;
+            btn_delete_user.FlatAppearance.BorderSize = 0;
+            btn_delete_user.FlatStyle = FlatStyle.Flat;
+            btn_delete_user.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_delete_user.ForeColor = SystemColors.Window;
+            btn_delete_user.Location = new Point(402, 391);
+            btn_delete_user.Name = "btn_delete_user";
+            btn_delete_user.Size = new Size(91, 38);
+            btn_delete_user.TabIndex = 8;
+            btn_delete_user.Text = "Xóa user";
+            btn_delete_user.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_create_user
             // 
-            button2.BackColor = Color.White;
-            button2.BackgroundImage = Properties.Resources.button_round2;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            button2.ForeColor = SystemColors.Window;
-            button2.Location = new Point(202, 391);
-            button2.Name = "button2";
-            button2.Size = new Size(91, 38);
-            button2.TabIndex = 7;
-            button2.Text = "Tạo user";
-            button2.UseVisualStyleBackColor = false;
+            btn_create_user.BackColor = Color.White;
+            btn_create_user.BackgroundImage = Properties.Resources.button_round2;
+            btn_create_user.FlatAppearance.BorderSize = 0;
+            btn_create_user.FlatStyle = FlatStyle.Flat;
+            btn_create_user.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_create_user.ForeColor = SystemColors.Window;
+            btn_create_user.Location = new Point(202, 391);
+            btn_create_user.Name = "btn_create_user";
+            btn_create_user.Size = new Size(91, 38);
+            btn_create_user.TabIndex = 7;
+            btn_create_user.Text = "Tạo user";
+            btn_create_user.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btn_inspect_user
             // 
-            button1.BackColor = Color.White;
-            button1.BackgroundImage = Properties.Resources.button_round2;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            button1.ForeColor = SystemColors.Window;
-            button1.Location = new Point(10, 391);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 38);
-            button1.TabIndex = 6;
-            button1.Text = "Xem";
-            button1.UseVisualStyleBackColor = false;
+            btn_inspect_user.BackColor = Color.White;
+            btn_inspect_user.BackgroundImage = Properties.Resources.button_round2;
+            btn_inspect_user.FlatAppearance.BorderSize = 0;
+            btn_inspect_user.FlatStyle = FlatStyle.Flat;
+            btn_inspect_user.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_inspect_user.ForeColor = SystemColors.Window;
+            btn_inspect_user.Location = new Point(10, 391);
+            btn_inspect_user.Name = "btn_inspect_user";
+            btn_inspect_user.Size = new Size(91, 38);
+            btn_inspect_user.TabIndex = 6;
+            btn_inspect_user.Text = "Xem";
+            btn_inspect_user.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
             panel5.BackColor = Color.WhiteSmoke;
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(textBox1);
-            panel5.Controls.Add(pictureBox3);
+            panel5.Controls.Add(tb_search_user);
+            panel5.Controls.Add(pic_search_user);
             panel5.Location = new Point(6, 11);
             panel5.Name = "panel5";
             panel5.Size = new Size(567, 38);
             panel5.TabIndex = 5;
             // 
-            // textBox1
+            // tb_search_user
             // 
-            textBox1.BackColor = Color.WhiteSmoke;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(52, 7);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Nhập tên người dùng...";
-            textBox1.Size = new Size(510, 23);
-            textBox1.TabIndex = 1;
+            tb_search_user.BackColor = Color.WhiteSmoke;
+            tb_search_user.BorderStyle = BorderStyle.None;
+            tb_search_user.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_search_user.Location = new Point(52, 7);
+            tb_search_user.Name = "tb_search_user";
+            tb_search_user.PlaceholderText = "Nhập tên người dùng...";
+            tb_search_user.Size = new Size(510, 23);
+            tb_search_user.TabIndex = 1;
             // 
-            // pictureBox3
+            // pic_search_user
             // 
-            pictureBox3.Image = Properties.Resources.Search1;
-            pictureBox3.Location = new Point(3, 3);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(43, 30);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 0;
-            pictureBox3.TabStop = false;
+            pic_search_user.Image = Properties.Resources.Search1;
+            pic_search_user.Location = new Point(3, 3);
+            pic_search_user.Name = "pic_search_user";
+            pic_search_user.Size = new Size(43, 30);
+            pic_search_user.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_search_user.TabIndex = 0;
+            pic_search_user.TabStop = false;
             // 
-            // btn_search
+            // btn_search_user
             // 
-            btn_search.BackColor = Color.White;
-            btn_search.BackgroundImage = Properties.Resources.button_round2;
-            btn_search.FlatAppearance.BorderSize = 0;
-            btn_search.FlatStyle = FlatStyle.Flat;
-            btn_search.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btn_search.ForeColor = SystemColors.Window;
-            btn_search.Location = new Point(591, 11);
-            btn_search.Name = "btn_search";
-            btn_search.Size = new Size(91, 38);
-            btn_search.TabIndex = 4;
-            btn_search.Text = "Tìm kiếm";
-            btn_search.UseVisualStyleBackColor = false;
+            btn_search_user.BackColor = Color.White;
+            btn_search_user.BackgroundImage = Properties.Resources.button_round2;
+            btn_search_user.FlatAppearance.BorderSize = 0;
+            btn_search_user.FlatStyle = FlatStyle.Flat;
+            btn_search_user.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_search_user.ForeColor = SystemColors.Window;
+            btn_search_user.Location = new Point(591, 11);
+            btn_search_user.Name = "btn_search_user";
+            btn_search_user.Size = new Size(91, 38);
+            btn_search_user.TabIndex = 4;
+            btn_search_user.Text = "Tìm kiếm";
+            btn_search_user.UseVisualStyleBackColor = false;
             // 
             // tabPage2
             // 
             tabPage2.BackColor = Color.FromArgb(249, 240, 240);
             tabPage2.BorderStyle = BorderStyle.FixedSingle;
-            tabPage2.Controls.Add(dataGridView2);
-            tabPage2.Controls.Add(button5);
-            tabPage2.Controls.Add(button6);
-            tabPage2.Controls.Add(button7);
-            tabPage2.Controls.Add(button8);
+            tabPage2.Controls.Add(dtGrid_role);
+            tabPage2.Controls.Add(btn_update_role);
+            tabPage2.Controls.Add(btn_delete_role);
+            tabPage2.Controls.Add(btn_create_role);
+            tabPage2.Controls.Add(btn_inspect_role);
             tabPage2.Controls.Add(panel6);
-            tabPage2.Controls.Add(button9);
+            tabPage2.Controls.Add(btn_search_role);
             tabPage2.ForeColor = Color.Black;
             tabPage2.Location = new Point(4, 32);
             tabPage2.Name = "tabPage2";
@@ -344,122 +344,122 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Role";
             // 
-            // dataGridView2
+            // dtGrid_role
             // 
-            dataGridView2.BackgroundColor = Color.WhiteSmoke;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(6, 59);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(676, 318);
-            dataGridView2.TabIndex = 17;
+            dtGrid_role.BackgroundColor = Color.WhiteSmoke;
+            dtGrid_role.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGrid_role.Location = new Point(6, 59);
+            dtGrid_role.Name = "dtGrid_role";
+            dtGrid_role.RowHeadersWidth = 51;
+            dtGrid_role.Size = new Size(676, 318);
+            dtGrid_role.TabIndex = 17;
             // 
-            // button5
+            // btn_update_role
             // 
-            button5.BackColor = Color.White;
-            button5.BackgroundImage = Properties.Resources.button_round2;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            button5.ForeColor = SystemColors.Window;
-            button5.Location = new Point(591, 391);
-            button5.Name = "button5";
-            button5.Size = new Size(91, 38);
-            button5.TabIndex = 16;
-            button5.Text = "Chỉnh sửa";
-            button5.UseVisualStyleBackColor = false;
+            btn_update_role.BackColor = Color.White;
+            btn_update_role.BackgroundImage = Properties.Resources.button_round2;
+            btn_update_role.FlatAppearance.BorderSize = 0;
+            btn_update_role.FlatStyle = FlatStyle.Flat;
+            btn_update_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_update_role.ForeColor = SystemColors.Window;
+            btn_update_role.Location = new Point(591, 391);
+            btn_update_role.Name = "btn_update_role";
+            btn_update_role.Size = new Size(91, 38);
+            btn_update_role.TabIndex = 16;
+            btn_update_role.Text = "Chỉnh sửa";
+            btn_update_role.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btn_delete_role
             // 
-            button6.BackColor = Color.White;
-            button6.BackgroundImage = Properties.Resources.button_round2;
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            button6.ForeColor = SystemColors.Window;
-            button6.Location = new Point(402, 391);
-            button6.Name = "button6";
-            button6.Size = new Size(91, 38);
-            button6.TabIndex = 15;
-            button6.Text = "Xóa role";
-            button6.UseVisualStyleBackColor = false;
+            btn_delete_role.BackColor = Color.White;
+            btn_delete_role.BackgroundImage = Properties.Resources.button_round2;
+            btn_delete_role.FlatAppearance.BorderSize = 0;
+            btn_delete_role.FlatStyle = FlatStyle.Flat;
+            btn_delete_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_delete_role.ForeColor = SystemColors.Window;
+            btn_delete_role.Location = new Point(402, 391);
+            btn_delete_role.Name = "btn_delete_role";
+            btn_delete_role.Size = new Size(91, 38);
+            btn_delete_role.TabIndex = 15;
+            btn_delete_role.Text = "Xóa role";
+            btn_delete_role.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btn_create_role
             // 
-            button7.BackColor = Color.White;
-            button7.BackgroundImage = Properties.Resources.button_round2;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            button7.ForeColor = SystemColors.Window;
-            button7.Location = new Point(202, 391);
-            button7.Name = "button7";
-            button7.Size = new Size(91, 38);
-            button7.TabIndex = 14;
-            button7.Text = "Tạo role";
-            button7.UseVisualStyleBackColor = false;
+            btn_create_role.BackColor = Color.White;
+            btn_create_role.BackgroundImage = Properties.Resources.button_round2;
+            btn_create_role.FlatAppearance.BorderSize = 0;
+            btn_create_role.FlatStyle = FlatStyle.Flat;
+            btn_create_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_create_role.ForeColor = SystemColors.Window;
+            btn_create_role.Location = new Point(202, 391);
+            btn_create_role.Name = "btn_create_role";
+            btn_create_role.Size = new Size(91, 38);
+            btn_create_role.TabIndex = 14;
+            btn_create_role.Text = "Tạo role";
+            btn_create_role.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btn_inspect_role
             // 
-            button8.BackColor = Color.White;
-            button8.BackgroundImage = Properties.Resources.button_round2;
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            button8.ForeColor = SystemColors.Window;
-            button8.Location = new Point(10, 391);
-            button8.Name = "button8";
-            button8.Size = new Size(91, 38);
-            button8.TabIndex = 13;
-            button8.Text = "Xem";
-            button8.UseVisualStyleBackColor = false;
+            btn_inspect_role.BackColor = Color.White;
+            btn_inspect_role.BackgroundImage = Properties.Resources.button_round2;
+            btn_inspect_role.FlatAppearance.BorderSize = 0;
+            btn_inspect_role.FlatStyle = FlatStyle.Flat;
+            btn_inspect_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_inspect_role.ForeColor = SystemColors.Window;
+            btn_inspect_role.Location = new Point(10, 391);
+            btn_inspect_role.Name = "btn_inspect_role";
+            btn_inspect_role.Size = new Size(91, 38);
+            btn_inspect_role.TabIndex = 13;
+            btn_inspect_role.Text = "Xem";
+            btn_inspect_role.UseVisualStyleBackColor = false;
             // 
             // panel6
             // 
             panel6.BackColor = Color.WhiteSmoke;
             panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(textBox2);
-            panel6.Controls.Add(pictureBox4);
+            panel6.Controls.Add(tb_search_role);
+            panel6.Controls.Add(pic_search_role);
             panel6.Location = new Point(6, 11);
             panel6.Name = "panel6";
             panel6.Size = new Size(567, 38);
             panel6.TabIndex = 12;
             // 
-            // textBox2
+            // tb_search_role
             // 
-            textBox2.BackColor = Color.WhiteSmoke;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(52, 7);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Nhập tên người dùng...";
-            textBox2.Size = new Size(510, 23);
-            textBox2.TabIndex = 1;
+            tb_search_role.BackColor = Color.WhiteSmoke;
+            tb_search_role.BorderStyle = BorderStyle.None;
+            tb_search_role.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_search_role.Location = new Point(52, 7);
+            tb_search_role.Name = "tb_search_role";
+            tb_search_role.PlaceholderText = "Nhập tên người dùng...";
+            tb_search_role.Size = new Size(510, 23);
+            tb_search_role.TabIndex = 1;
             // 
-            // pictureBox4
+            // pic_search_role
             // 
-            pictureBox4.Image = Properties.Resources.Search1;
-            pictureBox4.Location = new Point(3, 3);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(43, 30);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 0;
-            pictureBox4.TabStop = false;
+            pic_search_role.Image = Properties.Resources.Search1;
+            pic_search_role.Location = new Point(3, 3);
+            pic_search_role.Name = "pic_search_role";
+            pic_search_role.Size = new Size(43, 30);
+            pic_search_role.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_search_role.TabIndex = 0;
+            pic_search_role.TabStop = false;
             // 
-            // button9
+            // btn_search_role
             // 
-            button9.BackColor = Color.White;
-            button9.BackgroundImage = Properties.Resources.button_round2;
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            button9.ForeColor = SystemColors.Window;
-            button9.Location = new Point(591, 11);
-            button9.Name = "button9";
-            button9.Size = new Size(91, 38);
-            button9.TabIndex = 11;
-            button9.Text = "Tìm kiếm";
-            button9.UseVisualStyleBackColor = false;
+            btn_search_role.BackColor = Color.White;
+            btn_search_role.BackgroundImage = Properties.Resources.button_round2;
+            btn_search_role.FlatAppearance.BorderSize = 0;
+            btn_search_role.FlatStyle = FlatStyle.Flat;
+            btn_search_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_search_role.ForeColor = SystemColors.Window;
+            btn_search_role.Location = new Point(591, 11);
+            btn_search_role.Name = "btn_search_role";
+            btn_search_role.Size = new Size(91, 38);
+            btn_search_role.TabIndex = 11;
+            btn_search_role.Text = "Tìm kiếm";
+            btn_search_role.UseVisualStyleBackColor = false;
             // 
             // User_Role
             // 
@@ -467,71 +467,71 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(42, 107, 167);
             ClientSize = new Size(957, 590);
-            Controls.Add(panel1);
-            Controls.Add(panel2);
-            Controls.Add(pictureBox1);
-            Controls.Add(panel3);
-            Controls.Add(pictureBox2);
-            Controls.Add(panel4);
+            Controls.Add(pn_main);
+            Controls.Add(pn_dstk);
+            Controls.Add(pic_khtn);
+            Controls.Add(pn_qlur);
+            Controls.Add(pic_logout);
+            Controls.Add(pn_qlq);
             FormBorderStyle = FormBorderStyle.None;
             Name = "User_Role";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Role";
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            tabControl1.ResumeLayout(false);
+            pn_dstk.ResumeLayout(false);
+            pn_dstk.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_khtn).EndInit();
+            pn_qlur.ResumeLayout(false);
+            pn_qlur.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_logout).EndInit();
+            pn_qlq.ResumeLayout(false);
+            pn_qlq.PerformLayout();
+            pn_main.ResumeLayout(false);
+            pn_main.PerformLayout();
+            tbCtrl_main.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_user).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_search_user).EndInit();
             tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_role).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_search_role).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private Panel panel2;
+        private Panel pn_dstk;
         private Label label2;
-        private PictureBox pictureBox1;
-        private Panel panel3;
+        private PictureBox pic_khtn;
+        private Panel pn_qlur;
         private Label label3;
-        private PictureBox pictureBox2;
-        private Panel panel4;
+        private PictureBox pic_logout;
+        private Panel pn_qlq;
         private Label label4;
-        private Label label1;
-        private Panel panel1;
-        private TabControl tabControl1;
+        private Label lab_ttur;
+        private Panel pn_main;
+        private TabControl tbCtrl_main;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private DataGridView dataGridView1;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private DataGridView dtGrid_user;
+        private Button btn_update_user;
+        private Button btn_delete_user;
+        private Button btn_create_user;
+        private Button btn_inspect_user;
         private Panel panel5;
-        private TextBox textBox1;
-        private PictureBox pictureBox3;
-        private Button btn_search;
-        private DataGridView dataGridView2;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
+        private TextBox tb_search_user;
+        private PictureBox pic_search_user;
+        private Button btn_search_user;
+        private DataGridView dtGrid_role;
+        private Button btn_update_role;
+        private Button btn_delete_role;
+        private Button btn_create_role;
+        private Button btn_inspect_role;
         private Panel panel6;
-        private TextBox textBox2;
-        private PictureBox pictureBox4;
-        private Button button9;
+        private TextBox tb_search_role;
+        private PictureBox pic_search_role;
+        private Button btn_search_role;
     }
 }

@@ -28,85 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            dataGridView1 = new DataGridView();
+            pn_main = new Panel();
+            dtGrid_main = new DataGridView();
             panel5 = new Panel();
-            textBox1 = new TextBox();
-            pictureBox3 = new PictureBox();
+            tb_search = new TextBox();
+            pic_search = new PictureBox();
             btn_search = new Button();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
-            panel2 = new Panel();
+            lab_dstknd = new Label();
+            pic_khtn = new PictureBox();
+            pn_dstk = new Panel();
             label2 = new Label();
-            pictureBox2 = new PictureBox();
-            panel3 = new Panel();
+            pic_logout = new PictureBox();
+            pn_qlur = new Panel();
             label3 = new Label();
-            panel4 = new Panel();
+            pn_qlq = new Panel();
             label4 = new Label();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            pn_main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_main).BeginInit();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_search).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_khtn).BeginInit();
+            pn_dstk.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_logout).BeginInit();
+            pn_qlur.SuspendLayout();
+            pn_qlq.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // pn_main
             // 
-            panel1.BackColor = SystemColors.Window;
-            panel1.Controls.Add(dataGridView1);
-            panel1.Controls.Add(panel5);
-            panel1.Controls.Add(btn_search);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(220, 54);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(739, 536);
-            panel1.TabIndex = 0;
+            pn_main.BackColor = SystemColors.Window;
+            pn_main.Controls.Add(dtGrid_main);
+            pn_main.Controls.Add(panel5);
+            pn_main.Controls.Add(btn_search);
+            pn_main.Controls.Add(lab_dstknd);
+            pn_main.Location = new Point(220, 54);
+            pn_main.Name = "pn_main";
+            pn_main.Size = new Size(739, 536);
+            pn_main.TabIndex = 0;
             // 
-            // dataGridView1
+            // dtGrid_main
             // 
-            dataGridView1.BackgroundColor = Color.WhiteSmoke;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(37, 118);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(676, 394);
-            dataGridView1.TabIndex = 4;
+            dtGrid_main.BackgroundColor = Color.WhiteSmoke;
+            dtGrid_main.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGrid_main.Location = new Point(37, 118);
+            dtGrid_main.Name = "dtGrid_main";
+            dtGrid_main.RowHeadersWidth = 51;
+            dtGrid_main.Size = new Size(676, 394);
+            dtGrid_main.TabIndex = 4;
             // 
             // panel5
             // 
             panel5.BackColor = Color.WhiteSmoke;
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(textBox1);
-            panel5.Controls.Add(pictureBox3);
+            panel5.Controls.Add(tb_search);
+            panel5.Controls.Add(pic_search);
             panel5.Location = new Point(37, 58);
             panel5.Name = "panel5";
             panel5.Size = new Size(567, 38);
             panel5.TabIndex = 3;
             // 
-            // textBox1
+            // tb_search
             // 
-            textBox1.BackColor = Color.WhiteSmoke;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(52, 7);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Nhập tên ...";
-            textBox1.Size = new Size(510, 23);
-            textBox1.TabIndex = 1;
+            tb_search.BackColor = Color.WhiteSmoke;
+            tb_search.BorderStyle = BorderStyle.None;
+            tb_search.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_search.Location = new Point(52, 7);
+            tb_search.Name = "tb_search";
+            tb_search.PlaceholderText = "Nhập tên ...";
+            tb_search.Size = new Size(510, 23);
+            tb_search.TabIndex = 1;
             // 
-            // pictureBox3
+            // pic_search
             // 
-            pictureBox3.Image = Properties.Resources.Search1;
-            pictureBox3.Location = new Point(3, 3);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(43, 30);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 0;
-            pictureBox3.TabStop = false;
+            pic_search.Image = Properties.Resources.Search1;
+            pic_search.Location = new Point(3, 3);
+            pic_search.Name = "pic_search";
+            pic_search.Size = new Size(43, 30);
+            pic_search.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_search.TabIndex = 0;
+            pic_search.TabStop = false;
             // 
             // btn_search
             // 
@@ -123,35 +123,35 @@
             btn_search.Text = "Tìm kiếm";
             btn_search.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // lab_dstknd
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label1.Location = new Point(163, 13);
-            label1.Name = "label1";
-            label1.Size = new Size(427, 31);
-            label1.TabIndex = 0;
-            label1.Text = "DANH SÁCH TÀI KHOẢN NGƯỜI DÙNG";
-            label1.TextAlign = ContentAlignment.TopCenter;
+            lab_dstknd.AutoSize = true;
+            lab_dstknd.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            lab_dstknd.Location = new Point(163, 13);
+            lab_dstknd.Name = "lab_dstknd";
+            lab_dstknd.Size = new Size(427, 31);
+            lab_dstknd.TabIndex = 0;
+            lab_dstknd.Text = "DANH SÁCH TÀI KHOẢN NGƯỜI DÙNG";
+            lab_dstknd.TextAlign = ContentAlignment.TopCenter;
             // 
-            // pictureBox1
+            // pic_khtn
             // 
-            pictureBox1.Image = Properties.Resources.logo2;
-            pictureBox1.Location = new Point(28, 28);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(170, 155);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            pic_khtn.Image = Properties.Resources.logo2;
+            pic_khtn.Location = new Point(28, 28);
+            pic_khtn.Name = "pic_khtn";
+            pic_khtn.Size = new Size(170, 155);
+            pic_khtn.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_khtn.TabIndex = 1;
+            pic_khtn.TabStop = false;
             // 
-            // panel2
+            // pn_dstk
             // 
-            panel2.BackColor = Color.FromArgb(177, 213, 246);
-            panel2.Controls.Add(label2);
-            panel2.Location = new Point(0, 254);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(220, 76);
-            panel2.TabIndex = 2;
+            pn_dstk.BackColor = Color.FromArgb(177, 213, 246);
+            pn_dstk.Controls.Add(label2);
+            pn_dstk.Location = new Point(0, 254);
+            pn_dstk.Name = "pn_dstk";
+            pn_dstk.Size = new Size(220, 76);
+            pn_dstk.TabIndex = 2;
             // 
             // label2
             // 
@@ -163,24 +163,24 @@
             label2.TabIndex = 0;
             label2.Text = "Danh sách tài khoản";
             // 
-            // pictureBox2
+            // pic_logout
             // 
-            pictureBox2.Image = Properties.Resources.Exit;
-            pictureBox2.Location = new Point(902, 9);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(43, 36);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
+            pic_logout.Image = Properties.Resources.Exit;
+            pic_logout.Location = new Point(902, 9);
+            pic_logout.Name = "pic_logout";
+            pic_logout.Size = new Size(43, 36);
+            pic_logout.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_logout.TabIndex = 3;
+            pic_logout.TabStop = false;
             // 
-            // panel3
+            // pn_qlur
             // 
-            panel3.BackColor = Color.FromArgb(42, 107, 167);
-            panel3.Controls.Add(label3);
-            panel3.Location = new Point(0, 331);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(220, 76);
-            panel3.TabIndex = 3;
+            pn_qlur.BackColor = Color.FromArgb(42, 107, 167);
+            pn_qlur.Controls.Add(label3);
+            pn_qlur.Location = new Point(0, 331);
+            pn_qlur.Name = "pn_qlur";
+            pn_qlur.Size = new Size(220, 76);
+            pn_qlur.TabIndex = 3;
             // 
             // label3
             // 
@@ -193,14 +193,14 @@
             label3.TabIndex = 0;
             label3.Text = "Quản lý User/Role";
             // 
-            // panel4
+            // pn_qlq
             // 
-            panel4.BackColor = Color.FromArgb(42, 107, 167);
-            panel4.Controls.Add(label4);
-            panel4.Location = new Point(0, 408);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(220, 76);
-            panel4.TabIndex = 4;
+            pn_qlq.BackColor = Color.FromArgb(42, 107, 167);
+            pn_qlq.Controls.Add(label4);
+            pn_qlq.Location = new Point(0, 408);
+            pn_qlq.Name = "pn_qlq";
+            pn_qlq.Size = new Size(220, 76);
+            pn_qlq.TabIndex = 4;
             // 
             // label4
             // 
@@ -219,50 +219,50 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(42, 107, 167);
             ClientSize = new Size(957, 590);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(pictureBox2);
-            Controls.Add(panel2);
-            Controls.Add(pictureBox1);
-            Controls.Add(panel1);
+            Controls.Add(pn_qlq);
+            Controls.Add(pn_qlur);
+            Controls.Add(pic_logout);
+            Controls.Add(pn_dstk);
+            Controls.Add(pic_khtn);
+            Controls.Add(pn_main);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Homepage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản Lý Người Dùng";
             Load += Homepage_Load_1;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            pn_main.ResumeLayout(false);
+            pn_main.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_main).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_search).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_khtn).EndInit();
+            pn_dstk.ResumeLayout(false);
+            pn_dstk.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_logout).EndInit();
+            pn_qlur.ResumeLayout(false);
+            pn_qlur.PerformLayout();
+            pn_qlq.ResumeLayout(false);
+            pn_qlq.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Label label1;
+        private Panel pn_main;
+        private Label lab_dstknd;
         private Button btn_search;
-        private PictureBox pictureBox1;
-        private Panel panel2;
+        private PictureBox pic_khtn;
+        private Panel pn_dstk;
         private Label label2;
-        private PictureBox pictureBox2;
-        private Panel panel3;
+        private PictureBox pic_logout;
+        private Panel pn_qlur;
         private Label label3;
-        private Panel panel4;
+        private Panel pn_qlq;
         private Label label4;
         private Panel panel5;
-        private PictureBox pictureBox3;
-        private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private PictureBox pic_search;
+        private TextBox tb_search;
+        private DataGridView dtGrid_main;
     }
 }

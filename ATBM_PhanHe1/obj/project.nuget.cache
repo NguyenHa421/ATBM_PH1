@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "DGK1EH3SpS+yrDK81usFIvWQP9Cb3v1B1sakizYyhaMY6O6OSlklI8kG8WWyJGVeOOLyCXGIjkSwnYnxdCbWug==",
+  "dgSpecHash": "C7NEKAbaNX7t2R0+a9bCoUfr8ng/X4yQZkDEwVfuKLhagAUEFF0pLTRETIS9HtfyXm0O4JSHxutS8DUDS74Mzw==",
   "success": true,
-  "projectFilePath": "D:\\Tài liệu\\Năm 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\ATBM_PhanHe1.csproj",
+  "projectFilePath": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\ATBM_PhanHe1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Thu Ha\\.nuget\\packages\\oracle.manageddataaccess\\21.13.0\\oracle.manageddataaccess.21.13.0.nupkg.sha512",
-    "C:\\Users\\Thu Ha\\.nuget\\packages\\system.formats.asn1\\7.0.0\\system.formats.asn1.7.0.0.nupkg.sha512",
-    "C:\\Users\\Thu Ha\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\Thu Ha\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\Thu Ha\\.nuget\\packages\\system.text.json\\6.0.1\\system.text.json.6.0.1.nupkg.sha512"
+    "C:\\Users\\MSI USER\\.nuget\\packages\\oracle.manageddataaccess\\21.13.0\\oracle.manageddataaccess.21.13.0.nupkg.sha512",
+    "C:\\Users\\MSI USER\\.nuget\\packages\\system.formats.asn1\\7.0.0\\system.formats.asn1.7.0.0.nupkg.sha512",
+    "C:\\Users\\MSI USER\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\MSI USER\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\MSI USER\\.nuget\\packages\\system.text.json\\6.0.1\\system.text.json.6.0.1.nupkg.sha512"
   ],
   "logs": [
     {
