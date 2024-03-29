@@ -45,9 +45,17 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "Oracle.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.21.121, )"
+            },
             "Oracle.ManagedDataAccess": {
               "target": "Package",
               "version": "[21.13.0, )"
+            },
+            "Oracle.ManagedDataAccess.Core": {
+              "target": "Package",
+              "version": "[3.21.130, )"
             }
           },
           "imports": [
