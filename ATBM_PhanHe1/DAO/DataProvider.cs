@@ -15,7 +15,9 @@ namespace ATBM_PhanHe1.DAO
     {
         private static DataProvider instance;
 
-        private string connectionStr = "DATA SOURCE=172.17.28.152:1521/QLSinhVien_DoAn;" + "PERSIST SECURITY INFO=True;USER ID=sys; password=Phucdat11; Pooling = False;";
+        private string connectionStr = "DATA SOURCE=(DESCRIPTION = "+
+            "(CONNECT_DATA=(SERVICE_NAME=))(ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=1521))"+
+            ")" + ");User Id = sys; password=Phucdat11;DBA Privilege=SYSDBA;";
         public static DataProvider Instance
         {
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }

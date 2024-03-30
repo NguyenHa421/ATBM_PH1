@@ -66,16 +66,3 @@ D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\System.Directory
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\runtimes\linux\lib\net6.0\System.DirectoryServices.Protocols.dll
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\runtimes\osx\lib\net6.0\System.DirectoryServices.Protocols.dll
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.DirectoryServices.Protocols.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\Oracle.EntityFrameworkCore.dll

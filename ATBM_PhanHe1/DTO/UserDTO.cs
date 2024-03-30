@@ -11,9 +11,9 @@ namespace ATBM_PhanHe1.DTO
     {
         public string userName { get; set; }
         public string userID { get; set; }
-        public DateOnly created {  get; set; }
-        public bool common { get; set; }
-        public UserDTO(string userName, string userID, DateOnly created, bool common)
+        public DateTime created {  get; set; }
+        public string common { get; set; }
+        public UserDTO(string userName, string userID, DateTime created, string common)
         {
             this.userName = userName;
             this.userID = userID;
@@ -24,8 +24,8 @@ namespace ATBM_PhanHe1.DTO
         {
             this.userName = row["USERNAME"].ToString();
             this.userID = row["USER_ID"].ToString();
-            this.created = (DateOnly)row["CREATED"];
-            this.common = Convert.ToBoolean(row["COMMON"]);
+            this.created = (DateTime)row["CREATED"];
+            this.common = row["COMMON"].ToString();
         }
     }
 }
