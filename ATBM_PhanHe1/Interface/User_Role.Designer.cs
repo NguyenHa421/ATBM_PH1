@@ -367,6 +367,7 @@
             btn_search_user.TabIndex = 4;
             btn_search_user.Text = "Tìm kiếm";
             btn_search_user.UseVisualStyleBackColor = false;
+            btn_search_user.Click += btn_search_user_Click;
             // 
             // tabPage2
             // 
@@ -517,6 +518,7 @@
             btn_search_role.TabIndex = 11;
             btn_search_role.Text = "Tìm kiếm";
             btn_search_role.UseVisualStyleBackColor = false;
+            btn_search_role.Click += btn_search_role_Click;
             // 
             // User_Role
             // 
