@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ATBM_PhanHe1.DAO
 {
@@ -20,7 +21,7 @@ namespace ATBM_PhanHe1.DAO
         public List<UserDTO> GetUserList()
         {
             List<UserDTO> list = new List<UserDTO>();
-            string query = "select* from all_users";
+            string query = "select * from all_users";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow row in data.Rows)
             {
@@ -29,6 +30,41 @@ namespace ATBM_PhanHe1.DAO
             }
             return list;
         }
-
+        public List<UserRoleDTO> GetUserWithPrivs()
+        {
+            List<UserRoleDTO> list = new List<UserRoleDTO>();
+            string query = "select grantee,count(granted_role) as nOfRole from dba_role_privs group by grantee";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow row in data.Rows)
+            {
+                UserRoleDTO user = new UserRoleDTO(row);
+                list.Add(user);
+            }
+            return list;
+        }
+        public List<UserDTO> SearchUser(string userName)
+        {
+            List<UserDTO> list = new List<UserDTO>();
+            string query = string.Format("select * from all_users where lower(username) like lower('%{0}%')", userName);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow row in data.Rows)
+            {
+                UserDTO user = new UserDTO(row);
+                list.Add(user);
+            }
+            return list;
+        }
+        public List<UserRoleDTO> SearchUserRole(string userName)
+        {
+            List<UserRoleDTO> list = new List<UserRoleDTO>();
+            string query = string.Format("select grantee, count(granted_role) as nOfRole from dba_role_privs where lower(grantee) like lower('%{0}%') group by grantee",userName);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                UserRoleDTO user = new UserRoleDTO(row);
+                list.Add(user);
+            }
+            return list;
+        }
     }
 }

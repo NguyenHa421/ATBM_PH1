@@ -451,3 +451,15 @@ INSERT INTO DANGKY (MASV, MAGV, MAHP, HK, NAM, MACT, DIEMTH, DIEMQT, DIEMCK, DIE
 INSERT INTO DANGKY (MASV, MAGV, MAHP, HK, NAM, MACT, DIEMTH, DIEMQT, DIEMCK, DIEMTK) VALUES
 (11, 10, 5, 3, 2023, 5, 8.5, 8.0, 8.5, 8.3);
 
+CREATE OR REPLACE PROCEDURE usp_GetAllUser
+IS
+    curs SYS_REFCURSOR;
+BEGIN
+    OPEN curs FOR
+    SELECT * FROM ALL_USERS;
+    DBMS_SQL.return_result(curs);
+END;
+select* from ROLE_TAB_PRIVS
+select* from DBA_role_privs
+select* from user_tab_privs
+exec usp_GetAllUser

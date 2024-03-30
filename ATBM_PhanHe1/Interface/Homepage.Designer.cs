@@ -41,8 +41,10 @@
             pic_logout = new PictureBox();
             pn_qlur = new Panel();
             label3 = new Label();
+            btn_qlur = new Button();
             pn_qlq = new Panel();
             label4 = new Label();
+            btn_qlq = new Button();
             pn_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtGrid_main).BeginInit();
             panel5.SuspendLayout();
@@ -122,6 +124,7 @@
             btn_search.TabIndex = 2;
             btn_search.Text = "Tìm kiếm";
             btn_search.UseVisualStyleBackColor = false;
+            btn_search.Click += btn_search_Click;
             // 
             // lab_dstknd
             // 
@@ -172,11 +175,13 @@
             pic_logout.SizeMode = PictureBoxSizeMode.Zoom;
             pic_logout.TabIndex = 3;
             pic_logout.TabStop = false;
+            pic_logout.Click += pic_logout_Click;
             // 
             // pn_qlur
             // 
             pn_qlur.BackColor = Color.FromArgb(42, 107, 167);
             pn_qlur.Controls.Add(label3);
+            pn_qlur.Controls.Add(btn_qlur);
             pn_qlur.Location = new Point(0, 331);
             pn_qlur.Name = "pn_qlur";
             pn_qlur.Size = new Size(220, 76);
@@ -193,10 +198,25 @@
             label3.TabIndex = 0;
             label3.Text = "Quản lý User/Role";
             // 
+            // btn_qlur
+            // 
+            btn_qlur.BackColor = Color.Transparent;
+            btn_qlur.FlatAppearance.BorderSize = 0;
+            btn_qlur.FlatStyle = FlatStyle.Flat;
+            btn_qlur.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_qlur.ForeColor = Color.Transparent;
+            btn_qlur.Location = new Point(0, 0);
+            btn_qlur.Name = "btn_qlur";
+            btn_qlur.Size = new Size(217, 76);
+            btn_qlur.TabIndex = 2;
+            btn_qlur.UseVisualStyleBackColor = false;
+            btn_qlur.Click += btn_qlur_Click;
+            // 
             // pn_qlq
             // 
             pn_qlq.BackColor = Color.FromArgb(42, 107, 167);
             pn_qlq.Controls.Add(label4);
+            pn_qlq.Controls.Add(btn_qlq);
             pn_qlq.Location = new Point(0, 408);
             pn_qlq.Name = "pn_qlq";
             pn_qlq.Size = new Size(220, 76);
@@ -212,6 +232,20 @@
             label4.Size = new Size(149, 28);
             label4.TabIndex = 0;
             label4.Text = "Quản lý quyền";
+            // 
+            // btn_qlq
+            // 
+            btn_qlq.BackColor = Color.Transparent;
+            btn_qlq.FlatAppearance.BorderSize = 0;
+            btn_qlq.FlatStyle = FlatStyle.Flat;
+            btn_qlq.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_qlq.ForeColor = Color.Transparent;
+            btn_qlq.Location = new Point(3, -3);
+            btn_qlq.Name = "btn_qlq";
+            btn_qlq.Size = new Size(217, 76);
+            btn_qlq.TabIndex = 2;
+            btn_qlq.UseVisualStyleBackColor = false;
+            btn_qlq.Click += btn_qlq_Click;
             // 
             // Homepage
             // 
@@ -263,5 +297,7 @@
         private PictureBox pic_search;
         private TextBox tb_search;
         private DataGridView dtGrid_main;
+        private Button btn_qlur;
+        private Button btn_qlq;
     }
 }

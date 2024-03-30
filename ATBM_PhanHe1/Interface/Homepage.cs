@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ATBM_PhanHe1.DAO;
 using ATBM_PhanHe1.DTO;
+using static System.Windows.Forms.DataFormats;
 
 namespace ATBM_PhanHe1.Interface
 {
@@ -24,16 +25,30 @@ namespace ATBM_PhanHe1.Interface
         void Load()
         {
             dtGrid_main.DataSource = userList;
-            LoadList();
-        }
-        void LoadList()
-        {
             userList.DataSource = UserDAO.Instance.GetUserList();
         }
-
-        private void Homepage_Load(object sender, EventArgs e)
+        private void pic_logout_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            userList.DataSource = UserDAO.Instance.SearchUser(tb_search.Text);
+        }
+        private void btn_qlur_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            User_Role newForm = new User_Role();
+            newForm.ShowDialog();
+            this.Close();
+        }
+        private void btn_qlq_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Permission newForm = new Permission();
+            newForm.ShowDialog();
+            this.Close();
         }
     }
 }
