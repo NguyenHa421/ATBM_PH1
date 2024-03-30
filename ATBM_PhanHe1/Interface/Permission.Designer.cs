@@ -50,14 +50,14 @@
             btn_search_user = new Button();
             pn_main = new Panel();
             lab_qlq = new Label();
-            label4 = new Label();
             pic_logout = new PictureBox();
             pn_qlq = new Panel();
-            label3 = new Label();
             pn_qlur = new Panel();
-            label2 = new Label();
             pn_dstk = new Panel();
             pic_khtn = new PictureBox();
+            button1 = new Button();
+            button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dtGrid_role).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_role).BeginInit();
@@ -350,17 +350,6 @@
             lab_qlq.Text = "QUẢN LÝ QUYỀN";
             lab_qlq.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(30, 23);
-            label4.Name = "label4";
-            label4.Size = new Size(149, 28);
-            label4.TabIndex = 0;
-            label4.Text = "Quản lý quyền";
-            // 
             // pic_logout
             // 
             pic_logout.Image = Properties.Resources.Exit;
@@ -375,47 +364,25 @@
             // pn_qlq
             // 
             pn_qlq.BackColor = Color.FromArgb(177, 213, 246);
-            pn_qlq.Controls.Add(label4);
+            pn_qlq.Controls.Add(button4);
             pn_qlq.Location = new Point(0, 408);
             pn_qlq.Name = "pn_qlq";
             pn_qlq.Size = new Size(220, 76);
             pn_qlq.TabIndex = 16;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(14, 23);
-            label3.Name = "label3";
-            label3.Size = new Size(184, 28);
-            label3.TabIndex = 0;
-            label3.Text = "Quản lý User/Role";
-            // 
             // pn_qlur
             // 
             pn_qlur.BackColor = Color.FromArgb(42, 107, 167);
-            pn_qlur.Controls.Add(label3);
+            pn_qlur.Controls.Add(button3);
             pn_qlur.Location = new Point(0, 331);
             pn_qlur.Name = "pn_qlur";
             pn_qlur.Size = new Size(220, 76);
             pn_qlur.TabIndex = 14;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(7, 23);
-            label2.Name = "label2";
-            label2.Size = new Size(205, 28);
-            label2.TabIndex = 0;
-            label2.Text = "Danh sách tài khoản";
-            // 
             // pn_dstk
             // 
             pn_dstk.BackColor = Color.FromArgb(42, 107, 167);
-            pn_dstk.Controls.Add(label2);
+            pn_dstk.Controls.Add(button1);
             pn_dstk.Location = new Point(0, 254);
             pn_dstk.Name = "pn_dstk";
             pn_dstk.Size = new Size(220, 76);
@@ -430,6 +397,51 @@
             pic_khtn.SizeMode = PictureBoxSizeMode.Zoom;
             pic_khtn.TabIndex = 12;
             pic_khtn.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(42, 107, 167);
+            button1.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(1, 10);
+            button1.Name = "button1";
+            button1.Size = new Size(218, 56);
+            button1.TabIndex = 7;
+            button1.Text = "Danh sách tài khoản";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(42, 107, 167);
+            button3.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.Transparent;
+            button3.Location = new Point(1, 10);
+            button3.Name = "button3";
+            button3.Size = new Size(218, 56);
+            button3.TabIndex = 7;
+            button3.Text = "Quản lý User/Role";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(177, 213, 246);
+            button4.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.Black;
+            button4.Location = new Point(1, 10);
+            button4.Name = "button4";
+            button4.Size = new Size(218, 56);
+            button4.TabIndex = 9;
+            button4.Text = "Quản lý quyền";
+            button4.UseVisualStyleBackColor = false;
             // 
             // Permission
             // 
@@ -462,11 +474,8 @@
             pn_main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_logout).EndInit();
             pn_qlq.ResumeLayout(false);
-            pn_qlq.PerformLayout();
             pn_qlur.ResumeLayout(false);
-            pn_qlur.PerformLayout();
             pn_dstk.ResumeLayout(false);
-            pn_dstk.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_khtn).EndInit();
             ResumeLayout(false);
         }
@@ -490,17 +499,17 @@
         private Button btn_search_user;
         private Panel pn_main;
         private Label lab_qlq;
-        private Label label4;
         private PictureBox pic_logout;
         private Panel pn_qlq;
-        private Label label3;
         private Panel pn_qlur;
-        private Label label2;
         private Panel pn_dstk;
         private PictureBox pic_khtn;
         private Button btn_revoke_role;
         private Button btn_grant_role;
         private Button btn_revoke_user;
         private Button btn_role;
+        private Button button1;
+        private Button button3;
+        private Button button4;
     }
 }
