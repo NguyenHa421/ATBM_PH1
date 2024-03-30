@@ -35,6 +35,7 @@
             panel6 = new Panel();
             pic_search_role = new PictureBox();
             tabPage2 = new TabPage();
+            pictureBox1 = new PictureBox();
             btn_revoke_role = new Button();
             btn_grant_role = new Button();
             tb_search_user = new TextBox();
@@ -45,29 +46,34 @@
             panel5 = new Panel();
             tbCtrl_main = new TabControl();
             tabPage1 = new TabPage();
+            pic_refresh_U = new PictureBox();
             btn_revoke_user = new Button();
             btn_role = new Button();
             btn_search_user = new Button();
             pn_main = new Panel();
             lab_qlq = new Label();
+            Parent_panel = new Panel();
             pic_logout = new PictureBox();
             pn_qlq = new Panel();
-            pn_qlur = new Panel();
-            pn_dstk = new Panel();
-            pic_khtn = new PictureBox();
-            button1 = new Button();
-            button3 = new Button();
             button4 = new Button();
+            pn_qlur = new Panel();
+            QLur_button = new Button();
+            pn_dstk = new Panel();
+            DSTK_button = new Button();
+            pic_khtn = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dtGrid_role).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_role).BeginInit();
             tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_search_user).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtGrid_user).BeginInit();
             panel5.SuspendLayout();
             tbCtrl_main.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_refresh_U).BeginInit();
             pn_main.SuspendLayout();
+            Parent_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_logout).BeginInit();
             pn_qlq.SuspendLayout();
             pn_qlur.SuspendLayout();
@@ -83,7 +89,7 @@
             btn_search_role.FlatStyle = FlatStyle.Flat;
             btn_search_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_search_role.ForeColor = SystemColors.Window;
-            btn_search_role.Location = new Point(591, 13);
+            btn_search_role.Location = new Point(591, 11);
             btn_search_role.Name = "btn_search_role";
             btn_search_role.Size = new Size(91, 38);
             btn_search_role.TabIndex = 11;
@@ -95,17 +101,17 @@
             tb_search_role.BackColor = Color.WhiteSmoke;
             tb_search_role.BorderStyle = BorderStyle.None;
             tb_search_role.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_search_role.Location = new Point(52, 9);
+            tb_search_role.Location = new Point(52, 7);
             tb_search_role.Name = "tb_search_role";
             tb_search_role.PlaceholderText = "Nhập tên người dùng...";
-            tb_search_role.Size = new Size(510, 23);
+            tb_search_role.Size = new Size(467, 23);
             tb_search_role.TabIndex = 1;
             // 
             // dtGrid_role
             // 
             dtGrid_role.BackgroundColor = Color.WhiteSmoke;
             dtGrid_role.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtGrid_role.Location = new Point(6, 61);
+            dtGrid_role.Location = new Point(6, 59);
             dtGrid_role.Name = "dtGrid_role";
             dtGrid_role.RowHeadersWidth = 51;
             dtGrid_role.Size = new Size(676, 318);
@@ -117,15 +123,15 @@
             panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(tb_search_role);
             panel6.Controls.Add(pic_search_role);
-            panel6.Location = new Point(6, 13);
+            panel6.Location = new Point(6, 11);
             panel6.Name = "panel6";
-            panel6.Size = new Size(567, 38);
+            panel6.Size = new Size(524, 38);
             panel6.TabIndex = 12;
             // 
             // pic_search_role
             // 
             pic_search_role.Image = Properties.Resources.Search1;
-            pic_search_role.Location = new Point(3, 5);
+            pic_search_role.Location = new Point(3, 3);
             pic_search_role.Name = "pic_search_role";
             pic_search_role.Size = new Size(43, 30);
             pic_search_role.SizeMode = PictureBoxSizeMode.Zoom;
@@ -136,6 +142,7 @@
             // 
             tabPage2.BackColor = Color.FromArgb(249, 240, 240);
             tabPage2.BorderStyle = BorderStyle.FixedSingle;
+            tabPage2.Controls.Add(pictureBox1);
             tabPage2.Controls.Add(btn_revoke_role);
             tabPage2.Controls.Add(btn_grant_role);
             tabPage2.Controls.Add(dtGrid_role);
@@ -145,9 +152,19 @@
             tabPage2.Location = new Point(4, 32);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(693, 441);
+            tabPage2.Size = new Size(693, 442);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Role";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.refresh_buttons;
+            pictureBox1.Location = new Point(536, 11);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(49, 39);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 20;
+            pictureBox1.TabStop = false;
             // 
             // btn_revoke_role
             // 
@@ -157,12 +174,13 @@
             btn_revoke_role.FlatStyle = FlatStyle.Flat;
             btn_revoke_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_revoke_role.ForeColor = SystemColors.Window;
-            btn_revoke_role.Location = new Point(552, 393);
+            btn_revoke_role.Location = new Point(552, 391);
             btn_revoke_role.Name = "btn_revoke_role";
             btn_revoke_role.Size = new Size(130, 38);
             btn_revoke_role.TabIndex = 19;
             btn_revoke_role.Text = "Thu hồi quyền";
             btn_revoke_role.UseVisualStyleBackColor = false;
+            btn_revoke_role.Click += btn_revoke_role_Click;
             // 
             // btn_grant_role
             // 
@@ -172,28 +190,29 @@
             btn_grant_role.FlatStyle = FlatStyle.Flat;
             btn_grant_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_grant_role.ForeColor = SystemColors.Window;
-            btn_grant_role.Location = new Point(280, 393);
+            btn_grant_role.Location = new Point(280, 391);
             btn_grant_role.Name = "btn_grant_role";
             btn_grant_role.Size = new Size(130, 38);
             btn_grant_role.TabIndex = 18;
             btn_grant_role.Text = "Cấp quyền";
             btn_grant_role.UseVisualStyleBackColor = false;
+            btn_grant_role.Click += btn_grant_role_Click;
             // 
             // tb_search_user
             // 
             tb_search_user.BackColor = Color.WhiteSmoke;
             tb_search_user.BorderStyle = BorderStyle.None;
             tb_search_user.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_search_user.Location = new Point(52, 9);
+            tb_search_user.Location = new Point(52, 7);
             tb_search_user.Name = "tb_search_user";
             tb_search_user.PlaceholderText = "Nhập tên người dùng...";
-            tb_search_user.Size = new Size(510, 23);
+            tb_search_user.Size = new Size(467, 23);
             tb_search_user.TabIndex = 1;
             // 
             // pic_search_user
             // 
             pic_search_user.Image = Properties.Resources.Search1;
-            pic_search_user.Location = new Point(3, 5);
+            pic_search_user.Location = new Point(3, 3);
             pic_search_user.Name = "pic_search_user";
             pic_search_user.Size = new Size(43, 30);
             pic_search_user.SizeMode = PictureBoxSizeMode.Zoom;
@@ -204,7 +223,7 @@
             // 
             dtGrid_user.BackgroundColor = Color.WhiteSmoke;
             dtGrid_user.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtGrid_user.Location = new Point(6, 61);
+            dtGrid_user.Location = new Point(6, 59);
             dtGrid_user.Name = "dtGrid_user";
             dtGrid_user.RowHeadersWidth = 51;
             dtGrid_user.Size = new Size(676, 318);
@@ -233,12 +252,13 @@
             btn_grant_user.FlatStyle = FlatStyle.Flat;
             btn_grant_user.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_grant_user.ForeColor = SystemColors.Window;
-            btn_grant_user.Location = new Point(10, 393);
+            btn_grant_user.Location = new Point(10, 391);
             btn_grant_user.Name = "btn_grant_user";
             btn_grant_user.Size = new Size(130, 38);
             btn_grant_user.TabIndex = 6;
             btn_grant_user.Text = "Cấp quyền";
             btn_grant_user.UseVisualStyleBackColor = false;
+            btn_grant_user.Click += btn_grant_user_Click;
             // 
             // panel5
             // 
@@ -246,9 +266,9 @@
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(tb_search_user);
             panel5.Controls.Add(pic_search_user);
-            panel5.Location = new Point(6, 13);
+            panel5.Location = new Point(6, 11);
             panel5.Name = "panel5";
-            panel5.Size = new Size(567, 38);
+            panel5.Size = new Size(524, 38);
             panel5.TabIndex = 5;
             // 
             // tbCtrl_main
@@ -257,16 +277,17 @@
             tbCtrl_main.Controls.Add(tabPage1);
             tbCtrl_main.Controls.Add(tabPage2);
             tbCtrl_main.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbCtrl_main.Location = new Point(24, 49);
+            tbCtrl_main.Location = new Point(24, 3);
             tbCtrl_main.Name = "tbCtrl_main";
             tbCtrl_main.SelectedIndex = 0;
-            tbCtrl_main.Size = new Size(701, 477);
+            tbCtrl_main.Size = new Size(701, 478);
             tbCtrl_main.TabIndex = 1;
             // 
             // tabPage1
             // 
             tabPage1.BackColor = Color.FromArgb(237, 248, 243);
             tabPage1.BorderStyle = BorderStyle.FixedSingle;
+            tabPage1.Controls.Add(pic_refresh_U);
             tabPage1.Controls.Add(btn_revoke_user);
             tabPage1.Controls.Add(btn_role);
             tabPage1.Controls.Add(dtGrid_user);
@@ -278,9 +299,19 @@
             tabPage1.Location = new Point(4, 32);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(693, 441);
+            tabPage1.Size = new Size(693, 442);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "User";
+            // 
+            // pic_refresh_U
+            // 
+            pic_refresh_U.Image = Properties.Resources.refresh_buttons;
+            pic_refresh_U.Location = new Point(536, 11);
+            pic_refresh_U.Name = "pic_refresh_U";
+            pic_refresh_U.Size = new Size(49, 39);
+            pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_refresh_U.TabIndex = 20;
+            pic_refresh_U.TabStop = false;
             // 
             // btn_revoke_user
             // 
@@ -290,12 +321,13 @@
             btn_revoke_user.FlatStyle = FlatStyle.Flat;
             btn_revoke_user.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_revoke_user.ForeColor = SystemColors.Window;
-            btn_revoke_user.Location = new Point(552, 393);
+            btn_revoke_user.Location = new Point(552, 391);
             btn_revoke_user.Name = "btn_revoke_user";
             btn_revoke_user.Size = new Size(130, 38);
             btn_revoke_user.TabIndex = 12;
             btn_revoke_user.Text = "Thu hồi quyền";
             btn_revoke_user.UseVisualStyleBackColor = false;
+            btn_revoke_user.Click += btn_revoke_user_Click;
             // 
             // btn_role
             // 
@@ -305,12 +337,13 @@
             btn_role.FlatStyle = FlatStyle.Flat;
             btn_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_role.ForeColor = SystemColors.Window;
-            btn_role.Location = new Point(280, 393);
+            btn_role.Location = new Point(280, 391);
             btn_role.Name = "btn_role";
             btn_role.Size = new Size(130, 38);
             btn_role.TabIndex = 11;
             btn_role.Text = "Cấp role";
             btn_role.UseVisualStyleBackColor = false;
+            btn_role.Click += btn_role_Click;
             // 
             // btn_search_user
             // 
@@ -320,7 +353,7 @@
             btn_search_user.FlatStyle = FlatStyle.Flat;
             btn_search_user.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_search_user.ForeColor = SystemColors.Window;
-            btn_search_user.Location = new Point(591, 13);
+            btn_search_user.Location = new Point(591, 11);
             btn_search_user.Name = "btn_search_user";
             btn_search_user.Size = new Size(91, 38);
             btn_search_user.TabIndex = 4;
@@ -330,8 +363,8 @@
             // pn_main
             // 
             pn_main.BackColor = SystemColors.Window;
-            pn_main.Controls.Add(tbCtrl_main);
             pn_main.Controls.Add(lab_qlq);
+            pn_main.Controls.Add(Parent_panel);
             pn_main.Location = new Point(220, 54);
             pn_main.Name = "pn_main";
             pn_main.Size = new Size(739, 536);
@@ -348,6 +381,14 @@
             lab_qlq.Text = "QUẢN LÝ QUYỀN";
             lab_qlq.TextAlign = ContentAlignment.TopCenter;
             // 
+            // Parent_panel
+            // 
+            Parent_panel.Controls.Add(tbCtrl_main);
+            Parent_panel.Location = new Point(0, 49);
+            Parent_panel.Name = "Parent_panel";
+            Parent_panel.Size = new Size(739, 484);
+            Parent_panel.TabIndex = 2;
+            // 
             // pic_logout
             // 
             pic_logout.Image = Properties.Resources.Exit;
@@ -357,6 +398,7 @@
             pic_logout.SizeMode = PictureBoxSizeMode.Zoom;
             pic_logout.TabIndex = 15;
             pic_logout.TabStop = false;
+            pic_logout.Click += pic_logout_Click;
             // 
             // pn_qlq
             // 
@@ -366,64 +408,6 @@
             pn_qlq.Name = "pn_qlq";
             pn_qlq.Size = new Size(220, 76);
             pn_qlq.TabIndex = 16;
-            // 
-            // pn_qlur
-            // 
-            pn_qlur.BackColor = Color.FromArgb(42, 107, 167);
-            pn_qlur.Controls.Add(button3);
-            pn_qlur.Location = new Point(0, 331);
-            pn_qlur.Name = "pn_qlur";
-            pn_qlur.Size = new Size(220, 76);
-            pn_qlur.TabIndex = 14;
-            // 
-            // pn_dstk
-            // 
-            pn_dstk.BackColor = Color.FromArgb(42, 107, 167);
-            pn_dstk.Controls.Add(button1);
-            pn_dstk.Location = new Point(0, 254);
-            pn_dstk.Name = "pn_dstk";
-            pn_dstk.Size = new Size(220, 76);
-            pn_dstk.TabIndex = 13;
-            // 
-            // pic_khtn
-            // 
-            pic_khtn.Image = Properties.Resources.logo2;
-            pic_khtn.Location = new Point(28, 28);
-            pic_khtn.Name = "pic_khtn";
-            pic_khtn.Size = new Size(170, 155);
-            pic_khtn.SizeMode = PictureBoxSizeMode.Zoom;
-            pic_khtn.TabIndex = 12;
-            pic_khtn.TabStop = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(42, 107, 167);
-            button1.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(1, 10);
-            button1.Name = "button1";
-            button1.Size = new Size(218, 56);
-            button1.TabIndex = 7;
-            button1.Text = "Danh sách tài khoản";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(42, 107, 167);
-            button3.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.Transparent;
-            button3.Location = new Point(1, 10);
-            button3.Name = "button3";
-            button3.Size = new Size(218, 56);
-            button3.TabIndex = 7;
-            button3.Text = "Quản lý User/Role";
-            button3.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -439,6 +423,66 @@
             button4.TabIndex = 9;
             button4.Text = "Quản lý quyền";
             button4.UseVisualStyleBackColor = false;
+            // 
+            // pn_qlur
+            // 
+            pn_qlur.BackColor = Color.FromArgb(42, 107, 167);
+            pn_qlur.Controls.Add(QLur_button);
+            pn_qlur.Location = new Point(0, 331);
+            pn_qlur.Name = "pn_qlur";
+            pn_qlur.Size = new Size(220, 76);
+            pn_qlur.TabIndex = 14;
+            // 
+            // QLur_button
+            // 
+            QLur_button.BackColor = Color.FromArgb(42, 107, 167);
+            QLur_button.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            QLur_button.FlatAppearance.BorderSize = 0;
+            QLur_button.FlatStyle = FlatStyle.Flat;
+            QLur_button.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            QLur_button.ForeColor = Color.Transparent;
+            QLur_button.Location = new Point(1, 10);
+            QLur_button.Name = "QLur_button";
+            QLur_button.Size = new Size(218, 56);
+            QLur_button.TabIndex = 7;
+            QLur_button.Text = "Quản lý User/Role";
+            QLur_button.UseVisualStyleBackColor = false;
+            QLur_button.Click += QLur_button_Click;
+            // 
+            // pn_dstk
+            // 
+            pn_dstk.BackColor = Color.FromArgb(42, 107, 167);
+            pn_dstk.Controls.Add(DSTK_button);
+            pn_dstk.Location = new Point(0, 254);
+            pn_dstk.Name = "pn_dstk";
+            pn_dstk.Size = new Size(220, 76);
+            pn_dstk.TabIndex = 13;
+            // 
+            // DSTK_button
+            // 
+            DSTK_button.BackColor = Color.FromArgb(42, 107, 167);
+            DSTK_button.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            DSTK_button.FlatAppearance.BorderSize = 0;
+            DSTK_button.FlatStyle = FlatStyle.Flat;
+            DSTK_button.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DSTK_button.ForeColor = Color.White;
+            DSTK_button.Location = new Point(1, 10);
+            DSTK_button.Name = "DSTK_button";
+            DSTK_button.Size = new Size(218, 56);
+            DSTK_button.TabIndex = 7;
+            DSTK_button.Text = "Danh sách tài khoản";
+            DSTK_button.UseVisualStyleBackColor = false;
+            DSTK_button.Click += DSTK_button_Click;
+            // 
+            // pic_khtn
+            // 
+            pic_khtn.Image = Properties.Resources.logo2;
+            pic_khtn.Location = new Point(28, 28);
+            pic_khtn.Name = "pic_khtn";
+            pic_khtn.Size = new Size(170, 155);
+            pic_khtn.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_khtn.TabIndex = 12;
+            pic_khtn.TabStop = false;
             // 
             // Permission
             // 
@@ -461,14 +505,17 @@
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_role).EndInit();
             tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_search_user).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtGrid_user).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             tbCtrl_main.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pic_refresh_U).EndInit();
             pn_main.ResumeLayout(false);
             pn_main.PerformLayout();
+            Parent_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pic_logout).EndInit();
             pn_qlq.ResumeLayout(false);
             pn_qlur.ResumeLayout(false);
@@ -505,8 +552,11 @@
         private Button btn_grant_role;
         private Button btn_revoke_user;
         private Button btn_role;
-        private Button button1;
-        private Button button3;
+        private Button DSTK_button;
+        private Button QLur_button;
         private Button button4;
+        private Panel Parent_panel;
+        private PictureBox pictureBox1;
+        private PictureBox pic_refresh_U;
     }
 }
