@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\t\u00E0i li\u1EC7u\\n\u0103m 3-2\\atbm_phanhe1\\atbm_ph1\\atbm_phanhe1\\interface\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\interface\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\t\u00E0i li\u1EC7u\\n\u0103m 3-2\\atbm_phanhe1\\atbm_ph1\\atbm_phanhe1\\interface\\user_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\interface\\user_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\t\u00E0i li\u1EC7u\\n\u0103m 3-2\\atbm_phanhe1\\atbm_ph1\\atbm_phanhe1\\interface\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\interface\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\t\u00E0i li\u1EC7u\\n\u0103m 3-2\\atbm_phanhe1\\atbm_ph1\\atbm_phanhe1\\users_roles\\grant_u_r.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\users_roles\\grant_u_r.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,44 +25,20 @@
               "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "User_Role.cs [Design]",
-              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\User_Role.cs",
-              "RelativeDocumentMoniker": "ATBM_PhanHe1\\Interface\\User_Role.cs",
-              "ToolTip": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\User_Role.cs [Design]",
-              "RelativeToolTip": "ATBM_PhanHe1\\Interface\\User_Role.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T13:04:59.294Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Permission.cs [Design]",
-              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\Permission.cs",
-              "RelativeDocumentMoniker": "ATBM_PhanHe1\\Interface\\Permission.cs",
-              "ToolTip": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\Permission.cs [Design]",
-              "RelativeToolTip": "ATBM_PhanHe1\\Interface\\Permission.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T13:03:13.968Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Homepage.cs [Design]",
-              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\Homepage.cs",
-              "RelativeDocumentMoniker": "ATBM_PhanHe1\\Interface\\Homepage.cs",
-              "ToolTip": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\Homepage.cs [Design]",
-              "RelativeToolTip": "ATBM_PhanHe1\\Interface\\Homepage.cs [Design]",
+              "Title": "Grant_U_R.cs [Design]",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U_R.cs",
+              "RelativeDocumentMoniker": "ATBM_PhanHe1\\Users_Roles\\Grant_U_R.cs",
+              "ToolTip": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U_R.cs [Design]",
+              "RelativeToolTip": "ATBM_PhanHe1\\Users_Roles\\Grant_U_R.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T12:58:50.211Z",
+              "WhenOpened": "2024-03-30T16:16:14.441Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }
