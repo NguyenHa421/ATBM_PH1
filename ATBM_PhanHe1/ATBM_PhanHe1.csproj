@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Role\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Oracle.ManagedDataAccess" Version="21.13.0" />
   </ItemGroup>
 
