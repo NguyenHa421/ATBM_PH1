@@ -40,9 +40,10 @@
             label2 = new Label();
             pic_logout = new PictureBox();
             pn_qlur = new Panel();
-            label3 = new Label();
             pn_qlq = new Panel();
-            label4 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             pn_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtGrid_main).BeginInit();
             panel5.SuspendLayout();
@@ -70,7 +71,7 @@
             // 
             dtGrid_main.BackgroundColor = Color.WhiteSmoke;
             dtGrid_main.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtGrid_main.Location = new Point(37, 118);
+            dtGrid_main.Location = new Point(90, 119);
             dtGrid_main.Name = "dtGrid_main";
             dtGrid_main.RowHeadersWidth = 51;
             dtGrid_main.Size = new Size(676, 394);
@@ -147,6 +148,7 @@
             // pn_dstk
             // 
             pn_dstk.BackColor = Color.FromArgb(177, 213, 246);
+            pn_dstk.Controls.Add(button1);
             pn_dstk.Controls.Add(label2);
             pn_dstk.Location = new Point(0, 254);
             pn_dstk.Name = "pn_dstk";
@@ -159,9 +161,8 @@
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(7, 21);
             label2.Name = "label2";
-            label2.Size = new Size(205, 28);
+            label2.Size = new Size(0, 28);
             label2.TabIndex = 0;
-            label2.Text = "Danh sách tài khoản";
             // 
             // pic_logout
             // 
@@ -176,42 +177,65 @@
             // pn_qlur
             // 
             pn_qlur.BackColor = Color.FromArgb(42, 107, 167);
-            pn_qlur.Controls.Add(label3);
+            pn_qlur.Controls.Add(button2);
             pn_qlur.Location = new Point(0, 331);
             pn_qlur.Name = "pn_qlur";
             pn_qlur.Size = new Size(220, 76);
             pn_qlur.TabIndex = 3;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(14, 21);
-            label3.Name = "label3";
-            label3.Size = new Size(184, 28);
-            label3.TabIndex = 0;
-            label3.Text = "Quản lý User/Role";
-            // 
             // pn_qlq
             // 
             pn_qlq.BackColor = Color.FromArgb(42, 107, 167);
-            pn_qlq.Controls.Add(label4);
+            pn_qlq.Controls.Add(button3);
             pn_qlq.Location = new Point(0, 408);
             pn_qlq.Name = "pn_qlq";
             pn_qlq.Size = new Size(220, 76);
             pn_qlq.TabIndex = 4;
             // 
-            // label4
+            // button1
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(30, 21);
-            label4.Name = "label4";
-            label4.Size = new Size(149, 28);
-            label4.TabIndex = 0;
-            label4.Text = "Quản lý quyền";
+            button1.BackColor = Color.FromArgb(177, 213, 246);
+            button1.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(0, 9);
+            button1.Name = "button1";
+            button1.Size = new Size(218, 56);
+            button1.TabIndex = 5;
+            button1.Text = "Danh sách tài khoản";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(42, 107, 167);
+            button2.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.Transparent;
+            button2.Location = new Point(1, 10);
+            button2.Name = "button2";
+            button2.Size = new Size(218, 56);
+            button2.TabIndex = 6;
+            button2.Text = "Quản lý User/Role";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(42, 107, 167);
+            button3.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.Transparent;
+            button3.Location = new Point(1, 10);
+            button3.Name = "button3";
+            button3.Size = new Size(218, 56);
+            button3.TabIndex = 7;
+            button3.Text = "Quản lý quyền";
+            button3.UseVisualStyleBackColor = false;
             // 
             // Homepage
             // 
@@ -241,9 +265,7 @@
             pn_dstk.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_logout).EndInit();
             pn_qlur.ResumeLayout(false);
-            pn_qlur.PerformLayout();
             pn_qlq.ResumeLayout(false);
-            pn_qlq.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -257,12 +279,13 @@
         private Label label2;
         private PictureBox pic_logout;
         private Panel pn_qlur;
-        private Label label3;
         private Panel pn_qlq;
-        private Label label4;
         private Panel panel5;
         private PictureBox pic_search;
         private TextBox tb_search;
         private DataGridView dtGrid_main;
+        private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }
