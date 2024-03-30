@@ -16,5 +16,18 @@ namespace ATBM_PhanHe1.Home_Login
         {
             InitializeComponent();
         }
+
+        private void Login_button_Click(object sender, EventArgs e)
+        {
+            Interface.Homepage homepage = new Interface.Homepage();
+            this.Hide();
+            homepage.ShowDialog();
+            this.Show();
+        }
+
+        private void pic_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
