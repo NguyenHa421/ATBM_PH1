@@ -89,6 +89,7 @@
             btn_search_role.TabIndex = 11;
             btn_search_role.Text = "Tìm kiếm";
             btn_search_role.UseVisualStyleBackColor = false;
+            btn_search_role.Click += btn_search_role_Click;
             // 
             // tb_search_role
             // 
@@ -326,6 +327,7 @@
             btn_search_user.TabIndex = 4;
             btn_search_user.Text = "Tìm kiếm";
             btn_search_user.UseVisualStyleBackColor = false;
+            btn_search_user.Click += btn_search_user_Click;
             // 
             // pn_main
             // 
@@ -357,6 +359,7 @@
             pic_logout.SizeMode = PictureBoxSizeMode.Zoom;
             pic_logout.TabIndex = 15;
             pic_logout.TabStop = false;
+            pic_logout.Click += pic_logout_Click;
             // 
             // pn_qlq
             // 

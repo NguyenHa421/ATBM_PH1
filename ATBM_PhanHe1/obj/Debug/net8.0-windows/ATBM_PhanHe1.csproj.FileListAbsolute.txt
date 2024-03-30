@@ -59,3 +59,10 @@ C:\Users\Thu Ha\Source\Repos\KamisatoNoel\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0
 C:\Users\Thu Ha\Source\Repos\KamisatoNoel\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ref\ATBM_PhanHe1.dll
 C:\Users\Thu Ha\Source\Repos\KamisatoNoel\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Interface.User_Role.resources
 C:\Users\Thu Ha\Source\Repos\KamisatoNoel\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Interface.Permission.resources
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Interface.Permission.resources
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Interface.User_Role.resources
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Properties.Resources.resources
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\System.DirectoryServices.Protocols.dll
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\runtimes\linux\lib\net6.0\System.DirectoryServices.Protocols.dll
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\runtimes\osx\lib\net6.0\System.DirectoryServices.Protocols.dll
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.DirectoryServices.Protocols.dll

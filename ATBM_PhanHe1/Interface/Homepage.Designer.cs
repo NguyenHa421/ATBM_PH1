@@ -123,6 +123,7 @@
             btn_search.TabIndex = 2;
             btn_search.Text = "Tìm kiếm";
             btn_search.UseVisualStyleBackColor = false;
+            btn_search.Click += btn_search_Click;
             // 
             // lab_dstknd
             // 
@@ -173,6 +174,7 @@
             pic_logout.SizeMode = PictureBoxSizeMode.Zoom;
             pic_logout.TabIndex = 3;
             pic_logout.TabStop = false;
+            pic_logout.Click += pic_logout_Click;
             // 
             // pn_qlur
             // 
@@ -237,6 +239,20 @@
             button3.Text = "Quản lý quyền";
             button3.UseVisualStyleBackColor = false;
             // 
+            // btn_qlq
+            // 
+            btn_qlq.BackColor = Color.Transparent;
+            btn_qlq.FlatAppearance.BorderSize = 0;
+            btn_qlq.FlatStyle = FlatStyle.Flat;
+            btn_qlq.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_qlq.ForeColor = Color.Transparent;
+            btn_qlq.Location = new Point(3, -3);
+            btn_qlq.Name = "btn_qlq";
+            btn_qlq.Size = new Size(217, 76);
+            btn_qlq.TabIndex = 2;
+            btn_qlq.UseVisualStyleBackColor = false;
+            btn_qlq.Click += btn_qlq_Click;
+            // 
             // Homepage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -253,7 +269,6 @@
             Name = "Homepage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản Lý Người Dùng";
-            Load += Homepage_Load_1;
             pn_main.ResumeLayout(false);
             pn_main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtGrid_main).EndInit();
