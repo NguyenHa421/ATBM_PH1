@@ -13,5 +13,38 @@
     <Compile Update="Interface\User_Role.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Role\Create_R.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Role\Delete_R.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Role\Update_R.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Users_Roles\Grant_R.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Users_Roles\Grant_U.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Users_Roles\Grant_U_R.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Users_Roles\Revorke_R.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Users_Roles\Revorke_U.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="User\Create_U.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="User\Delete_U.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="User\Update_U.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
