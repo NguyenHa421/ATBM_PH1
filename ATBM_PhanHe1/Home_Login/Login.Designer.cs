@@ -34,8 +34,10 @@
             label3 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            button1 = new Button();
+            Login_button = new Button();
+            pic_close = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_close).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -105,21 +107,34 @@
             textBox2.TabIndex = 5;
             textBox2.TabStop = false;
             // 
-            // button1
+            // Login_button
             // 
-            button1.BackColor = Color.White;
-            button1.BackgroundImage = Properties.Resources.b_r;
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(699, 453);
-            button1.Name = "button1";
-            button1.Size = new Size(162, 64);
-            button1.TabIndex = 6;
-            button1.TabStop = false;
-            button1.Text = "Đăng nhập";
-            button1.UseVisualStyleBackColor = false;
+            Login_button.BackColor = Color.White;
+            Login_button.BackgroundImage = Properties.Resources.b_r;
+            Login_button.BackgroundImageLayout = ImageLayout.Zoom;
+            Login_button.FlatStyle = FlatStyle.Flat;
+            Login_button.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Login_button.ForeColor = Color.White;
+            Login_button.Location = new Point(699, 453);
+            Login_button.Name = "Login_button";
+            Login_button.Size = new Size(162, 64);
+            Login_button.TabIndex = 6;
+            Login_button.TabStop = false;
+            Login_button.Text = "Đăng nhập";
+            Login_button.UseVisualStyleBackColor = false;
+            Login_button.Click += Login_button_Click;
+            // 
+            // pic_close
+            // 
+            pic_close.BackColor = Color.White;
+            pic_close.Image = Properties.Resources.Exit1;
+            pic_close.Location = new Point(859, 41);
+            pic_close.Name = "pic_close";
+            pic_close.Size = new Size(43, 36);
+            pic_close.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_close.TabIndex = 7;
+            pic_close.TabStop = false;
+            pic_close.Click += pic_close_Click;
             // 
             // Login
             // 
@@ -128,7 +143,8 @@
             BackColor = Color.FromArgb(42, 107, 167);
             BackgroundImage = Properties.Resources.Background1;
             ClientSize = new Size(957, 590);
-            Controls.Add(button1);
+            Controls.Add(pic_close);
+            Controls.Add(Login_button);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label3);
@@ -140,6 +156,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_close).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -152,6 +169,7 @@
         private Label label3;
         private TextBox textBox1;
         private TextBox textBox2;
-        private Button button1;
+        private Button Login_button;
+        private PictureBox pic_close;
     }
 }
