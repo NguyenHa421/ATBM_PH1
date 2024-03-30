@@ -18,7 +18,7 @@ namespace ATBM_PhanHe1.DTO
         }
         public UserRoleDTO(DataRow row)
         {
-            this.userName = row["grantee"].ToString();
+            this.userName = row["username"].ToString();
             this.nOfRole = Convert.ToInt32(row["nOfRole"]);
         }
     }

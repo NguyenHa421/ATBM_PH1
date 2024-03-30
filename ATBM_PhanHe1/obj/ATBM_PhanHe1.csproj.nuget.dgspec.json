@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Tài liệu\\Năm 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\ATBM_PhanHe1.csproj": {}
+    "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\ATBM_PhanHe1.csproj": {}
   },
   "projects": {
-    "D:\\Tài liệu\\Năm 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\ATBM_PhanHe1.csproj": {
+    "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\ATBM_PhanHe1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Tài liệu\\Năm 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\ATBM_PhanHe1.csproj",
+        "projectUniqueName": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\ATBM_PhanHe1.csproj",
         "projectName": "ATBM_PhanHe1",
-        "projectPath": "D:\\Tài liệu\\Năm 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\ATBM_PhanHe1.csproj",
-        "packagesPath": "C:\\Users\\Thu Ha\\.nuget\\packages\\",
-        "outputPath": "D:\\Tài liệu\\Năm 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\obj\\",
+        "projectPath": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\ATBM_PhanHe1.csproj",
+        "packagesPath": "C:\\Users\\MSI USER\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Thu Ha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MSI USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

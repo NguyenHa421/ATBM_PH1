@@ -41,5 +41,20 @@ namespace ATBM_PhanHe1.Interface
         {
             roleList.DataSource = RoleDAO.Instance.SearchRole(tb_search_role.Text);
         }
+
+        private void btn_dstk_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Homepage newForm = new Homepage();
+            newForm.ShowDialog();
+            this.Close();
+        }
+        private void btn_qlur_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            User_Role newForm = new User_Role();
+            newForm.ShowDialog();
+            this.Close();
+        }
     }
 }

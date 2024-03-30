@@ -33,7 +33,7 @@ namespace ATBM_PhanHe1.DAO
         public List<UserRoleDTO> GetUserWithPrivs()
         {
             List<UserRoleDTO> list = new List<UserRoleDTO>();
-            string query = "select grantee,count(granted_role) as nOfRole from dba_role_privs group by grantee";
+            string query = "select username,count(granted_role) as nOfRole from all_users, dba_role_privs where username = grantee(+) group by username";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow row in data.Rows)
             {
@@ -65,6 +65,11 @@ namespace ATBM_PhanHe1.DAO
                 list.Add(user);
             }
             return list;
+        }
+        public void DeleteUser(string userName)
+        {
+            string query = "drop user " + userName;
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace ATBM_PhanHe1.Interface
     {
         BindingSource userList = new BindingSource();
         BindingSource roleList = new BindingSource();
+        private string clickedUser = "";
         public User_Role()
         {
             InitializeComponent();
@@ -39,6 +40,40 @@ namespace ATBM_PhanHe1.Interface
         private void btn_search_role_Click(object sender, EventArgs e)
         {
             roleList.DataSource = RoleDAO.Instance.SearchRole(tb_search_role.Text);
+        }
+
+        private void btn_dstk_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Homepage newForm = new Homepage();
+            newForm.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_qlq_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Permission newForm = new Permission();
+            newForm.ShowDialog();
+            this.Close();
+        }
+
+        private void dtGrid_user_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell cell = dtGrid_user.Rows[e.RowIndex].Cells[0];
+                clickedUser = cell.Value.ToString();
+            }
+        }
+
+        private void btn_delete_user_Click(object sender, EventArgs e)
+        {
+            if (clickedUser!="")
+            {
+                UserDAO.Instance.DeleteUser(clickedUser);
+                clickedUser = "";
+            }
         }
     }
 }

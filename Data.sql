@@ -463,3 +463,5 @@ select* from ROLE_TAB_PRIVS
 select* from DBA_role_privs
 select* from user_tab_privs
 exec usp_GetAllUser
+CREATE USER C##testing IDENTIFIED BY 123456;
+select username,count(granted_role) as nOfRole from all_users, dba_role_privs where username = grantee(+) group by username

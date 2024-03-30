@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             pn_dstk = new Panel();
+            btn_dstk = new Button();
             pic_khtn = new PictureBox();
             pn_qlur = new Panel();
+            btn_qlur = new Button();
             pic_logout = new PictureBox();
             pn_qlq = new Panel();
+            btn_qlq = new Button();
             lab_ttur = new Label();
             pn_main = new Panel();
             tbCtrl_main = new TabControl();
@@ -56,9 +59,6 @@
             tb_search_role = new TextBox();
             pic_search_role = new PictureBox();
             btn_search_role = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
             pn_dstk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_khtn).BeginInit();
             pn_qlur.SuspendLayout();
@@ -79,11 +79,27 @@
             // pn_dstk
             // 
             pn_dstk.BackColor = Color.FromArgb(42, 107, 167);
-            pn_dstk.Controls.Add(button1);
+            pn_dstk.Controls.Add(btn_dstk);
             pn_dstk.Location = new Point(0, 254);
             pn_dstk.Name = "pn_dstk";
             pn_dstk.Size = new Size(220, 76);
             pn_dstk.TabIndex = 7;
+            // 
+            // btn_dstk
+            // 
+            btn_dstk.BackColor = Color.FromArgb(42, 107, 167);
+            btn_dstk.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            btn_dstk.FlatAppearance.BorderSize = 0;
+            btn_dstk.FlatStyle = FlatStyle.Flat;
+            btn_dstk.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_dstk.ForeColor = Color.White;
+            btn_dstk.Location = new Point(1, 10);
+            btn_dstk.Name = "btn_dstk";
+            btn_dstk.Size = new Size(218, 56);
+            btn_dstk.TabIndex = 6;
+            btn_dstk.Text = "Danh sách tài khoản";
+            btn_dstk.UseVisualStyleBackColor = false;
+            btn_dstk.Click += btn_dstk_Click;
             // 
             // pic_khtn
             // 
@@ -98,11 +114,26 @@
             // pn_qlur
             // 
             pn_qlur.BackColor = Color.FromArgb(177, 213, 246);
-            pn_qlur.Controls.Add(button2);
+            pn_qlur.Controls.Add(btn_qlur);
             pn_qlur.Location = new Point(0, 331);
             pn_qlur.Name = "pn_qlur";
             pn_qlur.Size = new Size(220, 76);
             pn_qlur.TabIndex = 8;
+            // 
+            // btn_qlur
+            // 
+            btn_qlur.BackColor = Color.FromArgb(177, 213, 246);
+            btn_qlur.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            btn_qlur.FlatAppearance.BorderSize = 0;
+            btn_qlur.FlatStyle = FlatStyle.Flat;
+            btn_qlur.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_qlur.ForeColor = Color.Black;
+            btn_qlur.Location = new Point(1, 10);
+            btn_qlur.Name = "btn_qlur";
+            btn_qlur.Size = new Size(218, 56);
+            btn_qlur.TabIndex = 7;
+            btn_qlur.Text = "Quản lý User/Role";
+            btn_qlur.UseVisualStyleBackColor = false;
             // 
             // pic_logout
             // 
@@ -118,11 +149,27 @@
             // pn_qlq
             // 
             pn_qlq.BackColor = Color.FromArgb(42, 107, 167);
-            pn_qlq.Controls.Add(button3);
+            pn_qlq.Controls.Add(btn_qlq);
             pn_qlq.Location = new Point(0, 408);
             pn_qlq.Name = "pn_qlq";
             pn_qlq.Size = new Size(220, 76);
             pn_qlq.TabIndex = 10;
+            // 
+            // btn_qlq
+            // 
+            btn_qlq.BackColor = Color.FromArgb(42, 107, 167);
+            btn_qlq.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            btn_qlq.FlatAppearance.BorderSize = 0;
+            btn_qlq.FlatStyle = FlatStyle.Flat;
+            btn_qlq.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_qlq.ForeColor = Color.Transparent;
+            btn_qlq.Location = new Point(1, 10);
+            btn_qlq.Name = "btn_qlq";
+            btn_qlq.Size = new Size(218, 56);
+            btn_qlq.TabIndex = 8;
+            btn_qlq.Text = "Quản lý quyền";
+            btn_qlq.UseVisualStyleBackColor = false;
+            btn_qlq.Click += btn_qlq_Click;
             // 
             // lab_ttur
             // 
@@ -185,6 +232,7 @@
             dtGrid_user.RowHeadersWidth = 51;
             dtGrid_user.Size = new Size(676, 318);
             dtGrid_user.TabIndex = 10;
+            dtGrid_user.CellContentClick += dtGrid_user_CellContentClick;
             // 
             // btn_update_user
             // 
@@ -215,6 +263,7 @@
             btn_delete_user.TabIndex = 8;
             btn_delete_user.Text = "Xóa user";
             btn_delete_user.UseVisualStyleBackColor = false;
+            btn_delete_user.Click += btn_delete_user_Click;
             // 
             // btn_create_user
             // 
@@ -431,51 +480,6 @@
             btn_search_role.UseVisualStyleBackColor = false;
             btn_search_role.Click += btn_search_role_Click;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(42, 107, 167);
-            button3.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.Transparent;
-            button3.Location = new Point(1, 10);
-            button3.Name = "button3";
-            button3.Size = new Size(218, 56);
-            button3.TabIndex = 8;
-            button3.Text = "Quản lý quyền";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(177, 213, 246);
-            button2.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.Black;
-            button2.Location = new Point(1, 10);
-            button2.Name = "button2";
-            button2.Size = new Size(218, 56);
-            button2.TabIndex = 7;
-            button2.Text = "Quản lý User/Role";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(42, 107, 167);
-            button1.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(1, 10);
-            button1.Name = "button1";
-            button1.Size = new Size(218, 56);
-            button1.TabIndex = 6;
-            button1.Text = "Danh sách tài khoản";
-            button1.UseVisualStyleBackColor = false;
-            // 
             // User_Role
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -542,8 +546,8 @@
         private TextBox tb_search_role;
         private PictureBox pic_search_role;
         private Button btn_search_role;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btn_qlq;
+        private Button btn_qlur;
+        private Button btn_dstk;
     }
 }
