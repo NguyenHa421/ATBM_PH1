@@ -35,7 +35,6 @@
             panel6 = new Panel();
             pic_search_role = new PictureBox();
             tabPage2 = new TabPage();
-            
             btn_revoke_role = new Button();
             btn_grant_role = new Button();
             tb_search_user = new TextBox();
@@ -65,7 +64,6 @@
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_role).BeginInit();
             tabPage2.SuspendLayout();
-            
             ((System.ComponentModel.ISupportInitialize)pic_search_user).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtGrid_user).BeginInit();
             panel5.SuspendLayout();
@@ -438,6 +436,7 @@
             btn_qlur.TabIndex = 7;
             btn_qlur.Text = "Quản lý User/Role";
             btn_qlur.UseVisualStyleBackColor = false;
+            btn_qlur.Click += btn_qlur_Click;
             // 
             // pn_dstk
             // 
@@ -462,6 +461,7 @@
             btn_dstk.TabIndex = 7;
             btn_dstk.Text = "Danh sách tài khoản";
             btn_dstk.UseVisualStyleBackColor = false;
+            btn_dstk.Click += btn_dstk_Click;
             // 
             // pic_khtn
             // 

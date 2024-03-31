@@ -105,6 +105,7 @@
             btn_dstk.TabIndex = 6;
             btn_dstk.Text = "Danh sách tài khoản";
             btn_dstk.UseVisualStyleBackColor = false;
+            btn_dstk.Click += btn_dstk_Click;
             // 
             // pic_khtn
             // 
@@ -174,6 +175,7 @@
             btn_qlq.TabIndex = 8;
             btn_qlq.Text = "Quản lý quyền";
             btn_qlq.UseVisualStyleBackColor = false;
+            btn_qlq.Click += btn_qlq_Click;
             // 
             // lab_ttur
             // 
@@ -245,6 +247,7 @@
             pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
             pic_refresh_U.TabIndex = 19;
             pic_refresh_U.TabStop = false;
+            pic_refresh_U.Click += pic_refresh_U_Click;
             // 
             // dtGrid_user
             // 
@@ -397,6 +400,7 @@
             pic_refresh.SizeMode = PictureBoxSizeMode.Zoom;
             pic_refresh.TabIndex = 18;
             pic_refresh.TabStop = false;
+            pic_refresh.Click += pic_refresh_Click;
             // 
             // dtGrid_role
             // 

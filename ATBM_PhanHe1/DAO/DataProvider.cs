@@ -6,6 +6,7 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.VisualBasic.ApplicationServices;
 using Oracle.ManagedDataAccess.Client;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -15,9 +16,9 @@ namespace ATBM_PhanHe1.DAO
     {
         private static DataProvider instance;
 
-        private string connectionStr = "DATA SOURCE=(DESCRIPTION = "+
-            "(CONNECT_DATA=(SERVICE_NAME=))(ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=1521))"+
-            ")" + ");User Id = sys; password=Phucdat11;DBA Privilege=SYSDBA;";
+        private string connectionStr = "DATA SOURCE=(DESCRIPTION =" +
+        "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))" +
+        "(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME =)));User Id = sys;password = Phucdat11;DBA Privilege=SYSDBA;";
         public static DataProvider Instance
         {
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }

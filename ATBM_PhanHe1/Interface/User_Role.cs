@@ -28,7 +28,7 @@ namespace ATBM_PhanHe1.Interface
             userList.DataSource = UserDAO.Instance.GetUserWithPrivs();
             roleList.DataSource = RoleDAO.Instance.GetRoleList();
         }
-        
+
         private void btn_search_user_Click(object sender, EventArgs e)
         {
             userList.DataSource = UserDAO.Instance.SearchUserRole(tb_search_user.Text);
@@ -70,6 +70,7 @@ namespace ATBM_PhanHe1.Interface
         private void btn_create_user_Click(object sender, EventArgs e)
         {
             OpenChildForm(new User.Create_U());
+            userList.DataSource = UserDAO.Instance.GetUserWithPrivs();
         }
 
         private void dtGrid_user_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -83,17 +84,22 @@ namespace ATBM_PhanHe1.Interface
 
         private void btn_delete_user_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new User.Delete_U());
+            string userName = clickedUser;
+            clickedUser = "";
+            OpenChildForm(new User.Delete_U(userName));
+            userList.DataSource = UserDAO.Instance.GetUserWithPrivs();
         }
 
         private void btn_create_role_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Role.Create_R());
+            roleList.DataSource = RoleDAO.Instance.GetRoleList();
         }
 
         private void btn_delete_role_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Role.Delete_R());
+            roleList.DataSource = RoleDAO.Instance.GetRoleList();
         }
 
         private void btn_update_user_Click(object sender, EventArgs e)
@@ -104,11 +110,32 @@ namespace ATBM_PhanHe1.Interface
         private void btn_update_role_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Role.Update_R());
-            if (clickedUser!="")
-            {
-                UserDAO.Instance.DeleteUser(clickedUser);
-                clickedUser = "";
-            }
+        }
+
+        private void btn_dstk_Click(object sender, EventArgs e)
+        {
+            Interface.Homepage hompage = new Interface.Homepage();
+            this.Hide();
+            hompage.ShowDialog();
+            this.Show();
+        }
+
+        private void btn_qlq_Click(object sender, EventArgs e)
+        {
+            Interface.Permission permission = new Interface.Permission();
+            this.Hide();
+            permission.ShowDialog();
+            this.Show();
+        }
+
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            userList.DataSource = UserDAO.Instance.GetUserWithPrivs();
+        }
+
+        private void pic_refresh_Click(object sender, EventArgs e)
+        {
+            roleList.DataSource = RoleDAO.Instance.GetRoleList();
         }
     }
 }

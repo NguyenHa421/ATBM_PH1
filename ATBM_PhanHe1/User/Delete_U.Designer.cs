@@ -32,7 +32,7 @@
             tb_name = new TextBox();
             label1 = new Label();
             lb_confirm = new Label();
-            btn_Create = new Button();
+            btn_delete = new Button();
             btn_Back = new Button();
             lb_Name = new Label();
             pn_Child.SuspendLayout();
@@ -44,7 +44,7 @@
             pn_Child.Controls.Add(tb_name);
             pn_Child.Controls.Add(label1);
             pn_Child.Controls.Add(lb_confirm);
-            pn_Child.Controls.Add(btn_Create);
+            pn_Child.Controls.Add(btn_delete);
             pn_Child.Controls.Add(btn_Back);
             pn_Child.Controls.Add(lb_Name);
             pn_Child.Location = new Point(120, 101);
@@ -61,7 +61,6 @@
             tb_name.PlaceholderText = "UserName";
             tb_name.Size = new Size(224, 27);
             tb_name.TabIndex = 17;
-            tb_name.TextChanged += tb_name_TextChanged;
             // 
             // label1
             // 
@@ -83,20 +82,21 @@
             lb_confirm.TabIndex = 21;
             lb_confirm.Text = "Xác nhận muốn xóa";
             // 
-            // btn_Create
+            // btn_delete
             // 
-            btn_Create.BackColor = Color.White;
-            btn_Create.BackgroundImage = Properties.Resources.button_round2;
-            btn_Create.FlatAppearance.BorderSize = 0;
-            btn_Create.FlatStyle = FlatStyle.Flat;
-            btn_Create.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btn_Create.ForeColor = SystemColors.Window;
-            btn_Create.Location = new Point(308, 203);
-            btn_Create.Name = "btn_Create";
-            btn_Create.Size = new Size(91, 38);
-            btn_Create.TabIndex = 20;
-            btn_Create.Text = "Xóa";
-            btn_Create.UseVisualStyleBackColor = false;
+            btn_delete.BackColor = Color.White;
+            btn_delete.BackgroundImage = Properties.Resources.button_round2;
+            btn_delete.FlatAppearance.BorderSize = 0;
+            btn_delete.FlatStyle = FlatStyle.Flat;
+            btn_delete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_delete.ForeColor = SystemColors.Window;
+            btn_delete.Location = new Point(308, 203);
+            btn_delete.Name = "btn_delete";
+            btn_delete.Size = new Size(91, 38);
+            btn_delete.TabIndex = 20;
+            btn_delete.Text = "Xóa";
+            btn_delete.UseVisualStyleBackColor = false;
+            btn_delete.Click += btn_delete_Click;
             // 
             // btn_Back
             // 
@@ -143,7 +143,7 @@
 
         private Panel pn_Child;
         private Label lb_confirm;
-        private Button btn_Create;
+        private Button btn_delete;
         private Button btn_Back;
         private TextBox tb_name;
         private Label lb_Name;

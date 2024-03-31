@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace ATBM_PhanHe1.Interface
 {
     public partial class Homepage : Form
     {
+        BindingSource userList = new BindingSource();
         public Homepage()
         {
             InitializeComponent();
+            Load();
+        }
+        private void Load()
+        {
+            dtGrid_user.DataSource = userList;
+            userList.DataSource = UserDAO.Instance.GetUserList();
         }
         private void CloseAllFormsExceptFirst()
         {
@@ -23,10 +31,6 @@ namespace ATBM_PhanHe1.Interface
             {
                 forms[i].Close();
             }
-        }
-        private void Homepage_Load_1(object sender, EventArgs e)
-        {
-
         }
         private void btn_qlur_Click(object sender, EventArgs e)
         {

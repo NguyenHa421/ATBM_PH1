@@ -32,7 +32,7 @@
             btn_Create = new Button();
             btn_Back = new Button();
             tb_pass = new TextBox();
-            tb_user = new TextBox();
+            tb_role = new TextBox();
             lb_Pass = new Label();
             lb_Name = new Label();
             pn_Child.SuspendLayout();
@@ -44,7 +44,7 @@
             pn_Child.Controls.Add(btn_Create);
             pn_Child.Controls.Add(btn_Back);
             pn_Child.Controls.Add(tb_pass);
-            pn_Child.Controls.Add(tb_user);
+            pn_Child.Controls.Add(tb_role);
             pn_Child.Controls.Add(lb_Pass);
             pn_Child.Controls.Add(lb_Name);
             pn_Child.Location = new Point(120, 101);
@@ -92,14 +92,14 @@
             tb_pass.Size = new Size(265, 34);
             tb_pass.TabIndex = 18;
             // 
-            // tb_user
+            // tb_role
             // 
-            tb_user.BorderStyle = BorderStyle.FixedSingle;
-            tb_user.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_user.Location = new Point(177, 60);
-            tb_user.Name = "tb_user";
-            tb_user.Size = new Size(265, 34);
-            tb_user.TabIndex = 17;
+            tb_role.BorderStyle = BorderStyle.FixedSingle;
+            tb_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_role.Location = new Point(177, 60);
+            tb_role.Name = "tb_role";
+            tb_role.Size = new Size(265, 34);
+            tb_role.TabIndex = 17;
             // 
             // lb_Pass
             // 
@@ -142,7 +142,7 @@
         private Button btn_Create;
         private Button btn_Back;
         private TextBox tb_pass;
-        private TextBox tb_user;
+        private TextBox tb_role;
         private Label lb_Pass;
         private Label lb_Name;
     }

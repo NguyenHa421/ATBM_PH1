@@ -36,7 +36,6 @@
             pic_search_user = new PictureBox();
             btn_search_user = new Button();
             lab_dstk = new Label();
-            dtGrid_main = new DataGridView();
             tb_search = new TextBox();
             pic_search = new PictureBox();
             pic_khtn = new PictureBox();
@@ -55,7 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)dtGrid_user).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_user).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dtGrid_main).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_search).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_khtn).BeginInit();
             pn_dstk.SuspendLayout();
@@ -154,19 +152,6 @@
             lab_dstk.TabIndex = 1;
             lab_dstk.Text = "DANH SÁCH THỐNG KÊ";
             lab_dstk.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // dtGrid_main
-            // 
-            dtGrid_main.BackgroundColor = Color.WhiteSmoke;
-            dtGrid_main.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtGrid_main.Location = new Point(34, 121);
-            dtGrid_main.Name = "dtGrid_main";
-            dtGrid_main.RowHeadersWidth = 51;
-            dtGrid_main.Size = new Size(676, 394);
-            dtGrid_main.TabIndex = 16;
-            // 
-            // tb_search
-            // 
             tb_search.BackColor = Color.WhiteSmoke;
             tb_search.BorderStyle = BorderStyle.None;
             tb_search.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -333,7 +318,6 @@
             Name = "Homepage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản Lý Người Dùng";
-            Load += Homepage_Load_1;
             pn_main.ResumeLayout(false);
             pn_main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).EndInit();
@@ -341,7 +325,6 @@
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_user).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dtGrid_main).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_search).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_khtn).EndInit();
             pn_dstk.ResumeLayout(false);
@@ -365,7 +348,6 @@
         private PictureBox pic_search;
         private TextBox tb_search;
         private Button btn_search;
-        private DataGridView dtGrid_main;
         private Label lab_dstknd;
         private Button btn_dstk;
         private Button btn_qlur;

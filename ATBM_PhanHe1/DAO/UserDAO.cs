@@ -66,6 +66,11 @@ namespace ATBM_PhanHe1.DAO
             }
             return list;
         }
+        public void CreateUser(string userId, string password)
+        {
+            string query = "create user " + userId + " identified by " + password;
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
         public void DeleteUser(string userName)
         {
             string query = "drop user " + userName;
