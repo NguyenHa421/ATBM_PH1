@@ -35,7 +35,7 @@
             panel6 = new Panel();
             pic_search_role = new PictureBox();
             tabPage2 = new TabPage();
-            pictureBox1 = new PictureBox();
+            
             btn_revoke_role = new Button();
             btn_grant_role = new Button();
             tb_search_user = new TextBox();
@@ -65,7 +65,7 @@
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_role).BeginInit();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            
             ((System.ComponentModel.ISupportInitialize)pic_search_user).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtGrid_user).BeginInit();
             panel5.SuspendLayout();
@@ -143,7 +143,6 @@
             // 
             tabPage2.BackColor = Color.FromArgb(249, 240, 240);
             tabPage2.BorderStyle = BorderStyle.FixedSingle;
-            tabPage2.Controls.Add(pictureBox1);
             tabPage2.Controls.Add(btn_revoke_role);
             tabPage2.Controls.Add(btn_grant_role);
             tabPage2.Controls.Add(dtGrid_role);
@@ -156,16 +155,6 @@
             tabPage2.Size = new Size(693, 442);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Role";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.refresh_buttons;
-            pictureBox1.Location = new Point(536, 11);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(49, 39);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 20;
-            pictureBox1.TabStop = false;
             // 
             // btn_revoke_role
             // 
@@ -449,7 +438,6 @@
             btn_qlur.TabIndex = 7;
             btn_qlur.Text = "Quản lý User/Role";
             btn_qlur.UseVisualStyleBackColor = false;
-            btn_qlur.Click += btn_qlur_Click;
             // 
             // pn_dstk
             // 
@@ -474,7 +462,6 @@
             btn_dstk.TabIndex = 7;
             btn_dstk.Text = "Danh sách tài khoản";
             btn_dstk.UseVisualStyleBackColor = false;
-            btn_dstk.Click += btn_dstk_Click;
             // 
             // pic_khtn
             // 
@@ -507,7 +494,6 @@
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_role).EndInit();
             tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_search_user).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtGrid_user).EndInit();
             panel5.ResumeLayout(false);
