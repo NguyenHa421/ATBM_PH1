@@ -105,7 +105,6 @@
             btn_dstk.TabIndex = 6;
             btn_dstk.Text = "Danh sách tài khoản";
             btn_dstk.UseVisualStyleBackColor = false;
-            btn_dstk.Click += btn_dstk_Click;
             // 
             // pic_khtn
             // 
@@ -175,7 +174,6 @@
             btn_qlq.TabIndex = 8;
             btn_qlq.Text = "Quản lý quyền";
             btn_qlq.UseVisualStyleBackColor = false;
-            btn_qlq.Click += btn_qlq_Click;
             // 
             // lab_ttur
             // 
