@@ -28,8 +28,7 @@ namespace ATBM_PhanHe1.Interface
         {
 
         }
-
-        private void QLur_button_Click(object sender, EventArgs e)
+        private void btn_qlur_Click(object sender, EventArgs e)
         {
             Interface.User_Role user_Role = new Interface.User_Role();
             this.Hide();
@@ -37,17 +36,17 @@ namespace ATBM_PhanHe1.Interface
             this.Show();
         }
 
-        private void QLQ_button_Click(object sender, EventArgs e)
+        private void btn_qlq_Click(object sender, EventArgs e)
         {
             Interface.Permission permission = new Interface.Permission();
             this.Hide();
             permission.ShowDialog();
             this.Show();
         }
-
         private void pic_logout_Click(object sender, EventArgs e)
         {
             CloseAllFormsExceptFirst();
         }
+
     }
 }
