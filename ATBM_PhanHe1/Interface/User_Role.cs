@@ -28,10 +28,7 @@ namespace ATBM_PhanHe1.Interface
             userList.DataSource = UserDAO.Instance.GetUserWithPrivs();
             roleList.DataSource = RoleDAO.Instance.GetRoleList();
         }
-        private void pic_logout_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
         private void btn_search_user_Click(object sender, EventArgs e)
         {
             userList.DataSource = UserDAO.Instance.SearchUserRole(tb_search_user.Text);
@@ -73,21 +70,6 @@ namespace ATBM_PhanHe1.Interface
         private void btn_create_user_Click(object sender, EventArgs e)
         {
             OpenChildForm(new User.Create_U());
-
-        private void btn_dstk_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Homepage newForm = new Homepage();
-            newForm.ShowDialog();
-            this.Close();
-        }
-
-        private void btn_qlq_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Permission newForm = new Permission();
-            newForm.ShowDialog();
-            this.Close();
         }
 
         private void dtGrid_user_CellContentClick(object sender, DataGridViewCellEventArgs e)
