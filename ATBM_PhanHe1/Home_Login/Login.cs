@@ -23,6 +23,7 @@ namespace ATBM_PhanHe1.Home_Login
             this.Hide();
             homepage.ShowDialog();
             this.Show();
+
         }
 
         private void pic_close_Click(object sender, EventArgs e)
