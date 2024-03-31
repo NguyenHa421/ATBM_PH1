@@ -32,9 +32,9 @@
             dtGrid_main = new DataGridView();
             tb_search = new TextBox();
             pic_search = new PictureBox();
-            btn_search = new Button();
-            lab_dstknd = new Label();
             pic_khtn = new PictureBox();
+            lab_dstknd = new Label();
+            btn_search = new Button();
             pn_dstk = new Panel();
             btn_dstk = new Button();
             label2 = new Label();
@@ -44,7 +44,6 @@
             pn_qlq = new Panel();
             btn_qlq = new Button();
             pn_main.SuspendLayout();
-            main_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_khtn).BeginInit();
             pn_dstk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_logout).BeginInit();
@@ -58,47 +57,21 @@
             // pn_main
             // 
             pn_main.BackColor = SystemColors.Window;
-            pn_main.Controls.Add(main_panel);
+            pn_main.Controls.Add(pn_main);
             pn_main.Location = new Point(220, 54);
             pn_main.Name = "pn_main";
             pn_main.Size = new Size(739, 536);
             pn_main.TabIndex = 0;
             // 
-            // main_panel
-            // 
-            main_panel.Controls.Add(dtGrid_main);
-            main_panel.Controls.Add(lab_dstknd);
-            main_panel.Controls.Add(panel5);
-            main_panel.Controls.Add(btn_search);
-            main_panel.Location = new Point(0, 0);
-            main_panel.Name = "main_panel";
-            main_panel.Size = new Size(739, 536);
-            main_panel.TabIndex = 0;
-            // 
             // pn_dstk
             // 
             pn_dstk.BackColor = Color.FromArgb(177, 213, 246);
-            pn_dstk.Controls.Add(button1);
+            pn_dstk.Controls.Add(btn_dstk);
             pn_dstk.Controls.Add(label2);
             pn_dstk.Location = new Point(0, 254);
             pn_dstk.Name = "pn_dstk";
             pn_dstk.Size = new Size(220, 76);
             pn_dstk.TabIndex = 2;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(177, 213, 246);
-            button1.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Black;
-            button1.Location = new Point(0, 9);
-            button1.Name = "button1";
-            button1.Size = new Size(218, 56);
-            button1.TabIndex = 5;
-            button1.Text = "Danh sách tài khoản";
-            button1.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -123,52 +96,20 @@
             // pn_qlur
             // 
             pn_qlur.BackColor = Color.FromArgb(42, 107, 167);
-            pn_qlur.Controls.Add(QLur_button);
+            pn_qlur.Controls.Add(btn_qlur);
             pn_qlur.Location = new Point(0, 331);
             pn_qlur.Name = "pn_qlur";
             pn_qlur.Size = new Size(220, 76);
             pn_qlur.TabIndex = 3;
             // 
-            // QLur_button
-            // 
-            QLur_button.BackColor = Color.FromArgb(42, 107, 167);
-            QLur_button.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
-            QLur_button.FlatAppearance.BorderSize = 0;
-            QLur_button.FlatStyle = FlatStyle.Flat;
-            QLur_button.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            QLur_button.ForeColor = Color.Transparent;
-            QLur_button.Location = new Point(1, 10);
-            QLur_button.Name = "QLur_button";
-            QLur_button.Size = new Size(218, 56);
-            QLur_button.TabIndex = 6;
-            QLur_button.Text = "Quản lý User/Role";
-            QLur_button.UseVisualStyleBackColor = false;
-            QLur_button.Click += QLur_button_Click;
-            // 
             // pn_qlq
             // 
             pn_qlq.BackColor = Color.FromArgb(42, 107, 167);
-            pn_qlq.Controls.Add(QLQ_button);
+            pn_qlq.Controls.Add(btn_qlq);
             pn_qlq.Location = new Point(0, 408);
             pn_qlq.Name = "pn_qlq";
             pn_qlq.Size = new Size(220, 76);
             pn_qlq.TabIndex = 4;
-            // 
-            // QLQ_button
-            // 
-            QLQ_button.BackColor = Color.FromArgb(42, 107, 167);
-            QLQ_button.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
-            QLQ_button.FlatAppearance.BorderSize = 0;
-            QLQ_button.FlatStyle = FlatStyle.Flat;
-            QLQ_button.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            QLQ_button.ForeColor = Color.Transparent;
-            QLQ_button.Location = new Point(1, 10);
-            QLQ_button.Name = "QLQ_button";
-            QLQ_button.Size = new Size(218, 56);
-            QLQ_button.TabIndex = 7;
-            QLQ_button.Text = "Quản lý quyền";
-            QLQ_button.UseVisualStyleBackColor = false;
-            QLQ_button.Click += QLQ_button_Click;
             // 
             // dtGrid_main
             // 
@@ -316,7 +257,6 @@
             btn_qlur.TabIndex = 6;
             btn_qlur.Text = "Quản lý User/Role";
             btn_qlur.UseVisualStyleBackColor = false;
-            btn_qlur.Click += btn_qlur_Click;
             // 
             // pn_qlq
             // 
@@ -341,7 +281,6 @@
             btn_qlq.TabIndex = 7;
             btn_qlq.Text = "Quản lý quyền";
             btn_qlq.UseVisualStyleBackColor = false;
-            btn_qlq.Click += btn_qlq_Click;
             // 
             // Homepage
             // 
@@ -361,8 +300,6 @@
             Text = "Quản Lý Người Dùng";
             Load += Homepage_Load_1;
             pn_main.ResumeLayout(false);
-            main_panel.ResumeLayout(false);
-            main_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_khtn).EndInit();
             pn_dstk.ResumeLayout(false);
             pn_dstk.PerformLayout();
@@ -388,7 +325,9 @@
         private Panel panel5;
         private PictureBox pic_search;
         private TextBox tb_search;
+        private Button btn_search;
         private DataGridView dtGrid_main;
+        private Label lab_dstknd;
         private Button btn_dstk;
         private Button btn_qlur;
         private Button btn_qlq;
