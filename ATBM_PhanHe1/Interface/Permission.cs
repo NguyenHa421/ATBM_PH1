@@ -69,23 +69,6 @@ namespace ATBM_PhanHe1.Interface
         {
             CloseAllFormsExceptFirst();
         }
-
-        private void QLur_button_Click(object sender, EventArgs e)
-        {
-            Interface.User_Role user_Role = new Interface.User_Role();
-            this.Hide();
-            user_Role.ShowDialog();
-            this.Show();
-        }
-
-        private void DSTK_button_Click(object sender, EventArgs e)
-        {
-            Interface.Homepage homepage = new Interface.Homepage();
-            this.Hide();
-            homepage.ShowDialog();
-            this.Show();
-        }
-
         private void btn_revoke_user_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Users_Roles.Revorke_U());
@@ -109,6 +92,20 @@ namespace ATBM_PhanHe1.Interface
         private void btn_role_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Users_Roles.Grant_U_R());
+
+        private void btn_dstk_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Homepage newForm = new Homepage();
+            newForm.ShowDialog();
+            this.Close();
+        }
+        private void btn_qlur_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            User_Role newForm = new User_Role();
+            newForm.ShowDialog();
+            this.Close();
         }
     }
 }

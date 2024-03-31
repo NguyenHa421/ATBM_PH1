@@ -15,6 +15,7 @@ namespace ATBM_PhanHe1.Interface
     {
         BindingSource userList = new BindingSource();
         BindingSource roleList = new BindingSource();
+        private string clickedUser = "";
         public User_Role()
         {
             InitializeComponent();
@@ -64,22 +65,6 @@ namespace ATBM_PhanHe1.Interface
                 forms[i].Close();
             }
         }
-        private void DSTK_button_Click(object sender, EventArgs e)
-        {
-            Interface.Homepage homepage = new Interface.Homepage();
-            this.Hide();
-            homepage.ShowDialog();
-            this.Show();
-        }
-
-        private void QLQ_button_Click(object sender, EventArgs e)
-        {
-            Interface.Permission permission = new Interface.Permission();
-            this.Hide();
-            permission.ShowDialog();
-            this.Show();
-        }
-
         private void pic_logout_Click(object sender, EventArgs e)
         {
             CloseAllFormsExceptFirst();
@@ -88,6 +73,30 @@ namespace ATBM_PhanHe1.Interface
         private void btn_create_user_Click(object sender, EventArgs e)
         {
             OpenChildForm(new User.Create_U());
+
+        private void btn_dstk_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Homepage newForm = new Homepage();
+            newForm.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_qlq_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Permission newForm = new Permission();
+            newForm.ShowDialog();
+            this.Close();
+        }
+
+        private void dtGrid_user_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell cell = dtGrid_user.Rows[e.RowIndex].Cells[0];
+                clickedUser = cell.Value.ToString();
+            }
         }
 
         private void btn_delete_user_Click(object sender, EventArgs e)
@@ -113,6 +122,11 @@ namespace ATBM_PhanHe1.Interface
         private void btn_update_role_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Role.Update_R());
+            if (clickedUser!="")
+            {
+                UserDAO.Instance.DeleteUser(clickedUser);
+                clickedUser = "";
+            }
         }
     }
 }

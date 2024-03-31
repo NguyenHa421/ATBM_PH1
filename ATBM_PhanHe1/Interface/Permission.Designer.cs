@@ -55,11 +55,11 @@
             Parent_panel = new Panel();
             pic_logout = new PictureBox();
             pn_qlq = new Panel();
-            button4 = new Button();
+            btn_qlq = new Button();
             pn_qlur = new Panel();
-            QLur_button = new Button();
+            btn_qlur = new Button();
             pn_dstk = new Panel();
-            DSTK_button = new Button();
+            btn_dstk = new Button();
             pic_khtn = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dtGrid_role).BeginInit();
             panel6.SuspendLayout();
@@ -405,76 +405,76 @@
             // pn_qlq
             // 
             pn_qlq.BackColor = Color.FromArgb(177, 213, 246);
-            pn_qlq.Controls.Add(button4);
+            pn_qlq.Controls.Add(btn_qlq);
             pn_qlq.Location = new Point(0, 408);
             pn_qlq.Name = "pn_qlq";
             pn_qlq.Size = new Size(220, 76);
             pn_qlq.TabIndex = 16;
             // 
-            // button4
+            // btn_qlq
             // 
-            button4.BackColor = Color.FromArgb(177, 213, 246);
-            button4.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.Black;
-            button4.Location = new Point(1, 10);
-            button4.Name = "button4";
-            button4.Size = new Size(218, 56);
-            button4.TabIndex = 9;
-            button4.Text = "Quản lý quyền";
-            button4.UseVisualStyleBackColor = false;
+            btn_qlq.BackColor = Color.FromArgb(177, 213, 246);
+            btn_qlq.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            btn_qlq.FlatAppearance.BorderSize = 0;
+            btn_qlq.FlatStyle = FlatStyle.Flat;
+            btn_qlq.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_qlq.ForeColor = Color.Black;
+            btn_qlq.Location = new Point(1, 10);
+            btn_qlq.Name = "btn_qlq";
+            btn_qlq.Size = new Size(218, 56);
+            btn_qlq.TabIndex = 9;
+            btn_qlq.Text = "Quản lý quyền";
+            btn_qlq.UseVisualStyleBackColor = false;
             // 
             // pn_qlur
             // 
             pn_qlur.BackColor = Color.FromArgb(42, 107, 167);
-            pn_qlur.Controls.Add(QLur_button);
+            pn_qlur.Controls.Add(btn_qlur);
             pn_qlur.Location = new Point(0, 331);
             pn_qlur.Name = "pn_qlur";
             pn_qlur.Size = new Size(220, 76);
             pn_qlur.TabIndex = 14;
             // 
-            // QLur_button
+            // btn_qlur
             // 
-            QLur_button.BackColor = Color.FromArgb(42, 107, 167);
-            QLur_button.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
-            QLur_button.FlatAppearance.BorderSize = 0;
-            QLur_button.FlatStyle = FlatStyle.Flat;
-            QLur_button.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            QLur_button.ForeColor = Color.Transparent;
-            QLur_button.Location = new Point(1, 10);
-            QLur_button.Name = "QLur_button";
-            QLur_button.Size = new Size(218, 56);
-            QLur_button.TabIndex = 7;
-            QLur_button.Text = "Quản lý User/Role";
-            QLur_button.UseVisualStyleBackColor = false;
-            QLur_button.Click += QLur_button_Click;
+            btn_qlur.BackColor = Color.FromArgb(42, 107, 167);
+            btn_qlur.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            btn_qlur.FlatAppearance.BorderSize = 0;
+            btn_qlur.FlatStyle = FlatStyle.Flat;
+            btn_qlur.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_qlur.ForeColor = Color.Transparent;
+            btn_qlur.Location = new Point(1, 10);
+            btn_qlur.Name = "btn_qlur";
+            btn_qlur.Size = new Size(218, 56);
+            btn_qlur.TabIndex = 7;
+            btn_qlur.Text = "Quản lý User/Role";
+            btn_qlur.UseVisualStyleBackColor = false;
+            btn_qlur.Click += btn_qlur_Click;
             // 
             // pn_dstk
             // 
             pn_dstk.BackColor = Color.FromArgb(42, 107, 167);
-            pn_dstk.Controls.Add(DSTK_button);
+            pn_dstk.Controls.Add(btn_dstk);
             pn_dstk.Location = new Point(0, 254);
             pn_dstk.Name = "pn_dstk";
             pn_dstk.Size = new Size(220, 76);
             pn_dstk.TabIndex = 13;
             // 
-            // DSTK_button
+            // btn_dstk
             // 
-            DSTK_button.BackColor = Color.FromArgb(42, 107, 167);
-            DSTK_button.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
-            DSTK_button.FlatAppearance.BorderSize = 0;
-            DSTK_button.FlatStyle = FlatStyle.Flat;
-            DSTK_button.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DSTK_button.ForeColor = Color.White;
-            DSTK_button.Location = new Point(1, 10);
-            DSTK_button.Name = "DSTK_button";
-            DSTK_button.Size = new Size(218, 56);
-            DSTK_button.TabIndex = 7;
-            DSTK_button.Text = "Danh sách tài khoản";
-            DSTK_button.UseVisualStyleBackColor = false;
-            DSTK_button.Click += DSTK_button_Click;
+            btn_dstk.BackColor = Color.FromArgb(42, 107, 167);
+            btn_dstk.FlatAppearance.BorderColor = Color.FromArgb(177, 213, 246);
+            btn_dstk.FlatAppearance.BorderSize = 0;
+            btn_dstk.FlatStyle = FlatStyle.Flat;
+            btn_dstk.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_dstk.ForeColor = Color.White;
+            btn_dstk.Location = new Point(1, 10);
+            btn_dstk.Name = "btn_dstk";
+            btn_dstk.Size = new Size(218, 56);
+            btn_dstk.TabIndex = 7;
+            btn_dstk.Text = "Danh sách tài khoản";
+            btn_dstk.UseVisualStyleBackColor = false;
+            btn_dstk.Click += btn_dstk_Click;
             // 
             // pic_khtn
             // 
@@ -554,11 +554,10 @@
         private Button btn_grant_role;
         private Button btn_revoke_user;
         private Button btn_role;
-        private Button DSTK_button;
-        private Button QLur_button;
-        private Button button4;
         private Panel Parent_panel;
-        private PictureBox pictureBox1;
         private PictureBox pic_refresh_U;
+        private Button btn_dstk;
+        private Button btn_qlur;
+        private Button btn_qlq;
     }
 }
