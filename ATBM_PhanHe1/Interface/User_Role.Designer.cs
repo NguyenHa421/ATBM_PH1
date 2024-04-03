@@ -54,7 +54,6 @@
             tabPage2 = new TabPage();
             pic_refresh = new PictureBox();
             dtGrid_role = new DataGridView();
-            btn_update_role = new Button();
             btn_delete_role = new Button();
             btn_create_role = new Button();
             btn_inspect_role = new Button();
@@ -377,7 +376,6 @@
             tabPage2.BorderStyle = BorderStyle.FixedSingle;
             tabPage2.Controls.Add(pic_refresh);
             tabPage2.Controls.Add(dtGrid_role);
-            tabPage2.Controls.Add(btn_update_role);
             tabPage2.Controls.Add(btn_delete_role);
             tabPage2.Controls.Add(btn_create_role);
             tabPage2.Controls.Add(btn_inspect_role);
@@ -412,22 +410,6 @@
             dtGrid_role.Size = new Size(676, 318);
             dtGrid_role.TabIndex = 17;
             // 
-            // btn_update_role
-            // 
-            btn_update_role.BackColor = Color.White;
-            btn_update_role.BackgroundImage = Properties.Resources.button_round2;
-            btn_update_role.FlatAppearance.BorderSize = 0;
-            btn_update_role.FlatStyle = FlatStyle.Flat;
-            btn_update_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btn_update_role.ForeColor = SystemColors.Window;
-            btn_update_role.Location = new Point(591, 391);
-            btn_update_role.Name = "btn_update_role";
-            btn_update_role.Size = new Size(91, 38);
-            btn_update_role.TabIndex = 16;
-            btn_update_role.Text = "Chỉnh sửa";
-            btn_update_role.UseVisualStyleBackColor = false;
-            btn_update_role.Click += btn_update_role_Click;
-            // 
             // btn_delete_role
             // 
             btn_delete_role.BackColor = Color.White;
@@ -436,7 +418,7 @@
             btn_delete_role.FlatStyle = FlatStyle.Flat;
             btn_delete_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_delete_role.ForeColor = SystemColors.Window;
-            btn_delete_role.Location = new Point(402, 391);
+            btn_delete_role.Location = new Point(591, 392);
             btn_delete_role.Name = "btn_delete_role";
             btn_delete_role.Size = new Size(91, 38);
             btn_delete_role.TabIndex = 15;
@@ -452,7 +434,7 @@
             btn_create_role.FlatStyle = FlatStyle.Flat;
             btn_create_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_create_role.ForeColor = SystemColors.Window;
-            btn_create_role.Location = new Point(202, 391);
+            btn_create_role.Location = new Point(391, 392);
             btn_create_role.Name = "btn_create_role";
             btn_create_role.Size = new Size(91, 38);
             btn_create_role.TabIndex = 14;
@@ -468,7 +450,7 @@
             btn_inspect_role.FlatStyle = FlatStyle.Flat;
             btn_inspect_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_inspect_role.ForeColor = SystemColors.Window;
-            btn_inspect_role.Location = new Point(10, 391);
+            btn_inspect_role.Location = new Point(199, 392);
             btn_inspect_role.Name = "btn_inspect_role";
             btn_inspect_role.Size = new Size(91, 38);
             btn_inspect_role.TabIndex = 13;
@@ -584,7 +566,6 @@
         private PictureBox pic_search_user;
         private Button btn_search_user;
         private DataGridView dtGrid_role;
-        private Button btn_update_role;
         private Button btn_delete_role;
         private Button btn_create_role;
         private Button btn_inspect_role;
