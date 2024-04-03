@@ -84,6 +84,7 @@
             pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
             pic_refresh_U.TabIndex = 24;
             pic_refresh_U.TabStop = false;
+            pic_refresh_U.Click += pic_refresh_U_Click;
             // 
             // dtGrid_user
             // 
@@ -141,6 +142,7 @@
             btn_search_user.TabIndex = 21;
             btn_search_user.Text = "Tìm kiếm";
             btn_search_user.UseVisualStyleBackColor = false;
+            btn_search_user.Click += btn_search_user_Click;
             // 
             // lab_dstk
             // 
@@ -152,6 +154,9 @@
             lab_dstk.TabIndex = 1;
             lab_dstk.Text = "DANH SÁCH THỐNG KÊ";
             lab_dstk.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // tb_search
+            // 
             tb_search.BackColor = Color.WhiteSmoke;
             tb_search.BorderStyle = BorderStyle.None;
             tb_search.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
