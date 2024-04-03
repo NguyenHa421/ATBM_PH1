@@ -106,5 +106,15 @@ namespace ATBM_PhanHe1.Interface
             hompage.ShowDialog();
             this.Show();
         }
+
+        private void pic_refresh2_Click(object sender, EventArgs e)
+        {
+            roleList.DataSource = RoleDAO.Instance.GetRoleList();
+        }
+
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            userList.DataSource = UserDAO.Instance.GetUserWithPrivs();
+        }
     }
 }
