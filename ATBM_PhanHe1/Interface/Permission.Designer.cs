@@ -35,6 +35,7 @@
             panel6 = new Panel();
             pic_search_role = new PictureBox();
             tabPage2 = new TabPage();
+            pic_refresh2 = new PictureBox();
             btn_revoke_role = new Button();
             btn_grant_role = new Button();
             tb_search_user = new TextBox();
@@ -64,6 +65,7 @@
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_role).BeginInit();
             tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_refresh2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_search_user).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtGrid_user).BeginInit();
             panel5.SuspendLayout();
@@ -141,6 +143,7 @@
             // 
             tabPage2.BackColor = Color.FromArgb(249, 240, 240);
             tabPage2.BorderStyle = BorderStyle.FixedSingle;
+            tabPage2.Controls.Add(pic_refresh2);
             tabPage2.Controls.Add(btn_revoke_role);
             tabPage2.Controls.Add(btn_grant_role);
             tabPage2.Controls.Add(dtGrid_role);
@@ -153,6 +156,17 @@
             tabPage2.Size = new Size(693, 442);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Role";
+            // 
+            // pic_refresh2
+            // 
+            pic_refresh2.Image = Properties.Resources.refresh_buttons;
+            pic_refresh2.Location = new Point(536, 10);
+            pic_refresh2.Name = "pic_refresh2";
+            pic_refresh2.Size = new Size(49, 39);
+            pic_refresh2.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_refresh2.TabIndex = 21;
+            pic_refresh2.TabStop = false;
+            pic_refresh2.Click += pic_refresh2_Click;
             // 
             // btn_revoke_role
             // 
@@ -300,6 +314,7 @@
             pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
             pic_refresh_U.TabIndex = 20;
             pic_refresh_U.TabStop = false;
+            pic_refresh_U.Click += pic_refresh_U_Click;
             // 
             // btn_revoke_user
             // 
@@ -494,6 +509,7 @@
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_role).EndInit();
             tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pic_refresh2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_search_user).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtGrid_user).EndInit();
             panel5.ResumeLayout(false);
@@ -545,5 +561,6 @@
         private Button btn_dstk;
         private Button btn_qlur;
         private Button btn_qlq;
+        private PictureBox pic_refresh2;
     }
 }
