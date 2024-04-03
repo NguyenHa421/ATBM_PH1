@@ -52,5 +52,14 @@ namespace ATBM_PhanHe1.Interface
             CloseAllFormsExceptFirst();
         }
 
+        private void btn_search_user_Click(object sender, EventArgs e)
+        {
+            userList.DataSource = UserDAO.Instance.SearchUser(tb_search_user.Text);
+        }
+
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            userList.DataSource = UserDAO.Instance.GetUserList();
+        }
     }
 }
