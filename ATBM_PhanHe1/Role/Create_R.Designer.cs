@@ -31,9 +31,7 @@
             pn_Child = new Panel();
             btn_Create = new Button();
             btn_Back = new Button();
-            tb_pass = new TextBox();
             tb_role = new TextBox();
-            lb_Pass = new Label();
             lb_Name = new Label();
             pn_Child.SuspendLayout();
             SuspendLayout();
@@ -43,9 +41,7 @@
             pn_Child.BackgroundImage = Properties.Resources.bg_mini;
             pn_Child.Controls.Add(btn_Create);
             pn_Child.Controls.Add(btn_Back);
-            pn_Child.Controls.Add(tb_pass);
             pn_Child.Controls.Add(tb_role);
-            pn_Child.Controls.Add(lb_Pass);
             pn_Child.Controls.Add(lb_Name);
             pn_Child.Location = new Point(120, 101);
             pn_Child.Name = "pn_Child";
@@ -83,39 +79,20 @@
             btn_Back.UseVisualStyleBackColor = false;
             btn_Back.Click += btn_Back_Click;
             // 
-            // tb_pass
-            // 
-            tb_pass.BorderStyle = BorderStyle.FixedSingle;
-            tb_pass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_pass.Location = new Point(177, 124);
-            tb_pass.Name = "tb_pass";
-            tb_pass.Size = new Size(265, 34);
-            tb_pass.TabIndex = 18;
-            // 
             // tb_role
             // 
             tb_role.BorderStyle = BorderStyle.FixedSingle;
             tb_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_role.Location = new Point(177, 60);
+            tb_role.Location = new Point(177, 100);
             tb_role.Name = "tb_role";
             tb_role.Size = new Size(265, 34);
             tb_role.TabIndex = 17;
-            // 
-            // lb_Pass
-            // 
-            lb_Pass.AutoSize = true;
-            lb_Pass.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Pass.Location = new Point(42, 126);
-            lb_Pass.Name = "lb_Pass";
-            lb_Pass.Size = new Size(98, 28);
-            lb_Pass.TabIndex = 16;
-            lb_Pass.Text = "Mật khẩu";
             // 
             // lb_Name
             // 
             lb_Name.AutoSize = true;
             lb_Name.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Name.Location = new Point(42, 62);
+            lb_Name.Location = new Point(42, 102);
             lb_Name.Name = "lb_Name";
             lb_Name.Size = new Size(85, 28);
             lb_Name.TabIndex = 15;
@@ -141,9 +118,7 @@
         private Panel pn_Child;
         private Button btn_Create;
         private Button btn_Back;
-        private TextBox tb_pass;
         private TextBox tb_role;
-        private Label lb_Pass;
         private Label lb_Name;
     }
 }
