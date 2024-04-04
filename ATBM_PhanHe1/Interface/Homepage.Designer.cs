@@ -36,14 +36,9 @@
             pic_search_user = new PictureBox();
             btn_search_user = new Button();
             lab_dstk = new Label();
-            tb_search = new TextBox();
-            pic_search = new PictureBox();
             pic_khtn = new PictureBox();
-            lab_dstknd = new Label();
-            btn_search = new Button();
             pn_dstk = new Panel();
             btn_dstk = new Button();
-            label2 = new Label();
             pic_logout = new PictureBox();
             pn_qlur = new Panel();
             btn_qlur = new Button();
@@ -54,7 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)dtGrid_user).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_user).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pic_search).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_khtn).BeginInit();
             pn_dstk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_logout).BeginInit();
@@ -155,26 +149,7 @@
             lab_dstk.Text = "DANH SÁCH THỐNG KÊ";
             lab_dstk.TextAlign = ContentAlignment.TopCenter;
             // 
-            // tb_search
-            // 
-            tb_search.BackColor = Color.WhiteSmoke;
-            tb_search.BorderStyle = BorderStyle.None;
-            tb_search.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_search.Location = new Point(52, 7);
-            tb_search.Name = "tb_search";
-            tb_search.PlaceholderText = "Nhập tên ...";
-            tb_search.Size = new Size(510, 23);
-            tb_search.TabIndex = 1;
-            // 
-            // pic_search
-            // 
-            pic_search.Image = Properties.Resources.Search1;
-            pic_search.Location = new Point(3, 3);
-            pic_search.Name = "pic_search";
-            pic_search.Size = new Size(43, 30);
-            pic_search.SizeMode = PictureBoxSizeMode.Zoom;
-            pic_search.TabIndex = 0;
-            pic_search.TabStop = false;
+           
             // 
             // pic_khtn
             // 
@@ -186,37 +161,11 @@
             pic_khtn.TabIndex = 1;
             pic_khtn.TabStop = false;
             // 
-            // lab_dstknd
-            // 
-            lab_dstknd.AutoSize = true;
-            lab_dstknd.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            lab_dstknd.Location = new Point(160, 22);
-            lab_dstknd.Name = "lab_dstknd";
-            lab_dstknd.Size = new Size(427, 31);
-            lab_dstknd.TabIndex = 13;
-            lab_dstknd.Text = "DANH SÁCH TÀI KHOẢN NGƯỜI DÙNG";
-            lab_dstknd.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // btn_search
-            // 
-            btn_search.BackColor = Color.White;
-            btn_search.BackgroundImage = Properties.Resources.button_round2;
-            btn_search.FlatAppearance.BorderSize = 0;
-            btn_search.FlatStyle = FlatStyle.Flat;
-            btn_search.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btn_search.ForeColor = SystemColors.Window;
-            btn_search.Location = new Point(619, 67);
-            btn_search.Name = "btn_search";
-            btn_search.Size = new Size(91, 38);
-            btn_search.TabIndex = 14;
-            btn_search.Text = "Tìm kiếm";
-            btn_search.UseVisualStyleBackColor = false;
-            // 
+           
             // pn_dstk
             // 
             pn_dstk.BackColor = Color.FromArgb(177, 213, 246);
             pn_dstk.Controls.Add(btn_dstk);
-            pn_dstk.Controls.Add(label2);
             pn_dstk.Location = new Point(0, 254);
             pn_dstk.Name = "pn_dstk";
             pn_dstk.Size = new Size(220, 76);
@@ -237,15 +186,7 @@
             btn_dstk.Text = "Danh sách tài khoản";
             btn_dstk.UseVisualStyleBackColor = false;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(7, 21);
-            label2.Name = "label2";
-            label2.Size = new Size(0, 28);
-            label2.TabIndex = 0;
-            // 
+           
             // pic_logout
             // 
             pic_logout.Image = Properties.Resources.Exit;
@@ -330,7 +271,6 @@
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_search_user).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pic_search).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_khtn).EndInit();
             pn_dstk.ResumeLayout(false);
             pn_dstk.PerformLayout();
@@ -345,15 +285,10 @@
         private Panel pn_main;
         private PictureBox pic_khtn;
         private Panel pn_dstk;
-        private Label label2;
         private PictureBox pic_logout;
         private Panel pn_qlur;
         private Panel pn_qlq;
         private Panel panel5;
-        private PictureBox pic_search;
-        private TextBox tb_search;
-        private Button btn_search;
-        private Label lab_dstknd;
         private Button btn_dstk;
         private Button btn_qlur;
         private Button btn_qlq;
