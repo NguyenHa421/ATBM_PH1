@@ -19,9 +19,6 @@
     <Compile Update="Role\Delete_R.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Role\Update_R.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Users_Roles\Grant_R.cs">
       <SubType>Form</SubType>
     </Compile>
