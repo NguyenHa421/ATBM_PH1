@@ -107,11 +107,6 @@ namespace ATBM_PhanHe1.Interface
             OpenChildForm(new User.Update_U());
         }
 
-        private void btn_update_role_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Role.Update_R());
-        }
-
         private void btn_dstk_Click(object sender, EventArgs e)
         {
             Interface.Homepage hompage = new Interface.Homepage();
