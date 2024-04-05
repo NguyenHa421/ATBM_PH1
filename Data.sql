@@ -1,9 +1,5 @@
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
-CREATE USER ADMIN IDENTIFIED BY admin123;
-GRANT ALL PRIVILEGES TO ADMIN;
-GRANT CREATE SESSION TO ADMIN;
-
 BEGIN
   EXECUTE IMMEDIATE 'DROP TABLE DANGKY';
   EXECUTE IMMEDIATE 'DROP TABLE PHANCONG';
@@ -470,6 +466,5 @@ select* from ROLE_TAB_PRIVS;
 select* from DBA_role_privs;
 select* from user_tab_privs;
 exec usp_GetAllUser;
-CREATE USER C##testing IDENTIFIED BY 123456;
 select username,count(granted_role) as nOfRole from all_users, dba_role_privs where username = grantee(+) group by username;
 
