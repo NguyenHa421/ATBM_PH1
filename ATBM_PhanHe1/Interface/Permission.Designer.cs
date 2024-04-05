@@ -230,6 +230,7 @@
             dtGrid_user.RowHeadersWidth = 51;
             dtGrid_user.Size = new Size(676, 318);
             dtGrid_user.TabIndex = 10;
+            dtGrid_user.CellContentClick += dtGrid_user_CellContentClick;
             // 
             // button2
             // 

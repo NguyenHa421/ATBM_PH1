@@ -15,6 +15,7 @@ namespace ATBM_PhanHe1.Interface
     {
         BindingSource userList = new BindingSource();
         BindingSource roleList = new BindingSource();
+        private string clickedUser = "";
         public Permission()
         {
             InitializeComponent();
@@ -62,6 +63,15 @@ namespace ATBM_PhanHe1.Interface
                 forms[i].Close();
             }
         }
+        private void dtGrid_user_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell cell = dtGrid_user.Rows[e.RowIndex].Cells[0];
+                clickedUser = cell.Value.ToString();
+            }
+            else { };
+        }
         private void pic_logout_Click(object sender, EventArgs e)
         {
             CloseAllFormsExceptFirst();
@@ -73,7 +83,9 @@ namespace ATBM_PhanHe1.Interface
 
         private void btn_grant_user_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Users_Roles.Grant_U());
+            string userName = clickedUser;
+            clickedUser = "";
+            OpenChildForm(new Users_Roles.Grant_U(userName));
         }
 
         private void btn_revoke_role_Click(object sender, EventArgs e)

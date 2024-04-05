@@ -64,7 +64,6 @@ D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Int
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Properties.Resources.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Role.Create_R.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Role.Delete_R.resources
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Role.Update_R.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Users_Roles.Grant_R.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Users_Roles.Grant_U.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Users_Roles.Grant_U_R.resources

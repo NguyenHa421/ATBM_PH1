@@ -466,10 +466,15 @@ BEGIN
     DBMS_SQL.return_result(curs);
 END;
 /
+grant select on hocphan to sys
 select* from ROLE_TAB_PRIVS;
 select* from DBA_role_privs;
-select* from user_tab_privs;
+select* from all_tab_columns;
 exec usp_GetAllUser;
+select*from dba_tables;
+select*from all_tab_columns;
+SELECT * FROM dba_tab_privs WHERE grantee = 'SYS' AND table_name = 'hocphan'
+select * from dba_tab_columns where table_name='HocPhan';
 CREATE USER C##testing IDENTIFIED BY 123456;
 select username,count(granted_role) as nOfRole from all_users, dba_role_privs where username = grantee(+) group by username;
 

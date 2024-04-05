@@ -30,17 +30,17 @@
         {
             bt_View = new Button();
             cB_grant = new CheckBox();
-            bt_revoke = new Button();
+            bt_grant = new Button();
             btn_Back = new Button();
             dataGridView1 = new DataGridView();
             clb_Role = new CheckedListBox();
             tb_add = new Label();
-            tb_R = new TextBox();
             lb_n_R = new Label();
             tb_user = new TextBox();
             lb_Name = new Label();
-            tb_Column = new TextBox();
             lb_Column = new Label();
+            cbB_table = new ComboBox();
+            cbB_column = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -70,20 +70,20 @@
             cB_grant.Text = "with GRANT OPTION";
             cB_grant.UseVisualStyleBackColor = true;
             // 
-            // bt_revoke
+            // bt_grant
             // 
-            bt_revoke.BackColor = Color.White;
-            bt_revoke.BackgroundImage = Properties.Resources.button_round2;
-            bt_revoke.FlatAppearance.BorderSize = 0;
-            bt_revoke.FlatStyle = FlatStyle.Flat;
-            bt_revoke.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            bt_revoke.ForeColor = SystemColors.Window;
-            bt_revoke.Location = new Point(613, 422);
-            bt_revoke.Name = "bt_revoke";
-            bt_revoke.Size = new Size(91, 38);
-            bt_revoke.TabIndex = 49;
-            bt_revoke.Text = "Thu hồi";
-            bt_revoke.UseVisualStyleBackColor = false;
+            bt_grant.BackColor = Color.White;
+            bt_grant.BackgroundImage = Properties.Resources.button_round2;
+            bt_grant.FlatAppearance.BorderSize = 0;
+            bt_grant.FlatStyle = FlatStyle.Flat;
+            bt_grant.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            bt_grant.ForeColor = SystemColors.Window;
+            bt_grant.Location = new Point(613, 422);
+            bt_grant.Name = "bt_grant";
+            bt_grant.Size = new Size(91, 38);
+            bt_grant.TabIndex = 49;
+            bt_grant.Text = "Cấp quyền";
+            bt_grant.UseVisualStyleBackColor = false;
             // 
             // btn_Back
             // 
@@ -133,15 +133,6 @@
             tb_add.TabIndex = 45;
             tb_add.Text = "Cấp quyền";
             // 
-            // tb_R
-            // 
-            tb_R.BorderStyle = BorderStyle.FixedSingle;
-            tb_R.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_R.Location = new Point(439, 104);
-            tb_R.Name = "tb_R";
-            tb_R.Size = new Size(265, 34);
-            tb_R.TabIndex = 44;
-            // 
             // lb_n_R
             // 
             lb_n_R.AutoSize = true;
@@ -158,6 +149,7 @@
             tb_user.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tb_user.Location = new Point(439, 45);
             tb_user.Name = "tb_user";
+            tb_user.ReadOnly = true;
             tb_user.Size = new Size(265, 34);
             tb_user.TabIndex = 42;
             // 
@@ -171,15 +163,6 @@
             lb_Name.TabIndex = 41;
             lb_Name.Text = "Tên user";
             // 
-            // tb_Column
-            // 
-            tb_Column.BorderStyle = BorderStyle.FixedSingle;
-            tb_Column.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_Column.Location = new Point(439, 360);
-            tb_Column.Name = "tb_Column";
-            tb_Column.Size = new Size(265, 34);
-            tb_Column.TabIndex = 53;
-            // 
             // lb_Column
             // 
             lb_Column.AutoSize = true;
@@ -190,22 +173,44 @@
             lb_Column.TabIndex = 52;
             lb_Column.Text = "Tên cột";
             // 
+            // cbB_table
+            // 
+            cbB_table.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbB_table.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            cbB_table.FormattingEnabled = true;
+            cbB_table.Location = new Point(439, 103);
+            cbB_table.Name = "cbB_table";
+            cbB_table.Size = new Size(265, 36);
+            cbB_table.TabIndex = 54;
+            cbB_table.SelectedIndexChanged += cbB_table_SelectedIndexChanged;
+            // 
+            // cbB_column
+            // 
+            cbB_column.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbB_column.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            cbB_column.FormattingEnabled = true;
+            cbB_column.Location = new Point(439, 359);
+            cbB_column.Name = "cbB_column";
+            cbB_column.Size = new Size(265, 36);
+            cbB_column.TabIndex = 54;
+            cbB_column.SelectedIndexChanged += cbB_table_SelectedIndexChanged;
+            // 
             // Grant_U
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(739, 484);
-            Controls.Add(tb_Column);
+            Controls.Add(cbB_column);
+            Controls.Add(cbB_table);
             Controls.Add(lb_Column);
             Controls.Add(bt_View);
             Controls.Add(cB_grant);
-            Controls.Add(bt_revoke);
+            Controls.Add(bt_grant);
             Controls.Add(btn_Back);
             Controls.Add(dataGridView1);
             Controls.Add(clb_Role);
             Controls.Add(tb_add);
-            Controls.Add(tb_R);
             Controls.Add(lb_n_R);
             Controls.Add(tb_user);
             Controls.Add(lb_Name);
@@ -221,16 +226,16 @@
 
         private Button bt_View;
         private CheckBox cB_grant;
-        private Button bt_revoke;
+        private Button bt_grant;
         private Button btn_Back;
         private DataGridView dataGridView1;
         private CheckedListBox clb_Role;
         private Label tb_add;
-        private TextBox tb_R;
         private Label lb_n_R;
         private TextBox tb_user;
         private Label lb_Name;
-        private TextBox tb_Column;
         private Label lb_Column;
+        private ComboBox cbB_table;
+        private ComboBox cbB_column;
     }
 }
