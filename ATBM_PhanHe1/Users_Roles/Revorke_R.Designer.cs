@@ -135,6 +135,7 @@
             tb_user.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tb_user.Location = new Point(439, 62);
             tb_user.Name = "tb_user";
+            tb_user.ReadOnly = true;
             tb_user.Size = new Size(265, 34);
             tb_user.TabIndex = 42;
             // 
@@ -150,6 +151,7 @@
             // 
             // cbB_Tables
             // 
+            cbB_Tables.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_Tables.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_Tables.FormattingEnabled = true;
             cbB_Tables.Location = new Point(439, 120);
