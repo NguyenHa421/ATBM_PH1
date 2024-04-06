@@ -17,6 +17,7 @@ namespace ATBM_PhanHe1.Users_Roles
         public Revorke_R()
         {
             InitializeComponent();
+            tb_user.Text = Interface.Permission.SelectedGrantRole;
             Load();
         }
         private void Load()
