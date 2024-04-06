@@ -43,6 +43,26 @@ namespace ATBM_PhanHe1.DAO
             }
             return list;
         }
+        public List<UserPrivsDTO> GetUserPrivsOnTable(string userName, string tableName)
+        {
+            List<UserPrivsDTO> list = new List<UserPrivsDTO>();
+            string query = $"select grantee,table_name,privilege,grantable from dba_tab_privs where grantee = '{userName}' and table_name = '{tableName}'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow row in data.Rows)
+            {
+                UserPrivsDTO priv = new UserPrivsDTO(row);
+                list.Add(priv);
+            }
+            data.Rows.Clear();
+            query = $"select grantee,table_name,column_name,privilege,grantable from dba_col_privs where grantee = '{userName}' and table_name = '{tableName}'";
+            data = DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow row in data.Rows)
+            {
+                UserPrivsDTO priv = new UserPrivsDTO(row);
+                list.Add(priv);
+            }
+            return list;
+        }
         public List<UserDTO> SearchUser(string userName)
         {
             List<UserDTO> list = new List<UserDTO>();
@@ -74,8 +94,41 @@ namespace ATBM_PhanHe1.DAO
         }
         public void DeleteUser(string userName)
         {
-            string query = "begin drop_user('" + userName + "'); end;";
+            string query = $"begin drop_user('{userName}'); end;";
             DataProvider.Instance.ExecuteNonQuery(query);
+        }
+        public void GrantPrivToUser(string userName, List<string> privs, int grantOption, string tableName)
+        {
+            string privStr = "";
+            foreach (string str in privs)
+                privStr+=str + ",";
+            privStr = privStr.Remove(privStr.Length - 1);
+            string query;
+            query = $"begin grant_privilege_to_user('{userName}','{privStr}','{tableName}',{grantOption}); end;";
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+        public void GrantPrivToUser(string userName, List<string> privs, int grantOption, string tableName, string column)
+        {
+            string privStr = "";
+            foreach (string str in privs)
+            {
+                privStr += str;
+                if (str == "Update")
+                    privStr += "(" + column + ")";
+                privStr += ",";
+            }            
+            privStr = privStr.Remove(privStr.Length - 1);
+            string query = $"begin grant_privilege_to_user('{userName}','{privStr}','{tableName}',{grantOption}); end;";
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+        public void RevokePrivs(string userName, List<string> privs, string tableName)
+        {
+            string privStr = "";
+            foreach (string str in privs)
+                privStr += str + ",";
+            privStr = privStr.Remove(privStr.Length - 1);
+            string query = $"begin revoke_privilege_to_user('{userName}','{privStr}','{tableName}'); end;";
+            DataProvider.Instance.ExecuteNonQuery (query);
         }
     }
 }

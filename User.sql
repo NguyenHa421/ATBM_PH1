@@ -26,29 +26,21 @@ END;
 /
 
 --PHAN QUYEN CHO USER
-CREATE OR REPLACE PROCEDURE grant_privilege_to_user (user_name IN VARCHAR2, privilege_name IN VARCHAR2, table_name IN VARCHAR2)
+CREATE OR REPLACE PROCEDURE grant_privilege_to_user (user_name IN VARCHAR2, privilege_name IN VARCHAR2, table_name IN VARCHAR2,withGrantOption IN NUMBER)
 as
 BEGIN
-    EXECUTE IMMEDIATE ('GRANT '||privilege_name|| 'ON '||table_name||' TO '||user_name);
+    IF withGrantOption = 0 THEN
+        EXECUTE IMMEDIATE ('GRANT '||privilege_name|| ' ON '||table_name||' TO '||user_name);
+    ELSE
+        EXECUTE IMMEDIATE ('GRANT '||privilege_name|| ' ON '||table_name||' TO '||user_name||' WITH GRANT OPTION');
+    END IF;
 end;
-
-/
-
---PHAN QUYEN CHO USER CO WITH GRANT OPTION
-CREATE OR REPLACE PROCEDURE grant_priv_to_role_with_grant_option (user_name IN VARCHAR2, privilege_name IN VARCHAR2, table_name IN VARCHAR2, withGrantOption IN VARCHAR2)
-AS
-BEGIN
-    EXECUTE IMMEDIATE ('GRANT '||privilege_name|| 'ON '||table_name||' TO '||user_name||' '||withGrantOption);
-END;
-
 /
 
 --THU HOI QUYEN CUA ROLE
 CREATE OR REPLACE PROCEDURE revoke_privilege_to_user (user_name IN VARCHAR2, privilege_name IN VARCHAR2, table_name IN VARCHAR2)
 AS
 BEGIN
-    EXECUTE IMMEDIATE ('REVOKE '||privilege_name|| 'ON '||table_name||' FROM '||user_name);
+    EXECUTE IMMEDIATE ('REVOKE '||privilege_name||' ON '||table_name||' FROM '||user_name);
 END;
 /
-
-begin create_user('c##testing','123456'); end;

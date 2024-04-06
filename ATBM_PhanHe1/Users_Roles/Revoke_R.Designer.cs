@@ -1,6 +1,6 @@
 ﻿namespace ATBM_PhanHe1.Users_Roles
 {
-    partial class Revorke_R
+    partial class Revoke_R
     {
         /// <summary>
         /// Required designer variable.

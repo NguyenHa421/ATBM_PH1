@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            bt_View = new Button();
             cB_grant = new CheckBox();
             bt_grant = new Button();
             btn_Back = new Button();
-            dataGridView1 = new DataGridView();
-            clb_Role = new CheckedListBox();
+            dtGrid_privs = new DataGridView();
+            clb_Privs = new CheckedListBox();
             tb_add = new Label();
             lb_n_R = new Label();
             tb_user = new TextBox();
@@ -41,29 +40,15 @@
             lb_Column = new Label();
             cbB_table = new ComboBox();
             cbB_column = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            cB_allCol = new CheckBox();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_privs).BeginInit();
             SuspendLayout();
-            // 
-            // bt_View
-            // 
-            bt_View.BackColor = Color.White;
-            bt_View.BackgroundImage = Properties.Resources.button_round2;
-            bt_View.FlatAppearance.BorderSize = 0;
-            bt_View.FlatStyle = FlatStyle.Flat;
-            bt_View.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            bt_View.ForeColor = SystemColors.Window;
-            bt_View.Location = new Point(613, 156);
-            bt_View.Name = "bt_View";
-            bt_View.Size = new Size(91, 38);
-            bt_View.TabIndex = 51;
-            bt_View.Text = "Xem";
-            bt_View.UseVisualStyleBackColor = false;
             // 
             // cB_grant
             // 
             cB_grant.AutoSize = true;
             cB_grant.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cB_grant.Location = new Point(476, 321);
+            cB_grant.Location = new Point(439, 282);
             cB_grant.Name = "cB_grant";
             cB_grant.Size = new Size(224, 32);
             cB_grant.TabIndex = 50;
@@ -84,6 +69,7 @@
             bt_grant.TabIndex = 49;
             bt_grant.Text = "Cấp quyền";
             bt_grant.UseVisualStyleBackColor = false;
+            bt_grant.Click += bt_grant_Click;
             // 
             // btn_Back
             // 
@@ -101,33 +87,33 @@
             btn_Back.UseVisualStyleBackColor = false;
             btn_Back.Click += btn_Back_Click;
             // 
-            // dataGridView1
+            // dtGrid_privs
             // 
-            dataGridView1.BackgroundColor = Color.WhiteSmoke;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(34, 47);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(271, 347);
-            dataGridView1.TabIndex = 47;
+            dtGrid_privs.BackgroundColor = Color.WhiteSmoke;
+            dtGrid_privs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGrid_privs.Location = new Point(34, 47);
+            dtGrid_privs.Name = "dtGrid_privs";
+            dtGrid_privs.RowHeadersWidth = 51;
+            dtGrid_privs.Size = new Size(271, 347);
+            dtGrid_privs.TabIndex = 47;
             // 
-            // clb_Role
+            // clb_Privs
             // 
-            clb_Role.BackColor = Color.White;
-            clb_Role.BorderStyle = BorderStyle.None;
-            clb_Role.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            clb_Role.FormattingEnabled = true;
-            clb_Role.Items.AddRange(new object[] { "Select", "Insert", "Delete", "Update" });
-            clb_Role.Location = new Point(476, 199);
-            clb_Role.Name = "clb_Role";
-            clb_Role.Size = new Size(150, 116);
-            clb_Role.TabIndex = 46;
+            clb_Privs.BackColor = Color.White;
+            clb_Privs.BorderStyle = BorderStyle.None;
+            clb_Privs.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            clb_Privs.FormattingEnabled = true;
+            clb_Privs.Items.AddRange(new object[] { "Insert", "Delete", "Select", "Update" });
+            clb_Privs.Location = new Point(439, 160);
+            clb_Privs.Name = "clb_Privs";
+            clb_Privs.Size = new Size(150, 116);
+            clb_Privs.TabIndex = 46;
             // 
             // tb_add
             // 
             tb_add.AutoSize = true;
             tb_add.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tb_add.Location = new Point(311, 199);
+            tb_add.Location = new Point(311, 160);
             tb_add.Name = "tb_add";
             tb_add.Size = new Size(109, 28);
             tb_add.TabIndex = 45;
@@ -194,7 +180,17 @@
             cbB_column.Size = new Size(265, 36);
             cbB_column.TabIndex = 54;
             // 
-            
+            // cB_allCol
+            // 
+            cB_allCol.AutoSize = true;
+            cB_allCol.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cB_allCol.Location = new Point(439, 320);
+            cB_allCol.Name = "cB_allCol";
+            cB_allCol.Size = new Size(121, 32);
+            cB_allCol.TabIndex = 50;
+            cB_allCol.Text = "Tất cả cột";
+            cB_allCol.UseVisualStyleBackColor = true;
+            cB_allCol.CheckedChanged += cB_allCol_CheckedChanged;
             // 
             // Grant_U
             // 
@@ -205,12 +201,12 @@
             Controls.Add(cbB_column);
             Controls.Add(cbB_table);
             Controls.Add(lb_Column);
-            Controls.Add(bt_View);
+            Controls.Add(cB_allCol);
             Controls.Add(cB_grant);
             Controls.Add(bt_grant);
             Controls.Add(btn_Back);
-            Controls.Add(dataGridView1);
-            Controls.Add(clb_Role);
+            Controls.Add(dtGrid_privs);
+            Controls.Add(clb_Privs);
             Controls.Add(tb_add);
             Controls.Add(lb_n_R);
             Controls.Add(tb_user);
@@ -218,19 +214,17 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Grant_U";
             Text = "Grant_U";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_privs).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button bt_View;
         private CheckBox cB_grant;
         private Button bt_grant;
         private Button btn_Back;
-        private DataGridView dataGridView1;
-        private CheckedListBox clb_Role;
+        private DataGridView dtGrid_privs;
+        private CheckedListBox clb_Privs;
         private Label tb_add;
         private Label lb_n_R;
         private TextBox tb_user;
@@ -238,5 +232,6 @@
         private Label lb_Column;
         private ComboBox cbB_table;
         private ComboBox cbB_column;
+        private CheckBox cB_allCol;
     }
 }

@@ -26,21 +26,15 @@ END;
 /
 
 --PHAN QUYEN CHO ROLE
-CREATE OR REPLACE PROCEDURE grant_privilege_to_role (role_name IN VARCHAR2, privilege_name IN VARCHAR2, table_name IN VARCHAR2)
+CREATE OR REPLACE PROCEDURE grant_privilege_to_role (role_name IN VARCHAR2, privilege_name IN VARCHAR2, table_name IN VARCHAR2,withGrantOption IN NUMBER)
 as
 BEGIN
-    EXECUTE IMMEDIATE ('GRANT '||privilege_name|| 'ON '||table_name||' TO '||role_name);
+    IF withGrantOption = 0 THEN
+        EXECUTE IMMEDIATE ('GRANT '||privilege_name|| 'ON '||table_name||' TO '||role_name);
+    ELSE
+        EXECUTE IMMEDIATE ('GRANT '||privilege_name|| 'ON '||table_name||' TO '||role_name||' WITH GRANT OPTION');
+    END IF;
 end;
-
-/
-
---PHAN QUYEN CHO ROLE CO WITH GRANT OPTION
-CREATE OR REPLACE PROCEDURE grant_priv_to_role_with_grant_option (role_name IN VARCHAR2, privilege_name IN VARCHAR2, table_name IN VARCHAR2, withGrantOption IN VARCHAR2)
-AS
-BEGIN
-    EXECUTE IMMEDIATE ('GRANT '||privilege_name|| 'ON '||table_name||' TO '||role_name||' '||withGrantOption);
-END;
-
 /
 
 --THU HOI QUYEN CUA ROLE

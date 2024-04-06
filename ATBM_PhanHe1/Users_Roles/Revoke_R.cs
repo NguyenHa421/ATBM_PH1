@@ -11,12 +11,13 @@ using System.Windows.Forms;
 
 namespace ATBM_PhanHe1.Users_Roles
 {
-    public partial class Revorke_U : Form
+    public partial class Revoke_R : Form
     {
         BindingSource tableList = new BindingSource();
-        public Revorke_U()
+        public Revoke_R()
         {
             InitializeComponent();
+            tb_user.Text = Interface.Permission.SelectedGrantRole;
             Load();
         }
         private void Load()

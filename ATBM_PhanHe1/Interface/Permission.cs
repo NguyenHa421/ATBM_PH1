@@ -79,7 +79,12 @@ namespace ATBM_PhanHe1.Interface
         }
         private void btn_revoke_user_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Users_Roles.Revorke_U());
+            if (clickedUser != "")
+            {
+                string userName = clickedUser;
+                clickedUser = "";
+                OpenChildForm(new Users_Roles.Revoke_U(userName));
+            }
         }
 
         private void btn_grant_user_Click(object sender, EventArgs e)
@@ -95,7 +100,7 @@ namespace ATBM_PhanHe1.Interface
         private void btn_revoke_role_Click(object sender, EventArgs e)
         {
 
-            OpenChildForm(new Users_Roles.Revorke_R());
+            OpenChildForm(new Users_Roles.Revoke_R());
         }
 
         private void btn_grant_role_Click(object sender, EventArgs e)

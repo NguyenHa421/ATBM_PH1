@@ -1,6 +1,6 @@
 ﻿namespace ATBM_PhanHe1.Users_Roles
 {
-    partial class Revorke_U
+    partial class Revoke_U
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,14 @@
             bt_View = new Button();
             bt_revoke = new Button();
             btn_Back = new Button();
-            dataGridView1 = new DataGridView();
-            clb_Role = new CheckedListBox();
+            dtGrid_priv = new DataGridView();
+            clb_privs = new CheckedListBox();
             tb_revoke = new Label();
             lb_n_R = new Label();
             tb_user = new TextBox();
             lb_Name = new Label();
             cbB_Tables = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_priv).BeginInit();
             SuspendLayout();
             // 
             // bt_View
@@ -70,6 +70,7 @@
             bt_revoke.TabIndex = 38;
             bt_revoke.Text = "Thu hồi";
             bt_revoke.UseVisualStyleBackColor = false;
+            bt_revoke.Click += bt_revoke_Click;
             // 
             // btn_Back
             // 
@@ -87,27 +88,27 @@
             btn_Back.UseVisualStyleBackColor = false;
             btn_Back.Click += btn_Back_Click;
             // 
-            // dataGridView1
+            // dtGrid_priv
             // 
-            dataGridView1.BackgroundColor = Color.WhiteSmoke;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(34, 66);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(271, 286);
-            dataGridView1.TabIndex = 36;
+            dtGrid_priv.BackgroundColor = Color.WhiteSmoke;
+            dtGrid_priv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGrid_priv.Location = new Point(34, 66);
+            dtGrid_priv.Name = "dtGrid_priv";
+            dtGrid_priv.RowHeadersWidth = 51;
+            dtGrid_priv.Size = new Size(271, 328);
+            dtGrid_priv.TabIndex = 36;
             // 
-            // clb_Role
+            // clb_privs
             // 
-            clb_Role.BackColor = Color.White;
-            clb_Role.BorderStyle = BorderStyle.None;
-            clb_Role.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            clb_Role.FormattingEnabled = true;
-            clb_Role.Items.AddRange(new object[] { "Select", "Insert", "Delete", "Update" });
-            clb_Role.Location = new Point(476, 236);
-            clb_Role.Name = "clb_Role";
-            clb_Role.Size = new Size(150, 116);
-            clb_Role.TabIndex = 35;
+            clb_privs.BackColor = Color.White;
+            clb_privs.BorderStyle = BorderStyle.None;
+            clb_privs.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            clb_privs.FormattingEnabled = true;
+            clb_privs.Items.AddRange(new object[] { "Select", "Insert", "Delete", "Update" });
+            clb_privs.Location = new Point(476, 236);
+            clb_privs.Name = "clb_privs";
+            clb_privs.Size = new Size(150, 116);
+            clb_privs.TabIndex = 35;
             // 
             // tb_revoke
             // 
@@ -158,8 +159,9 @@
             cbB_Tables.Name = "cbB_Tables";
             cbB_Tables.Size = new Size(265, 36);
             cbB_Tables.TabIndex = 69;
+            cbB_Tables.SelectedIndexChanged += cbB_Tables_SelectedIndexChanged;
             // 
-            // Revorke_U
+            // Revoke_U
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -169,16 +171,16 @@
             Controls.Add(bt_View);
             Controls.Add(bt_revoke);
             Controls.Add(btn_Back);
-            Controls.Add(dataGridView1);
-            Controls.Add(clb_Role);
+            Controls.Add(dtGrid_priv);
+            Controls.Add(clb_privs);
             Controls.Add(tb_revoke);
             Controls.Add(lb_n_R);
             Controls.Add(tb_user);
             Controls.Add(lb_Name);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Revorke_U";
+            Name = "Revoke_U";
             Text = "Revorke_U";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_priv).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,8 +190,8 @@
         private Button bt_View;
         private Button bt_revoke;
         private Button btn_Back;
-        private DataGridView dataGridView1;
-        private CheckedListBox clb_Role;
+        private DataGridView dtGrid_priv;
+        private CheckedListBox clb_privs;
         private Label tb_revoke;
         private Label lb_n_R;
         private TextBox tb_user;
