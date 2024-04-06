@@ -19,12 +19,12 @@ namespace ATBM_PhanHe1.DAO
         private Table_ColumnDAO() { }
         public DataTable GetListTable()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM user_tables WHERE table_name LIKE 'TB_%'");
+            return DataProvider.Instance.ExecuteQuery("SELECT table_name FROM user_tables WHERE table_name LIKE 'TB_%'");
         }
         
         public DataTable GetListColumn(string tableName)
         {
-            return DataProvider.Instance.ExecuteQuery($"SELECT column_name FROM USER_TAB_COLUMNS WHERE table_name = {tableName}");
+            return DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM USER_TAB_COLUMNS WHERE table_name = ('{0}')", tableName));
         }
     }
 }
