@@ -16,6 +16,7 @@ namespace ATBM_PhanHe1.Interface
         BindingSource userList = new BindingSource();
         BindingSource roleList = new BindingSource();
         private string clickedUser = "";
+        public static string SelectedGrantRole { get; set; }
         public Permission()
         {
             InitializeComponent();
@@ -83,27 +84,24 @@ namespace ATBM_PhanHe1.Interface
 
         private void btn_grant_user_Click(object sender, EventArgs e)
         {
-            if (clickedUser!="")
+            if (clickedUser != "")
             {
                 string userName = clickedUser;
                 clickedUser = "";
                 OpenChildForm(new Users_Roles.Grant_U(userName));
-            }  
+            }
         }
 
         private void btn_revoke_role_Click(object sender, EventArgs e)
         {
-            
+
             OpenChildForm(new Users_Roles.Revorke_R());
         }
 
         private void btn_grant_role_Click(object sender, EventArgs e)
         {
-            string userName = clickedUser;
-            clickedUser = "";
-            OpenChildForm(new Users_Roles.Grant_R(userName));
+            OpenChildForm(new Users_Roles.Grant_R());
         }
-
         private void btn_role_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Users_Roles.Grant_U_R());
@@ -133,6 +131,15 @@ namespace ATBM_PhanHe1.Interface
         private void pic_refresh_U_Click(object sender, EventArgs e)
         {
             userList.DataSource = UserDAO.Instance.GetUserWithPrivs();
+        }
+
+        private void dtGrid_role_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string name = dtGrid_role[e.ColumnIndex, e.RowIndex].Value.ToString();
+                SelectedGrantRole = name;
+            }
         }
     }
 }
