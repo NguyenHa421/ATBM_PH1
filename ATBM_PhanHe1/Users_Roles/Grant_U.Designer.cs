@@ -195,14 +195,7 @@
             cbB_column.TabIndex = 54;
             cbB_column.SelectedIndexChanged += cbB_table_SelectedIndexChanged;
             // 
-            // cbB_Column
-            // 
-            cbB_Column.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_Column.FormattingEnabled = true;
-            cbB_Column.Location = new Point(439, 359);
-            cbB_Column.Name = "cbB_Column";
-            cbB_Column.Size = new Size(265, 36);
-            cbB_Column.TabIndex = 55;
+            
             // 
             // Grant_U
             // 
