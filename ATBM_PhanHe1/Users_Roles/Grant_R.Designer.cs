@@ -33,7 +33,7 @@
             cB_grant = new CheckBox();
             bt_grant = new Button();
             btn_Back = new Button();
-            dataGridView1 = new DataGridView();
+            dtGrid_role_table = new DataGridView();
             clb_Role = new CheckedListBox();
             tb_add = new Label();
             lb_n_R = new Label();
@@ -41,7 +41,8 @@
             lb_Name = new Label();
             cbB_Tables = new ComboBox();
             cbB_Column = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            cB_allCol = new CheckBox();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_role_table).BeginInit();
             SuspendLayout();
             // 
             // lb_Column
@@ -68,6 +69,7 @@
             bt_View.TabIndex = 64;
             bt_View.Text = "Xem";
             bt_View.UseVisualStyleBackColor = false;
+            bt_View.Click += bt_View_Click;
             // 
             // cB_grant
             // 
@@ -88,12 +90,13 @@
             bt_grant.FlatStyle = FlatStyle.Flat;
             bt_grant.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             bt_grant.ForeColor = SystemColors.Window;
-            bt_grant.Location = new Point(613, 412);
+            bt_grant.Location = new Point(613, 430);
             bt_grant.Name = "bt_grant";
             bt_grant.Size = new Size(91, 38);
             bt_grant.TabIndex = 62;
             bt_grant.Text = "Cấp quyền";
             bt_grant.UseVisualStyleBackColor = false;
+            bt_grant.Click += bt_grant_Click;
             // 
             // btn_Back
             // 
@@ -103,7 +106,7 @@
             btn_Back.FlatStyle = FlatStyle.Flat;
             btn_Back.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_Back.ForeColor = SystemColors.Window;
-            btn_Back.Location = new Point(311, 412);
+            btn_Back.Location = new Point(311, 430);
             btn_Back.Name = "btn_Back";
             btn_Back.Size = new Size(91, 38);
             btn_Back.TabIndex = 61;
@@ -111,15 +114,15 @@
             btn_Back.UseVisualStyleBackColor = false;
             btn_Back.Click += btn_Back_Click;
             // 
-            // dataGridView1
+            // dtGrid_role_table
             // 
-            dataGridView1.BackgroundColor = Color.WhiteSmoke;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(34, 37);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(271, 347);
-            dataGridView1.TabIndex = 60;
+            dtGrid_role_table.BackgroundColor = Color.WhiteSmoke;
+            dtGrid_role_table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGrid_role_table.Location = new Point(34, 37);
+            dtGrid_role_table.Name = "dtGrid_role_table";
+            dtGrid_role_table.RowHeadersWidth = 51;
+            dtGrid_role_table.Size = new Size(271, 374);
+            dtGrid_role_table.TabIndex = 60;
             // 
             // clb_Role
             // 
@@ -194,12 +197,24 @@
             cbB_Column.Size = new Size(265, 36);
             cbB_Column.TabIndex = 68;
             // 
+            // cB_allCol
+            // 
+            cB_allCol.AutoSize = true;
+            cB_allCol.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cB_allCol.Location = new Point(476, 391);
+            cB_allCol.Name = "cB_allCol";
+            cB_allCol.Size = new Size(121, 32);
+            cB_allCol.TabIndex = 69;
+            cB_allCol.Text = "Tất cả cột";
+            cB_allCol.UseVisualStyleBackColor = true;
+            // 
             // Grant_R
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(739, 484);
+            Controls.Add(cB_allCol);
             Controls.Add(cbB_Column);
             Controls.Add(cbB_Tables);
             Controls.Add(lb_Column);
@@ -207,7 +222,7 @@
             Controls.Add(cB_grant);
             Controls.Add(bt_grant);
             Controls.Add(btn_Back);
-            Controls.Add(dataGridView1);
+            Controls.Add(dtGrid_role_table);
             Controls.Add(clb_Role);
             Controls.Add(tb_add);
             Controls.Add(lb_n_R);
@@ -216,7 +231,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Grant_R";
             Text = "Grant_R";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_role_table).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -227,7 +242,7 @@
         private CheckBox cB_grant;
         private Button bt_grant;
         private Button btn_Back;
-        private DataGridView dataGridView1;
+        private DataGridView dtGrid_role_table;
         private CheckedListBox clb_Role;
         private Label tb_add;
         private Label lb_n_R;
@@ -235,5 +250,6 @@
         private Label lb_Name;
         private ComboBox cbB_Tables;
         private ComboBox cbB_Column;
+        private CheckBox cB_allCol;
     }
 }
