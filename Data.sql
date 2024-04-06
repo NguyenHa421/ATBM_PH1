@@ -468,7 +468,7 @@ select* from DBA_role_privs;
 select* from all_tab_columns;
 exec usp_GetAllUser;
 select*from dba_tables;
-select*from all_tab_columns;
+select*from all_tab_columns where table_name like 'TB%';
 SELECT * FROM dba_tab_privs WHERE grantee = 'SYS' AND table_name = 'hocphan'
 select * from dba_tab_columns where table_name='HocPhan';
 CREATE USER C##testing IDENTIFIED BY 123456;
