@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Windows.Forms;
 
 namespace ATBM_PhanHe1.DAO
 {
@@ -19,6 +21,10 @@ namespace ATBM_PhanHe1.DAO
         {
             return DataProvider.Instance.ExecuteQuery("SELECT * FROM user_tables WHERE table_name LIKE 'TB_%'");
         }
-
+        
+        public DataTable GetListColumn(string tableName)
+        {
+            return DataProvider.Instance.ExecuteQuery($"SELECT column_name FROM USER_TAB_COLUMNS WHERE table_name = {tableName}");
+        }
     }
 }
