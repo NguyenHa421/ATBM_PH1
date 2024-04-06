@@ -31,7 +31,7 @@
             lb_Column = new Label();
             bt_View = new Button();
             cB_grant = new CheckBox();
-            bt_revoke = new Button();
+            bt_grant = new Button();
             btn_Back = new Button();
             dataGridView1 = new DataGridView();
             clb_Role = new CheckedListBox();
@@ -80,20 +80,20 @@
             cB_grant.Text = "with GRANT OPTION";
             cB_grant.UseVisualStyleBackColor = true;
             // 
-            // bt_revoke
+            // bt_grant
             // 
-            bt_revoke.BackColor = Color.White;
-            bt_revoke.BackgroundImage = Properties.Resources.button_round2;
-            bt_revoke.FlatAppearance.BorderSize = 0;
-            bt_revoke.FlatStyle = FlatStyle.Flat;
-            bt_revoke.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            bt_revoke.ForeColor = SystemColors.Window;
-            bt_revoke.Location = new Point(613, 412);
-            bt_revoke.Name = "bt_revoke";
-            bt_revoke.Size = new Size(91, 38);
-            bt_revoke.TabIndex = 62;
-            bt_revoke.Text = "Thu hồi";
-            bt_revoke.UseVisualStyleBackColor = false;
+            bt_grant.BackColor = Color.White;
+            bt_grant.BackgroundImage = Properties.Resources.button_round2;
+            bt_grant.FlatAppearance.BorderSize = 0;
+            bt_grant.FlatStyle = FlatStyle.Flat;
+            bt_grant.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            bt_grant.ForeColor = SystemColors.Window;
+            bt_grant.Location = new Point(613, 412);
+            bt_grant.Name = "bt_grant";
+            bt_grant.Size = new Size(91, 38);
+            bt_grant.TabIndex = 62;
+            bt_grant.Text = "Cấp quyền";
+            bt_grant.UseVisualStyleBackColor = false;
             // 
             // btn_Back
             // 
@@ -205,7 +205,7 @@
             Controls.Add(lb_Column);
             Controls.Add(bt_View);
             Controls.Add(cB_grant);
-            Controls.Add(bt_revoke);
+            Controls.Add(bt_grant);
             Controls.Add(btn_Back);
             Controls.Add(dataGridView1);
             Controls.Add(clb_Role);
@@ -225,7 +225,7 @@
         private Label lb_Column;
         private Button bt_View;
         private CheckBox cB_grant;
-        private Button bt_revoke;
+        private Button bt_grant;
         private Button btn_Back;
         private DataGridView dataGridView1;
         private CheckedListBox clb_Role;
