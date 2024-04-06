@@ -1,4 +1,5 @@
 ﻿using ATBM_PhanHe1.DTO;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -68,12 +69,12 @@ namespace ATBM_PhanHe1.DAO
         }
         public void CreateUser(string userId, string password)
         {
-            string query = "create user " + userId + " identified by " + password;
+            string query = $"begin create_user('{userId}','{password}'); end;";
             DataProvider.Instance.ExecuteNonQuery(query);
         }
         public void DeleteUser(string userName)
         {
-            string query = "drop user " + userName;
+            string query = "begin drop_user('" + userName + "'); end;";
             DataProvider.Instance.ExecuteNonQuery(query);
         }
     }

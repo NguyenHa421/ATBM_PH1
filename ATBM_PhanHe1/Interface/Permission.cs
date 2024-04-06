@@ -83,9 +83,12 @@ namespace ATBM_PhanHe1.Interface
 
         private void btn_grant_user_Click(object sender, EventArgs e)
         {
-            string userName = clickedUser;
-            clickedUser = "";
-            OpenChildForm(new Users_Roles.Grant_U(userName));
+            if (clickedUser!="")
+            {
+                string userName = clickedUser;
+                clickedUser = "";
+                OpenChildForm(new Users_Roles.Grant_U(userName));
+            }  
         }
 
         private void btn_revoke_role_Click(object sender, EventArgs e)

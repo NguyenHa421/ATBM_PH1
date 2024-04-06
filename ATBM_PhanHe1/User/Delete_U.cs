@@ -1,4 +1,5 @@
 ﻿using ATBM_PhanHe1.DAO;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,8 +26,15 @@ namespace ATBM_PhanHe1.User
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            if (tb_name.Text != "")
+            try
+            {
                 UserDAO.Instance.DeleteUser(tb_name.Text);
+                MessageBox.Show("Xoá thành công", "Thông báo");
+            }
+            catch (OracleException oe)
+            {
+                MessageBox.Show(oe.Message, "Lỗi");
+            }
             this.Close();
         }
     }

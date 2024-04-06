@@ -193,7 +193,6 @@
             cbB_column.Name = "cbB_column";
             cbB_column.Size = new Size(265, 36);
             cbB_column.TabIndex = 54;
-            cbB_column.SelectedIndexChanged += cbB_table_SelectedIndexChanged;
             // 
             
             // 
