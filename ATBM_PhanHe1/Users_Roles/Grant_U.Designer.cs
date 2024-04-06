@@ -38,9 +38,9 @@
             lb_n_R = new Label();
             tb_user = new TextBox();
             lb_Name = new Label();
-            tb_Column = new TextBox();
             lb_Column = new Label();
             cbB_Tables = new ComboBox();
+            cbB_Column = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -162,15 +162,6 @@
             lb_Name.TabIndex = 41;
             lb_Name.Text = "Tên user";
             // 
-            // tb_Column
-            // 
-            tb_Column.BorderStyle = BorderStyle.FixedSingle;
-            tb_Column.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_Column.Location = new Point(439, 360);
-            tb_Column.Name = "tb_Column";
-            tb_Column.Size = new Size(265, 34);
-            tb_Column.TabIndex = 53;
-            // 
             // lb_Column
             // 
             lb_Column.AutoSize = true;
@@ -191,14 +182,23 @@
             cbB_Tables.TabIndex = 54;
             cbB_Tables.SelectedIndexChanged += cbB_Tables_SelectedIndexChanged;
             // 
+            // cbB_Column
+            // 
+            cbB_Column.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbB_Column.FormattingEnabled = true;
+            cbB_Column.Location = new Point(439, 359);
+            cbB_Column.Name = "cbB_Column";
+            cbB_Column.Size = new Size(265, 36);
+            cbB_Column.TabIndex = 55;
+            // 
             // Grant_U
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(739, 484);
+            Controls.Add(cbB_Column);
             Controls.Add(cbB_Tables);
-            Controls.Add(tb_Column);
             Controls.Add(lb_Column);
             Controls.Add(bt_View);
             Controls.Add(cB_grant);
@@ -230,8 +230,8 @@
         private Label lb_n_R;
         private TextBox tb_user;
         private Label lb_Name;
-        private TextBox tb_Column;
         private Label lb_Column;
         private ComboBox cbB_Tables;
+        private ComboBox cbB_Column;
     }
 }
