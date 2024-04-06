@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace ATBM_PhanHe1.Users_Roles
 {
@@ -15,10 +16,10 @@ namespace ATBM_PhanHe1.Users_Roles
     {
         BindingSource tableList = new BindingSource();
         BindingSource columnList = new BindingSource();
-        public Grant_R(string userName)
+        public Grant_R()
         {
             InitializeComponent();
-            tb_user.Text = userName;
+            tb_user.Text = Interface.Permission.SelectedGrantRole;
             Load();
         }
         private void Load()
