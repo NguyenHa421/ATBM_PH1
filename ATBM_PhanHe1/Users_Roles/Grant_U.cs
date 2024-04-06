@@ -14,6 +14,7 @@ namespace ATBM_PhanHe1.Users_Roles
     public partial class Grant_U : Form
     {
         BindingSource tableList = new BindingSource();
+        BindingSource columnList = new BindingSource();
         public Grant_U()
         {
             InitializeComponent();
@@ -22,8 +23,14 @@ namespace ATBM_PhanHe1.Users_Roles
         private void Load()
         {
             cbB_Tables.DataSource = tableList;
-            cbB_Tables.DataSource = Table_ColumnDAO.Instance.GetListTable();
+            tableList.DataSource = Table_ColumnDAO.Instance.GetListTable();
             cbB_Tables.DisplayMember = "TABLE_NAME";
+        }
+        private void LoadColumn()
+        {
+            cbB_Column.DataSource = columnList;
+            columnList.DataSource = Table_ColumnDAO.Instance.GetListColumn(cbB_Tables.Text);
+            cbB_Column.DisplayMember = "COLUMN_NAME";
         }
         private void btn_Back_Click(object sender, EventArgs e)
         {
@@ -32,7 +39,7 @@ namespace ATBM_PhanHe1.Users_Roles
 
         private void cbB_Tables_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            LoadColumn();
         }
     }
 }
