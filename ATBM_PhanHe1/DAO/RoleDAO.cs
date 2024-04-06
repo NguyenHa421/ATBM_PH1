@@ -15,7 +15,7 @@ namespace ATBM_PhanHe1.DAO
         public List<RoleDTO> GetRoleList()
         {
             List<RoleDTO> list = new List<RoleDTO>();
-            string query = "select role, count(owner) as nOfOwner from role_tab_privs group by role";
+            string query = "select d.role_id, d.role, count(p.owner) as nOfOwner from dba_roles d left join role_tab_privs p on p.role = d.role group by d.role_id, d.role";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
@@ -27,7 +27,7 @@ namespace ATBM_PhanHe1.DAO
         public List<RoleDTO> SearchRole(string roleName)
         {
             List<RoleDTO> list = new List<RoleDTO>();
-            string query = string.Format("select role, count(owner) as nOfOwner from role_tab_privs where lower(role) like lower('%{0}%') group by role", roleName);
+            string query = string.Format("select d.role_id, d.role, count(p.owner) as nOfOwner from dba_roles d left join role_tab_privs p on p.role = d.role where lower(d.role) like lower('%{0}%') group by d.role_id, d.role", roleName);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
@@ -35,6 +35,18 @@ namespace ATBM_PhanHe1.DAO
                 list.Add(role);
             }
             return list;
+        }
+        public bool Add_Role(string name)
+        {
+            string query = $"begin create_role ('{name}');end;";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool Delete_Role(string name)
+        {
+            string query = $"begin drop_role ('{name}');end;";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
     }
 }

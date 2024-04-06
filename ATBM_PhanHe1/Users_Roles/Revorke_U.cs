@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace ATBM_PhanHe1.Users_Roles
 {
     public partial class Revorke_U : Form
     {
+        BindingSource tableList = new BindingSource();
         public Revorke_U()
         {
             InitializeComponent();
+            Load();
+        }
+        private void Load()
+        {
+            cbB_Tables.DataSource = tableList;
+            cbB_Tables.DataSource = Table_ColumnDAO.Instance.GetListTable();
+            cbB_Tables.DisplayMember = "TABLE_NAME";
         }
 
         private void btn_Back_Click(object sender, EventArgs e)

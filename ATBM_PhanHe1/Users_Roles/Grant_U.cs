@@ -14,10 +14,12 @@ namespace ATBM_PhanHe1.Users_Roles
 {
     public partial class Grant_U : Form
     {
+        BindingSource tableList = new BindingSource();
         public Grant_U(string userName)
         {
             InitializeComponent();
             tb_user.Text = userName;
+            Load();
             LoadComboBox();
         }
         private void LoadComboBox()
@@ -25,7 +27,12 @@ namespace ATBM_PhanHe1.Users_Roles
             for (int i = 0; i < TableDAO.Instance.tables.Length; i++)
                 cbB_table.Items.Add(TableDAO.Instance.tables[i]);
         }
-
+        private void Load()
+        {
+            cbB_Tables.DataSource = tableList;
+            cbB_Tables.DataSource = Table_ColumnDAO.Instance.GetListTable();
+            cbB_Tables.DisplayMember = "TABLE_NAME";
+        }
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();

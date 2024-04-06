@@ -62,6 +62,7 @@
             btn_Create.TabIndex = 20;
             btn_Create.Text = "Tạo mới";
             btn_Create.UseVisualStyleBackColor = false;
+            btn_Create.Click += btn_Create_Click;
             // 
             // btn_Back
             // 

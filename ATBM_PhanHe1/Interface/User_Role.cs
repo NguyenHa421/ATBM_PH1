@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace ATBM_PhanHe1.Interface
 {
@@ -16,6 +17,7 @@ namespace ATBM_PhanHe1.Interface
         BindingSource userList = new BindingSource();
         BindingSource roleList = new BindingSource();
         private string clickedUser = "";
+        public static string SelectedDeleteName { get; set; }
         public User_Role()
         {
             InitializeComponent();
@@ -131,6 +133,14 @@ namespace ATBM_PhanHe1.Interface
         private void pic_refresh_Click(object sender, EventArgs e)
         {
             roleList.DataSource = RoleDAO.Instance.GetRoleList();
+        }
+        private void dtGrid_role_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string name = dtGrid_role[e.ColumnIndex, e.RowIndex].Value.ToString();
+                SelectedDeleteName = name;
+            }
         }
     }
 }

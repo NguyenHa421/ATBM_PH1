@@ -61,6 +61,7 @@
             tb_name.PlaceholderText = "RoleName";
             tb_name.Size = new Size(224, 27);
             tb_name.TabIndex = 17;
+            tb_name.TextChanged += tb_name_TextChanged;
             // 
             // label1
             // 
@@ -96,6 +97,7 @@
             btn_Create.TabIndex = 20;
             btn_Create.Text = "Xóa";
             btn_Create.UseVisualStyleBackColor = false;
+            btn_Create.Click += btn_Create_Click;
             // 
             // btn_Back
             // 
