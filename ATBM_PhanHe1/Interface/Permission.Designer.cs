@@ -117,6 +117,7 @@
             dtGrid_role.RowHeadersWidth = 51;
             dtGrid_role.Size = new Size(676, 318);
             dtGrid_role.TabIndex = 17;
+            dtGrid_role.CellContentClick += dtGrid_role_CellContentClick;
             // 
             // panel6
             // 
