@@ -22,7 +22,7 @@ namespace ATBM_PhanHe1.Users_Roles
         private void Load()
         {
             cbB_Tables.DataSource = tableList;
-            cbB_Tables.DataSource = Table_ColumnDAO.Instance.GetListTable();
+            tableList.DataSource = Table_ColumnDAO.Instance.GetListTable();
             cbB_Tables.DisplayMember = "TABLE_NAME";
         }
 
