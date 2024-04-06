@@ -1,4 +1,5 @@
 ﻿using ATBM_PhanHe1.DAO;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace ATBM_PhanHe1.Users_Roles
     public partial class Revoke_R : Form
     {
         BindingSource tableList = new BindingSource();
+        BindingSource roletableList = new BindingSource();
         public Revoke_R()
         {
             InitializeComponent();
@@ -30,6 +32,37 @@ namespace ATBM_PhanHe1.Users_Roles
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void Load_Grid()
+        {
+            dtGrid_role_table.DataSource = roletableList;
+            roletableList.DataSource = RoleDAO.Instance.ListRole_Table(tb_user.Text, cbB_Tables.Text);
+        }
+        private void bt_View_Click(object sender, EventArgs e)
+        {
+            Load_Grid();
+        }
+
+        private void bt_revoke_Click(object sender, EventArgs e)
+        {
+            string role_name = tb_user.Text;
+            string table_name = cbB_Tables.Text;
+            List<string> privs = new List<string>();
+            foreach (var checkedItem in clb_Role.CheckedItems)
+                privs.Add(checkedItem.ToString());
+            if (privs.Count > 0)
+            {
+                try
+                {
+                    RoleDAO.Instance.Revoke_Role(role_name, privs, table_name);
+                    MessageBox.Show("Thu hồi quyền thành công", "Thông báo");
+                }
+                catch (OracleException oe)
+                {
+                    MessageBox.Show(oe.Message, "Lỗi");
+                }
+            }
+            Load_Grid();
         }
     }
 }
