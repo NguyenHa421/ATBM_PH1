@@ -15,24 +15,20 @@ namespace ATBM_PhanHe1.Users_Roles
     public partial class Grant_U : Form
     {
         BindingSource tableList = new BindingSource();
+        BindingSource columnList = new BindingSource();
         public Grant_U(string userName)
         {
             InitializeComponent();
             tb_user.Text = userName;
-            Load();
             LoadComboBox();
         }
         private void LoadComboBox()
         {
-            for (int i = 0; i < TableDAO.Instance.tables.Length; i++)
-                cbB_table.Items.Add(TableDAO.Instance.tables[i]);
-        }
-        private void Load()
-        {
-            cbB_Tables.DataSource = tableList;
+            cbB_table.DataSource = tableList;
             tableList.DataSource = Table_ColumnDAO.Instance.GetListTable();
-            cbB_Tables.DisplayMember = "TABLE_NAME";
+            cbB_table.DisplayMember = "TABLE_NAME";
         }
+        
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -44,10 +40,9 @@ namespace ATBM_PhanHe1.Users_Roles
         }
         private void LoadColumns()
         {
-            cbB_column.Items.Clear();
-            List<string> columns = TableDAO.Instance.GetColumns(cbB_table.Text);
-            for (int i = 0;i < columns.Count;i++)
-                cbB_column.Items.Add(columns[i]);
+            cbB_column.DataSource = columnList;
+            columnList.DataSource = Table_ColumnDAO.Instance.GetListColumn(cbB_table.Text);
+            cbB_column.DisplayMember = "COLUMN_NAME";
         }
     }
 }
