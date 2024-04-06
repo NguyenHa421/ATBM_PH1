@@ -31,14 +31,14 @@
             bt_View = new Button();
             bt_revoke = new Button();
             btn_Back = new Button();
-            dataGridView1 = new DataGridView();
+            dtGrid_role_table = new DataGridView();
             clb_Role = new CheckedListBox();
             tb_revoke = new Label();
             lb_n_R = new Label();
             tb_user = new TextBox();
             lb_Name = new Label();
             cbB_Tables = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_role_table).BeginInit();
             SuspendLayout();
             // 
             // bt_View
@@ -55,6 +55,7 @@
             bt_View.TabIndex = 50;
             bt_View.Text = "Xem";
             bt_View.UseVisualStyleBackColor = false;
+            bt_View.Click += bt_View_Click;
             // 
             // bt_revoke
             // 
@@ -70,6 +71,7 @@
             bt_revoke.TabIndex = 49;
             bt_revoke.Text = "Thu hồi";
             bt_revoke.UseVisualStyleBackColor = false;
+            bt_revoke.Click += bt_revoke_Click;
             // 
             // btn_Back
             // 
@@ -87,15 +89,15 @@
             btn_Back.UseVisualStyleBackColor = false;
             btn_Back.Click += btn_Back_Click;
             // 
-            // dataGridView1
+            // dtGrid_role_table
             // 
-            dataGridView1.BackgroundColor = Color.WhiteSmoke;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(34, 64);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(271, 286);
-            dataGridView1.TabIndex = 47;
+            dtGrid_role_table.BackgroundColor = Color.WhiteSmoke;
+            dtGrid_role_table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGrid_role_table.Location = new Point(34, 64);
+            dtGrid_role_table.Name = "dtGrid_role_table";
+            dtGrid_role_table.RowHeadersWidth = 51;
+            dtGrid_role_table.Size = new Size(271, 286);
+            dtGrid_role_table.TabIndex = 47;
             // 
             // clb_Role
             // 
@@ -159,7 +161,7 @@
             cbB_Tables.Size = new Size(265, 36);
             cbB_Tables.TabIndex = 68;
             // 
-            // Revorke_R
+            // Revoke_R
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -169,16 +171,16 @@
             Controls.Add(bt_View);
             Controls.Add(bt_revoke);
             Controls.Add(btn_Back);
-            Controls.Add(dataGridView1);
+            Controls.Add(dtGrid_role_table);
             Controls.Add(clb_Role);
             Controls.Add(tb_revoke);
             Controls.Add(lb_n_R);
             Controls.Add(tb_user);
             Controls.Add(lb_Name);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Revorke_R";
+            Name = "Revoke_R";
             Text = "Revorke_R";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_role_table).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,7 +190,7 @@
         private Button bt_View;
         private Button bt_revoke;
         private Button btn_Back;
-        private DataGridView dataGridView1;
+        private DataGridView dtGrid_role_table;
         private CheckedListBox clb_Role;
         private Label tb_revoke;
         private Label lb_n_R;
