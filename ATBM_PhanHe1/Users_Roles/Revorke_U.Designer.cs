@@ -34,10 +34,10 @@
             dataGridView1 = new DataGridView();
             clb_Role = new CheckedListBox();
             tb_revoke = new Label();
-            tb_R = new TextBox();
             lb_n_R = new Label();
             tb_user = new TextBox();
             lb_Name = new Label();
+            cbB_Tables = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -119,15 +119,6 @@
             tb_revoke.TabIndex = 34;
             tb_revoke.Text = "Thu hồi quyền";
             // 
-            // tb_R
-            // 
-            tb_R.BorderStyle = BorderStyle.FixedSingle;
-            tb_R.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_R.Location = new Point(439, 123);
-            tb_R.Name = "tb_R";
-            tb_R.Size = new Size(265, 34);
-            tb_R.TabIndex = 33;
-            // 
             // lb_n_R
             // 
             lb_n_R.AutoSize = true;
@@ -157,19 +148,28 @@
             lb_Name.TabIndex = 30;
             lb_Name.Text = "Tên user";
             // 
+            // cbB_Tables
+            // 
+            cbB_Tables.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbB_Tables.FormattingEnabled = true;
+            cbB_Tables.Location = new Point(439, 122);
+            cbB_Tables.Name = "cbB_Tables";
+            cbB_Tables.Size = new Size(265, 36);
+            cbB_Tables.TabIndex = 69;
+            // 
             // Revorke_U
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(739, 484);
+            Controls.Add(cbB_Tables);
             Controls.Add(bt_View);
             Controls.Add(bt_revoke);
             Controls.Add(btn_Back);
             Controls.Add(dataGridView1);
             Controls.Add(clb_Role);
             Controls.Add(tb_revoke);
-            Controls.Add(tb_R);
             Controls.Add(lb_n_R);
             Controls.Add(tb_user);
             Controls.Add(lb_Name);
@@ -189,9 +189,9 @@
         private DataGridView dataGridView1;
         private CheckedListBox clb_Role;
         private Label tb_revoke;
-        private TextBox tb_R;
         private Label lb_n_R;
         private TextBox tb_user;
         private Label lb_Name;
+        private ComboBox cbB_Tables;
     }
 }
