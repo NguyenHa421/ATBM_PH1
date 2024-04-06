@@ -90,7 +90,9 @@ namespace ATBM_PhanHe1.Interface
 
         private void btn_revoke_role_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Users_Roles.Revorke_R());
+            string userName = clickedUser;
+            clickedUser = "";
+            OpenChildForm(new Users_Roles.Revorke_R(userName));
         }
 
         private void btn_grant_role_Click(object sender, EventArgs e)
