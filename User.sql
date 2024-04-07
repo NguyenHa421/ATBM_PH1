@@ -44,3 +44,11 @@ BEGIN
     EXECUTE IMMEDIATE ('REVOKE '||privilege_name||' ON '||table_name||' FROM '||user_name);
 END;
 /
+
+--DOI MAT KHAU CUA USER
+CREATE OR REPLACE PROCEDURE change_password (user_name IN VARCHAR2, password IN VARCHAR2)
+AS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER USER '||user_name||' IDENTIFIED BY '||password);
+END;
+/

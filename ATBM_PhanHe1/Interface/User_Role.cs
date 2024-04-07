@@ -109,7 +109,7 @@ namespace ATBM_PhanHe1.Interface
 
         private void btn_update_user_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new User.Update_U());
+            OpenChildForm(new User.Update_U(clickedUser));
         }
 
         private void btn_dstk_Click(object sender, EventArgs e)

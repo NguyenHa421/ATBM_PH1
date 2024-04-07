@@ -128,7 +128,12 @@ namespace ATBM_PhanHe1.DAO
                 privStr += str + ",";
             privStr = privStr.Remove(privStr.Length - 1);
             string query = $"begin revoke_privilege_to_user('{userName}','{privStr}','{tableName}'); end;";
-            DataProvider.Instance.ExecuteNonQuery (query);
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+        public void ChangePassword(string userName, string password)
+        {
+            string query = $"begin change_password('{userName}','{password}'); end;";
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
     }
 }
