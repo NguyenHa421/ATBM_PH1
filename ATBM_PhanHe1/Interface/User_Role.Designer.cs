@@ -46,7 +46,6 @@
             btn_update_user = new Button();
             btn_delete_user = new Button();
             btn_create_user = new Button();
-            btn_inspect_user = new Button();
             panel5 = new Panel();
             tb_search_user = new TextBox();
             pic_search_user = new PictureBox();
@@ -56,7 +55,6 @@
             dtGrid_role = new DataGridView();
             btn_delete_role = new Button();
             btn_create_role = new Button();
-            btn_inspect_role = new Button();
             panel6 = new Panel();
             tb_search_role = new TextBox();
             pic_search_role = new PictureBox();
@@ -226,7 +224,6 @@
             tabPage1.Controls.Add(btn_update_user);
             tabPage1.Controls.Add(btn_delete_user);
             tabPage1.Controls.Add(btn_create_user);
-            tabPage1.Controls.Add(btn_inspect_user);
             tabPage1.Controls.Add(panel5);
             tabPage1.Controls.Add(btn_search_user);
             tabPage1.ForeColor = Color.Black;
@@ -307,21 +304,6 @@
             btn_create_user.UseVisualStyleBackColor = false;
             btn_create_user.Click += btn_create_user_Click;
             // 
-            // btn_inspect_user
-            // 
-            btn_inspect_user.BackColor = Color.White;
-            btn_inspect_user.BackgroundImage = Properties.Resources.button_round2;
-            btn_inspect_user.FlatAppearance.BorderSize = 0;
-            btn_inspect_user.FlatStyle = FlatStyle.Flat;
-            btn_inspect_user.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btn_inspect_user.ForeColor = SystemColors.Window;
-            btn_inspect_user.Location = new Point(10, 391);
-            btn_inspect_user.Name = "btn_inspect_user";
-            btn_inspect_user.Size = new Size(91, 38);
-            btn_inspect_user.TabIndex = 6;
-            btn_inspect_user.Text = "Xem";
-            btn_inspect_user.UseVisualStyleBackColor = false;
-            // 
             // panel5
             // 
             panel5.BackColor = Color.WhiteSmoke;
@@ -378,7 +360,6 @@
             tabPage2.Controls.Add(dtGrid_role);
             tabPage2.Controls.Add(btn_delete_role);
             tabPage2.Controls.Add(btn_create_role);
-            tabPage2.Controls.Add(btn_inspect_role);
             tabPage2.Controls.Add(panel6);
             tabPage2.Controls.Add(btn_search_role);
             tabPage2.ForeColor = Color.Black;
@@ -442,21 +423,6 @@
             btn_create_role.Text = "Tạo role";
             btn_create_role.UseVisualStyleBackColor = false;
             btn_create_role.Click += btn_create_role_Click;
-            // 
-            // btn_inspect_role
-            // 
-            btn_inspect_role.BackColor = Color.White;
-            btn_inspect_role.BackgroundImage = Properties.Resources.button_round2;
-            btn_inspect_role.FlatAppearance.BorderSize = 0;
-            btn_inspect_role.FlatStyle = FlatStyle.Flat;
-            btn_inspect_role.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btn_inspect_role.ForeColor = SystemColors.Window;
-            btn_inspect_role.Location = new Point(199, 392);
-            btn_inspect_role.Name = "btn_inspect_role";
-            btn_inspect_role.Size = new Size(91, 38);
-            btn_inspect_role.TabIndex = 13;
-            btn_inspect_role.Text = "Xem";
-            btn_inspect_role.UseVisualStyleBackColor = false;
             // 
             // panel6
             // 
@@ -561,7 +527,6 @@
         private Button btn_update_user;
         private Button btn_delete_user;
         private Button btn_create_user;
-        private Button btn_inspect_user;
         private Panel panel5;
         private TextBox tb_search_user;
         private PictureBox pic_search_user;
@@ -569,7 +534,6 @@
         private DataGridView dtGrid_role;
         private Button btn_delete_role;
         private Button btn_create_role;
-        private Button btn_inspect_role;
         private Panel panel6;
         private TextBox tb_search_role;
         private PictureBox pic_search_role;
