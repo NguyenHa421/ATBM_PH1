@@ -53,7 +53,6 @@
             lb_Column.Size = new Size(78, 28);
             lb_Column.TabIndex = 65;
             lb_Column.Text = "Tên cột";
-            lb_Column.Visible = false;
             // 
             // bt_View
             // 
@@ -185,7 +184,6 @@
             cbB_Column.Name = "cbB_Column";
             cbB_Column.Size = new Size(265, 36);
             cbB_Column.TabIndex = 68;
-            cbB_Column.Visible = false;
             // 
             // cB_allCol
             // 
@@ -197,7 +195,6 @@
             cB_allCol.TabIndex = 69;
             cB_allCol.Text = "Tất cả cột";
             cB_allCol.UseVisualStyleBackColor = true;
-            cB_allCol.Visible = false;
             // 
             // Grant_R
             // 
