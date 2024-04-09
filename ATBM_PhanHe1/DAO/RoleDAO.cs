@@ -72,7 +72,7 @@ namespace ATBM_PhanHe1.DAO
             foreach (string str in privs)
             {
                 privStr += str;
-                if (str == "Update")
+                if (str == "Update" || str == "Insert")
                     privStr += "(" + column_name + ")";
                 privStr += ",";
             }
