@@ -32,8 +32,8 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            tB_name = new TextBox();
+            tB_pass = new TextBox();
             Login_button = new Button();
             pic_close = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -85,27 +85,27 @@
             label3.TabIndex = 3;
             label3.Text = "Password";
             // 
-            // textBox1
+            // tB_name
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(549, 225);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "   Username";
-            textBox1.Size = new Size(312, 38);
-            textBox1.TabIndex = 4;
-            textBox1.TabStop = false;
+            tB_name.BorderStyle = BorderStyle.FixedSingle;
+            tB_name.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tB_name.Location = new Point(549, 225);
+            tB_name.Name = "tB_name";
+            tB_name.PlaceholderText = "   Username";
+            tB_name.Size = new Size(312, 38);
+            tB_name.TabIndex = 4;
+            tB_name.TabStop = false;
             // 
-            // textBox2
+            // tB_pass
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(549, 361);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "   Password";
-            textBox2.Size = new Size(312, 38);
-            textBox2.TabIndex = 5;
-            textBox2.TabStop = false;
+            tB_pass.BorderStyle = BorderStyle.FixedSingle;
+            tB_pass.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tB_pass.Location = new Point(549, 361);
+            tB_pass.Name = "tB_pass";
+            tB_pass.PlaceholderText = "   Password";
+            tB_pass.Size = new Size(312, 38);
+            tB_pass.TabIndex = 5;
+            tB_pass.TabStop = false;
             // 
             // Login_button
             // 
@@ -145,8 +145,8 @@
             ClientSize = new Size(957, 590);
             Controls.Add(pic_close);
             Controls.Add(Login_button);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tB_pass);
+            Controls.Add(tB_name);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -167,8 +167,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tB_name;
+        private TextBox tB_pass;
         private Button Login_button;
         private PictureBox pic_close;
     }
