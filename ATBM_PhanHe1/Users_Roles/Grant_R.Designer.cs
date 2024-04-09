@@ -30,7 +30,6 @@
         {
             lb_Column = new Label();
             bt_View = new Button();
-            cB_grant = new CheckBox();
             bt_grant = new Button();
             btn_Back = new Button();
             dtGrid_role_table = new DataGridView();
@@ -49,11 +48,12 @@
             // 
             lb_Column.AutoSize = true;
             lb_Column.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Column.Location = new Point(311, 352);
+            lb_Column.Location = new Point(311, 333);
             lb_Column.Name = "lb_Column";
             lb_Column.Size = new Size(78, 28);
             lb_Column.TabIndex = 65;
             lb_Column.Text = "Tên cột";
+            lb_Column.Visible = false;
             // 
             // bt_View
             // 
@@ -70,17 +70,6 @@
             bt_View.Text = "Xem";
             bt_View.UseVisualStyleBackColor = false;
             bt_View.Click += bt_View_Click;
-            // 
-            // cB_grant
-            // 
-            cB_grant.AutoSize = true;
-            cB_grant.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cB_grant.Location = new Point(476, 311);
-            cB_grant.Name = "cB_grant";
-            cB_grant.Size = new Size(224, 32);
-            cB_grant.TabIndex = 63;
-            cB_grant.Text = "with GRANT OPTION";
-            cB_grant.UseVisualStyleBackColor = true;
             // 
             // bt_grant
             // 
@@ -192,21 +181,23 @@
             cbB_Column.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_Column.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_Column.FormattingEnabled = true;
-            cbB_Column.Location = new Point(439, 349);
+            cbB_Column.Location = new Point(439, 330);
             cbB_Column.Name = "cbB_Column";
             cbB_Column.Size = new Size(265, 36);
             cbB_Column.TabIndex = 68;
+            cbB_Column.Visible = false;
             // 
             // cB_allCol
             // 
             cB_allCol.AutoSize = true;
             cB_allCol.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cB_allCol.Location = new Point(476, 391);
+            cB_allCol.Location = new Point(476, 377);
             cB_allCol.Name = "cB_allCol";
             cB_allCol.Size = new Size(121, 32);
             cB_allCol.TabIndex = 69;
             cB_allCol.Text = "Tất cả cột";
             cB_allCol.UseVisualStyleBackColor = true;
+            cB_allCol.Visible = false;
             // 
             // Grant_R
             // 
@@ -219,7 +210,6 @@
             Controls.Add(cbB_Tables);
             Controls.Add(lb_Column);
             Controls.Add(bt_View);
-            Controls.Add(cB_grant);
             Controls.Add(bt_grant);
             Controls.Add(btn_Back);
             Controls.Add(dtGrid_role_table);
@@ -239,7 +229,6 @@
         #endregion
         private Label lb_Column;
         private Button bt_View;
-        private CheckBox cB_grant;
         private Button bt_grant;
         private Button btn_Back;
         private DataGridView dtGrid_role_table;
