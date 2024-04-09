@@ -29,9 +29,13 @@ END;
 CREATE OR REPLACE PROCEDURE grant_privilege_to_role (role_name IN VARCHAR2, privilege_name IN VARCHAR2, table_name IN VARCHAR2)
 as
 BEGIN
-    EXECUTE IMMEDIATE ('GRANT '||privilege_name|| 'ON '||table_name||' TO '||role_name);
+    EXECUTE IMMEDIATE ('GRANT '||privilege_name|| ' ON '||table_name||' TO '||role_name);
 end;
 /
+begin
+    grant_privilege_to_role ('C##TEST42', 'INSERT', 'TB_SINHVIEN');
+end;
+select d.role, p.table_name, p.column_name, p.privilege from dba_roles d left join role_tab_privs p on p.role = d.role where d.role = 'C##TEST42';
 --THU HOI QUYEN CUA ROLE
 CREATE OR REPLACE PROCEDURE revoke_privilege_to_role (role_name IN VARCHAR2, privilege_name IN VARCHAR2, table_name IN VARCHAR2)
 AS
