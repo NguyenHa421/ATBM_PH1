@@ -64,16 +64,6 @@ namespace ATBM_PhanHe1.Users_Roles
 
             if (privs.Count > 0)
             {
-                foreach (var priv in privs)
-                {
-                    string priv_name = priv.ToString();
-                    if (priv_name == "SELECT" || priv_name == "UPDATE")
-                    {
-                        lb_Column.Visible = true;
-                        cbB_Column.Visible = true;
-                        cB_allCol.Visible = true;
-                    }
-                }
                 try
                 {
                     if (cB_allCol.Checked)
@@ -88,19 +78,9 @@ namespace ATBM_PhanHe1.Users_Roles
                 }
             }
             Load_Grid();
-            lb_Column.Visible = false;
-            cbB_Column.Visible = false;
-            cB_allCol.Visible = false;
+            
         }
 
-        private void clb_Role_SelectedIndexChanged(object sender, ItemCheckEventArgs e)
-        {
-            if (e.ToString() == "Select" && clb_Role.GetItemChecked(e.Index))
-            {
-                lb_Column.Visible = true;
-                cbB_Column.Visible = true;
-                cB_allCol.Visible = true;
-            }
-        }
+       
     }
 }
