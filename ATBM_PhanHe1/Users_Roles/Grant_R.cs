@@ -58,18 +58,28 @@ namespace ATBM_PhanHe1.Users_Roles
             string role_name = tb_user.Text;
             string table_name = cbB_Tables.Text;
             string column_name = cbB_Column.Text;
-            int withGrantO = cB_grant.Checked ? 1 : 0;
             List<string> privs = new List<string>();
             foreach (var checkedItem in clb_Role.CheckedItems)
                 privs.Add(checkedItem.ToString());
+
             if (privs.Count > 0)
             {
+                foreach (var priv in privs)
+                {
+                    string priv_name = priv.ToString();
+                    if (priv_name == "SELECT" || priv_name == "UPDATE")
+                    {
+                        lb_Column.Visible = true;
+                        cbB_Column.Visible = true;
+                        cB_allCol.Visible = true;
+                    }
+                }
                 try
                 {
                     if (cB_allCol.Checked)
-                        RoleDAO.Instance.Grant_Role(role_name, privs, table_name, withGrantO);
+                        RoleDAO.Instance.Grant_Role(role_name, privs, table_name);
                     else
-                        RoleDAO.Instance.Grant_Role(role_name, privs, table_name, withGrantO, column_name);
+                        RoleDAO.Instance.Grant_Role(role_name, privs, table_name, column_name);
                     MessageBox.Show("Cấp quyền thành công", "Thông báo");
                 }
                 catch (OracleException oe)
@@ -78,6 +88,19 @@ namespace ATBM_PhanHe1.Users_Roles
                 }
             }
             Load_Grid();
+            lb_Column.Visible = false;
+            cbB_Column.Visible = false;
+            cB_allCol.Visible = false;
+        }
+
+        private void clb_Role_SelectedIndexChanged(object sender, ItemCheckEventArgs e)
+        {
+            if (e.ToString() == "Select" && clb_Role.GetItemChecked(e.Index))
+            {
+                lb_Column.Visible = true;
+                cbB_Column.Visible = true;
+                cB_allCol.Visible = true;
+            }
         }
     }
 }
