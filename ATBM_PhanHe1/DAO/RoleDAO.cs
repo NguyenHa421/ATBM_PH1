@@ -56,17 +56,17 @@ namespace ATBM_PhanHe1.DAO
             return DataProvider.Instance.ExecuteQuery($"select d.role, p.table_name, p.column_name, p.privilege from dba_roles d left join role_tab_privs p on p.role = d.role where lower(d.role) like lower('%{roleName}%') and lower(p.table_name) like lower('%{tableName}%')");
         }
         
-        public bool Grant_Role(string role_name, List<string> privs, string table_name, int withGrantOption)
+        public bool Grant_Role(string role_name, List<string> privs, string table_name)
         {
             string privStr = "";
             foreach (string str in privs)
                 privStr += str + ",";
             privStr = privStr.Remove(privStr.Length - 1);
-            string query = $"begin grant_privilege_to_role('{role_name}','{privStr}','{table_name}','{withGrantOption}');end;";
+            string query = $"begin grant_privilege_to_role('{role_name}','{privStr}','{table_name}');end;";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public bool Grant_Role(string role_name, List<string> privs, string table_name, int withGrantOption, string column_name)
+        public bool Grant_Role(string role_name, List<string> privs, string table_name, string column_name)
         {
             string privStr = "";
             foreach (string str in privs)
@@ -77,7 +77,7 @@ namespace ATBM_PhanHe1.DAO
                 privStr += ",";
             }
             privStr = privStr.Remove(privStr.Length - 1);
-            string query = $"begin grant_privilege_to_role('{role_name}','{privStr}','{table_name}','{withGrantOption}');end;";
+            string query = $"begin grant_privilege_to_role('{role_name}','{privStr}','{table_name}');end;";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
