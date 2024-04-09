@@ -66,6 +66,7 @@
             btn_Create.TabIndex = 20;
             btn_Create.Text = "Thay đổi";
             btn_Create.UseVisualStyleBackColor = false;
+            btn_Create.Click += btn_Create_Click;
             // 
             // btn_Back
             // 
@@ -98,6 +99,7 @@
             tb_user.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tb_user.Location = new Point(179, 60);
             tb_user.Name = "tb_user";
+            tb_user.ReadOnly = true;
             tb_user.Size = new Size(265, 34);
             tb_user.TabIndex = 17;
             // 
