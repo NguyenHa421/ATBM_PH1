@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace ATBM_PhanHe1.Interface
 {
@@ -109,7 +110,12 @@ namespace ATBM_PhanHe1.Interface
         }
         private void btn_role_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Users_Roles.Grant_U_R());
+            if (clickedUser != "")
+            {
+                string userName = clickedUser;
+                clickedUser = "";
+                OpenChildForm(new Users_Roles.Grant_U_R(userName));
+            }
         }
 
         private void btn_qlur_Click(object sender, EventArgs e)
