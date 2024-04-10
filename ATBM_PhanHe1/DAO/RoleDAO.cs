@@ -91,5 +91,10 @@ namespace ATBM_PhanHe1.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public DataTable ListRole_CbB()
+        {
+            return DataProvider.Instance.ExecuteQuery("select role from dba_roles");
+        }
+
     }
 }
