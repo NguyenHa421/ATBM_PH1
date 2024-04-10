@@ -135,5 +135,21 @@ namespace ATBM_PhanHe1.DAO
             string query = $"begin change_password('{userName}','{password}'); end;";
             DataProvider.Instance.ExecuteNonQuery(query);
         }
+        public DataTable ListUserRole_Table(string userName)
+        {
+            return DataProvider.Instance.ExecuteQuery($"select grantee, granted_role, admin_option from dba_role_privs where lower(grantee) like lower('%{userName}%')");
+        }
+        public bool Grant_Role_To_User(string user_name, string role_name, int AdminOption)
+        {
+            string query = $"begin grant_role_to_user('{user_name}','{role_name}',{AdminOption});end;";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool Revoke_Role_From_User(string user_name, string role_name)
+        {
+            string query = $"begin revoke_role_to_user('{user_name}','{role_name}');end;";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }
