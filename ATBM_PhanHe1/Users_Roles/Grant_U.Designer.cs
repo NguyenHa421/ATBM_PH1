@@ -33,7 +33,6 @@
             btn_Back = new Button();
             dtGrid_privs = new DataGridView();
             clb_Privs = new CheckedListBox();
-            tb_add = new Label();
             lb_n_R = new Label();
             tb_user = new TextBox();
             lb_Name = new Label();
@@ -41,6 +40,7 @@
             cbB_table = new ComboBox();
             cbB_column = new ComboBox();
             cB_allCol = new CheckBox();
+            tb_add = new Label();
             ((System.ComponentModel.ISupportInitialize)dtGrid_privs).BeginInit();
             SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             // 
             cB_grant.AutoSize = true;
             cB_grant.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cB_grant.Location = new Point(439, 282);
+            cB_grant.Location = new Point(452, 134);
             cB_grant.Name = "cB_grant";
             cB_grant.Size = new Size(224, 32);
             cB_grant.TabIndex = 50;
@@ -63,7 +63,7 @@
             bt_grant.FlatStyle = FlatStyle.Flat;
             bt_grant.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             bt_grant.ForeColor = SystemColors.Window;
-            bt_grant.Location = new Point(613, 422);
+            bt_grant.Location = new Point(636, 434);
             bt_grant.Name = "bt_grant";
             bt_grant.Size = new Size(91, 38);
             bt_grant.TabIndex = 49;
@@ -79,7 +79,7 @@
             btn_Back.FlatStyle = FlatStyle.Flat;
             btn_Back.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_Back.ForeColor = SystemColors.Window;
-            btn_Back.Location = new Point(311, 422);
+            btn_Back.Location = new Point(17, 434);
             btn_Back.Name = "btn_Back";
             btn_Back.Size = new Size(91, 38);
             btn_Back.TabIndex = 48;
@@ -91,10 +91,10 @@
             // 
             dtGrid_privs.BackgroundColor = Color.WhiteSmoke;
             dtGrid_privs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtGrid_privs.Location = new Point(34, 47);
+            dtGrid_privs.Location = new Point(12, 199);
             dtGrid_privs.Name = "dtGrid_privs";
             dtGrid_privs.RowHeadersWidth = 51;
-            dtGrid_privs.Size = new Size(271, 347);
+            dtGrid_privs.Size = new Size(715, 229);
             dtGrid_privs.TabIndex = 47;
             // 
             // clb_Privs
@@ -104,26 +104,16 @@
             clb_Privs.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             clb_Privs.FormattingEnabled = true;
             clb_Privs.Items.AddRange(new object[] { "Insert", "Delete", "Select", "Update" });
-            clb_Privs.Location = new Point(439, 160);
+            clb_Privs.Location = new Point(577, 12);
             clb_Privs.Name = "clb_Privs";
             clb_Privs.Size = new Size(150, 116);
             clb_Privs.TabIndex = 46;
-            // 
-            // tb_add
-            // 
-            tb_add.AutoSize = true;
-            tb_add.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tb_add.Location = new Point(311, 160);
-            tb_add.Name = "tb_add";
-            tb_add.Size = new Size(109, 28);
-            tb_add.TabIndex = 45;
-            tb_add.Text = "Cấp quyền";
             // 
             // lb_n_R
             // 
             lb_n_R.AutoSize = true;
             lb_n_R.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_n_R.Location = new Point(311, 106);
+            lb_n_R.Location = new Point(12, 65);
             lb_n_R.Name = "lb_n_R";
             lb_n_R.Size = new Size(96, 28);
             lb_n_R.TabIndex = 43;
@@ -133,7 +123,7 @@
             // 
             tb_user.BorderStyle = BorderStyle.FixedSingle;
             tb_user.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_user.Location = new Point(439, 45);
+            tb_user.Location = new Point(140, 7);
             tb_user.Name = "tb_user";
             tb_user.ReadOnly = true;
             tb_user.Size = new Size(265, 34);
@@ -143,7 +133,7 @@
             // 
             lb_Name.AutoSize = true;
             lb_Name.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Name.Location = new Point(311, 47);
+            lb_Name.Location = new Point(12, 9);
             lb_Name.Name = "lb_Name";
             lb_Name.Size = new Size(89, 28);
             lb_Name.TabIndex = 41;
@@ -153,7 +143,7 @@
             // 
             lb_Column.AutoSize = true;
             lb_Column.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Column.Location = new Point(311, 362);
+            lb_Column.Location = new Point(12, 122);
             lb_Column.Name = "lb_Column";
             lb_Column.Size = new Size(78, 28);
             lb_Column.TabIndex = 52;
@@ -164,7 +154,7 @@
             cbB_table.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_table.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
             cbB_table.FormattingEnabled = true;
-            cbB_table.Location = new Point(439, 103);
+            cbB_table.Location = new Point(140, 62);
             cbB_table.Name = "cbB_table";
             cbB_table.Size = new Size(265, 36);
             cbB_table.TabIndex = 54;
@@ -175,7 +165,7 @@
             cbB_column.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_column.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
             cbB_column.FormattingEnabled = true;
-            cbB_column.Location = new Point(439, 359);
+            cbB_column.Location = new Point(140, 119);
             cbB_column.Name = "cbB_column";
             cbB_column.Size = new Size(265, 36);
             cbB_column.TabIndex = 54;
@@ -184,7 +174,7 @@
             // 
             cB_allCol.AutoSize = true;
             cB_allCol.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cB_allCol.Location = new Point(439, 320);
+            cB_allCol.Location = new Point(140, 161);
             cB_allCol.Name = "cB_allCol";
             cB_allCol.Size = new Size(121, 32);
             cB_allCol.TabIndex = 50;
@@ -192,12 +182,23 @@
             cB_allCol.UseVisualStyleBackColor = true;
             cB_allCol.CheckedChanged += cB_allCol_CheckedChanged;
             // 
+            // tb_add
+            // 
+            tb_add.AutoSize = true;
+            tb_add.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tb_add.Location = new Point(452, 50);
+            tb_add.Name = "tb_add";
+            tb_add.Size = new Size(109, 28);
+            tb_add.TabIndex = 59;
+            tb_add.Text = "Cấp quyền";
+            // 
             // Grant_U
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(739, 484);
+            Controls.Add(tb_add);
             Controls.Add(cbB_column);
             Controls.Add(cbB_table);
             Controls.Add(lb_Column);
@@ -207,7 +208,6 @@
             Controls.Add(btn_Back);
             Controls.Add(dtGrid_privs);
             Controls.Add(clb_Privs);
-            Controls.Add(tb_add);
             Controls.Add(lb_n_R);
             Controls.Add(tb_user);
             Controls.Add(lb_Name);
@@ -225,7 +225,6 @@
         private Button btn_Back;
         private DataGridView dtGrid_privs;
         private CheckedListBox clb_Privs;
-        private Label tb_add;
         private Label lb_n_R;
         private TextBox tb_user;
         private Label lb_Name;
@@ -233,5 +232,6 @@
         private ComboBox cbB_table;
         private ComboBox cbB_column;
         private CheckBox cB_allCol;
+        private Label tb_add;
     }
 }

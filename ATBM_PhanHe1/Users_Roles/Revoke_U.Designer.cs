@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            bt_View = new Button();
             bt_revoke = new Button();
             btn_Back = new Button();
             dtGrid_priv = new DataGridView();
@@ -41,21 +40,6 @@
             ((System.ComponentModel.ISupportInitialize)dtGrid_priv).BeginInit();
             SuspendLayout();
             // 
-            // bt_View
-            // 
-            bt_View.BackColor = Color.White;
-            bt_View.BackgroundImage = Properties.Resources.button_round2;
-            bt_View.FlatAppearance.BorderSize = 0;
-            bt_View.FlatStyle = FlatStyle.Flat;
-            bt_View.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            bt_View.ForeColor = SystemColors.Window;
-            bt_View.Location = new Point(613, 175);
-            bt_View.Name = "bt_View";
-            bt_View.Size = new Size(91, 38);
-            bt_View.TabIndex = 40;
-            bt_View.Text = "Xem";
-            bt_View.UseVisualStyleBackColor = false;
-            // 
             // bt_revoke
             // 
             bt_revoke.BackColor = Color.White;
@@ -64,7 +48,7 @@
             bt_revoke.FlatStyle = FlatStyle.Flat;
             bt_revoke.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             bt_revoke.ForeColor = SystemColors.Window;
-            bt_revoke.Location = new Point(613, 386);
+            bt_revoke.Location = new Point(636, 434);
             bt_revoke.Name = "bt_revoke";
             bt_revoke.Size = new Size(91, 38);
             bt_revoke.TabIndex = 38;
@@ -80,7 +64,7 @@
             btn_Back.FlatStyle = FlatStyle.Flat;
             btn_Back.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_Back.ForeColor = SystemColors.Window;
-            btn_Back.Location = new Point(311, 386);
+            btn_Back.Location = new Point(17, 434);
             btn_Back.Name = "btn_Back";
             btn_Back.Size = new Size(91, 38);
             btn_Back.TabIndex = 37;
@@ -92,10 +76,10 @@
             // 
             dtGrid_priv.BackgroundColor = Color.WhiteSmoke;
             dtGrid_priv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtGrid_priv.Location = new Point(34, 66);
+            dtGrid_priv.Location = new Point(12, 129);
             dtGrid_priv.Name = "dtGrid_priv";
             dtGrid_priv.RowHeadersWidth = 51;
-            dtGrid_priv.Size = new Size(271, 328);
+            dtGrid_priv.Size = new Size(715, 299);
             dtGrid_priv.TabIndex = 36;
             // 
             // clb_privs
@@ -105,7 +89,7 @@
             clb_privs.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             clb_privs.FormattingEnabled = true;
             clb_privs.Items.AddRange(new object[] { "Select", "Insert", "Delete", "Update" });
-            clb_privs.Location = new Point(476, 236);
+            clb_privs.Location = new Point(562, 7);
             clb_privs.Name = "clb_privs";
             clb_privs.Size = new Size(150, 116);
             clb_privs.TabIndex = 35;
@@ -114,7 +98,7 @@
             // 
             tb_revoke.AutoSize = true;
             tb_revoke.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tb_revoke.Location = new Point(311, 236);
+            tb_revoke.Location = new Point(411, 9);
             tb_revoke.Name = "tb_revoke";
             tb_revoke.Size = new Size(145, 28);
             tb_revoke.TabIndex = 34;
@@ -124,7 +108,7 @@
             // 
             lb_n_R.AutoSize = true;
             lb_n_R.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_n_R.Location = new Point(311, 125);
+            lb_n_R.Location = new Point(12, 73);
             lb_n_R.Name = "lb_n_R";
             lb_n_R.Size = new Size(96, 28);
             lb_n_R.TabIndex = 32;
@@ -134,7 +118,7 @@
             // 
             tb_user.BorderStyle = BorderStyle.FixedSingle;
             tb_user.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_user.Location = new Point(439, 64);
+            tb_user.Location = new Point(140, 12);
             tb_user.Name = "tb_user";
             tb_user.ReadOnly = true;
             tb_user.Size = new Size(265, 34);
@@ -144,7 +128,7 @@
             // 
             lb_Name.AutoSize = true;
             lb_Name.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Name.Location = new Point(311, 66);
+            lb_Name.Location = new Point(12, 14);
             lb_Name.Name = "lb_Name";
             lb_Name.Size = new Size(89, 28);
             lb_Name.TabIndex = 30;
@@ -155,7 +139,7 @@
             cbB_Tables.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_Tables.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_Tables.FormattingEnabled = true;
-            cbB_Tables.Location = new Point(439, 122);
+            cbB_Tables.Location = new Point(140, 70);
             cbB_Tables.Name = "cbB_Tables";
             cbB_Tables.Size = new Size(265, 36);
             cbB_Tables.TabIndex = 69;
@@ -168,7 +152,6 @@
             BackColor = Color.White;
             ClientSize = new Size(739, 484);
             Controls.Add(cbB_Tables);
-            Controls.Add(bt_View);
             Controls.Add(bt_revoke);
             Controls.Add(btn_Back);
             Controls.Add(dtGrid_priv);
@@ -186,8 +169,6 @@
         }
 
         #endregion
-
-        private Button bt_View;
         private Button bt_revoke;
         private Button btn_Back;
         private DataGridView dtGrid_priv;

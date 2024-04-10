@@ -53,7 +53,7 @@ namespace ATBM_PhanHe1.Users_Roles
             {
                 try
                 {
-                    UserDAO.Instance.RevokePrivs(tb_user.Text,privs, cbB_Tables.Text);
+                    UserDAO.Instance.RevokePrivs(tb_user.Text, privs, cbB_Tables.Text);
                     MessageBox.Show("Thu hồi quyền thành công", "Thông báo");
                 }
                 catch (OracleException oe)

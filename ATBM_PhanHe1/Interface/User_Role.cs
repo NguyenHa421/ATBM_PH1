@@ -86,13 +86,13 @@ namespace ATBM_PhanHe1.Interface
 
         private void btn_delete_user_Click(object sender, EventArgs e)
         {
-            if(clickedUser!="")
+            if (clickedUser != "")
             {
                 string userName = clickedUser;
                 clickedUser = "";
                 OpenChildForm(new User.Delete_U(userName));
                 userList.DataSource = UserDAO.Instance.GetUserWithPrivs();
-            }    
+            }
         }
 
         private void btn_create_role_Click(object sender, EventArgs e)

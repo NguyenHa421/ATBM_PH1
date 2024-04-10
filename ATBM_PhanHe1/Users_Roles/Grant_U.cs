@@ -85,10 +85,5 @@ namespace ATBM_PhanHe1.Users_Roles
             else
                 cbB_column.Enabled = true;
         }
-
-        private void clb_Privs_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

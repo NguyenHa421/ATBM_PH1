@@ -48,7 +48,7 @@
             // 
             lb_Column.AutoSize = true;
             lb_Column.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Column.Location = new Point(311, 333);
+            lb_Column.Location = new Point(12, 121);
             lb_Column.Name = "lb_Column";
             lb_Column.Size = new Size(78, 28);
             lb_Column.TabIndex = 65;
@@ -62,7 +62,7 @@
             bt_View.FlatStyle = FlatStyle.Flat;
             bt_View.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             bt_View.ForeColor = SystemColors.Window;
-            bt_View.Location = new Point(613, 146);
+            bt_View.Location = new Point(636, 157);
             bt_View.Name = "bt_View";
             bt_View.Size = new Size(91, 38);
             bt_View.TabIndex = 64;
@@ -78,7 +78,7 @@
             bt_grant.FlatStyle = FlatStyle.Flat;
             bt_grant.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             bt_grant.ForeColor = SystemColors.Window;
-            bt_grant.Location = new Point(613, 430);
+            bt_grant.Location = new Point(636, 434);
             bt_grant.Name = "bt_grant";
             bt_grant.Size = new Size(91, 38);
             bt_grant.TabIndex = 62;
@@ -94,7 +94,7 @@
             btn_Back.FlatStyle = FlatStyle.Flat;
             btn_Back.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_Back.ForeColor = SystemColors.Window;
-            btn_Back.Location = new Point(311, 430);
+            btn_Back.Location = new Point(9, 434);
             btn_Back.Name = "btn_Back";
             btn_Back.Size = new Size(91, 38);
             btn_Back.TabIndex = 61;
@@ -106,10 +106,10 @@
             // 
             dtGrid_role_table.BackgroundColor = Color.WhiteSmoke;
             dtGrid_role_table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtGrid_role_table.Location = new Point(34, 37);
+            dtGrid_role_table.Location = new Point(9, 201);
             dtGrid_role_table.Name = "dtGrid_role_table";
             dtGrid_role_table.RowHeadersWidth = 51;
-            dtGrid_role_table.Size = new Size(271, 374);
+            dtGrid_role_table.Size = new Size(718, 227);
             dtGrid_role_table.TabIndex = 60;
             // 
             // clb_Role
@@ -119,7 +119,7 @@
             clb_Role.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             clb_Role.FormattingEnabled = true;
             clb_Role.Items.AddRange(new object[] { "Select", "Insert", "Delete", "Update" });
-            clb_Role.Location = new Point(476, 189);
+            clb_Role.Location = new Point(577, 12);
             clb_Role.Name = "clb_Role";
             clb_Role.Size = new Size(150, 116);
             clb_Role.TabIndex = 59;
@@ -128,7 +128,7 @@
             // 
             tb_add.AutoSize = true;
             tb_add.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tb_add.Location = new Point(311, 189);
+            tb_add.Location = new Point(439, 38);
             tb_add.Name = "tb_add";
             tb_add.Size = new Size(109, 28);
             tb_add.TabIndex = 58;
@@ -138,7 +138,7 @@
             // 
             lb_n_R.AutoSize = true;
             lb_n_R.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_n_R.Location = new Point(311, 96);
+            lb_n_R.Location = new Point(12, 68);
             lb_n_R.Name = "lb_n_R";
             lb_n_R.Size = new Size(96, 28);
             lb_n_R.TabIndex = 56;
@@ -148,7 +148,7 @@
             // 
             tb_user.BorderStyle = BorderStyle.FixedSingle;
             tb_user.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_user.Location = new Point(439, 35);
+            tb_user.Location = new Point(140, 7);
             tb_user.Name = "tb_user";
             tb_user.ReadOnly = true;
             tb_user.Size = new Size(265, 34);
@@ -158,7 +158,7 @@
             // 
             lb_Name.AutoSize = true;
             lb_Name.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Name.Location = new Point(311, 37);
+            lb_Name.Location = new Point(12, 9);
             lb_Name.Name = "lb_Name";
             lb_Name.Size = new Size(85, 28);
             lb_Name.TabIndex = 54;
@@ -169,7 +169,7 @@
             cbB_Tables.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_Tables.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_Tables.FormattingEnabled = true;
-            cbB_Tables.Location = new Point(439, 93);
+            cbB_Tables.Location = new Point(140, 65);
             cbB_Tables.Name = "cbB_Tables";
             cbB_Tables.Size = new Size(265, 36);
             cbB_Tables.TabIndex = 67;
@@ -180,7 +180,7 @@
             cbB_Column.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_Column.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_Column.FormattingEnabled = true;
-            cbB_Column.Location = new Point(439, 330);
+            cbB_Column.Location = new Point(140, 121);
             cbB_Column.Name = "cbB_Column";
             cbB_Column.Size = new Size(265, 36);
             cbB_Column.TabIndex = 68;
@@ -189,7 +189,7 @@
             // 
             cB_allCol.AutoSize = true;
             cB_allCol.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cB_allCol.Location = new Point(476, 377);
+            cB_allCol.Location = new Point(140, 163);
             cB_allCol.Name = "cB_allCol";
             cB_allCol.Size = new Size(121, 32);
             cB_allCol.TabIndex = 69;

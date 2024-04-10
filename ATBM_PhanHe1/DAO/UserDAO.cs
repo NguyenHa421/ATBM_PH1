@@ -34,7 +34,7 @@ namespace ATBM_PhanHe1.DAO
         public List<UserRoleDTO> GetUserWithPrivs()
         {
             List<UserRoleDTO> list = new List<UserRoleDTO>();
-            string query = "select username,count(granted_role) as nOfRole from all_users, dba_role_privs where username = grantee(+) group by username";
+            string query = "select username ,count(granted_role) as nOfRole from all_users, dba_role_privs where username = grantee(+) group by username";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow row in data.Rows)
             {
@@ -78,10 +78,10 @@ namespace ATBM_PhanHe1.DAO
         public List<UserRoleDTO> SearchUserRole(string userName)
         {
             List<UserRoleDTO> list = new List<UserRoleDTO>();
-            string query = string.Format("select grantee, count(granted_role) as nOfRole from dba_role_privs where lower(grantee) like lower('%{0}%') group by grantee",userName);
+            string query = string.Format("select username, count(granted_role) as nOfRole from all_users, dba_role_privs where username = grantee(+) and lower(username) like lower('%{0}%') group by username", userName);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
-            {
+            { 
                 UserRoleDTO user = new UserRoleDTO(row);
                 list.Add(user);
             }
