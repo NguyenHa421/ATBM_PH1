@@ -39,3 +39,21 @@ BEGIN
     EXECUTE IMMEDIATE ('REVOKE '||privilege_name|| ' ON '||table_name||' FROM '||role_name);
 END;
 /
+--CAP ROLE CHO USER 
+CREATE OR REPLACE PROCEDURE grant_role_to_user (user_name IN VARCHAR2, role_name IN VARCHAR2, withAdminOption IN NUMBER)
+as
+BEGIN
+    IF withAdminOption = 0 THEN
+        EXECUTE IMMEDIATE ('GRANT '||role_name|| ' TO '||user_name);
+    ELSE
+        EXECUTE IMMEDIATE ('GRANT '||role_name|| ' TO '||user_name||' WITH ADMIN OPTION');
+    END IF;
+end;
+/
+--THU HOI ROLE CHO USER
+CREATE OR REPLACE PROCEDURE revoke_role_to_user (user_name IN VARCHAR2, role_name IN VARCHAR2)
+AS
+BEGIN
+    EXECUTE IMMEDIATE ('REVOKE '||role_name||' FROM '||user_name);
+END;
+/
