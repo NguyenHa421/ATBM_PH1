@@ -63,5 +63,10 @@ namespace ATBM_PhanHe1.Users_Roles
             }
             LoadGrid();
         }
+
+        private void bt_View_Click(object sender, EventArgs e)
+        {
+            privGridSource.DataSource = UserDAO.Instance.GetUserPrivsAll(tb_user.Text);
+        }
     }
 }
