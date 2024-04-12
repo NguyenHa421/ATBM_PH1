@@ -38,6 +38,7 @@
             tb_user = new TextBox();
             lb_Name = new Label();
             cbB_Tables = new ComboBox();
+            bt_viewall = new Button();
             ((System.ComponentModel.ISupportInitialize)dtGrid_role_table).BeginInit();
             SuspendLayout();
             // 
@@ -161,12 +162,29 @@
             cbB_Tables.Size = new Size(265, 36);
             cbB_Tables.TabIndex = 68;
             // 
+            // bt_viewall
+            // 
+            bt_viewall.BackColor = Color.White;
+            bt_viewall.BackgroundImage = Properties.Resources.button_round2;
+            bt_viewall.FlatAppearance.BorderSize = 0;
+            bt_viewall.FlatStyle = FlatStyle.Flat;
+            bt_viewall.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            bt_viewall.ForeColor = SystemColors.Window;
+            bt_viewall.Location = new Point(529, 439);
+            bt_viewall.Name = "bt_viewall";
+            bt_viewall.Size = new Size(91, 38);
+            bt_viewall.TabIndex = 71;
+            bt_viewall.Text = "Tất cả";
+            bt_viewall.UseVisualStyleBackColor = false;
+            bt_viewall.Click += bt_viewall_Click;
+            // 
             // Revoke_R
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(739, 484);
+            Controls.Add(bt_viewall);
             Controls.Add(cbB_Tables);
             Controls.Add(bt_View);
             Controls.Add(bt_revoke);
@@ -197,5 +215,6 @@
         private TextBox tb_user;
         private Label lb_Name;
         private ComboBox cbB_Tables;
+        private Button bt_viewall;
     }
 }
