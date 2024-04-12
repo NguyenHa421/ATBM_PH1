@@ -41,6 +41,7 @@
             cbB_Tables = new ComboBox();
             cbB_Column = new ComboBox();
             cB_allCol = new CheckBox();
+            bt_viewall = new Button();
             ((System.ComponentModel.ISupportInitialize)dtGrid_role_table).BeginInit();
             SuspendLayout();
             // 
@@ -196,12 +197,29 @@
             cB_allCol.Text = "Tất cả cột";
             cB_allCol.UseVisualStyleBackColor = true;
             // 
+            // bt_viewall
+            // 
+            bt_viewall.BackColor = Color.White;
+            bt_viewall.BackgroundImage = Properties.Resources.button_round2;
+            bt_viewall.FlatAppearance.BorderSize = 0;
+            bt_viewall.FlatStyle = FlatStyle.Flat;
+            bt_viewall.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            bt_viewall.ForeColor = SystemColors.Window;
+            bt_viewall.Location = new Point(525, 434);
+            bt_viewall.Name = "bt_viewall";
+            bt_viewall.Size = new Size(91, 38);
+            bt_viewall.TabIndex = 70;
+            bt_viewall.Text = "Tất cả";
+            bt_viewall.UseVisualStyleBackColor = false;
+            bt_viewall.Click += bt_viewall_Click;
+            // 
             // Grant_R
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(739, 484);
+            Controls.Add(bt_viewall);
             Controls.Add(cB_allCol);
             Controls.Add(cbB_Column);
             Controls.Add(cbB_Tables);
@@ -237,5 +255,6 @@
         private ComboBox cbB_Tables;
         private ComboBox cbB_Column;
         private CheckBox cB_allCol;
+        private Button bt_viewall;
     }
 }
