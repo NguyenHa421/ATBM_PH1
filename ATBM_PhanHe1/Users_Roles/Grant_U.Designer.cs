@@ -41,6 +41,7 @@
             cbB_column = new ComboBox();
             cB_allCol = new CheckBox();
             tb_add = new Label();
+            bt_View = new Button();
             ((System.ComponentModel.ISupportInitialize)dtGrid_privs).BeginInit();
             SuspendLayout();
             // 
@@ -192,12 +193,29 @@
             tb_add.TabIndex = 59;
             tb_add.Text = "Cấp quyền";
             // 
+            // bt_View
+            // 
+            bt_View.BackColor = Color.White;
+            bt_View.BackgroundImage = Properties.Resources.button_round2;
+            bt_View.FlatAppearance.BorderSize = 0;
+            bt_View.FlatStyle = FlatStyle.Flat;
+            bt_View.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            bt_View.ForeColor = SystemColors.Window;
+            bt_View.Location = new Point(523, 434);
+            bt_View.Name = "bt_View";
+            bt_View.Size = new Size(91, 38);
+            bt_View.TabIndex = 65;
+            bt_View.Text = "Tất cả";
+            bt_View.UseVisualStyleBackColor = false;
+            bt_View.Click += bt_View_Click;
+            // 
             // Grant_U
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(739, 484);
+            Controls.Add(bt_View);
             Controls.Add(tb_add);
             Controls.Add(cbB_column);
             Controls.Add(cbB_table);
@@ -233,5 +251,6 @@
         private ComboBox cbB_column;
         private CheckBox cB_allCol;
         private Label tb_add;
+        private Button bt_View;
     }
 }
