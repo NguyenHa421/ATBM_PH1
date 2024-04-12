@@ -78,9 +78,13 @@ namespace ATBM_PhanHe1.Users_Roles
                 }
             }
             Load_Grid();
-            
+
         }
 
-       
+        private void bt_viewall_Click(object sender, EventArgs e)
+        {
+            dtGrid_role_table.DataSource = roletableList;
+            roletableList.DataSource = RoleDAO.Instance.ListRoleAll_Table(tb_user.Text);
+        }
     }
 }
