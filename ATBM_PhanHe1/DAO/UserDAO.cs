@@ -151,5 +151,25 @@ namespace ATBM_PhanHe1.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public List<UserPrivsDTO> GetUserPrivsAll(string userName)
+        {
+            List<UserPrivsDTO> list = new List<UserPrivsDTO>();
+            string query = $"select grantee,table_name,privilege,grantable from dba_tab_privs where grantee = '{userName}'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                UserPrivsDTO priv = new UserPrivsDTO(row);
+                list.Add(priv);
+            }
+            data.Rows.Clear();
+            query = $"select grantee,table_name,column_name,privilege,grantable from dba_col_privs where grantee = '{userName}'";
+            data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                UserPrivsDTO priv = new UserPrivsDTO(row);
+                list.Add(priv);
+            }
+            return list;
+        }
     }
 }
