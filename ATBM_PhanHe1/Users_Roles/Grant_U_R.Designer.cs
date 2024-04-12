@@ -147,9 +147,11 @@
             // 
             // cbB_listRole
             // 
+            cbB_listRole.DropDownHeight = 200;
             cbB_listRole.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_listRole.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_listRole.FormattingEnabled = true;
+            cbB_listRole.IntegralHeight = false;
             cbB_listRole.Location = new Point(439, 237);
             cbB_listRole.Name = "cbB_listRole";
             cbB_listRole.Size = new Size(265, 36);
