@@ -55,7 +55,11 @@ namespace ATBM_PhanHe1.DAO
         {
             return DataProvider.Instance.ExecuteQuery($"select d.role, p.table_name, p.column_name, p.privilege from dba_roles d left join role_tab_privs p on p.role = d.role where lower(d.role) like lower('%{roleName}%') and lower(p.table_name) like lower('%{tableName}%')");
         }
-        
+        public DataTable ListRoleAll_Table(string roleName)
+        {
+            return DataProvider.Instance.ExecuteQuery($"select d.role, p.table_name, p.column_name, p.privilege from dba_roles d left join role_tab_privs p on p.role = d.role where lower(d.role) like lower('%{roleName}%')");
+        }
+
         public bool Grant_Role(string role_name, List<string> privs, string table_name)
         {
             string privStr = "";
