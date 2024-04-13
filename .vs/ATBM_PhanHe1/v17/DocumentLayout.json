@@ -1,53 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Projects\\ATBM\\ATBM_PH1\\",
+  "WorkspaceRootPath": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\users_roles\\revoke_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\t\u00E0i li\u1EC7u\\n\u0103m 3-2\\atbm_phanhe1\\atbm_ph1\\atbm_phanhe1\\users_roles\\revoke_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\users_roles\\revoke_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\users_roles\\revoke_r.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\atbm_phanhe1\\users_roles\\revoke_r.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\users_roles\\revoke_r.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\users_roles\\grant_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\atbm_phanhe1\\users_roles\\grant_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\users_roles\\grant_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\users_roles\\grant_r.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\atbm_phanhe1\\users_roles\\grant_r.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\users_roles\\grant_r.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\users_roles\\grant_u_r.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\atbm_phanhe1\\users_roles\\grant_u_r.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\users_roles\\grant_u_r.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\users_roles\\revoke_u.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\atbm_phanhe1\\users_roles\\revoke_u.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\users_roles\\revoke_u.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\users_roles\\grant_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\atbm_phanhe1\\users_roles\\grant_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\users_roles\\grant_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\user\\update_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\atbm_phanhe1\\user\\update_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\user\\update_u.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\interface\\user_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\atbm_phanhe1\\interface\\user_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\interface\\user_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\atbm_phanhe1\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\dto\\userroledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\atbm_phanhe1\\dto\\userroledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\dto\\userroledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\interface\\user_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\atbm_phanhe1\\interface\\user_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\interface\\user_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -58,12 +58,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -76,9 +72,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Revoke_U.cs [Design]",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_U.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_U.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\Users_Roles\\Revoke_U.cs",
-              "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_U.cs [Design]",
+              "ToolTip": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_U.cs [Design]",
               "RelativeToolTip": "ATBM_PhanHe1\\Users_Roles\\Revoke_U.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T14:10:43.966Z",
@@ -88,46 +84,43 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Grant_U_R.cs [Design]",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U_R.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U_R.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\Users_Roles\\Grant_U_R.cs",
               "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U_R.cs [Design]",
-              "RelativeToolTip": "ATBM_PhanHe1\\Users_Roles\\Grant_U_R.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U_R.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T14:10:30.014Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-10T14:10:30.014Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Revoke_R.cs [Design]",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_R.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_R.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\Users_Roles\\Revoke_R.cs",
               "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_R.cs [Design]",
-              "RelativeToolTip": "ATBM_PhanHe1\\Users_Roles\\Revoke_R.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_R.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T14:09:06.024Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-10T14:09:06.024Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Grant_U.cs",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\Users_Roles\\Grant_U.cs",
-              "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U.cs",
+              "ToolTip": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U.cs",
               "RelativeToolTip": "ATBM_PhanHe1\\Users_Roles\\Grant_U.cs",
               "ViewState": "AQIAAEwAAAAAAAAAAAAwwFYAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T14:06:38.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T14:06:38.91Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Revoke_U.Designer.cs",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_U.Designer.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_U.Designer.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\Users_Roles\\Revoke_U.Designer.cs",
-              "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_U.Designer.cs",
+              "ToolTip": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Revoke_U.Designer.cs",
               "RelativeToolTip": "ATBM_PhanHe1\\Users_Roles\\Revoke_U.Designer.cs",
               "ViewState": "AQIAACoAAAAAAAAAAAAmwCoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -138,88 +131,81 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Grant_R.cs [Design]",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_R.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_R.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\Users_Roles\\Grant_R.cs",
               "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_R.cs [Design]",
-              "RelativeToolTip": "ATBM_PhanHe1\\Users_Roles\\Grant_R.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_R.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T13:57:24.286Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-10T13:57:24.286Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Grant_U.cs [Design]",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\Users_Roles\\Grant_U.cs",
               "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U.cs [Design]",
-              "RelativeToolTip": "ATBM_PhanHe1\\Users_Roles\\Grant_U.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Users_Roles\\Grant_U.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T13:53:50.337Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-10T13:53:50.337Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Update_U.cs [Design]",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\User\\Update_U.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\User\\Update_U.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\User\\Update_U.cs",
               "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\User\\Update_U.cs [Design]",
-              "RelativeToolTip": "ATBM_PhanHe1\\User\\Update_U.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\User\\Update_U.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T13:53:45.492Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-10T13:53:45.492Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "UserDAO.cs",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\DAO\\UserDAO.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\DAO\\UserDAO.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\DAO\\UserDAO.cs",
-              "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\DAO\\UserDAO.cs",
+              "ToolTip": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\DAO\\UserDAO.cs",
               "RelativeToolTip": "ATBM_PhanHe1\\DAO\\UserDAO.cs",
               "ViewState": "AQIAADUAAAAAAAAAAAAvwE4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T13:32:13.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T13:32:13.155Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "UserRoleDTO.cs",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\DTO\\UserRoleDTO.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\DTO\\UserRoleDTO.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\DTO\\UserRoleDTO.cs",
-              "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\DTO\\UserRoleDTO.cs",
+              "ToolTip": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\DTO\\UserRoleDTO.cs",
               "RelativeToolTip": "ATBM_PhanHe1\\DTO\\UserRoleDTO.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAjwBQAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T13:31:15.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T13:31:15.055Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "User_Role.cs",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\User_Role.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\User_Role.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\Interface\\User_Role.cs",
-              "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\User_Role.cs",
+              "ToolTip": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\User_Role.cs",
               "RelativeToolTip": "ATBM_PhanHe1\\Interface\\User_Role.cs",
               "ViewState": "AQIAAE0AAAAAAAAAAAA0wCgAAABTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T13:29:50.313Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T13:29:50.313Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "User_Role.cs [Design]",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\User_Role.cs",
+              "DocumentMoniker": "D:\\T\u00E0i li\u1EC7u\\N\u0103m 3-2\\ATBM_PhanHe1\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\User_Role.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\Interface\\User_Role.cs",
               "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\User_Role.cs [Design]",
-              "RelativeToolTip": "ATBM_PhanHe1\\Interface\\User_Role.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Interface\\User_Role.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T13:29:33.224Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-10T13:29:33.224Z"
             }
           ]
         }
