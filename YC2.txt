@@ -1,0 +1,8 @@
+a. Nhãn cho trưởng khoa là Trưởng khoa : HTTT, CNPM, KHMT, CNTT, TGMT, MMT : CS1, CS2
+b. Nhãn cho trưởng bộ môn ở cs2 là Trưởng đơn vị : HTTT, CNPM, KHMT, CNTT, TGMT, MMT : CS1, CS2
+c. Nhãn cho giáo vụ là Giáo vụ : HTTT, CNPM, KHMT, CNTT, TGMT, MMT : CS1, CS2
+d. Nhãn cho thông báo t1 là Trưởng đơn vị : : CS1, CS2
+e. Nhãn cho thông báo t2 là Sinh viên : HTTT : CS1
+f. Nhãn cho thông báo t3 là Trưởng đơn vị : KHMT : CS1
+g. Nhãn cho thông báo t4 là Trưởng đơn vị : KHMT : CS1, CS2
+h. - Nhãn cho thông báo t5 dành cho giảng viên bộ môn HTTT và MMT ở bất kỳ cơ sở nào 
