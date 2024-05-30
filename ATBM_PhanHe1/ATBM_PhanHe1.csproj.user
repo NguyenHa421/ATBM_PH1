@@ -13,6 +13,51 @@
     <Compile Update="Interface\User_Role.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PhanHe2\Add_Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Add_Unit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Confirm_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Confirm_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Homepage_Dean.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Homepage_Others.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Homepage_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Homepage_Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\MainBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Update_Info_Personnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Update_Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Update_Unit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\ViewInfo_Personnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\View_InfoStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\View_InfoUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Role\Create_R.cs">
       <SubType>Form</SubType>
     </Compile>
