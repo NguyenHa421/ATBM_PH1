@@ -44,9 +44,10 @@
             // 
             pic_logo.BackColor = Color.White;
             pic_logo.Image = Properties.Resources.Home_Pic1;
-            pic_logo.Location = new Point(77, 147);
+            pic_logo.Location = new Point(77, 158);
+            pic_logo.Margin = new Padding(3, 4, 3, 4);
             pic_logo.Name = "pic_logo";
-            pic_logo.Size = new Size(413, 297);
+            pic_logo.Size = new Size(383, 287);
             pic_logo.SizeMode = PictureBoxSizeMode.Zoom;
             pic_logo.TabIndex = 0;
             pic_logo.TabStop = false;
@@ -57,9 +58,9 @@
             lb_main.BackColor = Color.White;
             lb_main.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb_main.ForeColor = Color.FromArgb(42, 107, 167);
-            lb_main.Location = new Point(386, 55);
+            lb_main.Location = new Point(384, 63);
             lb_main.Name = "lb_main";
-            lb_main.Size = new Size(184, 45);
+            lb_main.Size = new Size(230, 54);
             lb_main.TabIndex = 1;
             lb_main.Text = "Đăng nhập";
             // 
@@ -68,9 +69,9 @@
             label2.AutoSize = true;
             label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(549, 174);
+            label2.Location = new Point(537, 179);
             label2.Name = "label2";
-            label2.Size = new Size(97, 25);
+            label2.Size = new Size(117, 31);
             label2.TabIndex = 2;
             label2.Text = "Username";
             // 
@@ -79,9 +80,9 @@
             label3.AutoSize = true;
             label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(549, 306);
+            label3.Location = new Point(537, 315);
             label3.Name = "label3";
-            label3.Size = new Size(91, 25);
+            label3.Size = new Size(110, 31);
             label3.TabIndex = 3;
             label3.Text = "Password";
             // 
@@ -89,11 +90,10 @@
             // 
             tB_name.BorderStyle = BorderStyle.FixedSingle;
             tB_name.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tB_name.Location = new Point(549, 225);
-            tB_name.Margin = new Padding(3, 2, 3, 2);
+            tB_name.Location = new Point(537, 229);
             tB_name.Name = "tB_name";
             tB_name.PlaceholderText = "   Username";
-            tB_name.Size = new Size(273, 32);
+            tB_name.Size = new Size(312, 38);
             tB_name.TabIndex = 4;
             tB_name.TabStop = false;
             // 
@@ -101,11 +101,10 @@
             // 
             tB_pass.BorderStyle = BorderStyle.FixedSingle;
             tB_pass.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tB_pass.Location = new Point(549, 361);
-            tB_pass.Margin = new Padding(3, 2, 3, 2);
+            tB_pass.Location = new Point(537, 367);
             tB_pass.Name = "tB_pass";
             tB_pass.PlaceholderText = "   Password";
-            tB_pass.Size = new Size(273, 32);
+            tB_pass.Size = new Size(312, 38);
             tB_pass.TabIndex = 5;
             tB_pass.TabStop = false;
             // 
@@ -115,12 +114,11 @@
             Login_button.BackgroundImage = Properties.Resources.b_r;
             Login_button.BackgroundImageLayout = ImageLayout.Zoom;
             Login_button.FlatStyle = FlatStyle.Flat;
-            Login_button.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Login_button.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Login_button.ForeColor = Color.White;
-            Login_button.Location = new Point(699, 453);
-            Login_button.Margin = new Padding(3, 2, 3, 2);
+            Login_button.Location = new Point(685, 452);
             Login_button.Name = "Login_button";
-            Login_button.Size = new Size(142, 48);
+            Login_button.Size = new Size(164, 60);
             Login_button.TabIndex = 6;
             Login_button.TabStop = false;
             Login_button.Text = "Đăng nhập";
@@ -131,9 +129,10 @@
             // 
             pic_close.BackColor = Color.White;
             pic_close.Image = Properties.Resources.Exit1;
-            pic_close.Location = new Point(859, 41);
+            pic_close.Location = new Point(855, 40);
+            pic_close.Margin = new Padding(3, 4, 3, 4);
             pic_close.Name = "pic_close";
-            pic_close.Size = new Size(43, 36);
+            pic_close.Size = new Size(49, 48);
             pic_close.SizeMode = PictureBoxSizeMode.Zoom;
             pic_close.TabIndex = 7;
             pic_close.TabStop = false;
@@ -141,7 +140,7 @@
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(42, 107, 167);
             BackgroundImage = Properties.Resources.Background1;
@@ -155,7 +154,6 @@
             Controls.Add(lb_main);
             Controls.Add(pic_logo);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
