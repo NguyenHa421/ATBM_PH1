@@ -13,7 +13,9 @@ namespace ATBM_PhanHe1
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new PhanHe2.MainBase());
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled);
+            Application.Run(new Home_Login.Login());
         }
     }
 }
