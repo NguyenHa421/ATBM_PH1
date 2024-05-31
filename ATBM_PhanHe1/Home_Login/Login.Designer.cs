@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
+            pic_logo = new PictureBox();
+            lb_main = new Label();
             label2 = new Label();
             label3 = new Label();
             tB_name = new TextBox();
             tB_pass = new TextBox();
             Login_button = new Button();
             pic_close = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_close).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pic_logo
             // 
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.Image = Properties.Resources.Home_Pic1;
-            pictureBox1.Location = new Point(77, 147);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(413, 297);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pic_logo.BackColor = Color.White;
+            pic_logo.Image = Properties.Resources.Home_Pic1;
+            pic_logo.Location = new Point(77, 147);
+            pic_logo.Name = "pic_logo";
+            pic_logo.Size = new Size(413, 297);
+            pic_logo.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_logo.TabIndex = 0;
+            pic_logo.TabStop = false;
             // 
-            // label1
+            // lb_main
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.White;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(42, 107, 167);
-            label1.Location = new Point(386, 55);
-            label1.Name = "label1";
-            label1.Size = new Size(230, 54);
-            label1.TabIndex = 1;
-            label1.Text = "Đăng nhập";
+            lb_main.AutoSize = true;
+            lb_main.BackColor = Color.White;
+            lb_main.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lb_main.ForeColor = Color.FromArgb(42, 107, 167);
+            lb_main.Location = new Point(386, 55);
+            lb_main.Name = "lb_main";
+            lb_main.Size = new Size(184, 45);
+            lb_main.TabIndex = 1;
+            lb_main.Text = "Đăng nhập";
             // 
             // label2
             // 
@@ -70,7 +70,7 @@
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(549, 174);
             label2.Name = "label2";
-            label2.Size = new Size(117, 31);
+            label2.Size = new Size(97, 25);
             label2.TabIndex = 2;
             label2.Text = "Username";
             // 
@@ -81,7 +81,7 @@
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(549, 306);
             label3.Name = "label3";
-            label3.Size = new Size(110, 31);
+            label3.Size = new Size(91, 25);
             label3.TabIndex = 3;
             label3.Text = "Password";
             // 
@@ -90,9 +90,10 @@
             tB_name.BorderStyle = BorderStyle.FixedSingle;
             tB_name.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tB_name.Location = new Point(549, 225);
+            tB_name.Margin = new Padding(3, 2, 3, 2);
             tB_name.Name = "tB_name";
             tB_name.PlaceholderText = "   Username";
-            tB_name.Size = new Size(312, 38);
+            tB_name.Size = new Size(273, 32);
             tB_name.TabIndex = 4;
             tB_name.TabStop = false;
             // 
@@ -101,9 +102,10 @@
             tB_pass.BorderStyle = BorderStyle.FixedSingle;
             tB_pass.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tB_pass.Location = new Point(549, 361);
+            tB_pass.Margin = new Padding(3, 2, 3, 2);
             tB_pass.Name = "tB_pass";
             tB_pass.PlaceholderText = "   Password";
-            tB_pass.Size = new Size(312, 38);
+            tB_pass.Size = new Size(273, 32);
             tB_pass.TabIndex = 5;
             tB_pass.TabStop = false;
             // 
@@ -116,8 +118,9 @@
             Login_button.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Login_button.ForeColor = Color.White;
             Login_button.Location = new Point(699, 453);
+            Login_button.Margin = new Padding(3, 2, 3, 2);
             Login_button.Name = "Login_button";
-            Login_button.Size = new Size(162, 64);
+            Login_button.Size = new Size(142, 48);
             Login_button.TabIndex = 6;
             Login_button.TabStop = false;
             Login_button.Text = "Đăng nhập";
@@ -138,7 +141,7 @@
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(42, 107, 167);
             BackgroundImage = Properties.Resources.Background1;
@@ -149,13 +152,14 @@
             Controls.Add(tB_name);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            Controls.Add(lb_main);
+            Controls.Add(pic_logo);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_close).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -163,8 +167,8 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private Label label1;
+        private PictureBox pic_logo;
+        private Label lb_main;
         private Label label2;
         private Label label3;
         private TextBox tB_name;
