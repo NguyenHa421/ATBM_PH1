@@ -1,3 +1,6 @@
+--SHOW CON_NAME
+--chuyen container
+ALTER SESSION SET CONTAINER = XEPDB1;
 --default user cua OLS
 ALTER USER lbacsys IDENTIFIED BY lbacsys ACCOUNT UNLOCK;
 --cau hinh va kich hoat OLS
@@ -16,3 +19,5 @@ BEGIN
     (policy_name => 'QLThongBao',
     column_name => 'LabelCol');
 END;
+
+SELECT CON_ID, NAME, OPEN_MODE FROM V$PDBS;
