@@ -19,6 +19,20 @@ end;
 /
 CALL dropUser('ADMIN');
 
+--proc xoa role neu ton tai
+CREATE OR REPLACE PROCEDURE Drop_OldRole 
+    (NameOfRole IN VARCHAR2)
+IS
+    v_exist PLS_INTEGER;
+BEGIN
+    SELECT COUNT(*) INTO v_exist 
+    FROM dba_roles WHERE role = NameOfRole;
+    IF v_exist = 1 THEN
+        EXECUTE IMMEDIATE 'DROP ROLE ' || NameOfRole;
+    END IF;
+END;
+/
+
 --tao schema
 CREATE USER ADMIN IDENTIFIED BY group12;
 ALTER USER ADMIN QUOTA 10M ON users;
