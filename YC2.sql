@@ -227,5 +227,73 @@ BEGIN
     table_name => 'THONGBAO',
     table_optionS => 'READ_CONTROL');
 END;
+/
+--xoa user truoc khi tao
+DROP USER truongkhoa CASCADE;
+DROP USER truongdonvi CASCADE;
+DROP USER giaovu CASCADE;
+
+--tao user de test
+CONN admin/group12@//localhost:1521/XEPDB1
+CREATE USER svcs2 IDENTIFIED BY svcs2;
+GRANT CREATE SESSION TO svcs2;
+GRANT SELECT ON admin.THONGBAO TO svcs2;
+
+CREATE USER truongkhoa IDENTIFIED BY truongkhoa;
+GRANT CREATE SESSION TO truongkhoa;
+GRANT SELECT ON admin.THONGBAO TO truongkhoa;
+
+CREATE USER truongdonvi IDENTIFIED BY truongdonvi;
+GRANT CREATE SESSION TO truongdonvi;
+GRANT SELECT ON admin.THONGBAO TO truongdonvi;
+
+CREATE USER giaovu IDENTIFIED BY giaovu;
+GRANT CREATE SESSION TO giaovu;
+GRANT SELECT ON admin.THONGBAO TO giaovu;
+
+--gan nhan cho user test
+CONN admin/group12@//localhost:1521/XEPDB1
+BEGIN
+    SA_USER_ADMIN.SET_USER_LABELS
+    (policy_name => 'QLThongBao',
+    user_name => 'svcs2',
+    max_read_label => 'SV:MMT:CS2',
+    def_label => 'SV:MMT:CS2',
+    row_label => 'SV::');
+
+    SA_USER_ADMIN.SET_USER_LABELS
+    (policy_name => 'QLThongBao',
+    user_name => 'truongkhoa',
+    max_read_label => 'TK:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
+    def_label => 'TK:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
+    row_label => 'TK::');
+    
+    SA_USER_ADMIN.SET_USER_LABELS
+    (policy_name => 'QLThongBao',
+    user_name => 'truongdonvi',
+    max_read_label => 'TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
+    def_label => 'TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
+    row_label => 'TDV::');
+    
+    SA_USER_ADMIN.SET_USER_LABELS
+    (policy_name => 'QLThongBao',
+    user_name => 'giaovu',
+    max_read_label => 'GVu:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
+    def_label => 'GVu:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
+    row_label => 'GVu::');
+END;
+
+--test
+CONN svcs2/svcs2@//localhost:1521/XEPDB1
+SELECT * FROM admin.THONGBAO;
+
+CONN truongkhoa/truongkhoa@//localhost:1521/XEPDB1
+SELECT * FROM admin.THONGBAO;
+
+CONN truongdonvi/truongdonvi@//localhost:1521/XEPDB1
+SELECT * FROM admin.THONGBAO;
+
+CONN giaovu/giaovu@//localhost:1521/XEPDB1
+SELECT * FROM admin.THONGBAO;
 
 ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE;
