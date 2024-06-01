@@ -1,6 +1,7 @@
---SHOW CON_NAME
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 --chuyen container
 ALTER SESSION SET CONTAINER = CDB$ROOT;
+--SHOW CON_NAME
 --default user cua OLS
 ALTER USER lbacsys IDENTIFIED BY lbacsys ACCOUNT UNLOCK;
 --chuyen container
@@ -117,4 +118,55 @@ BEGIN
     short_name => 'cs2',
     long_name => 'Co so 2');
 END;
---SELECT CON_ID, NAME, OPEN_MODE FROM V$PDBS;
+
+--tao cac label cho yeu cau a, b, c
+CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
+BEGIN
+    --a. nhan cho truong khoa
+    SA_LABEL_ADMIN.CREATE_LABEL
+    (policy_name => 'QLThongBao',
+    label_tag => 9100,
+    label_value => 'TK:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
+    
+    --b. nhan cho truong bo mon o cs2
+    SA_LABEL_ADMIN.CREATE_LABEL
+    (policy_name => 'QLThongBao',
+    label_tag => 7200,
+    label_value => 'TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
+    
+    --c. nhan cho giao vu
+    SA_LABEL_ADMIN.CREATE_LABEL
+    (policy_name => 'QLThongBao',
+    label_tag => 4300,
+    label_value => 'GVu:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
+END;
+--tao user admin
+DROP USER admin CASCADE;
+CREATE USER admin IDENTIFIED BY group12;
+--grant cac quyen can thiet cho user admin
+GRANT CREATE SESSION TO admin;
+GRANT ALL PRIVILEGES TO admin;
+CONN lbacsys/lbacsys
+BEGIN
+    SA_USER_ADMIN.SET_USER_PRIVS
+    (policy_name => 'QLThongBao',
+    user_name => 'admin',
+    privileges => 'FULL,PROFILE_ACCESS');
+END;
+
+SELECT username, common
+FROM DBA_USERS 
+WHERE USERNAME = 'ADMIN';
+
+GRANT EXECUTE ON sa_components TO admin WITH GRANT OPTION;
+GRANT EXECUTE ON sa_user_admin TO admin WITH GRANT OPTION;
+GRANT EXECUTE ON sa_user_admin TO admin WITH GRANT OPTION;
+GRANT EXECUTE ON sa_label_admin TO admin WITH GRANT OPTION;
+GRANT EXECUTE ON sa_policy_admin TO admin WITH GRANT OPTION;
+GRANT EXECUTE ON sa_audit_admin  TO admin WITH GRANT OPTION;
+GRANT LBAC_DBA TO admin;
+GRANT EXECUTE ON sa_sysdba TO admin;
+GRANT EXECUTE ON to_lbac_data_label TO admin;
+GRANT QLThongBao_DBA TO admin;
+
+ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE;

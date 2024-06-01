@@ -6,3 +6,5 @@ e. Nhãn cho thông báo t2 là Sinh viên : HTTT : CS1
 f. Nhãn cho thông báo t3 là Trưởng đơn vị : KHMT : CS1
 g. Nhãn cho thông báo t4 là Trưởng đơn vị : KHMT : CS1, CS2
 h. - Nhãn cho thông báo t5 dành cho giảng viên bộ môn HTTT ở bất kỳ cơ sở nào là Giảng viên : HTTT : CS1, CS2
+- nhãn cho thông báo t6 dành cho toàn bộ sinh viên tại cơ sở 2 là Sinh viên : : CS2
+- nhãn cho thông báo t7 chỉ dành cho trưởng khoa tại cả 2 cơ sở là Trưởng khoa : : CS1, CS2
