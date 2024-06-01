@@ -15,6 +15,7 @@ BEGIN
     SA_SYSDBA.DROP_POLICY
     (policy_name => 'QLThongBao');
 END;
+/
 --tao policy
 CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
@@ -62,7 +63,7 @@ BEGIN
     short_name => 'SV',
     long_name => 'SinhVien');
 END;
-
+/
 --tao compartment
 CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
@@ -102,7 +103,7 @@ BEGIN
     short_name => 'MMT',
     long_name => 'Mang may tinh');
 END;
-
+/
 --tao cac group
 CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
@@ -118,7 +119,7 @@ BEGIN
     short_name => 'cs2',
     long_name => 'Co so 2');
 END;
-
+/
 --tao cac label cho yeu cau a, b, c
 CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
@@ -140,24 +141,21 @@ BEGIN
     label_tag => 4300,
     label_value => 'GVu:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
 END;
+/
 --tao user admin
 DROP USER admin CASCADE;
 CREATE USER admin IDENTIFIED BY group12;
 --grant cac quyen can thiet cho user admin
 GRANT CREATE SESSION TO admin;
 GRANT ALL PRIVILEGES TO admin;
-CONN lbacsys/lbacsys
+CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
     SA_USER_ADMIN.SET_USER_PRIVS
     (policy_name => 'QLThongBao',
     user_name => 'admin',
     privileges => 'FULL,PROFILE_ACCESS');
 END;
-
-SELECT username, common
-FROM DBA_USERS 
-WHERE USERNAME = 'ADMIN';
-
+/
 GRANT EXECUTE ON sa_components TO admin WITH GRANT OPTION;
 GRANT EXECUTE ON sa_user_admin TO admin WITH GRANT OPTION;
 GRANT EXECUTE ON sa_user_admin TO admin WITH GRANT OPTION;
@@ -168,5 +166,66 @@ GRANT LBAC_DBA TO admin;
 GRANT EXECUTE ON sa_sysdba TO admin;
 GRANT EXECUTE ON to_lbac_data_label TO admin;
 GRANT QLThongBao_DBA TO admin;
+/
+--tao bang thong bao
+CONN admin/group12@//localhost:1521/XEPDB1;
+CREATE TABLE admin.THONGBAO
+(
+    MaTB VARCHAR2(50) PRIMARY KEY,
+    NoiDung VARCHAR2(4000),
+    LabelCol NUMBER(10)
+);
+
+--them cac dong du lieu
+CONN admin/group12@//localhost:1521/XEPDB1;
+INSERT INTO admin.THONGBAO(MaTB,NoiDung) VALUES('T1','Thong bao danh cho tat ca truong don vi');
+INSERT INTO admin.THONGBAO(MaTB,NoiDung) VALUES('T2','Thong bao danh cho sinh vien thuoc nganh HTTT hoc o co so 1');
+INSERT INTO admin.THONGBAO(MaTB,NoiDung) VALUES('T3','Thong bao danh cho truong bo mon KHMT o co so 1');
+INSERT INTO admin.THONGBAO(MaTB,NoiDung) VALUES('T4','Thong bao danh cho truong bo mon KHMT o co so 1 va co so 2');
+INSERT INTO admin.THONGBAO(MaTB,NoiDung) VALUES('T5','Thong bao danh cho giang vien bo mon HTTT o co so 1 va co so 2');
+INSERT INTO admin.THONGBAO(MaTB,NoiDung) VALUES('T6','Thong bao danh cho toan bo sinh vien o co so 2');
+INSERT INTO admin.THONGBAO(MaTB,NoiDung) VALUES('T7','Thong bao danh cho truong khoa o co so 2');
+--xem du lieu
+CONN admin/group12@//localhost:1521/XEPDB1;
+SELECT * FROM admin.THONGBAO;
+--them label cho cac dong du lieu
+CONN admin/group12@//localhost:1521/XEPDB1;
+UPDATE admin.THONGBAO
+SET LabelCol = char_to_label('QLThongBao','TDV::CS1,CS2')
+WHERE MaTB = 'T1';
+
+UPDATE admin.THONGBAO
+SET LabelCol = char_to_label('QLThongBao','SV:HTTT:CS1')
+WHERE MaTB = 'T2';
+
+UPDATE admin.THONGBAO
+SET LabelCol = char_to_label('QLThongBao','TDV:KHMT:CS1')
+WHERE MaTB = 'T3';
+
+UPDATE admin.THONGBAO
+SET LabelCol = char_to_label('QLThongBao','TDV:KHMT:CS1,CS2')
+WHERE MaTB = 'T4';
+
+UPDATE admin.THONGBAO
+SET LabelCol = char_to_label('QLThongBao','GV:HTTT:CS1,CS2')
+WHERE MaTB = 'T5';
+
+UPDATE admin.THONGBAO
+SET LabelCol = char_to_label('QLThongBao','SV::CS2')
+WHERE MaTB = 'T6';
+
+UPDATE admin.THONGBAO
+SET LabelCol = char_to_label('QLThongBao','TK::CS1,CS2')
+WHERE MaTB = 'T7';
+/
+--ap dung OLS
+CONN admin/group12@//localhost:1521/XEPDB1
+BEGIN
+    SA_POLICY_ADMIN.APPLY_TABLE_POLICY
+    (policy_name => 'QLThongBao',
+    schema_name => 'admin',
+    table_name => 'THONGBAO',
+    table_optionS => 'READ_CONTROL');
+END;
 
 ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE;
