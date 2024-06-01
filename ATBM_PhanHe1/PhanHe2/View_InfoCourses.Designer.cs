@@ -1,0 +1,202 @@
+﻿namespace ATBM_PhanHe1.PhanHe2
+{
+    partial class View_InfoCourses
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            pn_parents = new Panel();
+            pic_refresh_U = new PictureBox();
+            btn_search = new Button();
+            btn_Add = new Button();
+            btn_Update = new Button();
+            dataGridView1 = new DataGridView();
+            btn_Back = new Button();
+            tb_name = new TextBox();
+            lb_name = new Label();
+            lb_Info = new Label();
+            pn_parents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_refresh_U).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // pn_parents
+            // 
+            pn_parents.Controls.Add(pic_refresh_U);
+            pn_parents.Controls.Add(btn_search);
+            pn_parents.Controls.Add(btn_Add);
+            pn_parents.Controls.Add(btn_Update);
+            pn_parents.Controls.Add(dataGridView1);
+            pn_parents.Controls.Add(btn_Back);
+            pn_parents.Controls.Add(tb_name);
+            pn_parents.Controls.Add(lb_name);
+            pn_parents.Controls.Add(lb_Info);
+            pn_parents.Location = new Point(0, 0);
+            pn_parents.Name = "pn_parents";
+            pn_parents.Size = new Size(895, 425);
+            pn_parents.TabIndex = 1;
+            // 
+            // pic_refresh_U
+            // 
+            pic_refresh_U.Image = Properties.Resources.refresh_buttons;
+            pic_refresh_U.Location = new Point(650, 49);
+            pic_refresh_U.Name = "pic_refresh_U";
+            pic_refresh_U.Size = new Size(49, 39);
+            pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_refresh_U.TabIndex = 108;
+            pic_refresh_U.TabStop = false;
+            // 
+            // btn_search
+            // 
+            btn_search.BackColor = Color.White;
+            btn_search.BackgroundImage = Properties.Resources.button_round2;
+            btn_search.FlatAppearance.BorderSize = 0;
+            btn_search.FlatStyle = FlatStyle.Flat;
+            btn_search.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_search.ForeColor = SystemColors.Window;
+            btn_search.Location = new Point(705, 50);
+            btn_search.Name = "btn_search";
+            btn_search.Size = new Size(91, 38);
+            btn_search.TabIndex = 107;
+            btn_search.Text = "Tìm kiếm";
+            btn_search.UseVisualStyleBackColor = false;
+            // 
+            // btn_Add
+            // 
+            btn_Add.BackColor = Color.White;
+            btn_Add.BackgroundImage = Properties.Resources.button_round2;
+            btn_Add.FlatAppearance.BorderSize = 0;
+            btn_Add.FlatStyle = FlatStyle.Flat;
+            btn_Add.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_Add.ForeColor = SystemColors.Window;
+            btn_Add.Location = new Point(437, 375);
+            btn_Add.Name = "btn_Add";
+            btn_Add.Size = new Size(91, 38);
+            btn_Add.TabIndex = 106;
+            btn_Add.Text = "Tạo mới";
+            btn_Add.UseVisualStyleBackColor = false;
+            // 
+            // btn_Update
+            // 
+            btn_Update.BackColor = Color.White;
+            btn_Update.BackgroundImage = Properties.Resources.button_round2;
+            btn_Update.FlatAppearance.BorderSize = 0;
+            btn_Update.FlatStyle = FlatStyle.Flat;
+            btn_Update.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_Update.ForeColor = SystemColors.Window;
+            btn_Update.Location = new Point(574, 375);
+            btn_Update.Name = "btn_Update";
+            btn_Update.Size = new Size(91, 38);
+            btn_Update.TabIndex = 105;
+            btn_Update.Text = "Cập nhật";
+            btn_Update.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(81, 105);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(716, 262);
+            dataGridView1.TabIndex = 104;
+            // 
+            // btn_Back
+            // 
+            btn_Back.BackColor = Color.White;
+            btn_Back.BackgroundImage = Properties.Resources.button_round2;
+            btn_Back.FlatAppearance.BorderSize = 0;
+            btn_Back.FlatStyle = FlatStyle.Flat;
+            btn_Back.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_Back.ForeColor = SystemColors.Window;
+            btn_Back.Location = new Point(705, 375);
+            btn_Back.Name = "btn_Back";
+            btn_Back.Size = new Size(91, 38);
+            btn_Back.TabIndex = 103;
+            btn_Back.Text = "Quay lại";
+            btn_Back.UseVisualStyleBackColor = false;
+            // 
+            // tb_name
+            // 
+            tb_name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_name.Location = new Point(211, 50);
+            tb_name.Name = "tb_name";
+            tb_name.Size = new Size(428, 34);
+            tb_name.TabIndex = 102;
+            tb_name.TabStop = false;
+            // 
+            // lb_name
+            // 
+            lb_name.AutoSize = true;
+            lb_name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lb_name.Location = new Point(81, 53);
+            lb_name.Name = "lb_name";
+            lb_name.Size = new Size(127, 28);
+            lb_name.TabIndex = 101;
+            lb_name.Text = "Tên học phần";
+            // 
+            // lb_Info
+            // 
+            lb_Info.AutoSize = true;
+            lb_Info.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lb_Info.Location = new Point(344, 9);
+            lb_Info.Name = "lb_Info";
+            lb_Info.Size = new Size(216, 31);
+            lb_Info.TabIndex = 100;
+            lb_Info.Text = "Thông tin học phần";
+            // 
+            // View_InfoCourses
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(895, 425);
+            Controls.Add(pn_parents);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "View_InfoCourses";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "View_InfoCourses";
+            pn_parents.ResumeLayout(false);
+            pn_parents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_refresh_U).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Panel pn_parents;
+        private PictureBox pic_refresh_U;
+        private Button btn_search;
+        private Button btn_Add;
+        private Button btn_Update;
+        private DataGridView dataGridView1;
+        private Button btn_Back;
+        private TextBox tb_name;
+        private Label lb_name;
+        private Label lb_Info;
+    }
+}
