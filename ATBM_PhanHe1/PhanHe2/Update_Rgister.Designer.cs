@@ -146,6 +146,7 @@
             btn_Add.TabIndex = 197;
             btn_Add.Text = "Cập nhật";
             btn_Add.UseVisualStyleBackColor = false;
+            btn_Add.Click += btn_Add_Click;
             // 
             // cbB_year
             // 

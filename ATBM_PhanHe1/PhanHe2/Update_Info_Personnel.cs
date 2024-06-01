@@ -24,7 +24,7 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            Confirm_Update confirm_Update = new Confirm_Update();
+            PhanHe2.Confirm_Update confirm_Update = new PhanHe2.Confirm_Update();
             confirm_Update.ShowDialog();
         }
 

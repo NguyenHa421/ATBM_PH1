@@ -83,6 +83,7 @@
             bt_delete.TabIndex = 114;
             bt_delete.Text = "Xóa";
             bt_delete.UseVisualStyleBackColor = false;
+            bt_delete.Click += bt_delete_Click;
             // 
             // cbB_program
             // 
@@ -172,6 +173,7 @@
             btn_Add.TabIndex = 106;
             btn_Add.Text = "Tạo mới";
             btn_Add.UseVisualStyleBackColor = false;
+            btn_Add.Click += btn_Add_Click;
             // 
             // btn_Update
             // 
@@ -187,6 +189,7 @@
             btn_Update.TabIndex = 105;
             btn_Update.Text = "Cập nhật";
             btn_Update.UseVisualStyleBackColor = false;
+            btn_Update.Click += btn_Update_Click;
             // 
             // dataGridView1
             // 

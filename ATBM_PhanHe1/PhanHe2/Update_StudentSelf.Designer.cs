@@ -78,6 +78,7 @@
             btn_Update.TabIndex = 53;
             btn_Update.Text = "Cập nhật";
             btn_Update.UseVisualStyleBackColor = false;
+            btn_Update.Click += btn_Update_Click;
             // 
             // btn_Cancel
             // 

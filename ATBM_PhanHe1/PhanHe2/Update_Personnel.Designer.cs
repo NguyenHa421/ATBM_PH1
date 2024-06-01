@@ -104,6 +104,7 @@
             btn_Update.TabIndex = 103;
             btn_Update.Text = "Cập nhật";
             btn_Update.UseVisualStyleBackColor = false;
+            btn_Update.Click += btn_Update_Click;
             // 
             // btn_Back
             // 

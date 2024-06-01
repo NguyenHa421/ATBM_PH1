@@ -59,6 +59,7 @@
             btn_Update.TabIndex = 129;
             btn_Update.Text = "Cập nhật";
             btn_Update.UseVisualStyleBackColor = false;
+            btn_Update.Click += btn_Update_Click;
             // 
             // cbB_year
             // 

@@ -241,6 +241,7 @@
             btn_Update.TabIndex = 110;
             btn_Update.Text = "Cập nhật";
             btn_Update.UseVisualStyleBackColor = false;
+            btn_Update.Click += btn_Update_Click;
             // 
             // Update_Courses
             // 

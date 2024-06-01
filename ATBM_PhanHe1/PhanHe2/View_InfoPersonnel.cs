@@ -16,10 +16,41 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             InitializeComponent();
         }
-
+        private Form currentFormChild;
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+            currentFormChild = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pn_parents.Controls.Add(childForm);
+            pn_parents.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Add_Personnel());
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Update_Personnel());
+        }
+
+        private void bt_delete_Click(object sender, EventArgs e)
+        {
+            PhanHe2.Confirm_Delete confirm_Delete = new PhanHe2.Confirm_Delete();
+            confirm_Delete.ShowDialog();
         }
     }
 }
