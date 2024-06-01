@@ -13,6 +13,21 @@
     <Compile Update="Interface\User_Role.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PhanHe2\Add_Assignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Add_Courses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Add_Personnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Add_PlanCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Add_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="PhanHe2\Add_Student.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -40,16 +55,52 @@
     <Compile Update="PhanHe2\MainBase.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PhanHe2\Update_Assignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Update_Courses.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="PhanHe2\Update_Info_Personnel.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PhanHe2\Update_Personnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Update_PlanCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Update_Rgister.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="PhanHe2\Update_Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Update_StudentSelf.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="PhanHe2\Update_Unit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="PhanHe2\ViewInfo_Personnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\ViewInfo_StudentSelf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\View_InfoAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\View_InfoCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\View_InfoPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\View_InfoPlanCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\View_InfoRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="PhanHe2\View_InfoStudent.cs">
