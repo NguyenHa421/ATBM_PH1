@@ -142,9 +142,14 @@ BEGIN
     label_value => 'GVu:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
 END;
 /
+
 --tao user admin
 DROP USER admin CASCADE;
+
+GRANT CREATE USER TO lbacsys;
+CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 CREATE USER admin IDENTIFIED BY group12;
+
 --grant cac quyen can thiet cho user admin
 GRANT CREATE SESSION TO admin;
 GRANT ALL PRIVILEGES TO admin;
