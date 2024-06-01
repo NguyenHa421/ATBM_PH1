@@ -31,7 +31,7 @@ EXEC USP_ADDUSRMEM ('RL_GIAOVU', 'Giao vu');
 
 --CS#1:
 CONN ADMIN/group12;
---tao view xem thong tin chinh minh trong quan he NHANSU
+--Tao view xem thong tin chinh minh trong quan he NHANSU
 CREATE OR REPLACE VIEW UV_NVXEMTHONGTIN
 AS
     SELECT *
@@ -75,7 +75,7 @@ AS
     FROM ADMIN.TB_DANGKY
     WHERE MAGV = SYS_CONTEXT('USERENV', 'SESSION_USER');
 /
---Tao proc Cap nhat cac truong diem so (trong DANGKY) cua SV co tham gia lop hoc phan duoc phan cong
+--Tao proc Cap nhat cac truong diem so (trong TB_DANGKY) cua SV co tham gia lop hoc phan duoc phan cong
 CREATE OR REPLACE PROCEDURE USP_CAPNHATDIEMSV
 (p_masv NVARCHAR2, p_mahp NVARCHAR2, p_hk NUMBER, p_nam NUMBER, p_mact NVARCHAR2,
 p_diemTH NUMBER, p_diemQT NUMBER, p_diemCK NUMBER, p_diemTK NUMBER)
@@ -98,13 +98,13 @@ GRANT EXECUTE ON USP_CAPNHATDIEMSV TO RL_GIANGVIEN;
 /
 
 --CS#3:
---Xem, them moi hoac cap nhat tren SV, DV, HP, KHMo
+--Cap quyen xem, them moi hoac cap nhat tren bang SV, DV, HP, KHMo cho RL_GIAOVU
 GRANT SELECT, INSERT, UPDATE ON ADMIN.TB_SINHVIEN TO RL_GIAOVU;
 GRANT SELECT, INSERT, UPDATE ON ADMIN.TB_DONVI TO RL_GIAOVU;
 GRANT SELECT, INSERT, UPDATE ON ADMIN.TB_HOCPHAN TO RL_GIAOVU;
 GRANT SELECT, INSERT, UPDATE ON ADMIN.TB_KHMO TO RL_GIAOVU;
 /
---Xem toan bo PHANCONG, sua tren "Van phong khoa" phu trach phan cong
+--Tao trigger chinh sua phan cong do "Van phong khoa" phu trach phan cong
 CREATE OR REPLACE TRIGGER UTR_CHINGSUAPHANCONG
 BEFORE UPDATE ON ADMIN.TB_PHANCONG
 FOR EACH ROW
@@ -121,10 +121,11 @@ BEGIN
     END IF;    
 END;
 /
+--Cap quyen xem tren toan bo TB_PHANCONG va quyen chinh sua
 GRANT SELECT, UPDATE ON ADMIN.TB_PHANCONG TO RL_GIAOVU;
 /
---Xoa hoac them DL tren DANGKY trong thoi gian hieu chinh
---thoi gian khong qua 14 ngay so voi ngay bat dau hk
+--Tao trigger xoa hoac them DL tren TB_DANGKY trong thoi gian hieu chinh
+--thoi gian hieu chinh khong qua 14 ngay so voi ngay bat dau hoc ky
 CREATE OR REPLACE TRIGGER UTR_XOA_THEMDANGKY
 BEFORE INSERT OR DELETE ON ADMIN.TB_DANGKY
 FOR EACH ROW
@@ -160,6 +161,7 @@ BEGIN
     END IF;
 END;
 /
+--Cap quyen xem, them va xoa tren TB_DANGKY cho RL_GIAOVU
 GRANT SELECT, INSERT, DELETE ON ADMIN.TB_DANGKY TO RL_GIAOVU;
 /
 
