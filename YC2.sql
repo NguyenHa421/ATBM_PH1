@@ -297,7 +297,7 @@ GRANT SELECT ON admin.THONGBAO TO truongdonvi;
 CREATE USER giaovu IDENTIFIED BY giaovu;
 GRANT CREATE SESSION TO giaovu;
 GRANT SELECT ON admin.THONGBAO TO giaovu;
-
+/
 --gan nhan cho user test
 CONN admin/group12@//localhost:1521/XEPDB1
 BEGIN
