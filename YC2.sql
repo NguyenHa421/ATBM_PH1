@@ -10,7 +10,7 @@ ALTER SESSION SET CONTAINER = XEPDB1;
 EXEC LBACSYS.CONFIGURE_OLS;
 EXEC LBACSYS.OLS_ENFORCEMENT.ENABLE_OLS;
 --xoa policy truoc khi tao
-CONN lbacsys/lbacsys
+CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
     SA_SYSDBA.DROP_POLICY
     (policy_name => 'QLThongBao');
@@ -120,7 +120,7 @@ BEGIN
     long_name => 'Co so 2');
 END;
 /
---tao cac label cho yeu cau a, b, c
+--tao cac label cho yeu cau a, b, c va cho thong bao t1 t2 t3 t4 t5 t6
 CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
     --a. nhan cho truong khoa
@@ -140,6 +140,48 @@ BEGIN
     (policy_name => 'QLThongBao',
     label_tag => 4300,
     label_value => 'GVu:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
+    
+    --d. nhan cho thong bao t1
+    SA_LABEL_ADMIN.CREATE_LABEL
+    (policy_name => 'QLThongBao',
+    label_tag => 7100,
+    label_value => 'TDV::CS1,CS2');
+    
+    --e. nhan cho thong bao t2
+    SA_LABEL_ADMIN.CREATE_LABEL
+    (policy_name => 'QLThongBao',
+    label_tag => 1100,
+    label_value => 'SV:HTTT:CS1');
+    
+    --f. nhan cho thong bao t3
+    SA_LABEL_ADMIN.CREATE_LABEL
+    (policy_name => 'QLThongBao',
+    label_tag => 7300,
+    label_value => 'TDV:KHMT:CS1');
+    
+    --g. nhan cho thong bao t4
+    SA_LABEL_ADMIN.CREATE_LABEL
+    (policy_name => 'QLThongBao',
+    label_tag => 7400,
+    label_value => 'TDV:KHMT:CS1,CS2');
+    
+    --h. nhan cho thong bao t5
+    SA_LABEL_ADMIN.CREATE_LABEL
+    (policy_name => 'QLThongBao',
+    label_tag => 5100,
+    label_value => 'GV:HTTT:CS1,CS2');
+    
+    --h. nhan cho thong bao t6
+    SA_LABEL_ADMIN.CREATE_LABEL
+    (policy_name => 'QLThongBao',
+    label_tag => 1200,
+    label_value => 'SV::CS2');
+    
+    --h. nhan cho thong bao t7
+    SA_LABEL_ADMIN.CREATE_LABEL
+    (policy_name => 'QLThongBao',
+    label_tag => 9200,
+    label_value => 'TK::CS1,CS2');
 END;
 /
 
@@ -264,30 +306,30 @@ BEGIN
     user_name => 'svcs2',
     max_read_label => 'SV:MMT:CS2',
     def_label => 'SV:MMT:CS2',
-    row_label => 'SV::');
+    row_label => 'SV:MMT:CS2');
 
     SA_USER_ADMIN.SET_USER_LABELS
     (policy_name => 'QLThongBao',
     user_name => 'truongkhoa',
     max_read_label => 'TK:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
     def_label => 'TK:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
-    row_label => 'TK::');
+    row_label => 'TK:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
     
     SA_USER_ADMIN.SET_USER_LABELS
     (policy_name => 'QLThongBao',
     user_name => 'truongdonvi',
     max_read_label => 'TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
     def_label => 'TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
-    row_label => 'TDV::');
+    row_label => 'TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
     
     SA_USER_ADMIN.SET_USER_LABELS
     (policy_name => 'QLThongBao',
     user_name => 'giaovu',
     max_read_label => 'GVu:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
     def_label => 'GVu:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2',
-    row_label => 'GVu::');
+    row_label => 'GVu:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
 END;
-
+/
 --test
 CONN svcs2/svcs2@//localhost:1521/XEPDB1
 SELECT * FROM admin.THONGBAO;
