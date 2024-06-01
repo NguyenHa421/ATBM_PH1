@@ -38,8 +38,8 @@
             pn_plan = new Panel();
             bt_plan = new Button();
             pic_plan = new PictureBox();
-            bt_register = new Button();
             pn_register = new Panel();
+            bt_register = new Button();
             pic_register = new PictureBox();
             pn_parents.SuspendLayout();
             pn_info.SuspendLayout();
@@ -87,6 +87,7 @@
             bt_info.TabIndex = 1;
             bt_info.Text = "Hồ sơ cá nhân";
             bt_info.UseVisualStyleBackColor = true;
+            bt_info.Click += bt_info_Click;
             // 
             // pic_info
             // 
@@ -122,6 +123,7 @@
             bt_course.TabIndex = 4;
             bt_course.Text = "Học phần";
             bt_course.UseVisualStyleBackColor = true;
+            bt_course.Click += bt_course_Click;
             // 
             // pic_course
             // 
@@ -157,6 +159,7 @@
             bt_plan.TabIndex = 5;
             bt_plan.Text = "Kế hoạch môn";
             bt_plan.UseVisualStyleBackColor = true;
+            bt_plan.Click += bt_plan_Click;
             // 
             // pic_plan
             // 
@@ -167,6 +170,17 @@
             pic_plan.SizeMode = PictureBoxSizeMode.Zoom;
             pic_plan.TabIndex = 4;
             pic_plan.TabStop = false;
+            // 
+            // pn_register
+            // 
+            pn_register.BackColor = Color.White;
+            pn_register.BackgroundImage = Properties.Resources.Bg_icon;
+            pn_register.Controls.Add(bt_register);
+            pn_register.Controls.Add(pic_register);
+            pn_register.Location = new Point(688, 27);
+            pn_register.Name = "pn_register";
+            pn_register.Size = new Size(170, 170);
+            pn_register.TabIndex = 25;
             // 
             // bt_register
             // 
@@ -181,17 +195,7 @@
             bt_register.TabIndex = 5;
             bt_register.Text = "Đăng ký";
             bt_register.UseVisualStyleBackColor = true;
-            // 
-            // pn_register
-            // 
-            pn_register.BackColor = Color.White;
-            pn_register.BackgroundImage = Properties.Resources.Bg_icon;
-            pn_register.Controls.Add(bt_register);
-            pn_register.Controls.Add(pic_register);
-            pn_register.Location = new Point(688, 27);
-            pn_register.Name = "pn_register";
-            pn_register.Size = new Size(170, 170);
-            pn_register.TabIndex = 25;
+            bt_register.Click += bt_register_Click;
             // 
             // pic_register
             // 

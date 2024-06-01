@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pn_parents = new Panel();
+            bt_delete = new Button();
             pic_refresh_U = new PictureBox();
             btn_search = new Button();
             btn_Add = new Button();
@@ -38,7 +39,6 @@
             tb_name = new TextBox();
             lb_name = new Label();
             lb_Info = new Label();
-            bt_delete = new Button();
             pn_parents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -60,6 +60,21 @@
             pn_parents.Name = "pn_parents";
             pn_parents.Size = new Size(895, 425);
             pn_parents.TabIndex = 1;
+            // 
+            // bt_delete
+            // 
+            bt_delete.BackColor = Color.White;
+            bt_delete.BackgroundImage = Properties.Resources.button_round2;
+            bt_delete.FlatAppearance.BorderSize = 0;
+            bt_delete.FlatStyle = FlatStyle.Flat;
+            bt_delete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            bt_delete.ForeColor = SystemColors.Window;
+            bt_delete.Location = new Point(361, 376);
+            bt_delete.Name = "bt_delete";
+            bt_delete.Size = new Size(91, 38);
+            bt_delete.TabIndex = 100;
+            bt_delete.Text = "Xóa";
+            bt_delete.UseVisualStyleBackColor = false;
             // 
             // pic_refresh_U
             // 
@@ -140,6 +155,7 @@
             btn_Back.TabIndex = 94;
             btn_Back.Text = "Quay lại";
             btn_Back.UseVisualStyleBackColor = false;
+            btn_Back.Click += btn_Back_Click;
             // 
             // tb_name
             // 
@@ -169,21 +185,6 @@
             lb_Info.Size = new Size(201, 31);
             lb_Info.TabIndex = 89;
             lb_Info.Text = "Thông tin nhân sự";
-            // 
-            // bt_delete
-            // 
-            bt_delete.BackColor = Color.White;
-            bt_delete.BackgroundImage = Properties.Resources.button_round2;
-            bt_delete.FlatAppearance.BorderSize = 0;
-            bt_delete.FlatStyle = FlatStyle.Flat;
-            bt_delete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            bt_delete.ForeColor = SystemColors.Window;
-            bt_delete.Location = new Point(361, 376);
-            bt_delete.Name = "bt_delete";
-            bt_delete.Size = new Size(91, 38);
-            bt_delete.TabIndex = 100;
-            bt_delete.Text = "Xóa";
-            bt_delete.UseVisualStyleBackColor = false;
             // 
             // View_InfoPersonnel
             // 

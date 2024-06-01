@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             pn_parents = new Panel();
+            cbB_program = new ComboBox();
+            lb_program = new Label();
+            cbB_semester = new ComboBox();
+            tb_year = new TextBox();
+            lb_year = new Label();
             pic_refresh_U = new PictureBox();
             btn_search = new Button();
             btn_Add = new Button();
@@ -37,11 +42,6 @@
             btn_Back = new Button();
             lb_semester = new Label();
             lb_Info = new Label();
-            tb_year = new TextBox();
-            lb_year = new Label();
-            cbB_semester = new ComboBox();
-            lb_program = new Label();
-            cbB_program = new ComboBox();
             pn_parents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -66,6 +66,55 @@
             pn_parents.Name = "pn_parents";
             pn_parents.Size = new Size(895, 425);
             pn_parents.TabIndex = 2;
+            // 
+            // cbB_program
+            // 
+            cbB_program.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbB_program.FormattingEnabled = true;
+            cbB_program.Items.AddRange(new object[] { "1", "2", "3" });
+            cbB_program.Location = new Point(508, 50);
+            cbB_program.Name = "cbB_program";
+            cbB_program.Size = new Size(197, 36);
+            cbB_program.TabIndex = 113;
+            // 
+            // lb_program
+            // 
+            lb_program.AutoSize = true;
+            lb_program.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lb_program.Location = new Point(374, 53);
+            lb_program.Name = "lb_program";
+            lb_program.Size = new Size(128, 28);
+            lb_program.TabIndex = 112;
+            lb_program.Text = "Chương trình";
+            // 
+            // cbB_semester
+            // 
+            cbB_semester.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbB_semester.FormattingEnabled = true;
+            cbB_semester.Items.AddRange(new object[] { "1", "2", "3" });
+            cbB_semester.Location = new Point(102, 50);
+            cbB_semester.Name = "cbB_semester";
+            cbB_semester.Size = new Size(60, 36);
+            cbB_semester.TabIndex = 111;
+            // 
+            // tb_year
+            // 
+            tb_year.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_year.Location = new Point(242, 50);
+            tb_year.Name = "tb_year";
+            tb_year.Size = new Size(105, 34);
+            tb_year.TabIndex = 110;
+            tb_year.TabStop = false;
+            // 
+            // lb_year
+            // 
+            lb_year.AutoSize = true;
+            lb_year.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lb_year.Location = new Point(182, 53);
+            lb_year.Name = "lb_year";
+            lb_year.Size = new Size(54, 28);
+            lb_year.TabIndex = 109;
+            lb_year.Text = "Năm";
             // 
             // pic_refresh_U
             // 
@@ -146,6 +195,7 @@
             btn_Back.TabIndex = 103;
             btn_Back.Text = "Quay lại";
             btn_Back.UseVisualStyleBackColor = false;
+            btn_Back.Click += btn_Back_Click;
             // 
             // lb_semester
             // 
@@ -166,55 +216,6 @@
             lb_Info.Size = new Size(202, 31);
             lb_Info.TabIndex = 100;
             lb_Info.Text = "Kế hoạch mở môn";
-            // 
-            // tb_year
-            // 
-            tb_year.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_year.Location = new Point(242, 50);
-            tb_year.Name = "tb_year";
-            tb_year.Size = new Size(105, 34);
-            tb_year.TabIndex = 110;
-            tb_year.TabStop = false;
-            // 
-            // lb_year
-            // 
-            lb_year.AutoSize = true;
-            lb_year.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_year.Location = new Point(182, 53);
-            lb_year.Name = "lb_year";
-            lb_year.Size = new Size(54, 28);
-            lb_year.TabIndex = 109;
-            lb_year.Text = "Năm";
-            // 
-            // cbB_semester
-            // 
-            cbB_semester.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_semester.FormattingEnabled = true;
-            cbB_semester.Items.AddRange(new object[] { "1", "2", "3" });
-            cbB_semester.Location = new Point(102, 50);
-            cbB_semester.Name = "cbB_semester";
-            cbB_semester.Size = new Size(60, 36);
-            cbB_semester.TabIndex = 111;
-            // 
-            // lb_program
-            // 
-            lb_program.AutoSize = true;
-            lb_program.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_program.Location = new Point(374, 53);
-            lb_program.Name = "lb_program";
-            lb_program.Size = new Size(128, 28);
-            lb_program.TabIndex = 112;
-            lb_program.Text = "Chương trình";
-            // 
-            // cbB_program
-            // 
-            cbB_program.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_program.FormattingEnabled = true;
-            cbB_program.Items.AddRange(new object[] { "1", "2", "3" });
-            cbB_program.Location = new Point(508, 50);
-            cbB_program.Name = "cbB_program";
-            cbB_program.Size = new Size(197, 36);
-            cbB_program.TabIndex = 113;
             // 
             // View_InfoPlanCourses
             // 

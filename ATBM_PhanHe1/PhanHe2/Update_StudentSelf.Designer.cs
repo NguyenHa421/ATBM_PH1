@@ -48,7 +48,7 @@
             // tb_newphone
             // 
             tb_newphone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_newphone.Location = new Point(419, 222);
+            tb_newphone.Location = new Point(396, 219);
             tb_newphone.Name = "tb_newphone";
             tb_newphone.Size = new Size(229, 34);
             tb_newphone.TabIndex = 55;
@@ -58,7 +58,7 @@
             // 
             lb_new_phone.AutoSize = true;
             lb_new_phone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_new_phone.Location = new Point(246, 225);
+            lb_new_phone.Location = new Point(223, 222);
             lb_new_phone.Name = "lb_new_phone";
             lb_new_phone.Size = new Size(167, 28);
             lb_new_phone.TabIndex = 54;
@@ -72,7 +72,7 @@
             btn_Update.FlatStyle = FlatStyle.Flat;
             btn_Update.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_Update.ForeColor = SystemColors.Window;
-            btn_Update.Location = new Point(475, 375);
+            btn_Update.Location = new Point(452, 372);
             btn_Update.Name = "btn_Update";
             btn_Update.Size = new Size(91, 38);
             btn_Update.TabIndex = 53;
@@ -87,17 +87,18 @@
             btn_Cancel.FlatStyle = FlatStyle.Flat;
             btn_Cancel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_Cancel.ForeColor = SystemColors.Window;
-            btn_Cancel.Location = new Point(354, 375);
+            btn_Cancel.Location = new Point(331, 372);
             btn_Cancel.Name = "btn_Cancel";
             btn_Cancel.Size = new Size(91, 38);
             btn_Cancel.TabIndex = 52;
             btn_Cancel.Text = "Hủy";
             btn_Cancel.UseVisualStyleBackColor = false;
+            btn_Cancel.Click += btn_Cancel_Click;
             // 
             // tb_phone
             // 
             tb_phone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_phone.Location = new Point(419, 169);
+            tb_phone.Location = new Point(396, 166);
             tb_phone.Name = "tb_phone";
             tb_phone.ReadOnly = true;
             tb_phone.Size = new Size(229, 34);
@@ -107,7 +108,7 @@
             // tb_name
             // 
             tb_name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_name.Location = new Point(419, 114);
+            tb_name.Location = new Point(396, 111);
             tb_name.Name = "tb_name";
             tb_name.ReadOnly = true;
             tb_name.Size = new Size(229, 34);
@@ -117,7 +118,7 @@
             // tb_id
             // 
             tb_id.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_id.Location = new Point(419, 59);
+            tb_id.Location = new Point(396, 56);
             tb_id.Name = "tb_id";
             tb_id.ReadOnly = true;
             tb_id.Size = new Size(229, 34);
@@ -128,7 +129,7 @@
             // 
             lb_phone.AutoSize = true;
             lb_phone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_phone.Location = new Point(246, 172);
+            lb_phone.Location = new Point(223, 169);
             lb_phone.Name = "lb_phone";
             lb_phone.Size = new Size(153, 28);
             lb_phone.TabIndex = 48;
@@ -138,7 +139,7 @@
             // 
             lb_name.AutoSize = true;
             lb_name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_name.Location = new Point(246, 117);
+            lb_name.Location = new Point(223, 114);
             lb_name.Name = "lb_name";
             lb_name.Size = new Size(96, 28);
             lb_name.TabIndex = 47;
@@ -148,7 +149,7 @@
             // 
             lb_id.AutoSize = true;
             lb_id.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_id.Location = new Point(246, 62);
+            lb_id.Location = new Point(223, 59);
             lb_id.Name = "lb_id";
             lb_id.Size = new Size(121, 28);
             lb_id.TabIndex = 46;
@@ -158,7 +159,7 @@
             // 
             lb_Info.AutoSize = true;
             lb_Info.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Info.Location = new Point(322, 12);
+            lb_Info.Location = new Point(299, 9);
             lb_Info.Name = "lb_Info";
             lb_Info.Size = new Size(293, 31);
             lb_Info.TabIndex = 45;
@@ -167,7 +168,7 @@
             // tb_role
             // 
             tb_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_role.Location = new Point(419, 272);
+            tb_role.Location = new Point(396, 269);
             tb_role.Name = "tb_role";
             tb_role.ReadOnly = true;
             tb_role.Size = new Size(229, 34);
@@ -178,7 +179,7 @@
             // 
             lb_address.AutoSize = true;
             lb_address.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_address.Location = new Point(246, 275);
+            lb_address.Location = new Point(223, 272);
             lb_address.Name = "lb_address";
             lb_address.Size = new Size(96, 28);
             lb_address.TabIndex = 56;
@@ -187,7 +188,7 @@
             // tb_newaddress
             // 
             tb_newaddress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_newaddress.Location = new Point(419, 326);
+            tb_newaddress.Location = new Point(396, 323);
             tb_newaddress.Name = "tb_newaddress";
             tb_newaddress.Size = new Size(229, 34);
             tb_newaddress.TabIndex = 59;
@@ -197,7 +198,7 @@
             // 
             lb_newaddress.AutoSize = true;
             lb_newaddress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_newaddress.Location = new Point(246, 329);
+            lb_newaddress.Location = new Point(223, 326);
             lb_newaddress.Name = "lb_newaddress";
             lb_newaddress.Size = new Size(110, 28);
             lb_newaddress.TabIndex = 58;

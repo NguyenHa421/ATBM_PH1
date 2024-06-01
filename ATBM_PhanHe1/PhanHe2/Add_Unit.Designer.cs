@@ -156,6 +156,7 @@
             Name = "Add_Unit";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Add_Unit";
+            Load += Add_Unit_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -17,7 +17,7 @@ namespace ATBM_PhanHe1.PhanHe2
         public MainBase()
         {
             InitializeComponent();
-            OpenChildForm(new PhanHe2.Homepage_Staff());
+            OpenChildForm(new PhanHe2.Homepage_Dean());
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)

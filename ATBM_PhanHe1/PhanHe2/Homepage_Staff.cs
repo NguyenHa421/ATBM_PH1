@@ -33,10 +33,30 @@ namespace ATBM_PhanHe1.PhanHe2
             childForm.BringToFront();
             childForm.Show();
         }
-       
+
         private void bt_student_Click_1(object sender, EventArgs e)
         {
             OpenChildForm(new PhanHe2.View_InfoStudent());
+        }
+
+        private void bt_info_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new PhanHe2.ViewInfo_Personnel());
+        }
+
+        private void bt_unit_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new PhanHe2.View_InfoUnit());
+        }
+
+        private void bt_course_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new PhanHe2.View_InfoCourses());
+        }
+
+        private void bt_plan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new PhanHe2.View_InfoPlanCourses());
         }
     }
 }

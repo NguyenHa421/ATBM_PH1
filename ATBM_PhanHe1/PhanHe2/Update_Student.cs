@@ -21,5 +21,10 @@ namespace ATBM_PhanHe1.PhanHe2
         {
 
         }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

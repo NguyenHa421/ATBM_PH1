@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             pn_parents = new Panel();
+            textBox1 = new TextBox();
             btn_Update = new Button();
+            label1 = new Label();
             btn_Back = new Button();
+            tb_name_unit = new TextBox();
+            lb_number_credits = new Label();
             tb_id_unit = new TextBox();
             tb_allowance = new TextBox();
             tb_role = new TextBox();
@@ -48,10 +52,6 @@
             lb_name = new Label();
             lb_id = new Label();
             lb_Info = new Label();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            tb_name_unit = new TextBox();
-            lb_number_credits = new Label();
             pn_parents.SuspendLayout();
             SuspendLayout();
             // 
@@ -85,6 +85,16 @@
             pn_parents.Size = new Size(895, 425);
             pn_parents.TabIndex = 1;
             // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(724, 300);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(106, 34);
+            textBox1.TabIndex = 96;
+            textBox1.TabStop = false;
+            // 
             // btn_Update
             // 
             btn_Update.BackColor = Color.White;
@@ -100,6 +110,16 @@
             btn_Update.Text = "Cập nhật";
             btn_Update.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(492, 303);
+            label1.Name = "label1";
+            label1.Size = new Size(223, 28);
+            label1.TabIndex = 95;
+            label1.Text = "Điểm trung bình tích lũy";
+            // 
             // btn_Back
             // 
             btn_Back.BackColor = Color.White;
@@ -114,6 +134,27 @@
             btn_Back.TabIndex = 41;
             btn_Back.Text = "Quay lại";
             btn_Back.UseVisualStyleBackColor = false;
+            btn_Back.Click += btn_Back_Click;
+            // 
+            // tb_name_unit
+            // 
+            tb_name_unit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_name_unit.Location = new Point(724, 245);
+            tb_name_unit.Name = "tb_name_unit";
+            tb_name_unit.ReadOnly = true;
+            tb_name_unit.Size = new Size(106, 34);
+            tb_name_unit.TabIndex = 94;
+            tb_name_unit.TabStop = false;
+            // 
+            // lb_number_credits
+            // 
+            lb_number_credits.AutoSize = true;
+            lb_number_credits.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lb_number_credits.Location = new Point(492, 248);
+            lb_number_credits.Name = "lb_number_credits";
+            lb_number_credits.Size = new Size(161, 28);
+            lb_number_credits.TabIndex = 93;
+            lb_number_credits.Text = "Số tín chỉ tích lũy";
             // 
             // tb_id_unit
             // 
@@ -284,46 +325,6 @@
             lb_Info.Size = new Size(200, 31);
             lb_Info.TabIndex = 22;
             lb_Info.Text = "Thông tin cá nhân";
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(724, 300);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(106, 34);
-            textBox1.TabIndex = 96;
-            textBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(492, 303);
-            label1.Name = "label1";
-            label1.Size = new Size(223, 28);
-            label1.TabIndex = 95;
-            label1.Text = "Điểm trung bình tích lũy";
-            // 
-            // tb_name_unit
-            // 
-            tb_name_unit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_name_unit.Location = new Point(724, 245);
-            tb_name_unit.Name = "tb_name_unit";
-            tb_name_unit.ReadOnly = true;
-            tb_name_unit.Size = new Size(106, 34);
-            tb_name_unit.TabIndex = 94;
-            tb_name_unit.TabStop = false;
-            // 
-            // lb_number_credits
-            // 
-            lb_number_credits.AutoSize = true;
-            lb_number_credits.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_number_credits.Location = new Point(492, 248);
-            lb_number_credits.Name = "lb_number_credits";
-            lb_number_credits.Size = new Size(161, 28);
-            lb_number_credits.TabIndex = 93;
-            lb_number_credits.Text = "Số tín chỉ tích lũy";
             // 
             // ViewInfo_StudentSelf
             // 

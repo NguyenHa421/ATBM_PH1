@@ -93,6 +93,7 @@
             bt_plan.TabIndex = 5;
             bt_plan.Text = "Kế hoạch môn";
             bt_plan.UseVisualStyleBackColor = true;
+            bt_plan.Click += bt_plan_Click;
             // 
             // pic_plan
             // 
@@ -128,6 +129,7 @@
             bt_course.TabIndex = 4;
             bt_course.Text = "Học phần";
             bt_course.UseVisualStyleBackColor = true;
+            bt_course.Click += bt_course_Click;
             // 
             // pic_course
             // 
@@ -163,6 +165,7 @@
             bt_unit.TabIndex = 3;
             bt_unit.Text = "Đơn vị";
             bt_unit.UseVisualStyleBackColor = true;
+            bt_unit.Click += bt_unit_Click;
             // 
             // pic_unit
             // 
@@ -234,6 +237,7 @@
             bt_info.TabIndex = 1;
             bt_info.Text = "Hồ sơ cá nhân";
             bt_info.UseVisualStyleBackColor = true;
+            bt_info.Click += bt_info_Click;
             // 
             // pic_info
             // 

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             pn_parents = new Panel();
-            pic_personnel = new PictureBox();
             pn_personnel = new Panel();
             bt_personnel = new Button();
+            pic_personnel = new PictureBox();
             pn_info = new Panel();
             bt_info = new Button();
             pic_info = new PictureBox();
@@ -50,12 +50,12 @@
             pn_assign = new Panel();
             bt_assign = new Button();
             pic_assign = new PictureBox();
-            bt_register = new Button();
             pn_register = new Panel();
+            bt_register = new Button();
             pic_register = new PictureBox();
             pn_parents.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pic_personnel).BeginInit();
             pn_personnel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_personnel).BeginInit();
             pn_info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_info).BeginInit();
             pn_course.SuspendLayout();
@@ -87,16 +87,6 @@
             pn_parents.Size = new Size(895, 425);
             pn_parents.TabIndex = 0;
             // 
-            // pic_personnel
-            // 
-            pic_personnel.Image = Properties.Resources.teamwork;
-            pic_personnel.Location = new Point(38, 21);
-            pic_personnel.Name = "pic_personnel";
-            pic_personnel.Size = new Size(91, 82);
-            pic_personnel.SizeMode = PictureBoxSizeMode.Zoom;
-            pic_personnel.TabIndex = 4;
-            pic_personnel.TabStop = false;
-            // 
             // pn_personnel
             // 
             pn_personnel.BackColor = Color.White;
@@ -121,6 +111,17 @@
             bt_personnel.TabIndex = 5;
             bt_personnel.Text = "Nhân sự";
             bt_personnel.UseVisualStyleBackColor = true;
+            bt_personnel.Click += bt_personnel_Click;
+            // 
+            // pic_personnel
+            // 
+            pic_personnel.Image = Properties.Resources.teamwork;
+            pic_personnel.Location = new Point(38, 21);
+            pic_personnel.Name = "pic_personnel";
+            pic_personnel.Size = new Size(91, 82);
+            pic_personnel.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_personnel.TabIndex = 4;
+            pic_personnel.TabStop = false;
             // 
             // pn_info
             // 
@@ -146,6 +147,7 @@
             bt_info.TabIndex = 1;
             bt_info.Text = "Hồ sơ cá nhân";
             bt_info.UseVisualStyleBackColor = true;
+            bt_info.Click += bt_info_Click;
             // 
             // pic_info
             // 
@@ -181,6 +183,7 @@
             bt_course.TabIndex = 4;
             bt_course.Text = "Học phần";
             bt_course.UseVisualStyleBackColor = true;
+            bt_course.Click += bt_course_Click;
             // 
             // pic_course
             // 
@@ -216,6 +219,7 @@
             bt_student.TabIndex = 2;
             bt_student.Text = "Sinh viên";
             bt_student.UseVisualStyleBackColor = true;
+            bt_student.Click += bt_student_Click;
             // 
             // pic_student
             // 
@@ -251,6 +255,7 @@
             bt_unit.TabIndex = 3;
             bt_unit.Text = "Đơn vị";
             bt_unit.UseVisualStyleBackColor = true;
+            bt_unit.Click += bt_unit_Click;
             // 
             // pic_unit
             // 
@@ -286,6 +291,7 @@
             bt_plan.TabIndex = 5;
             bt_plan.Text = "Kế hoạch môn";
             bt_plan.UseVisualStyleBackColor = true;
+            bt_plan.Click += bt_plan_Click;
             // 
             // pic_plan
             // 
@@ -321,6 +327,7 @@
             bt_assign.TabIndex = 5;
             bt_assign.Text = "Phân công";
             bt_assign.UseVisualStyleBackColor = true;
+            bt_assign.Click += bt_assign_Click;
             // 
             // pic_assign
             // 
@@ -331,6 +338,17 @@
             pic_assign.SizeMode = PictureBoxSizeMode.Zoom;
             pic_assign.TabIndex = 4;
             pic_assign.TabStop = false;
+            // 
+            // pn_register
+            // 
+            pn_register.BackColor = Color.White;
+            pn_register.BackgroundImage = Properties.Resources.Bg_icon;
+            pn_register.Controls.Add(bt_register);
+            pn_register.Controls.Add(pic_register);
+            pn_register.Location = new Point(470, 229);
+            pn_register.Name = "pn_register";
+            pn_register.Size = new Size(170, 170);
+            pn_register.TabIndex = 21;
             // 
             // bt_register
             // 
@@ -345,17 +363,7 @@
             bt_register.TabIndex = 5;
             bt_register.Text = "Đăng ký";
             bt_register.UseVisualStyleBackColor = true;
-            // 
-            // pn_register
-            // 
-            pn_register.BackColor = Color.White;
-            pn_register.BackgroundImage = Properties.Resources.Bg_icon;
-            pn_register.Controls.Add(bt_register);
-            pn_register.Controls.Add(pic_register);
-            pn_register.Location = new Point(470, 229);
-            pn_register.Name = "pn_register";
-            pn_register.Size = new Size(170, 170);
-            pn_register.TabIndex = 21;
+            bt_register.Click += bt_register_Click;
             // 
             // pic_register
             // 
@@ -379,8 +387,8 @@
             StartPosition = FormStartPosition.CenterParent;
             Text = "Homepage_Dean";
             pn_parents.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pic_personnel).EndInit();
             pn_personnel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pic_personnel).EndInit();
             pn_info.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pic_info).EndInit();
             pn_course.ResumeLayout(false);

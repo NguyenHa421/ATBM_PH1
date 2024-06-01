@@ -110,6 +110,7 @@
             btn_Back.TabIndex = 41;
             btn_Back.Text = "Quay lại";
             btn_Back.UseVisualStyleBackColor = false;
+            btn_Back.Click += btn_Back_Click;
             // 
             // tb_name_unit
             // 

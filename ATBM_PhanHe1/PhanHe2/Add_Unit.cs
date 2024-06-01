@@ -21,5 +21,10 @@ namespace ATBM_PhanHe1.PhanHe2
         {
 
         }
+
+        private void Add_Unit_Load(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

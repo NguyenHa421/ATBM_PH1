@@ -53,7 +53,7 @@
             btn_Update.FlatStyle = FlatStyle.Flat;
             btn_Update.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_Update.ForeColor = SystemColors.Window;
-            btn_Update.Location = new Point(484, 372);
+            btn_Update.Location = new Point(454, 378);
             btn_Update.Name = "btn_Update";
             btn_Update.Size = new Size(91, 38);
             btn_Update.TabIndex = 129;
@@ -64,7 +64,7 @@
             // 
             cbB_year.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_year.FormattingEnabled = true;
-            cbB_year.Location = new Point(447, 218);
+            cbB_year.Location = new Point(417, 224);
             cbB_year.Name = "cbB_year";
             cbB_year.Size = new Size(229, 36);
             cbB_year.TabIndex = 125;
@@ -74,7 +74,7 @@
             cbB_semester.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_semester.FormattingEnabled = true;
             cbB_semester.Items.AddRange(new object[] { "1", "2", "3" });
-            cbB_semester.Location = new Point(447, 160);
+            cbB_semester.Location = new Point(417, 166);
             cbB_semester.Name = "cbB_semester";
             cbB_semester.Size = new Size(229, 36);
             cbB_semester.TabIndex = 124;
@@ -87,18 +87,19 @@
             btn_Back.FlatStyle = FlatStyle.Flat;
             btn_Back.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_Back.ForeColor = SystemColors.Window;
-            btn_Back.Location = new Point(359, 372);
+            btn_Back.Location = new Point(329, 378);
             btn_Back.Name = "btn_Back";
             btn_Back.Size = new Size(91, 38);
             btn_Back.TabIndex = 123;
             btn_Back.Text = "Quay lại";
             btn_Back.UseVisualStyleBackColor = false;
+            btn_Back.Click += btn_Back_Click;
             // 
             // lb_year
             // 
             lb_year.AutoSize = true;
             lb_year.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_year.Location = new Point(265, 221);
+            lb_year.Location = new Point(235, 227);
             lb_year.Name = "lb_year";
             lb_year.Size = new Size(54, 28);
             lb_year.TabIndex = 119;
@@ -108,7 +109,7 @@
             // 
             lb_nameprogram.AutoSize = true;
             lb_nameprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_nameprogram.Location = new Point(265, 327);
+            lb_nameprogram.Location = new Point(235, 333);
             lb_nameprogram.Name = "lb_nameprogram";
             lb_nameprogram.Size = new Size(159, 28);
             lb_nameprogram.TabIndex = 118;
@@ -118,7 +119,7 @@
             // 
             lb_idprogram.AutoSize = true;
             lb_idprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_idprogram.Location = new Point(265, 275);
+            lb_idprogram.Location = new Point(235, 281);
             lb_idprogram.Name = "lb_idprogram";
             lb_idprogram.Size = new Size(158, 28);
             lb_idprogram.TabIndex = 117;
@@ -128,7 +129,7 @@
             // 
             lb_semester.AutoSize = true;
             lb_semester.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_semester.Location = new Point(265, 163);
+            lb_semester.Location = new Point(235, 169);
             lb_semester.Name = "lb_semester";
             lb_semester.Size = new Size(72, 28);
             lb_semester.TabIndex = 116;
@@ -138,7 +139,7 @@
             // 
             lb_name.AutoSize = true;
             lb_name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_name.Location = new Point(265, 110);
+            lb_name.Location = new Point(235, 116);
             lb_name.Name = "lb_name";
             lb_name.Size = new Size(127, 28);
             lb_name.TabIndex = 113;
@@ -148,7 +149,7 @@
             // 
             lb_id.AutoSize = true;
             lb_id.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_id.Location = new Point(265, 58);
+            lb_id.Location = new Point(235, 64);
             lb_id.Name = "lb_id";
             lb_id.Size = new Size(126, 28);
             lb_id.TabIndex = 112;
@@ -158,7 +159,7 @@
             // 
             lb_Info.AutoSize = true;
             lb_Info.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Info.Location = new Point(312, 11);
+            lb_Info.Location = new Point(282, 17);
             lb_Info.Name = "lb_Info";
             lb_Info.Size = new Size(298, 31);
             lb_Info.TabIndex = 111;
@@ -168,7 +169,7 @@
             // 
             cbB_idprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_idprogram.FormattingEnabled = true;
-            cbB_idprogram.Location = new Point(447, 272);
+            cbB_idprogram.Location = new Point(417, 278);
             cbB_idprogram.Name = "cbB_idprogram";
             cbB_idprogram.Size = new Size(229, 36);
             cbB_idprogram.TabIndex = 130;
@@ -177,7 +178,7 @@
             // 
             cbB_nameprograme.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_nameprograme.FormattingEnabled = true;
-            cbB_nameprograme.Location = new Point(447, 324);
+            cbB_nameprograme.Location = new Point(417, 330);
             cbB_nameprograme.Name = "cbB_nameprograme";
             cbB_nameprograme.Size = new Size(229, 36);
             cbB_nameprograme.TabIndex = 131;
@@ -186,7 +187,7 @@
             // 
             cbB_nameCourses.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_nameCourses.FormattingEnabled = true;
-            cbB_nameCourses.Location = new Point(447, 107);
+            cbB_nameCourses.Location = new Point(417, 113);
             cbB_nameCourses.Name = "cbB_nameCourses";
             cbB_nameCourses.Size = new Size(229, 36);
             cbB_nameCourses.TabIndex = 133;
@@ -195,7 +196,7 @@
             // 
             cbB_idcourses.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_idcourses.FormattingEnabled = true;
-            cbB_idcourses.Location = new Point(447, 55);
+            cbB_idcourses.Location = new Point(417, 61);
             cbB_idcourses.Name = "cbB_idcourses";
             cbB_idcourses.Size = new Size(229, 36);
             cbB_idcourses.TabIndex = 132;
