@@ -11,7 +11,6 @@ EXEC USP_CREATEUSER;
 CALL drop_role('RL_NHANVIENCOBAN');
 CALL drop_role('RL_GIANGVIEN');
 CALL drop_role('RL_GIAOVU');
-
 /
 --Tao role RL_NHANVIENCOBAN va them user vao role
 CREATE ROLE RL_NHANVIENCOBAN;
@@ -61,7 +60,6 @@ GRANT SELECT ON ADMIN.TB_KHMO TO RL_NHANVIENCOBAN;
 /
 
 --CS#2:
-
 CONN ADMIN/group12;
 --Tao view xem phan cong giang day lien quan den minh
 CREATE OR REPLACE VIEW UV_GVXEMPHANCONG
