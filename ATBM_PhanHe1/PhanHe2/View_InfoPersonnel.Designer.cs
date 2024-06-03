@@ -34,14 +34,14 @@
             btn_search = new Button();
             btn_Add = new Button();
             btn_Update = new Button();
-            dataGridView1 = new DataGridView();
+            dtGrid_personel = new DataGridView();
             btn_Back = new Button();
             tb_name = new TextBox();
             lb_name = new Label();
             lb_Info = new Label();
             pn_parents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_personel).BeginInit();
             SuspendLayout();
             // 
             // pn_parents
@@ -51,7 +51,7 @@
             pn_parents.Controls.Add(btn_search);
             pn_parents.Controls.Add(btn_Add);
             pn_parents.Controls.Add(btn_Update);
-            pn_parents.Controls.Add(dataGridView1);
+            pn_parents.Controls.Add(dtGrid_personel);
             pn_parents.Controls.Add(btn_Back);
             pn_parents.Controls.Add(tb_name);
             pn_parents.Controls.Add(lb_name);
@@ -86,6 +86,7 @@
             pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
             pic_refresh_U.TabIndex = 99;
             pic_refresh_U.TabStop = false;
+            pic_refresh_U.Click += pic_refresh_U_Click;
             // 
             // btn_search
             // 
@@ -101,6 +102,7 @@
             btn_search.TabIndex = 98;
             btn_search.Text = "Tìm kiếm";
             btn_search.UseVisualStyleBackColor = false;
+            btn_search.Click += btn_search_Click;
             // 
             // btn_Add
             // 
@@ -134,15 +136,16 @@
             btn_Update.UseVisualStyleBackColor = false;
             btn_Update.Click += btn_Update_Click;
             // 
-            // dataGridView1
+            // dtGrid_personel
             // 
-            dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(41, 104);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(816, 262);
-            dataGridView1.TabIndex = 95;
+            dtGrid_personel.BackgroundColor = SystemColors.Control;
+            dtGrid_personel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGrid_personel.Location = new Point(41, 104);
+            dtGrid_personel.Name = "dtGrid_personel";
+            dtGrid_personel.RowHeadersWidth = 51;
+            dtGrid_personel.Size = new Size(816, 262);
+            dtGrid_personel.TabIndex = 95;
+            dtGrid_personel.CellContentClick += dtGrid_personel_CellContentClick;
             // 
             // btn_Back
             // 
@@ -203,7 +206,7 @@
             pn_parents.ResumeLayout(false);
             pn_parents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_personel).EndInit();
             ResumeLayout(false);
         }
 
@@ -215,7 +218,7 @@
         private Button btn_search;
         private Button btn_Add;
         private Button btn_Update;
-        private DataGridView dataGridView1;
+        private DataGridView dtGrid_personel;
         private Button btn_Back;
         private TextBox tb_name;
         private Label lb_name;

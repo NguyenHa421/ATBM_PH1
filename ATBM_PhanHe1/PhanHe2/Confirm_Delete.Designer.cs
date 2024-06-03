@@ -47,6 +47,7 @@
             btn_Confirm.TabIndex = 47;
             btn_Confirm.Text = "Xác nhận";
             btn_Confirm.UseVisualStyleBackColor = false;
+            btn_Confirm.Click += btn_Confirm_Click;
             // 
             // btn_Cancel
             // 

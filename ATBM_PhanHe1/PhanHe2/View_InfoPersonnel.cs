@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace ATBM_PhanHe1.PhanHe2
 {
     public partial class View_InfoPersonnel : Form
     {
+        BindingSource personelList = new BindingSource();
+        private string clickedPersonelID = "";
         public View_InfoPersonnel()
         {
             InitializeComponent();
+            Load();
+        }
+        private void Load()
+        {
+            dtGrid_personel.DataSource = personelList;
+            personelList.DataSource = PersonelDAO.Instance.GetPersonelList();
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -49,8 +58,32 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void bt_delete_Click(object sender, EventArgs e)
         {
-            PhanHe2.Confirm_Delete confirm_Delete = new PhanHe2.Confirm_Delete();
-            confirm_Delete.ShowDialog();
+            using (Confirm_Delete confirm_delete = new Confirm_Delete())
+            {
+                if (confirm_delete.ShowDialog() == DialogResult.OK)
+                {
+                    PersonelDAO.Instance.DeletePersonelByID(clickedPersonelID);
+                }
+            }
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            personelList.DataSource = PersonelDAO.Instance.SearchPersonel(tb_name.Text);
+        }
+
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            personelList.DataSource = PersonelDAO.Instance.GetPersonelList();
+        }
+
+        private void dtGrid_personel_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell cell = dtGrid_personel.Rows[e.RowIndex].Cells[0];
+                clickedPersonelID = cell.Value.ToString();
+            }
         }
     }
 }

@@ -41,5 +41,19 @@ namespace ATBM_PhanHe1.DAO
             }
             return result;
         }
+        public UnitDTO GetUnitByName(string unitName)
+        {
+            string query = string.Format("select * from donvi where lower(TENDV) like lower('%{0}%')", unitName);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            UnitDTO unit = new UnitDTO(data.Rows[0]);
+            return unit;
+        }
+        public UnitDTO GetUnitByID(string unitID)
+        {
+            string query = string.Format("select * from donvi where lower(MADV) like lower('%{0}%')", unitID);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            UnitDTO unit = new UnitDTO(data.Rows[0]);
+            return unit;
+        }
     }
 }

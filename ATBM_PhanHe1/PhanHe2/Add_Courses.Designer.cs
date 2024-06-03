@@ -57,6 +57,7 @@
             cbB_unit.Name = "cbB_unit";
             cbB_unit.Size = new Size(229, 36);
             cbB_unit.TabIndex = 87;
+            cbB_unit.SelectedIndexChanged += cbB_unit_SelectedIndexChanged;
             // 
             // cbB_idunit
             // 
@@ -66,6 +67,7 @@
             cbB_idunit.Name = "cbB_idunit";
             cbB_idunit.Size = new Size(229, 36);
             cbB_idunit.TabIndex = 86;
+            cbB_idunit.SelectedIndexChanged += cbB_idunit_SelectedIndexChanged;
             // 
             // btn_Add
             // 
@@ -81,6 +83,7 @@
             btn_Add.TabIndex = 84;
             btn_Add.Text = "Tạo mới";
             btn_Add.UseVisualStyleBackColor = false;
+            btn_Add.Click += btn_Add_Click;
             // 
             // btn_Back
             // 
@@ -131,9 +134,9 @@
             lb_unit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lb_unit.Location = new Point(49, 300);
             lb_unit.Name = "lb_unit";
-            lb_unit.Size = new Size(69, 28);
+            lb_unit.Size = new Size(101, 28);
             lb_unit.TabIndex = 78;
-            lb_unit.Text = "Đơn vị";
+            lb_unit.Text = "Tên đơn vị";
             // 
             // lb_practice
             // 
@@ -277,7 +280,6 @@
 
         #endregion
 
-        private ComboBox cbB_gender;
         private ComboBox cbB_unit;
         private ComboBox cbB_idunit;
         private Button btn_Add;

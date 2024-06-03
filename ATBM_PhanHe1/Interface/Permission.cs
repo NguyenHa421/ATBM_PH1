@@ -72,7 +72,6 @@ namespace ATBM_PhanHe1.Interface
                 DataGridViewCell cell = dtGrid_user.Rows[e.RowIndex].Cells[0];
                 clickedUser = cell.Value.ToString();
             }
-            else { };
         }
         private void pic_logout_Click(object sender, EventArgs e)
         {

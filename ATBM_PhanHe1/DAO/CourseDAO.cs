@@ -42,5 +42,10 @@ namespace ATBM_PhanHe1.DAO
             }
             return result;
         }
+        public void AddCource(string  courseId, string courceName, int credits, int lectureNum, int practicalNum, int maxStudent, string unitID)
+        {
+            string query = string.Format("insert into HOCPHAN values('{0}','{1}',{2},{3},{4},{5},'{6}')", courseId, courceName, credits, lectureNum, practicalNum, maxStudent, unitID);
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
     }
 }
