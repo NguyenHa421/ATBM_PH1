@@ -33,14 +33,14 @@
             btn_search = new Button();
             btn_Add = new Button();
             btn_Update = new Button();
-            dataGridView1 = new DataGridView();
+            dtGrid_course = new DataGridView();
             btn_Back = new Button();
             tb_name = new TextBox();
             lb_name = new Label();
             lb_Info = new Label();
             pn_parents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_course).BeginInit();
             SuspendLayout();
             // 
             // pn_parents
@@ -49,7 +49,7 @@
             pn_parents.Controls.Add(btn_search);
             pn_parents.Controls.Add(btn_Add);
             pn_parents.Controls.Add(btn_Update);
-            pn_parents.Controls.Add(dataGridView1);
+            pn_parents.Controls.Add(dtGrid_course);
             pn_parents.Controls.Add(btn_Back);
             pn_parents.Controls.Add(tb_name);
             pn_parents.Controls.Add(lb_name);
@@ -68,6 +68,7 @@
             pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
             pic_refresh_U.TabIndex = 108;
             pic_refresh_U.TabStop = false;
+            pic_refresh_U.Click += pic_refresh_U_Click;
             // 
             // btn_search
             // 
@@ -83,6 +84,7 @@
             btn_search.TabIndex = 107;
             btn_search.Text = "Tìm kiếm";
             btn_search.UseVisualStyleBackColor = false;
+            btn_search.Click += btn_search_Click;
             // 
             // btn_Add
             // 
@@ -116,15 +118,15 @@
             btn_Update.UseVisualStyleBackColor = false;
             btn_Update.Click += btn_Update_Click;
             // 
-            // dataGridView1
+            // dtGrid_course
             // 
-            dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(81, 105);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(716, 262);
-            dataGridView1.TabIndex = 104;
+            dtGrid_course.BackgroundColor = SystemColors.Control;
+            dtGrid_course.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGrid_course.Location = new Point(81, 105);
+            dtGrid_course.Name = "dtGrid_course";
+            dtGrid_course.RowHeadersWidth = 51;
+            dtGrid_course.Size = new Size(716, 262);
+            dtGrid_course.TabIndex = 104;
             // 
             // btn_Back
             // 
@@ -185,7 +187,7 @@
             pn_parents.ResumeLayout(false);
             pn_parents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_course).EndInit();
             ResumeLayout(false);
         }
 
@@ -196,7 +198,7 @@
         private Button btn_search;
         private Button btn_Add;
         private Button btn_Update;
-        private DataGridView dataGridView1;
+        private DataGridView dtGrid_course;
         private Button btn_Back;
         private TextBox tb_name;
         private Label lb_name;

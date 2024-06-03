@@ -21,5 +21,6 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             this.Close();
         }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace ATBM_PhanHe1.PhanHe2
 {
     public partial class View_InfoUnit : Form
     {
+        BindingSource unitList = new BindingSource();
         public View_InfoUnit()
         {
             InitializeComponent();
+            Load();
+        }
+        private void Load()
+        {
+            dtGrid_unit.DataSource = unitList;
+            unitList.DataSource = UnitDAO.Instance.GetUnitList();
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -32,11 +40,6 @@ namespace ATBM_PhanHe1.PhanHe2
             childForm.BringToFront();
             childForm.Show();
         }
-        private void lb_name_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -50,6 +53,14 @@ namespace ATBM_PhanHe1.PhanHe2
         private void btn_Update_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Update_Unit());
+        }
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            unitList.DataSource = UnitDAO.Instance.SearchUnit(tb_name.Text);
+        }
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            unitList.DataSource = UnitDAO.Instance.GetUnitList();
         }
     }
 }

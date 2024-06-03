@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace ATBM_PhanHe1.PhanHe2
 {
     public partial class View_InfoStudent : Form
     {
+        BindingSource studentList = new BindingSource();
         public View_InfoStudent()
         {
             InitializeComponent();
+            Load();
+        }
+        private void Load()
+        {
+            dtGrid_student.DataSource = studentList;
+            studentList.DataSource = StudentDAO.Instance.GetStudentList();
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -46,6 +54,16 @@ namespace ATBM_PhanHe1.PhanHe2
         private void btn_Add_Click(object sender, EventArgs e)
         {
             OpenChildForm(new PhanHe2.Add_Student());
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            studentList.DataSource = StudentDAO.Instance.SearchStudent(tb_id.Text, tb_name.Text);
+        }
+
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            studentList.DataSource = StudentDAO.Instance.GetStudentList();
         }
     }
 }
