@@ -41,5 +41,12 @@ namespace ATBM_PhanHe1.DAO
             }
             return result;
         }
+        public StudentDTO GetStudentByID(string studentID)
+        {
+            string query = string.Format("select * from tb_sinhvien where lower(MASV) like lower('%{0}%')", studentID);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            StudentDTO result = new StudentDTO(data.Rows[0]);
+            return result;
+        }
     }
 }
