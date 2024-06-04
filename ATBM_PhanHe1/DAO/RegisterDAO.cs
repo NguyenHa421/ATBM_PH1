@@ -1,4 +1,5 @@
 ﻿using ATBM_PhanHe1.DTO;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,40 +9,40 @@ using System.Threading.Tasks;
 
 namespace ATBM_PhanHe1.DAO
 {
-    public class PersonelDAO
+    public class RegisterDAO
     {
-        private static PersonelDAO instance;
-        public static PersonelDAO Instance
+        private static RegisterDAO instance;
+        public static RegisterDAO Instance
         {
-            get { if (instance == null) instance = new PersonelDAO(); return PersonelDAO.instance; }
-            private set { PersonelDAO.instance = value; }
+            get { if (instance == null) instance = new RegisterDAO(); return RegisterDAO.instance; }
+            private set { RegisterDAO.instance = value; }
         }
-        private PersonelDAO() { }
-        public List<PersonelDTO> GetPersonelList()
+        private RegisterDAO() { }
+        public List<RegisterDTO> GetRegisterList()
         {
-            List<PersonelDTO> list = new List<PersonelDTO>();
-            string query = "select * from tb_nhansu";
+            List<RegisterDTO> list = new List<RegisterDTO>();
+            string query = "select * from tb_dangky";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
-                PersonelDTO personel = new PersonelDTO(row);
-                list.Add(personel);
+                RegisterDTO register = new RegisterDTO(row);
+                list.Add(register);
             }
             return list;
         }
-        public List<PersonelDTO> SearchPersonel(string searchKey)
+        public List<RegisterDTO> SearchRegister(string searchKey)
         {
-            List<PersonelDTO> result = new List<PersonelDTO>();
-            string query = string.Format("select * from tb_nhansu where lower(HOTEN) like lower('%{0}%')", searchKey);
+            List<RegisterDTO> result = new List<RegisterDTO>();
+            string query = string.Format("select * from tb_dangky where lower(HOTEN) like lower('%{0}%')", searchKey);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
-                PersonelDTO personel = new PersonelDTO(row);
-                result.Add(personel);
+                PersonelDTO register = new RegisterDTO(row);
+                result.Add(register);
             }
             return result;
         }
-        public void DeletePersonelByID(string id)
+        public void DeleteRegisterByID(string id)
         {
             string query = string.Format("begin delete from tb_nhansu where MANV = {0}; end;", id);
             DataProvider.Instance.ExecuteNonQuery(query);
