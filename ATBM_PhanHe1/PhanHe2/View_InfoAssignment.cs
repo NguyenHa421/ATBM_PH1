@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using ATBM_PhanHe1.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,26 @@ namespace ATBM_PhanHe1.PhanHe2
 {
     public partial class View_InfoAssignment : Form
     {
+        BindingSource assignmentList = new BindingSource();
         public View_InfoAssignment()
         {
             InitializeComponent();
+            LoadComboBox();
+            LoadGrid();
+        }
+        private void LoadComboBox()
+        {
+            cbB_semester.Items.Add(1);
+            cbB_semester.Items.Add(2);
+            cbB_semester.Items.Add(3);
+            List<ProgramDTO> list = ProgramDAO.Instance.GetProgramList();
+            foreach (ProgramDTO p in list)
+                cbB_program.Items.Add(p.programName);
+        }
+        private void LoadGrid()
+        {
+            dtGrid_assignment.DataSource = assignmentList;
+            assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -51,6 +70,19 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             PhanHe2.Confirm_Delete confirm_Delete = new PhanHe2.Confirm_Delete();
             confirm_Delete.ShowDialog();
+        }
+
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            int semester = Int32.Parse(cbB_semester.SelectedValue.ToString());
+            int year = Int32.Parse(tb_year.Text);
+            string programName = cbB_program.SelectedValue.ToString();
+            assignmentList.DataSource = AssignmentDAO.Instance.SearchAssignment(semester, year, programName);
         }
     }
 }

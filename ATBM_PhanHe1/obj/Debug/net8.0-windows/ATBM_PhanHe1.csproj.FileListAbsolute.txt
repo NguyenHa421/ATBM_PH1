@@ -133,7 +133,6 @@ D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Pha
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Update_Info_Personnel.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Update_Personnel.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Update_PlanCourses.resources
-D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Update_Rgister.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Update_Student.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Update_StudentSelf.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Update_Unit.resources
@@ -146,3 +145,4 @@ D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Pha
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.View_InfoRegister.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.View_InfoStudent.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.View_InfoUnit.resources
+D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Update_Register.resources

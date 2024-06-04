@@ -19,7 +19,7 @@ namespace ATBM_PhanHe1.DAO
         private MajorDAO() { }
         public MajorDTO GetMajorByID(string majorID)
         {
-            string query = string.Format("select * from tb_nganh where lower(MANGANH) like lower('%{0}%')", majorID);
+            string query = string.Format("select * from admin.tb_nganh where lower(MANGANH) like lower('%{0}%')", majorID);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             MajorDTO result = new MajorDTO(data.Rows[0]);
             return result;

@@ -43,13 +43,13 @@ namespace ATBM_PhanHe1.DAO
         }
         public void DeletePersonelByID(string id)
         {
-            string query = string.Format("begin delete from tb_nhansu where MANV = {0}; end;", id);
+            string query = string.Format("begin delete from admin.tb_nhansu where MANV = {0}; end;", id);
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 
         public PersonelDTO GetPersonelByID(string personelID)
         {
-            string query = string.Format("select * from tb_nhansu where lower(MANV) like lower('%{0}%')", personelID);
+            string query = string.Format("select * from admin.tb_nhansu where lower(MANV) like lower('%{0}%')", personelID);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             PersonelDTO result = new PersonelDTO(data.Rows[0]);
             return result;

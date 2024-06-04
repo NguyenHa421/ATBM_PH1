@@ -39,13 +39,13 @@
             btn_search = new Button();
             btn_Add = new Button();
             btn_Update = new Button();
-            dataGridView1 = new DataGridView();
+            dtGrid_assignment = new DataGridView();
             btn_Back = new Button();
             lb_semester = new Label();
             lb_Info = new Label();
             pn_parents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_assignment).BeginInit();
             SuspendLayout();
             // 
             // pn_parents
@@ -60,7 +60,7 @@
             pn_parents.Controls.Add(btn_search);
             pn_parents.Controls.Add(btn_Add);
             pn_parents.Controls.Add(btn_Update);
-            pn_parents.Controls.Add(dataGridView1);
+            pn_parents.Controls.Add(dtGrid_assignment);
             pn_parents.Controls.Add(btn_Back);
             pn_parents.Controls.Add(lb_semester);
             pn_parents.Controls.Add(lb_Info);
@@ -90,7 +90,6 @@
             cbB_program.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_program.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_program.FormattingEnabled = true;
-            cbB_program.Items.AddRange(new object[] { "1", "2", "3" });
             cbB_program.Location = new Point(508, 50);
             cbB_program.Name = "cbB_program";
             cbB_program.Size = new Size(197, 36);
@@ -111,7 +110,6 @@
             cbB_semester.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_semester.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_semester.FormattingEnabled = true;
-            cbB_semester.Items.AddRange(new object[] { "1", "2", "3" });
             cbB_semester.Location = new Point(102, 50);
             cbB_semester.Name = "cbB_semester";
             cbB_semester.Size = new Size(60, 36);
@@ -145,6 +143,7 @@
             pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
             pic_refresh_U.TabIndex = 108;
             pic_refresh_U.TabStop = false;
+            pic_refresh_U.Click += pic_refresh_U_Click;
             // 
             // btn_search
             // 
@@ -160,6 +159,7 @@
             btn_search.TabIndex = 107;
             btn_search.Text = "Tìm kiếm";
             btn_search.UseVisualStyleBackColor = false;
+            btn_search.Click += btn_search_Click;
             // 
             // btn_Add
             // 
@@ -193,15 +193,15 @@
             btn_Update.UseVisualStyleBackColor = false;
             btn_Update.Click += btn_Update_Click;
             // 
-            // dataGridView1
+            // dtGrid_assignment
             // 
-            dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(24, 102);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(843, 262);
-            dataGridView1.TabIndex = 104;
+            dtGrid_assignment.BackgroundColor = SystemColors.Control;
+            dtGrid_assignment.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGrid_assignment.Location = new Point(24, 102);
+            dtGrid_assignment.Name = "dtGrid_assignment";
+            dtGrid_assignment.RowHeadersWidth = 51;
+            dtGrid_assignment.Size = new Size(843, 262);
+            dtGrid_assignment.TabIndex = 104;
             // 
             // btn_Back
             // 
@@ -253,7 +253,7 @@
             pn_parents.ResumeLayout(false);
             pn_parents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGrid_assignment).EndInit();
             ResumeLayout(false);
         }
 
@@ -269,7 +269,7 @@
         private Button btn_search;
         private Button btn_Add;
         private Button btn_Update;
-        private DataGridView dataGridView1;
+        private DataGridView dtGrid_assignment;
         private Button btn_Back;
         private Label lb_semester;
         private Label lb_Info;
