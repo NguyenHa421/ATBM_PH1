@@ -30,9 +30,10 @@ namespace ATBM_PhanHe1.Home_Login
             Pass = tB_pass.Text.ToString();
             try
             {
-                Interface.Homepage homepage = new Interface.Homepage();
+                //Interface.Homepage homepage = new Interface.Homepage();
+                PhanHe2.View_InfoPersonnel newForm = new PhanHe2.View_InfoPersonnel();
                 this.Hide();
-                homepage.ShowDialog();
+                newForm.ShowDialog();
                 this.Show();
             }
             catch (OracleException oe)

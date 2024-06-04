@@ -62,7 +62,14 @@ namespace ATBM_PhanHe1.PhanHe2
             {
                 if (confirm_delete.ShowDialog() == DialogResult.OK)
                 {
-                    PersonelDAO.Instance.DeletePersonelByID(clickedPersonelID);
+                    try
+                    {
+                        PersonelDAO.Instance.DeletePersonelByID(clickedPersonelID);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Không thể xoá nhân viên này!", "Lỗi");
+                    }
                 }
             }
         }

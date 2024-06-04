@@ -42,8 +42,8 @@ namespace ATBM_PhanHe1.DTO
             this.phone = row["DT"].ToString();
             this.programID = row["MACT"].ToString();
             this.majorID = row["MANGANH"].ToString();
-            this.credits = (int)row["STCTL"];
-            this.gpa = (double)row["DTBTL"];
+            this.credits = Decimal.ToInt32((decimal)row["SOTCTL"]);
+            this.gpa = Decimal.ToDouble((decimal)row["DTBTL"]);
         }
     }
 }

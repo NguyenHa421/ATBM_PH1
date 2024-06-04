@@ -30,10 +30,10 @@ namespace ATBM_PhanHe1.DTO
         {
             this.courseID = row["MAHP"].ToString();
             this.courseName = row["TENHP"].ToString();
-            this.credits = (int)row["SOTC"];
-            this.lectureNum = (int)row["STLT"];
-            this.practicalNum = (int)row["STTH"];
-            this.maxStudent = (int)row["SOSVTD"];
+            this.credits = Decimal.ToInt32((decimal)row["SOTC"]);
+            this.lectureNum = Decimal.ToInt32((decimal)row["STLT"]);
+            this.practicalNum = Decimal.ToInt32((decimal)row["STTH"]);
+            this.maxStudent = Decimal.ToInt32((decimal)row["SOSVTD"]);
             this.unitID = row["MADV"].ToString();
         }
     }

@@ -32,7 +32,7 @@ namespace ATBM_PhanHe1.DTO
             this.personelName = row["HOTEN"].ToString();
             this.gender = row["PHAI"].ToString();
             this.birthday = (DateTime)row["NGSINH"];
-            this.allowance = (int)row["PHUCAP"];
+            this.allowance = Decimal.ToInt32((decimal)row["PHUCAP"]);
             this.role = row["VAITRO"].ToString();
             this.unitID = row["MADV"].ToString();
         }
