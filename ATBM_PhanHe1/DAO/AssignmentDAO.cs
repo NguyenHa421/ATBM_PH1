@@ -33,7 +33,13 @@ namespace ATBM_PhanHe1.DAO
         public List<AssignmentDTO> SearchAssignment(int semester,int year,string programName)
         {
             List<AssignmentDTO> result = new List<AssignmentDTO>();
-            string query = string.Format("select admin.tb_phancong.* from admin.tb_phancong, admin.tb_chuongtrinh where admin.tb_phancong.MACT = admin.tb_chuongtrinh.MACT and HK = {0} and NAM = {1} and TENCT = '{2}'", semester, year, programName);
+            string query = "select pc.*, ns.HOTEN, hp.TENHP, ct.TENCT from admin.tb_phancong pc, admin.tb_nhansu ns, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where pc.MAGV = ns.MANV and pc.MAHP = hp.MAHP and pc.MACT = ct.MACT";
+            if (semester > 0)
+                query += string.Format(" and HK = {0}", semester);
+            if (year > 0)
+                query += string.Format(" and NAM = {0}", year);
+            if (programName != "null")
+                query += string.Format(" and TENCT = '{0}'", programName);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {

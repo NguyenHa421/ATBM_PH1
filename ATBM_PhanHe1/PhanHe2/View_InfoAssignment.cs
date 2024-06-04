@@ -23,12 +23,16 @@ namespace ATBM_PhanHe1.PhanHe2
         }
         private void LoadComboBox()
         {
-            cbB_semester.Items.Add(1);
-            cbB_semester.Items.Add(2);
-            cbB_semester.Items.Add(3);
+            cbB_semester.Items.Add("null");
+            cbB_semester.Items.Add("1");
+            cbB_semester.Items.Add("2");
+            cbB_semester.Items.Add("3");
+            cbB_semester.SelectedIndex = 0;
+            cbB_program.Items.Add("null");
             List<ProgramDTO> list = ProgramDAO.Instance.GetProgramList();
             foreach (ProgramDTO p in list)
                 cbB_program.Items.Add(p.programName);
+            cbB_program.SelectedIndex = 0;
         }
         private void LoadGrid()
         {
@@ -79,9 +83,22 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            int semester = Int32.Parse(cbB_semester.SelectedValue.ToString());
-            int year = Int32.Parse(tb_year.Text);
-            string programName = cbB_program.SelectedValue.ToString();
+            int semester = 0;
+            int year = 0;
+            if (cbB_semester.SelectedItem.ToString() != "null")
+                semester = int.Parse(cbB_semester.SelectedItem.ToString());
+            if (tb_year.Text != "")
+            {
+                try
+                {
+                    year = int.Parse(tb_year.Text);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Năm không hợp lệ!", "Lỗi");
+                }
+            }
+            string programName = cbB_program.SelectedItem.ToString();
             assignmentList.DataSource = AssignmentDAO.Instance.SearchAssignment(semester, year, programName);
         }
     }
