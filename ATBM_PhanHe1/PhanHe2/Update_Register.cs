@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ATBM_PhanHe1.PhanHe2
 {
-    public partial class Update_Rgister : Form
+    public partial class Update_Register : Form
     {
-        public Update_Rgister()
+        public Update_Register()
         {
             InitializeComponent();
         }

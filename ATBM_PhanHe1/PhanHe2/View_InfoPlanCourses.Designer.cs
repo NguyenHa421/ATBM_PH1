@@ -69,6 +69,7 @@
             // 
             // cbB_program
             // 
+            cbB_program.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_program.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_program.FormattingEnabled = true;
             cbB_program.Items.AddRange(new object[] { "1", "2", "3" });
@@ -89,6 +90,7 @@
             // 
             // cbB_semester
             // 
+            cbB_semester.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_semester.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_semester.FormattingEnabled = true;
             cbB_semester.Items.AddRange(new object[] { "1", "2", "3" });

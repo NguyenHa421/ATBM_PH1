@@ -70,7 +70,7 @@
     <Compile Update="PhanHe2\Update_PlanCourses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PhanHe2\Update_Rgister.cs">
+    <Compile Update="PhanHe2\Update_Register.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="PhanHe2\Update_Student.cs">

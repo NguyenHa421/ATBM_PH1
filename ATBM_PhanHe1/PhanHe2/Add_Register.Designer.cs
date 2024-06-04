@@ -71,6 +71,7 @@
             // 
             // cbB_nameCourses
             // 
+            cbB_nameCourses.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_nameCourses.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_nameCourses.FormattingEnabled = true;
             cbB_nameCourses.Location = new Point(626, 293);
@@ -80,6 +81,7 @@
             // 
             // cbB_idcourses
             // 
+            cbB_idcourses.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_idcourses.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_idcourses.FormattingEnabled = true;
             cbB_idcourses.Location = new Point(626, 225);
@@ -89,6 +91,7 @@
             // 
             // cbB_nameprograme
             // 
+            cbB_nameprograme.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_nameprograme.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_nameprograme.FormattingEnabled = true;
             cbB_nameprograme.Location = new Point(626, 155);
@@ -98,6 +101,7 @@
             // 
             // cbB_idprogram
             // 
+            cbB_idprogram.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_idprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_idprogram.FormattingEnabled = true;
             cbB_idprogram.Location = new Point(626, 87);
@@ -122,6 +126,7 @@
             // 
             // cbB_year
             // 
+            cbB_year.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_year.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_year.FormattingEnabled = true;
             cbB_year.Location = new Point(189, 293);
@@ -131,6 +136,7 @@
             // 
             // cbB_semester
             // 
+            cbB_semester.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_semester.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_semester.FormattingEnabled = true;
             cbB_semester.Items.AddRange(new object[] { "1", "2", "3" });

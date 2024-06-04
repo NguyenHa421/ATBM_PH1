@@ -78,6 +78,7 @@
             // 
             // cbB_unit
             // 
+            cbB_unit.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_unit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_unit.FormattingEnabled = true;
             cbB_unit.Location = new Point(191, 297);
@@ -87,6 +88,7 @@
             // 
             // cbB_idunit
             // 
+            cbB_idunit.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_idunit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_idunit.FormattingEnabled = true;
             cbB_idunit.Location = new Point(191, 225);

@@ -89,7 +89,6 @@
             tb_Name.PlaceholderText = "Full Name";
             tb_Name.Size = new Size(335, 27);
             tb_Name.TabIndex = 12;
-            tb_Name.TextChanged += tb_Name_TextChanged;
             // 
             // pic_logout
             // 
@@ -102,7 +101,7 @@
             pic_logout.TabStop = false;
             pic_logout.Click += pic_logout_Click;
             // 
-            // MainBaseStaff
+            // MainBase
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -114,7 +113,7 @@
             Controls.Add(pn_main);
             Controls.Add(pic_khtn);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "MainBaseStaff";
+            Name = "MainBase";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HomepageBaseStaff";
             pn_main.ResumeLayout(false);

@@ -35,11 +35,6 @@ namespace ATBM_PhanHe1.PhanHe2
             childForm.BringToFront();
             childForm.Show();
         }
-        private void tb_Name_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void pic_logout_Click(object sender, EventArgs e)
         {
             this.Close();

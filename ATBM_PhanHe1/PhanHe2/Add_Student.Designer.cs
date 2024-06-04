@@ -222,6 +222,7 @@
             // 
             // cbB_program
             // 
+            cbB_program.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_program.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_program.FormattingEnabled = true;
             cbB_program.Location = new Point(626, 219);
@@ -231,6 +232,7 @@
             // 
             // cbB_major
             // 
+            cbB_major.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_major.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_major.FormattingEnabled = true;
             cbB_major.Location = new Point(626, 291);
@@ -240,6 +242,7 @@
             // 
             // cbB_gender
             // 
+            cbB_gender.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_gender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_gender.FormattingEnabled = true;
             cbB_gender.Items.AddRange(new object[] { "Nam", "Nữ" });
