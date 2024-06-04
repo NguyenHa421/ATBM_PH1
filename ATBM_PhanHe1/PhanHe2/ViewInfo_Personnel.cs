@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using ATBM_PhanHe1.DTO;
+using ATBM_PhanHe1.Home_Login;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +18,21 @@ namespace ATBM_PhanHe1.PhanHe2
         public ViewInfo_Personnel()
         {
             InitializeComponent();
+            Load();
+        }
+        private void Load()
+        {
+            PersonelDTO curPersonel = PersonelDAO.Instance.GetPersonelByID(Login.User);
+            UnitDTO curUnit = UnitDAO.Instance.GetUnitByID(Login.User);
+
+            tb_id.Text = curPersonel.personelID;
+            tb_name.Text = curPersonel.personelName;
+            tb_birth.Text = curPersonel.birthday.ToString();
+            tb_gender.Text = curPersonel.gender;
+            tb_allowance.Text = curPersonel.allowance.ToString();
+            tb_role.Text = curPersonel.role;
+            tb_id_unit.Text = curUnit.unitID;
+            tb_name_unit.Text = curUnit.unitName;
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)

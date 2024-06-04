@@ -15,6 +15,11 @@ namespace ATBM_PhanHe1.PhanHe2
         public View_InfoRegister()
         {
             InitializeComponent();
+            Load();
+        }
+        private void Load()
+        {
+
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -44,7 +49,7 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new PhanHe2.Update_Rgister());
+            OpenChildForm(new PhanHe2.Update_Register());
         }
 
         private void bt_delete_Click(object sender, EventArgs e)
