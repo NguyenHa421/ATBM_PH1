@@ -142,7 +142,6 @@ BEGIN
     ELSE
         RAISE_APPLICATION_ERROR(-20003, 'CHI CHO PHEP INSERT HOAC DELETE.');
     END IF;
-    
     IF v_hk = 1 THEN
         v_hk_start := TO_DATE('01-01-' || v_nam, 'DD-MM-YYYY');
     ELSIF v_hk = 2 THEN
@@ -152,7 +151,6 @@ BEGIN
     ELSE
         RAISE_APPLICATION_ERROR(-20002, 'HOC KY KHONG HOP LE.');
     END IF;
-    
     IF v_current > v_hk_start + 14 THEN
         RAISE_APPLICATION_ERROR(-20002, 'KHONG THE HIEU CHINH DANG KY HOC PHAN SAU 14 NGAY TU NGAY BAT DAU HOC KY.');
     END IF;

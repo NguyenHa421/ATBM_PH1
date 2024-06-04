@@ -3,6 +3,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -171,5 +172,36 @@ namespace ATBM_PhanHe1.DAO
             }
             return list;
         }
+        
+        public string GetRole(string id)
+        {
+            string query = $"SELECT HOTEN FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')"; 
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            if (result == null)
+            {
+                query = $"SELECT VAITRO FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
+                result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+                if (result != null) { return result.ToString(); }
+                else { result = "System"; }
+            }
+            else
+            {
+                result = "Sinh vien";
+            }
+            return result.ToString();
+        }
+        public string GetNameStudent(string id)
+        {
+            string query = $"SELECT HOTEN FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetNameOther(string id)
+        {
+            string query = $"SELECT HOTEN FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+
     }
 }

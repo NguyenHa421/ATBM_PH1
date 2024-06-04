@@ -1,6 +1,3 @@
-CALL Drop_OldRole('DROP ROLE RL_SINHVIEN');
-CREATE ROLE RL_SINHVIEN;
-/
 conn ADMIN/group12
 -- CS#4: 
 -- YC1

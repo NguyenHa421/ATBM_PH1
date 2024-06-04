@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,26 @@ namespace ATBM_PhanHe1.PhanHe2
         public MainBase()
         {
             InitializeComponent();
-            OpenChildForm(new PhanHe2.Homepage_Dean());
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Sinh vien")
+            {
+                tb_Name.Text = UserDAO.Instance.GetNameStudent(Home_Login.Login.User);
+                OpenChildForm(new PhanHe2.Homepage_Student());
+            }
+            else if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Nhan vien co ban")
+            {
+                tb_Name.Text = UserDAO.Instance.GetNameOther(Home_Login.Login.User);
+                OpenChildForm(new PhanHe2.Homepage_Staff());
+            }
+            else if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Truong khoa")
+            {
+                tb_Name.Text = UserDAO.Instance.GetNameOther(Home_Login.Login.User);
+                OpenChildForm(new PhanHe2.Homepage_Dean());
+            }
+            else
+            {
+                tb_Name.Text = UserDAO.Instance.GetNameOther(Home_Login.Login.User);
+                OpenChildForm(new PhanHe2.Homepage_Others());
+            }
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)

@@ -31,9 +31,13 @@ namespace ATBM_PhanHe1.Home_Login
             try
             {
                 //Interface.Homepage homepage = new Interface.Homepage();
-                PhanHe2.View_InfoAssignment newForm = new PhanHe2.View_InfoAssignment();
+                //PhanHe2.View_InfoPersonnel newForm = new PhanHe2.View_InfoPersonnel();
+                //this.Hide();
+                //newForm.ShowDialog();
+                //this.Show();
+                PhanHe2.MainBase mainBase = new PhanHe2.MainBase();
                 this.Hide();
-                newForm.ShowDialog();
+                mainBase.ShowDialog();
                 this.Show();
             }
             catch (OracleException oe)
