@@ -18,7 +18,7 @@ namespace ATBM_PhanHe1.DAO
 
         private string connectionStr = "DATA SOURCE=(DESCRIPTION =" +
         "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))" +
-        $"(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME =)));User Id = {Home_Login.Login.User};password = {Home_Login.Login.Pass};DBA Privilege=SYSDBA;";
+        $"(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME =)));User Id = {Home_Login.Login.User};password = {Home_Login.Login.Pass};";
         public static DataProvider Instance
         {
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }

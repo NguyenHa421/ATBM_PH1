@@ -3,34 +3,32 @@ AUTHID CURRENT_USER
 AS
     v_role VARCHAR2(50);
 BEGIN 
-    IF v_role IS NULL THEN
-        SELECT 'Sinh vien' INTO v_role FROM ADMIN.TB_SINHVIEN WHERE MASV = user_name;
-    END IF;
-    
-    IF v_role IS NULL THEN
+    SELECT 'Sinh vien' INTO v_role FROM ADMIN.TB_SINHVIEN WHERE MASV = user_name;
+EXCEPTION
+    WHEN No_Data_Found THEN
         SELECT VAITRO INTO v_role FROM ADMIN.TB_NHANSU WHERE MANV = user_name;
-    END IF;
-    
     IF v_role IS NULL THEN
         SELECT 'He thong' INTO v_role FROM dba_users WHERE username = user_name;
     END IF;
-END;
-/
-CALL FIND_ROLE('SV126109');
-CALL FIND_ROLE('NV100');
-
-CREATE OR REPLACE PROCEDURE find_name(user_id IN VARCHAR2)
-AUTHID CURRENT_USER
-AS
-    name_student VARCHAR2(100);
-BEGIN 
-    SELECT HOTEN INTO name_student FROM ADMIN.TB_SINHVIEN WHERE MASV = user_id;
-    IF name_student IS NULL THEN
-        DBMS_OUTPUT.put_line('Khong ton tai');
+    IF v_role IS NULL THEN
+        DBMS_OUTPUT.PUT_LINE('Vai trò c?a ng??i dùng');
     ELSE
-        DBMS_OUTPUT.put_line(name_student);
+        DBMS_OUTPUT.PUT_LINE(v_role);
     END IF;
 END;
 /
-CALL find_name('SV120238');
 SET SERVEROUTPUT ON;
+CALL FIND_ROLE('SV126109');
+CALL FIND_ROLE('NV100');
+CALL FIND_ROLE('sys');
+
+--Proc lay ten user la sinh vien
+CREATE OR REPLACE PROCEDURE admin.find_name(user_id IN VARCHAR2)
+AS
+BEGIN
+  EXECUTE IMMEDIATE 'SELECT HOTEN FROM ADMIN.TB_SINHVIEN WHERE MASV = ''' || user_id || '''';
+END;
+/
+CONN SV120221/SV120221;
+SELECT HOTEN FROM ADMIN.TB_SINHVIEN WHERE MASV = 'SV120221';
+

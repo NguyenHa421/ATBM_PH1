@@ -171,5 +171,11 @@ namespace ATBM_PhanHe1.DAO
             }
             return list;
         }
+        public string GetName(string id)
+        {
+            string query = $"SELECT HOTEN FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
     }
 }

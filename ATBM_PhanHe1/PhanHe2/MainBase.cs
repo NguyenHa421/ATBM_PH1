@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace ATBM_PhanHe1.PhanHe2
         public MainBase()
         {
             InitializeComponent();
+            tb_Name.Text = UserDAO.Instance.GetName(Home_Login.Login.User);
             OpenChildForm(new PhanHe2.Homepage_Dean());
         }
         private Form currentFormChild;
