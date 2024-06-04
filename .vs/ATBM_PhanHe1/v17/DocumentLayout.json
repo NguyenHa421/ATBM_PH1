@@ -3,23 +3,35 @@
   "WorkspaceRootPath": "D:\\Projects\\ATBM\\ATBM_PH1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\phanhe2\\add_assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\phanhe2\\add_assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\phanhe2\\add_personnel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\phanhe2\\add_personnel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\Projects\\ATBM\\ATBM_PH1\\atbm_phanhe1\\phanhe2\\add_courses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\phanhe2\\add_courses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\phanhe2\\view_infopersonnel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\phanhe2\\view_infopersonnel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\phanhe2\\view_infopersonnel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\phanhe2\\view_infopersonnel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\dto\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\Projects\\ATBM\\ATBM_PH1\\atbm_phanhe1\\dto\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\dto\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\dao\\personeldao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\Projects\\ATBM\\ATBM_PH1\\atbm_phanhe1\\dao\\personeldao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\dao\\personeldao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\home_login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\Projects\\ATBM\\ATBM_PH1\\atbm_phanhe1\\home_login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\home_login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,16 +39,12 @@
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\dao\\unitdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\dao\\coursedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\Projects\\ATBM\\ATBM_PH1\\atbm_phanhe1\\dao\\coursedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\dao\\coursedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|d:\\projects\\atbm\\atbm_ph1\\atbm_phanhe1\\phanhe2\\add_courses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\Projects\\ATBM\\ATBM_PH1\\atbm_phanhe1\\phanhe2\\add_courses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\phanhe2\\add_courses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\Projects\\ATBM\\ATBM_PH1\\atbm_phanhe1\\phanhe2\\add_courses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|solutionrelative:atbm_phanhe1\\phanhe2\\add_courses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C01C9684-EBCB-4E70-AB8C-CAA2B9C3D34D}|ATBM_PhanHe1\\ATBM_PhanHe1.csproj|D:\\Projects\\ATBM\\ATBM_PH1\\atbm_phanhe1\\phanhe2\\view_infocourses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -77,6 +85,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DataProvider.cs",
+              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\DAO\\DataProvider.cs",
+              "RelativeDocumentMoniker": "ATBM_PhanHe1\\DAO\\DataProvider.cs",
+              "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\DAO\\DataProvider.cs",
+              "RelativeToolTip": "ATBM_PhanHe1\\DAO\\DataProvider.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T07:15:51.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Add_Assignment.cs [Design]",
+              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\Add_Assignment.cs",
+              "RelativeDocumentMoniker": "ATBM_PhanHe1\\PhanHe2\\Add_Assignment.cs",
+              "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\Add_Assignment.cs [Design]",
+              "RelativeToolTip": "ATBM_PhanHe1\\PhanHe2\\Add_Assignment.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T07:14:50.897Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Add_Personnel.cs [Design]",
+              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\Add_Personnel.cs",
+              "RelativeDocumentMoniker": "ATBM_PhanHe1\\PhanHe2\\Add_Personnel.cs",
+              "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\Add_Personnel.cs [Design]",
+              "RelativeToolTip": "ATBM_PhanHe1\\PhanHe2\\Add_Personnel.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T07:05:17.085Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "View_InfoPersonnel.cs",
               "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\View_InfoPersonnel.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\PhanHe2\\View_InfoPersonnel.cs",
@@ -89,19 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "View_InfoPersonnel.cs [Design]",
-              "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\View_InfoPersonnel.cs",
-              "RelativeDocumentMoniker": "ATBM_PhanHe1\\PhanHe2\\View_InfoPersonnel.cs",
-              "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\View_InfoPersonnel.cs [Design]",
-              "RelativeToolTip": "ATBM_PhanHe1\\PhanHe2\\View_InfoPersonnel.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T06:00:14.333Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "StudentDTO.cs",
               "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\DTO\\StudentDTO.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\DTO\\StudentDTO.cs",
@@ -109,12 +142,11 @@
               "RelativeToolTip": "ATBM_PhanHe1\\DTO\\StudentDTO.cs",
               "ViewState": "AQIAACAAAAAAAAAAAAAnwCkAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T05:50:11.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T05:50:11.961Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Login.cs",
               "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\Home_Login\\Login.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\Home_Login\\Login.cs",
@@ -122,12 +154,11 @@
               "RelativeToolTip": "ATBM_PhanHe1\\Home_Login\\Login.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAYwB4AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T05:40:49.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T05:40:49.063Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "PersonelDAO.cs",
               "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\DAO\\PersonelDAO.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\DAO\\PersonelDAO.cs",
@@ -135,12 +166,11 @@
               "RelativeToolTip": "ATBM_PhanHe1\\DAO\\PersonelDAO.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAA5wCwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T05:39:56.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T05:39:56.897Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "CourseDAO.cs",
               "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\DAO\\CourseDAO.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\DAO\\CourseDAO.cs",
@@ -148,12 +178,11 @@
               "RelativeToolTip": "ATBM_PhanHe1\\DAO\\CourseDAO.cs",
               "ViewState": "AQIAACAAAAAAAAAAAAAgwC4AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T05:39:29.16Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T05:39:29.16Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Add_Courses.cs",
               "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\Add_Courses.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\PhanHe2\\Add_Courses.cs",
@@ -166,18 +195,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "Add_Courses.cs [Design]",
               "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\Add_Courses.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\PhanHe2\\Add_Courses.cs",
               "ToolTip": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\Add_Courses.cs [Design]",
               "RelativeToolTip": "ATBM_PhanHe1\\PhanHe2\\Add_Courses.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T11:05:04.072Z"
+              "WhenOpened": "2024-06-03T11:05:04.072Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "View_InfoCourses.cs",
               "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\View_InfoCourses.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\PhanHe2\\View_InfoCourses.cs",
@@ -189,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "UnitDAO.cs",
               "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\DAO\\UnitDAO.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\DAO\\UnitDAO.cs",
@@ -197,12 +227,11 @@
               "RelativeToolTip": "ATBM_PhanHe1\\DAO\\UnitDAO.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAkwBYAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T11:06:45.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T11:06:45.025Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "View_InfoAssignment.cs",
               "DocumentMoniker": "D:\\Projects\\ATBM\\ATBM_PH1\\ATBM_PhanHe1\\PhanHe2\\View_InfoAssignment.cs",
               "RelativeDocumentMoniker": "ATBM_PhanHe1\\PhanHe2\\View_InfoAssignment.cs",
