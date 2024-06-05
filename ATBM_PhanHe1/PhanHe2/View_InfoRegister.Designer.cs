@@ -92,10 +92,10 @@
             cbB_program.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_program.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_program.FormattingEnabled = true;
-            cbB_program.Items.AddRange(new object[] { "1", "2", "3" });
             cbB_program.Location = new Point(444, 38);
             cbB_program.Margin = new Padding(3, 2, 3, 2);
             cbB_program.Name = "cbB_program";
+            cbB_program.RightToLeft = RightToLeft.No;
             cbB_program.Size = new Size(173, 29);
             cbB_program.TabIndex = 113;
             // 
@@ -114,7 +114,6 @@
             cbB_semester.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_semester.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_semester.FormattingEnabled = true;
-            cbB_semester.Items.AddRange(new object[] { "1", "2", "3" });
             cbB_semester.Location = new Point(89, 38);
             cbB_semester.Margin = new Padding(3, 2, 3, 2);
             cbB_semester.Name = "cbB_semester";
@@ -151,6 +150,7 @@
             pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
             pic_refresh_U.TabIndex = 108;
             pic_refresh_U.TabStop = false;
+            pic_refresh_U.Click += pic_refresh_U_Click;
             // 
             // btn_search
             // 

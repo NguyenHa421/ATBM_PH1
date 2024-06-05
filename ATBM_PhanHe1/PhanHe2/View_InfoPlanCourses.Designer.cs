@@ -73,7 +73,6 @@
             cbB_program.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_program.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_program.FormattingEnabled = true;
-            cbB_program.Items.AddRange(new object[] { "1", "2", "3" });
             cbB_program.Location = new Point(444, 38);
             cbB_program.Margin = new Padding(3, 2, 3, 2);
             cbB_program.Name = "cbB_program";
@@ -95,7 +94,6 @@
             cbB_semester.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_semester.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_semester.FormattingEnabled = true;
-            cbB_semester.Items.AddRange(new object[] { "1", "2", "3" });
             cbB_semester.Location = new Point(89, 38);
             cbB_semester.Margin = new Padding(3, 2, 3, 2);
             cbB_semester.Name = "cbB_semester";

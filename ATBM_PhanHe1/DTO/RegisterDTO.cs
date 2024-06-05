@@ -35,9 +35,9 @@ namespace ATBM_PhanHe1.DTO
         public RegisterDTO(DataRow row)
         {
             this.studentID = row["MASV"].ToString();
-            this.studentName = row["sv.HOTEN"].ToString();
+            this.studentName = row["HOTENSV"].ToString();
             this.lecturerID = row["MAGV"].ToString();
-            this.lecturerName = row["ns.HOTEN"].ToString();
+            this.lecturerName = row["HOTENGV"].ToString();
             this.courseID = row["MAHP"].ToString();
             this.courseName = row["TENHP"].ToString();
             this.semester = Decimal.ToInt32((decimal)row["HK"]);

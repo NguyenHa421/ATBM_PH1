@@ -101,7 +101,6 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            registerList.DataSource = RegisterDAO.Instance.GetRegisterList();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -123,6 +122,11 @@ namespace ATBM_PhanHe1.PhanHe2
             }
             string programName = cbB_program.SelectedItem.ToString();
             registerList.DataSource = RegisterDAO.Instance.SearchRegister(semester, year, programName);
+        }
+
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            registerList.DataSource = RegisterDAO.Instance.GetRegisterList();
         }
     }
 }
