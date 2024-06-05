@@ -24,5 +24,9 @@ namespace ATBM_PhanHe1.DAO
             MajorDTO result = new MajorDTO(data.Rows[0]);
             return result;
         }
+        public DataTable GetListMajor()
+        {
+            return DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM ADMIN.TB_NGANH"));
+        }
     }
 }

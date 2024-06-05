@@ -245,7 +245,7 @@
             cbB_gender.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_gender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_gender.FormattingEnabled = true;
-            cbB_gender.Items.AddRange(new object[] { "Nam", "Nữ" });
+            cbB_gender.Items.AddRange(new object[] { "Male", "Female" });
             cbB_gender.Location = new Point(183, 219);
             cbB_gender.Name = "cbB_gender";
             cbB_gender.Size = new Size(229, 36);

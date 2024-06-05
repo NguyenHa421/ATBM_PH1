@@ -19,7 +19,16 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void btn_Confirm_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+            PhanHe2.Success success = new Success();
+            success.ShowDialog();
         }
     }
 }

@@ -82,8 +82,8 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void bt_delete_Click(object sender, EventArgs e)
         {
-            PhanHe2.Confirm_Delete confirm_Delete = new PhanHe2.Confirm_Delete();
-            confirm_Delete.ShowDialog();
+            //PhanHe2.Confirm_Delete confirm_Delete = new PhanHe2.Confirm_Delete();
+            //confirm_Delete.ShowDialog();
         }
 
         private void pic_refresh_U_Click(object sender, EventArgs e)

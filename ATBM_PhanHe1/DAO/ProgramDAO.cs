@@ -36,5 +36,9 @@ namespace ATBM_PhanHe1.DAO
             ProgramDTO result = new ProgramDTO(data.Rows[0]);
             return result;
         }
+        public DataTable GetListProgram()
+        {
+            return DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM ADMIN.TB_CHUONGTRINH"));
+        }
     }
 }
