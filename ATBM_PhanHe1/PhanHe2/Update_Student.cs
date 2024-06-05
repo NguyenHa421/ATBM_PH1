@@ -1,4 +1,5 @@
 ﻿using ATBM_PhanHe1.DAO;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,15 +21,19 @@ namespace ATBM_PhanHe1.PhanHe2
             InitializeComponent();
             Load();
             tb_id.Text = student_id;
-            tb_name.Text = UserDAO.Instance.GetNameStudent(student_id);
-            cbB_gender.Text = StudentDAO.Instance.GetGenderStudent(student_id);
-            tb_birth.Text = StudentDAO.Instance.GetBirthStudent(student_id);
-            tb_phone.Text = StudentDAO.Instance.GetPhoneStudent(student_id);
-            tb_address.Text = StudentDAO.Instance.GetAddressStudent(student_id);
-            cbB_program.Text = StudentDAO.Instance.GetProgramStudent(student_id);
-            cbB_major.Text = StudentDAO.Instance.GetMajorStudent(student_id);
-            tb_credit.Text = StudentDAO.Instance.GetCreditStudent(student_id);
-            tb_GPA.Text = StudentDAO.Instance.GetGPAStudent(student_id);
+            Load_Info();
+        }
+        private void Load_Info()
+        {
+            tb_name.Text = UserDAO.Instance.GetNameStudent(tb_id.Text);
+            cbB_gender.Text = StudentDAO.Instance.GetGenderStudent(tb_id.Text);
+            tb_birth.Text = StudentDAO.Instance.GetBirthStudent(tb_id.Text);
+            tb_phone.Text = StudentDAO.Instance.GetPhoneStudent(tb_id.Text);
+            tb_address.Text = StudentDAO.Instance.GetAddressStudent(tb_id.Text);
+            cbB_program.Text = StudentDAO.Instance.GetProgramStudent(tb_id.Text);
+            cbB_major.Text = StudentDAO.Instance.GetMajorStudent(tb_id.Text);
+            tb_credit.Text = StudentDAO.Instance.GetCreditStudent(tb_id.Text);
+            tb_GPA.Text = StudentDAO.Instance.GetGPAStudent(tb_id.Text);
         }
         private void Load()
         {
@@ -40,10 +45,6 @@ namespace ATBM_PhanHe1.PhanHe2
             majorList.DataSource = MajorDAO.Instance.GetListMajor();
             cbB_major.DisplayMember = "TENNGANH";
         }
-        private void lb_phone_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
@@ -52,8 +53,26 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            PhanHe2.Confirm_Update confirm_Update = new PhanHe2.Confirm_Update();
-            confirm_Update.ShowDialog();
+            string id = tb_id.Text;
+            string name = tb_name.Text;
+            string gender = cbB_gender.Text;
+            DateTime birth = tb_birth.Value;
+            string addr = tb_address.Text;
+            string phone = tb_phone.Text;
+            string program = ProgramDAO.Instance.GetIDProgram(cbB_program.Text);
+            string major = MajorDAO.Instance.GetIDMajor(cbB_major.Text);
+            int credit = int.Parse(tb_credit.Text);
+            float GPA = float.Parse(tb_GPA.Text);
+            try
+            {
+                StudentDAO.Instance.Update_Student(id, name, gender, birth.Date, addr, phone, program, major, credit, GPA);
+                PhanHe2.Success success = new PhanHe2.Success();
+                success.ShowDialog();
+            }
+            catch (OracleException oe)
+            {
+                MessageBox.Show(oe.Message, "Lỗi");
+            }
         }
     }
 }

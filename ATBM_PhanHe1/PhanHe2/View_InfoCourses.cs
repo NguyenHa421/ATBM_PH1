@@ -17,6 +17,11 @@ namespace ATBM_PhanHe1.PhanHe2
         public View_InfoCourses()
         {
             InitializeComponent();
+            Load_Form();
+            Load();
+        }
+        private void Load_Form()
+        {
             if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Sinh vien")
             {
                 btn_Add.Enabled = false;
@@ -42,7 +47,6 @@ namespace ATBM_PhanHe1.PhanHe2
                 btn_Add.Enabled = false;
                 btn_Update.Enabled = false;
             }
-            Load();
         }
         private void Load()
         {

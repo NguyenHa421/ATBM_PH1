@@ -195,7 +195,6 @@
             lb_phone.Size = new Size(128, 28);
             lb_phone.TabIndex = 76;
             lb_phone.Text = "Số điện thoại";
-            lb_phone.Click += lb_phone_Click;
             // 
             // lb_program
             // 

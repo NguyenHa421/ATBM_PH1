@@ -98,7 +98,7 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                DataGridViewCell cell = dG_Register.Rows[e.RowIndex].Cells[0];
+                DataGridViewCell cell = dtGrid_register.Rows[e.RowIndex].Cells[0];
                 clickedRegister = cell.Value.ToString();
             }
         }
@@ -110,8 +110,8 @@ namespace ATBM_PhanHe1.PhanHe2
                 clickedRegister = "";
                 try
                 {
-                    PhanHe2.Confirm_Delete confirm_Delete = new PhanHe2.Confirm_Delete(register_id);
-                    confirm_Delete.ShowDialog();
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
                 }
                 catch (OracleException oe)
                 {
@@ -148,6 +148,11 @@ namespace ATBM_PhanHe1.PhanHe2
         private void pic_refresh_U_Click(object sender, EventArgs e)
         {
             registerList.DataSource = RegisterDAO.Instance.GetRegisterList();
+        }
+
+        private void pn_parents_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

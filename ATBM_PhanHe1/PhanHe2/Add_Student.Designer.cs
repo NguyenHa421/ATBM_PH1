@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tb_role = new TextBox();
+            tb_addr = new TextBox();
             tb_phone = new TextBox();
             tb_name = new TextBox();
             tb_id = new TextBox();
@@ -49,14 +49,14 @@
             cbB_gender = new ComboBox();
             SuspendLayout();
             // 
-            // tb_role
+            // tb_addr
             // 
-            tb_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_role.Location = new Point(626, 149);
-            tb_role.Name = "tb_role";
-            tb_role.Size = new Size(229, 34);
-            tb_role.TabIndex = 60;
-            tb_role.TabStop = false;
+            tb_addr.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_addr.Location = new Point(626, 149);
+            tb_addr.Name = "tb_addr";
+            tb_addr.Size = new Size(229, 34);
+            tb_addr.TabIndex = 60;
+            tb_addr.TabStop = false;
             // 
             // tb_phone
             // 
@@ -190,6 +190,7 @@
             btn_Add.TabIndex = 64;
             btn_Add.Text = "Tạo mới";
             btn_Add.UseVisualStyleBackColor = false;
+            btn_Add.Click += btn_Add_Click;
             // 
             // btn_Back
             // 
@@ -209,7 +210,7 @@
             // 
             // tb_birth
             // 
-            tb_birth.CustomFormat = "dd/MM/yyyy";
+            tb_birth.CustomFormat = "dd-MM-yyyy";
             tb_birth.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tb_birth.Format = DateTimePickerFormat.Custom;
             tb_birth.Location = new Point(183, 289);
@@ -229,6 +230,7 @@
             cbB_program.Name = "cbB_program";
             cbB_program.Size = new Size(229, 36);
             cbB_program.TabIndex = 67;
+            cbB_program.SelectedIndexChanged += cbB_program_SelectedIndexChanged;
             // 
             // cbB_major
             // 
@@ -263,7 +265,7 @@
             Controls.Add(tb_birth);
             Controls.Add(btn_Add);
             Controls.Add(btn_Back);
-            Controls.Add(tb_role);
+            Controls.Add(tb_addr);
             Controls.Add(tb_phone);
             Controls.Add(tb_name);
             Controls.Add(tb_id);
@@ -285,7 +287,7 @@
         }
 
         #endregion
-        private TextBox tb_role;
+        private TextBox tb_addr;
         private TextBox tb_phone;
         private TextBox tb_name;
         private TextBox tb_id;

@@ -40,5 +40,11 @@ namespace ATBM_PhanHe1.DAO
         {
             return DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM ADMIN.TB_CHUONGTRINH"));
         }
+        public string GetIDProgram(string name_program)
+        {
+            string query = $"SELECT MACT FROM ADMIN.TB_CHUONGTRINH WHERE TENCT = ('{name_program}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { name_program });
+            return result.ToString();
+        }
     }
 }

@@ -96,5 +96,23 @@ namespace ATBM_PhanHe1.DAO
             object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
             return result.ToString();
         }
+        public string GetIDAuto(string Program)
+        {
+            string query = $"SELECT ADMIN.CREATE_IDSTUDENT('{Program}') FROM DUAL";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { Program });
+            return result.ToString();
+        }
+        public bool Add_Student(string id, string name, string gender, DateTime birth, string addr, string phone, string program, string major, int credit, float gpa)
+        {
+            string query = $"INSERT INTO ADMIN.TB_SINHVIEN(MASV, HOTEN, PHAI, NGSINH, DCHI, DT, MACT, MANGANH, SOTCTL, DTBTL) VALUES ('{id}', '{name}', '{gender}', TO_DATE('{birth.ToString("yyyy-MM-dd")}', 'YYYY-MM-DD'), '{addr}', '{phone}', '{program}', '{major}', '{credit}', '{gpa}')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool Update_Student(string id, string name, string gender, DateTime birth, string addr, string phone, string program, string major, int credit, float gpa)
+        {
+            string query = $"UPDATE ADMIN.TB_SINHVIEN SET HOTEN = ('{name}'), PHAI = ('{gender}'), NGSINH = TO_DATE('{birth.ToString("yyyy-MM-dd")}', 'YYYY-MM-DD'), DCHI = ('{addr}'), DT = ('{phone}'), MACT = ('{program}'), MANGANH = ('{major}'), SOTCTL = ('{credit}'), DTBTL = ('{gpa}') WHERE MASV = ('{id}')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }

@@ -18,6 +18,10 @@ namespace ATBM_PhanHe1.PhanHe2
         public MainBase()
         {
             InitializeComponent();
+            Load_Form();
+        }
+        private void Load_Form()
+        {
             if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Sinh vien")
             {
                 tb_Name.Text = UserDAO.Instance.GetNameStudent(Home_Login.Login.User);

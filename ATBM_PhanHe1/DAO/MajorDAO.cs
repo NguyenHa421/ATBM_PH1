@@ -28,5 +28,11 @@ namespace ATBM_PhanHe1.DAO
         {
             return DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM ADMIN.TB_NGANH"));
         }
+        public string GetIDMajor(string name_major)
+        {
+            string query = $"SELECT MANGANH FROM ADMIN.TB_NGANH WHERE TENNGANH = ('{name_major}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { name_major });
+            return result.ToString();
+        }
     }
 }

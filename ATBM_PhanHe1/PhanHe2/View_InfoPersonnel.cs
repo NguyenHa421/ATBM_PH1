@@ -58,19 +58,15 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void bt_delete_Click(object sender, EventArgs e)
         {
-            using (Confirm_Delete confirm_delete = new Confirm_Delete(clickedPersonelID))
+            try
             {
-                if (confirm_delete.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        PersonelDAO.Instance.DeletePersonelByID(clickedPersonelID);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Không thể xoá nhân viên này!", "Lỗi");
-                    }
-                }
+                PersonelDAO.Instance.DeletePersonelByID(clickedPersonelID);
+                PhanHe2.Success success = new PhanHe2.Success();
+                success.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể xoá nhân viên này!", "Lỗi");
             }
         }
 
