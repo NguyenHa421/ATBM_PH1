@@ -1,4 +1,5 @@
 ﻿using ATBM_PhanHe1.DAO;
+using ATBM_PhanHe1.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace ATBM_PhanHe1.PhanHe2
 {
     public partial class View_InfoRegister : Form
     {
+        BindingSource registerList = new BindingSource();
         public View_InfoRegister()
         {
             InitializeComponent();
@@ -39,11 +41,26 @@ namespace ATBM_PhanHe1.PhanHe2
                 btn_Add.Enabled = false;
                 btn_delete.Enabled = false;
             }
-            Load();
+            LoadComboBox();
+            LoadGrid();
         }
-        private void Load()
+        private void LoadComboBox()
         {
-
+            cbB_semester.Items.Add("null");
+            cbB_semester.Items.Add("1");
+            cbB_semester.Items.Add("2");
+            cbB_semester.Items.Add("3");
+            cbB_semester.SelectedIndex = 0;
+            cbB_program.Items.Add("null");
+            List<ProgramDTO> list = ProgramDAO.Instance.GetProgramList();
+            foreach (ProgramDTO p in list)
+                cbB_program.Items.Add(p.programName);
+            cbB_program.SelectedIndex = 0;
+        }
+        private void LoadGrid()
+        {
+            dtGrid_register.DataSource = registerList;
+            registerList.DataSource = RegisterDAO.Instance.GetRegisterList();
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -80,6 +97,32 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             PhanHe2.Confirm_Delete confirm_Delete = new PhanHe2.Confirm_Delete();
             confirm_Delete.ShowDialog();
+        }
+
+        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            registerList.DataSource = RegisterDAO.Instance.GetRegisterList();
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            int semester = 0;
+            int year = 0;
+            if (cbB_semester.SelectedItem.ToString() != "null")
+                semester = int.Parse(cbB_semester.SelectedItem.ToString());
+            if (tb_year.Text != "")
+            {
+                try
+                {
+                    year = int.Parse(tb_year.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Năm không hợp lệ!", "Lỗi");
+                }
+            }
+            string programName = cbB_program.SelectedItem.ToString();
+            registerList.DataSource = RegisterDAO.Instance.SearchRegister(semester, year, programName);
         }
     }
 }

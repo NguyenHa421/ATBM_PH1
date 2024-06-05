@@ -1,4 +1,5 @@
 ﻿using ATBM_PhanHe1.DAO;
+using ATBM_PhanHe1.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace ATBM_PhanHe1.PhanHe2
 {
     public partial class View_InfoPlanCourses : Form
     {
+        BindingSource planCoursesList = new BindingSource();
         public View_InfoPlanCourses()
         {
             InitializeComponent();
@@ -41,7 +43,29 @@ namespace ATBM_PhanHe1.PhanHe2
                 btn_Add.Enabled = false;
                 btn_Update.Enabled = false;
             }
+            LoadComboBox();
+            LoadGrid();
         }
+
+        private void LoadComboBox()
+        {
+            cbB_semester.Items.Add("null");
+            cbB_semester.Items.Add("1");
+            cbB_semester.Items.Add("2");
+            cbB_semester.Items.Add("3");
+            cbB_semester.SelectedIndex = 0;
+            cbB_program.Items.Add("null");
+            List<ProgramDTO> list = ProgramDAO.Instance.GetProgramList();
+            foreach (ProgramDTO p in list)
+                cbB_program.Items.Add(p.programName);
+            cbB_program.SelectedIndex = 0;
+        }
+        private void LoadGrid()
+        {
+            dtGrid_planCourses.DataSource = planCoursesList;
+            planCoursesList.DataSource = PlanCoursesDAO.Instance.GetPlanCoursesList();
+        }
+
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
         {
@@ -71,6 +95,32 @@ namespace ATBM_PhanHe1.PhanHe2
         private void btn_Update_Click(object sender, EventArgs e)
         {
             OpenChildForm(new PhanHe2.Update_PlanCourses());
+        }
+
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            planCoursesList.DataSource = RegisterDAO.Instance.GetRegisterList();
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            int semester = 0;
+            int year = 0;
+            if (cbB_semester.SelectedItem.ToString() != "null")
+                semester = int.Parse(cbB_semester.SelectedItem.ToString());
+            if (tb_year.Text != "")
+            {
+                try
+                {
+                    year = int.Parse(tb_year.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Năm không hợp lệ!", "Lỗi");
+                }
+            }
+            string programName = cbB_program.SelectedItem.ToString();
+            planCoursesList.DataSource = PlanCoursesDAO.Instance.SearchPlanCourses(semester, year, programName);
         }
     }
 }

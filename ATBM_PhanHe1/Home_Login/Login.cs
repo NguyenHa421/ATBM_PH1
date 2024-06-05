@@ -31,7 +31,7 @@ namespace ATBM_PhanHe1.Home_Login
             try
             {
                 //Interface.Homepage homepage = new Interface.Homepage();
-                //PhanHe2.View_InfoPersonnel newForm = new PhanHe2.View_InfoPersonnel();
+                //PhanHe2.View_InfoRegister newForm = new PhanHe2.View_InfoRegister();
                 //this.Hide();
                 //newForm.ShowDialog();
                 //this.Show();
