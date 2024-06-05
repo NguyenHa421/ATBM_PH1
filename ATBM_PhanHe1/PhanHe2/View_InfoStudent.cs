@@ -17,6 +17,26 @@ namespace ATBM_PhanHe1.PhanHe2
         public View_InfoStudent()
         {
             InitializeComponent();
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Nhan vien co ban")
+            {
+                btn_Add.Enabled = false;
+                btn_Update.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Truong khoa")
+            {
+                btn_Add.Enabled = false;
+                btn_Update.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Giang vien")
+            {
+                btn_Add.Enabled = false;
+                btn_Update.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Truong don vi")
+            {
+                btn_Add.Enabled = false;
+                btn_Update.Enabled = false;
+            }
             Load();
         }
         private void Load()

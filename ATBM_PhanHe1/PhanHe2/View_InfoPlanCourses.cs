@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,31 @@ namespace ATBM_PhanHe1.PhanHe2
         public View_InfoPlanCourses()
         {
             InitializeComponent();
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Sinh vien")
+            {
+                btn_Add.Enabled = false;
+                btn_Update.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Nhan vien co ban")
+            {
+                btn_Add.Enabled = false;
+                btn_Update.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Truong khoa")
+            {
+                btn_Add.Enabled = false;
+                btn_Update.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Giang vien")
+            {
+                btn_Add.Enabled = false;
+                btn_Update.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Truong don vi")
+            {
+                btn_Add.Enabled = false;
+                btn_Update.Enabled = false;
+            }
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)

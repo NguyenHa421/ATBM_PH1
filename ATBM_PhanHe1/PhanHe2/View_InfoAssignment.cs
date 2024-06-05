@@ -18,6 +18,16 @@ namespace ATBM_PhanHe1.PhanHe2
         public View_InfoAssignment()
         {
             InitializeComponent();
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Giang vien")
+            {
+                btn_Add.Enabled = false;
+                btn_Update.Enabled = false;
+                bt_delete.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Giao vu")
+            {
+                btn_Update.Enabled = false;
+            }
             LoadComboBox();
             LoadGrid();
         }

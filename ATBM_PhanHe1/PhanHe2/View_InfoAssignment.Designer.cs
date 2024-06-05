@@ -77,7 +77,7 @@
             bt_delete.FlatStyle = FlatStyle.Flat;
             bt_delete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             bt_delete.ForeColor = SystemColors.Window;
-            bt_delete.Location = new Point(364, 373);
+            bt_delete.Location = new Point(366, 373);
             bt_delete.Name = "bt_delete";
             bt_delete.Size = new Size(91, 38);
             bt_delete.TabIndex = 114;

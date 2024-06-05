@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,29 @@ namespace ATBM_PhanHe1.PhanHe2
         public View_InfoRegister()
         {
             InitializeComponent();
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Sinh vien")
+            {
+                btn_Update.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Truong khoa")
+            {
+                btn_Add.Enabled = false;
+                btn_delete.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Giang vien")
+            {
+                btn_Add.Enabled = false;
+                btn_delete.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Giao vu")
+            {
+                btn_Update.Enabled = false;
+            }
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Truong don vi")
+            {
+                btn_Add.Enabled = false;
+                btn_delete.Enabled = false;
+            }
             Load();
         }
         private void Load()
