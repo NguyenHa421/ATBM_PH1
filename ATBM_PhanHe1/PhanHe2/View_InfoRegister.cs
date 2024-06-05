@@ -1,4 +1,5 @@
 ﻿using ATBM_PhanHe1.DAO;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace ATBM_PhanHe1.PhanHe2
 {
     public partial class View_InfoRegister : Form
     {
+        private string clickedRegister = "";
         public View_InfoRegister()
         {
             InitializeComponent();
@@ -75,11 +77,30 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             OpenChildForm(new PhanHe2.Update_Register());
         }
-
+        private void dG_Register_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell cell = dG_Register.Rows[e.RowIndex].Cells[0];
+                clickedRegister = cell.Value.ToString();
+            }
+        }
         private void bt_delete_Click(object sender, EventArgs e)
         {
-            PhanHe2.Confirm_Delete confirm_Delete = new PhanHe2.Confirm_Delete();
-            confirm_Delete.ShowDialog();
+            if (clickedRegister != "")
+            {
+                string register_id = clickedRegister;
+                clickedRegister = "";
+                try
+                {
+                    PhanHe2.Confirm_Delete confirm_Delete = new PhanHe2.Confirm_Delete(register_id);
+                    confirm_Delete.ShowDialog();
+                }
+                catch (OracleException oe)
+                {
+                    MessageBox.Show(oe.Message, "Lỗi");
+                }
+            }
         }
     }
 }

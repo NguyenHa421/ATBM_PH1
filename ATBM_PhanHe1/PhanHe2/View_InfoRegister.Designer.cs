@@ -39,13 +39,13 @@
             btn_search = new Button();
             btn_Add = new Button();
             btn_Update = new Button();
-            dataGridView1 = new DataGridView();
+            dG_Register = new DataGridView();
             btn_Back = new Button();
             lb_semester = new Label();
             lb_Info = new Label();
             pn_parents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dG_Register).BeginInit();
             SuspendLayout();
             // 
             // pn_parents
@@ -60,7 +60,7 @@
             pn_parents.Controls.Add(btn_search);
             pn_parents.Controls.Add(btn_Add);
             pn_parents.Controls.Add(btn_Update);
-            pn_parents.Controls.Add(dataGridView1);
+            pn_parents.Controls.Add(dG_Register);
             pn_parents.Controls.Add(btn_Back);
             pn_parents.Controls.Add(lb_semester);
             pn_parents.Controls.Add(lb_Info);
@@ -193,15 +193,16 @@
             btn_Update.UseVisualStyleBackColor = false;
             btn_Update.Click += btn_Update_Click;
             // 
-            // dataGridView1
+            // dG_Register
             // 
-            dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(24, 102);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(843, 262);
-            dataGridView1.TabIndex = 104;
+            dG_Register.BackgroundColor = SystemColors.Control;
+            dG_Register.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dG_Register.Location = new Point(24, 102);
+            dG_Register.Name = "dG_Register";
+            dG_Register.RowHeadersWidth = 51;
+            dG_Register.Size = new Size(843, 262);
+            dG_Register.TabIndex = 104;
+            dG_Register.CellContentClick += dG_Register_CellContentClick;
             // 
             // btn_Back
             // 
@@ -253,7 +254,7 @@
             pn_parents.ResumeLayout(false);
             pn_parents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dG_Register).EndInit();
             ResumeLayout(false);
         }
 
@@ -269,7 +270,7 @@
         private Button btn_search;
         private Button btn_Add;
         private Button btn_Update;
-        private DataGridView dataGridView1;
+        private DataGridView dG_Register;
         private Button btn_Back;
         private Label lb_semester;
         private Label lb_Info;

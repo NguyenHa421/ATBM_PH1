@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace ATBM_PhanHe1.PhanHe2
 {
-    public partial class Confirm_Update : Form
+    public partial class Success : Form
     {
-        public Confirm_Update()
+        public Success()
         {
             InitializeComponent();
         }
 
-        private void btn_Cancel_Click(object sender, EventArgs e)
+        private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
-            PhanHe2.Success success = new Success();
-            success.ShowDialog();
         }
     }
 }

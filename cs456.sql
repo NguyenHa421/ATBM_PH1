@@ -402,3 +402,7 @@ EXCEPTION
     WHEN OTHERS THEN
         NULL;
 END;
+--Mot so quyen khac
+--Giao vu co the xem bang chuong trinh, bang nganh:
+GRANT SELECT ON ADMIN.TB_CHUONGTRINH TO RL_GIAOVU;
+GRANT SELECT ON ADMIN.TB_NGANH TO RL_GIAOVU;

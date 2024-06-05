@@ -131,6 +131,7 @@
             dtGrid_student.RowHeadersWidth = 51;
             dtGrid_student.Size = new Size(850, 262);
             dtGrid_student.TabIndex = 95;
+            dtGrid_student.CellContentClick += dtGrid_student_CellContentClick;
             // 
             // btn_Back
             // 

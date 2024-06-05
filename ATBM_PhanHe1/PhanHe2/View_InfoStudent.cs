@@ -1,4 +1,5 @@
 ﻿using ATBM_PhanHe1.DAO;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace ATBM_PhanHe1.PhanHe2
     public partial class View_InfoStudent : Form
     {
         BindingSource studentList = new BindingSource();
+        private string clickedStudent = "";
         public View_InfoStudent()
         {
             InitializeComponent();
@@ -65,10 +67,23 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             this.Close();
         }
+        private void dtGrid_student_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell cell = dtGrid_student.Rows[e.RowIndex].Cells[0];
+                clickedStudent = cell.Value.ToString();
+            }
+        }
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new PhanHe2.Update_Student());
+            if (clickedStudent != "")
+            {
+                string Studentid = clickedStudent;
+                clickedStudent = "";
+                OpenChildForm(new PhanHe2.Update_Student(Studentid));
+            }
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -85,5 +100,6 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             studentList.DataSource = StudentDAO.Instance.GetStudentList();
         }
+
     }
 }

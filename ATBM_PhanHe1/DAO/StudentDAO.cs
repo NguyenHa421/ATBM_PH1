@@ -48,5 +48,53 @@ namespace ATBM_PhanHe1.DAO
             StudentDTO result = new StudentDTO(data.Rows[0]);
             return result;
         }
+        public string GetGenderStudent(string id)
+        {
+            string query = $"SELECT PHAI FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetBirthStudent(string id)
+        {
+            string query = $"SELECT NGSINH FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetPhoneStudent(string id)
+        {
+            string query = $"SELECT DT FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetAddressStudent(string id)
+        {
+            string query = $"SELECT DCHI FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetProgramStudent(string id)
+        {
+            string query = $"SELECT ct.TENCT FROM ADMIN.TB_SINHVIEN sv JOIN ADMIN.TB_CHUONGTRINH ct ON sv.MACT = ct.MACT WHERE sv.MASV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetMajorStudent(string id)
+        {
+            string query = $"SELECT n.TENNGANH FROM ADMIN.TB_SINHVIEN sv JOIN ADMIN.TB_NGANH n ON sv.MANGANH = n.MANGANH WHERE sv.MASV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetCreditStudent(string id)
+        {
+            string query = $"SELECT SOTCTL FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetGPAStudent(string id)
+        {
+            string query = $"SELECT DTBTL FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
     }
 }

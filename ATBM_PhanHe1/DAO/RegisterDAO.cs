@@ -42,12 +42,14 @@ namespace ATBM_PhanHe1.DAO
             }
             return result;
         }*/
-        public void DeleteRegisterByID(string id)
+        public bool DeleteRegisterByID(string id)
         {
             string query = string.Format("begin delete from tb_nhansu where MANV = {0}; end;", id);
-            DataProvider.Instance.ExecuteNonQuery(query);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+            
         }
-
+       
         public PersonelDTO GetPersonelByID(string personelID)
         {
             string query = string.Format("select * from tb_nhansu where lower(MANV) like lower('%{0}%')", personelID);

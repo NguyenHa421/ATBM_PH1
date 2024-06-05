@@ -34,7 +34,7 @@
             tb_birth = new DateTimePicker();
             btn_Update = new Button();
             btn_Back = new Button();
-            tb_role = new TextBox();
+            tb_address = new TextBox();
             tb_phone = new TextBox();
             tb_name = new TextBox();
             tb_id = new TextBox();
@@ -47,9 +47,9 @@
             lb_name = new Label();
             lb_id = new Label();
             lb_Info = new Label();
-            textBox1 = new TextBox();
+            tb_GPA = new TextBox();
             label1 = new Label();
-            tb_name_unit = new TextBox();
+            tb_credit = new TextBox();
             lb_number_credits = new Label();
             SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             cbB_gender.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_gender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_gender.FormattingEnabled = true;
-            cbB_gender.Items.AddRange(new object[] { "Nam", "Nữ" });
+            cbB_gender.Items.AddRange(new object[] { "Male", "Female" });
             cbB_gender.Location = new Point(183, 192);
             cbB_gender.Name = "cbB_gender";
             cbB_gender.Size = new Size(229, 36);
@@ -129,14 +129,14 @@
             btn_Back.UseVisualStyleBackColor = false;
             btn_Back.Click += btn_Back_Click;
             // 
-            // tb_role
+            // tb_address
             // 
-            tb_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_role.Location = new Point(626, 82);
-            tb_role.Name = "tb_role";
-            tb_role.Size = new Size(229, 34);
-            tb_role.TabIndex = 82;
-            tb_role.TabStop = false;
+            tb_address.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_address.Location = new Point(626, 82);
+            tb_address.Name = "tb_address";
+            tb_address.Size = new Size(229, 34);
+            tb_address.TabIndex = 82;
+            tb_address.TabStop = false;
             // 
             // tb_phone
             // 
@@ -257,14 +257,14 @@
             lb_Info.TabIndex = 70;
             lb_Info.Text = "Cập nhật sinh viên";
             // 
-            // textBox1
+            // tb_GPA
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(749, 306);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(106, 34);
-            textBox1.TabIndex = 92;
-            textBox1.TabStop = false;
+            tb_GPA.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_GPA.Location = new Point(749, 306);
+            tb_GPA.Name = "tb_GPA";
+            tb_GPA.Size = new Size(106, 34);
+            tb_GPA.TabIndex = 92;
+            tb_GPA.TabStop = false;
             // 
             // label1
             // 
@@ -276,14 +276,14 @@
             label1.TabIndex = 91;
             label1.Text = "Điểm trung bình tích lũy";
             // 
-            // tb_name_unit
+            // tb_credit
             // 
-            tb_name_unit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_name_unit.Location = new Point(749, 254);
-            tb_name_unit.Name = "tb_name_unit";
-            tb_name_unit.Size = new Size(106, 34);
-            tb_name_unit.TabIndex = 90;
-            tb_name_unit.TabStop = false;
+            tb_credit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_credit.Location = new Point(749, 254);
+            tb_credit.Name = "tb_credit";
+            tb_credit.Size = new Size(106, 34);
+            tb_credit.TabIndex = 90;
+            tb_credit.TabStop = false;
             // 
             // lb_number_credits
             // 
@@ -301,9 +301,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(895, 425);
-            Controls.Add(textBox1);
+            Controls.Add(tb_GPA);
             Controls.Add(label1);
-            Controls.Add(tb_name_unit);
+            Controls.Add(tb_credit);
             Controls.Add(lb_number_credits);
             Controls.Add(cbB_gender);
             Controls.Add(cbB_major);
@@ -311,7 +311,7 @@
             Controls.Add(tb_birth);
             Controls.Add(btn_Update);
             Controls.Add(btn_Back);
-            Controls.Add(tb_role);
+            Controls.Add(tb_address);
             Controls.Add(tb_phone);
             Controls.Add(tb_name);
             Controls.Add(tb_id);
@@ -340,7 +340,7 @@
         private DateTimePicker tb_birth;
         private Button btn_Update;
         private Button btn_Back;
-        private TextBox tb_role;
+        private TextBox tb_address;
         private TextBox tb_phone;
         private TextBox tb_name;
         private TextBox tb_id;
@@ -353,9 +353,9 @@
         private Label lb_name;
         private Label lb_id;
         private Label lb_Info;
-        private TextBox textBox1;
+        private TextBox tb_GPA;
         private Label label1;
-        private TextBox tb_name_unit;
+        private TextBox tb_credit;
         private Label lb_number_credits;
     }
 }

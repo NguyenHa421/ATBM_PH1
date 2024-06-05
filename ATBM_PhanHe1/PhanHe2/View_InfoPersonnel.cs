@@ -58,7 +58,7 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void bt_delete_Click(object sender, EventArgs e)
         {
-            using (Confirm_Delete confirm_delete = new Confirm_Delete())
+            using (Confirm_Delete confirm_delete = new Confirm_Delete(clickedPersonelID))
             {
                 if (confirm_delete.ShowDialog() == DialogResult.OK)
                 {
