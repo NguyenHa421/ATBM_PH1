@@ -50,11 +50,14 @@
             lb_name = new Label();
             lb_id = new Label();
             lb_Info = new Label();
+            pic_refresh_U = new PictureBox();
             pn_parents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_refresh_U).BeginInit();
             SuspendLayout();
             // 
             // pn_parents
             // 
+            pn_parents.Controls.Add(pic_refresh_U);
             pn_parents.Controls.Add(btn_Update);
             pn_parents.Controls.Add(btn_Back);
             pn_parents.Controls.Add(tb_name_unit);
@@ -303,6 +306,17 @@
             lb_Info.TabIndex = 22;
             lb_Info.Text = "Thông tin cá nhân";
             // 
+            // pic_refresh_U
+            // 
+            pic_refresh_U.Image = Properties.Resources.refresh_buttons;
+            pic_refresh_U.Location = new Point(781, 15);
+            pic_refresh_U.Name = "pic_refresh_U";
+            pic_refresh_U.Size = new Size(49, 39);
+            pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_refresh_U.TabIndex = 110;
+            pic_refresh_U.TabStop = false;
+            pic_refresh_U.Click += pic_refresh_U_Click;
+            // 
             // ViewInfo_Personnel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -316,6 +330,7 @@
             Text = "ViewInfo_Personnel";
             pn_parents.ResumeLayout(false);
             pn_parents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_refresh_U).EndInit();
             ResumeLayout(false);
         }
 
@@ -343,5 +358,6 @@
         private Label lb_name;
         private Label lb_id;
         private Label lb_Info;
+        private PictureBox pic_refresh_U;
     }
 }

@@ -64,5 +64,10 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             Load_Info();
         }
+
+        private void pn_parents_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

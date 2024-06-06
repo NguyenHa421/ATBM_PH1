@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pn_parents = new Panel();
+            pic_refresh_U = new PictureBox();
             tb_gpa = new TextBox();
             btn_Update = new Button();
             label1 = new Label();
@@ -52,7 +53,6 @@
             lb_name = new Label();
             lb_id = new Label();
             lb_Info = new Label();
-            pic_refresh_U = new PictureBox();
             pn_parents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_refresh_U).BeginInit();
             SuspendLayout();
@@ -87,6 +87,18 @@
             pn_parents.Name = "pn_parents";
             pn_parents.Size = new Size(895, 425);
             pn_parents.TabIndex = 1;
+            pn_parents.Paint += pn_parents_Paint;
+            // 
+            // pic_refresh_U
+            // 
+            pic_refresh_U.Image = Properties.Resources.refresh_buttons;
+            pic_refresh_U.Location = new Point(781, 15);
+            pic_refresh_U.Name = "pic_refresh_U";
+            pic_refresh_U.Size = new Size(49, 39);
+            pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_refresh_U.TabIndex = 109;
+            pic_refresh_U.TabStop = false;
+            pic_refresh_U.Click += pic_refresh_U_Click;
             // 
             // tb_gpa
             // 
@@ -329,17 +341,6 @@
             lb_Info.Size = new Size(200, 31);
             lb_Info.TabIndex = 22;
             lb_Info.Text = "Thông tin cá nhân";
-            // 
-            // pic_refresh_U
-            // 
-            pic_refresh_U.Image = Properties.Resources.refresh_buttons;
-            pic_refresh_U.Location = new Point(781, 15);
-            pic_refresh_U.Name = "pic_refresh_U";
-            pic_refresh_U.Size = new Size(49, 39);
-            pic_refresh_U.SizeMode = PictureBoxSizeMode.Zoom;
-            pic_refresh_U.TabIndex = 109;
-            pic_refresh_U.TabStop = false;
-            pic_refresh_U.Click += pic_refresh_U_Click;
             // 
             // ViewInfo_StudentSelf
             // 
