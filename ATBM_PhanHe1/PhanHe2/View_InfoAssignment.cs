@@ -56,7 +56,10 @@ namespace ATBM_PhanHe1.PhanHe2
             if (curRole == "Giang vien")
                 assignmentList.DataSource = AssignmentDAO.Instance.GetLecturerAssignmentList();
             else if (curRole == "Giao vu")
+            {
                 assignmentList.DataSource = AssignmentDAO.Instance.GetRegistrarAssignmentList();
+                dtGrid_assignment.Columns["lecturerName"].Visible = false;
+            }  
             else
                 assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
         }
@@ -102,7 +105,11 @@ namespace ATBM_PhanHe1.PhanHe2
             if (curRole == "Giang vien")
                 assignmentList.DataSource = AssignmentDAO.Instance.GetLecturerAssignmentList();
             else if (curRole == "Giao vu")
+            {
                 assignmentList.DataSource = AssignmentDAO.Instance.GetRegistrarAssignmentList();
+                dtGrid_assignment.Columns["lecturerName"].Visible = false;
+            }
+
             else
                 assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
         }
