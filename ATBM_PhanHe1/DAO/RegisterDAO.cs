@@ -30,6 +30,54 @@ namespace ATBM_PhanHe1.DAO
             }
             return list;
         }
+        public List<RegisterDTO> GetLecturerRegisterList()
+        {
+            List<RegisterDTO> list = new List<RegisterDTO>();
+            string query = "select dk.*, ns.HOTEN as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.uv_gvxemdangky dk, admin.tb_sinhvien sv, admin.uv_nvxemthongtin ns, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAGV = ns.MANV and dk.MASV = sv.MASV and dk.MAHP = hp.MAHP and dk.MACT = ct.MACT";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                RegisterDTO register = new RegisterDTO(row);
+                list.Add(register);
+            }
+            return list;
+        }
+        public List<RegisterDTO> GetRegistrarRegisterList()
+        {
+            List<RegisterDTO> list = new List<RegisterDTO>();
+            string query = "select dk.*, null as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.tb_dangky dk, admin.tb_sinhvien sv, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MASV = sv.MASV and dk.MACT = ct.MACT";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                RegisterDTO register = new RegisterDTO(row);
+                list.Add(register);
+            }
+            return list;
+        }
+        public List<RegisterDTO> GetUnitChiefRegisterList()
+        {
+            List<RegisterDTO> list = new List<RegisterDTO>();
+            string query = "select dk.*, hp.TENHP, ct.TENCT from admin.uv_xemdangky dk, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MACT = ct.MACT";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                RegisterDTO register = new RegisterDTO(row);
+                list.Add(register);
+            }
+            return list;
+        }
+        public List<RegisterDTO> GetStudentRegisterList()
+        {
+            List<RegisterDTO> list = new List<RegisterDTO>();
+            string query = "select dk.*, null as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.tb_dangky dk, admin.tb_sinhvien sv, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MASV = sv.MASV and dk.MACT = ct.MACT";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                RegisterDTO register = new RegisterDTO(row);
+                list.Add(register);
+            }
+            return list;
+        }
         public List<RegisterDTO> SearchRegister(int semester, int year, string programName)
         {
             List<RegisterDTO> result = new List<RegisterDTO>();
