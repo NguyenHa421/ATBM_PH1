@@ -96,6 +96,78 @@ namespace ATBM_PhanHe1.DAO
             }
             return result;
         }
+        public List<RegisterDTO> SearchLecturerRegister(int semester, int year, string programName)
+        {
+            List<RegisterDTO> result = new List<RegisterDTO>();
+            string query = "select dk.*, ns.HOTEN as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.uv_gvxemdangky dk, admin.tb_sinhvien sv, admin.uv_nvxemthongtin ns, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAGV = ns.MANV and dk.MASV = sv.MASV and dk.MAHP = hp.MAHP and dk.MACT = ct.MACT";
+            if (semester > 0)
+                query += string.Format(" and HK = {0}", semester);
+            if (year > 0)
+                query += string.Format(" and NAM = {0}", year);
+            if (programName != "null")
+                query += string.Format(" and TENCT = '{0}'", programName);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                RegisterDTO register = new RegisterDTO(row);
+                result.Add(register);
+            }
+            return result;
+        }
+        public List<RegisterDTO> SearchRegistrarRegister(int semester, int year, string programName)
+        {
+            List<RegisterDTO> result = new List<RegisterDTO>();
+            string query = "select dk.*, null as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.tb_dangky dk, admin.tb_sinhvien sv, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MASV = sv.MASV and dk.MACT = ct.MACT";
+            if (semester > 0)
+                query += string.Format(" and HK = {0}", semester);
+            if (year > 0)
+                query += string.Format(" and NAM = {0}", year);
+            if (programName != "null")
+                query += string.Format(" and TENCT = '{0}'", programName);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                RegisterDTO register = new RegisterDTO(row);
+                result.Add(register);
+            }
+            return result;
+        }
+        public List<RegisterDTO> SearchUnitChiefRegister(int semester, int year, string programName)
+        {
+            List<RegisterDTO> result = new List<RegisterDTO>();
+            string query = "select dk.*, hp.TENHP, ct.TENCT from admin.uv_xemdangky dk, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MACT = ct.MACT";
+            if (semester > 0)
+                query += string.Format(" and HK = {0}", semester);
+            if (year > 0)
+                query += string.Format(" and NAM = {0}", year);
+            if (programName != "null")
+                query += string.Format(" and TENCT = '{0}'", programName);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                RegisterDTO register = new RegisterDTO(row);
+                result.Add(register);
+            }
+            return result;
+        }
+        public List<RegisterDTO> SearchStudentRegister(int semester, int year, string programName)
+        {
+            List<RegisterDTO> result = new List<RegisterDTO>();
+            string query = "select dk.*, null as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.tb_dangky dk, admin.tb_sinhvien sv, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MASV = sv.MASV and dk.MACT = ct.MACT";
+            if (semester > 0)
+                query += string.Format(" and HK = {0}", semester);
+            if (year > 0)
+                query += string.Format(" and NAM = {0}", year);
+            if (programName != "null")
+                query += string.Format(" and TENCT = '{0}'", programName);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                RegisterDTO register = new RegisterDTO(row);
+                result.Add(register);
+            }
+            return result;
+        }
         public bool DeleteRegisterByID(string id)
         {
             string query = string.Format("begin delete from admin.tb_nhansu where MANV = {0}; end;", id);

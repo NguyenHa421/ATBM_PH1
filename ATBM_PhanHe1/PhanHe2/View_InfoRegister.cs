@@ -165,7 +165,24 @@ namespace ATBM_PhanHe1.PhanHe2
                 }
             }
             string programName = cbB_program.SelectedItem.ToString();
-            registerList.DataSource = RegisterDAO.Instance.SearchRegister(semester, year, programName);
+            if (curRole == "Giang vien")
+                registerList.DataSource = RegisterDAO.Instance.SearchLecturerRegister(semester, year, programName);
+            else if (curRole == "Giao vu")
+            {
+                registerList.DataSource = RegisterDAO.Instance.SearchRegistrarRegister(semester, year, programName);
+                dtGrid_register.Columns["lecturerName"].Visible = false;
+            }
+            else if (curRole == "Truong don vi")
+            {
+                registerList.DataSource = RegisterDAO.Instance.SearchUnitChiefRegister(semester, year, programName);
+            }
+            else if (curRole == "Sinh vien")
+            {
+                registerList.DataSource = RegisterDAO.Instance.SearchStudentRegister(semester, year, programName);
+                dtGrid_register.Columns["lecturerName"].Visible = false;
+            }
+            else
+                registerList.DataSource = RegisterDAO.Instance.SearchRegister(semester, year, programName);
         }
 
         private void pic_refresh_U_Click(object sender, EventArgs e)
