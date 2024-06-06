@@ -45,7 +45,7 @@ namespace ATBM_PhanHe1.DAO
         public List<AssignmentDTO> GetRegistrarAssignmentList()
         {
             List<AssignmentDTO> list = new List<AssignmentDTO>();
-            string query = "select pc.*, null as HOTEN, hp.TENHP, ct.TENCT from admin.tb_phancong pc, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where pc.MAHP = hp.MAHP and pc.MACT = ct.MACT";
+            string query = "select pc.*, ns.HOTEN, hp.TENHP, ct.TENCT from admin.tb_phancong pc, admin.uv_giaovuxemnhansu ns, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where pc.MAGV = ns.MANV and pc.MAHP = hp.MAHP and pc.MACT = ct.MACT";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {

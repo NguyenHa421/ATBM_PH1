@@ -16,6 +16,8 @@ namespace ATBM_PhanHe1.PhanHe2
     {
         BindingSource assignmentList = new BindingSource();
         string curRole;
+        int clickedRow;
+
         public View_InfoAssignment()
         {
             InitializeComponent();
@@ -58,8 +60,7 @@ namespace ATBM_PhanHe1.PhanHe2
             else if (curRole == "Giao vu")
             {
                 assignmentList.DataSource = AssignmentDAO.Instance.GetRegistrarAssignmentList();
-                dtGrid_assignment.Columns["lecturerName"].Visible = false;
-            }  
+            }
             else
                 assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
         }
@@ -91,7 +92,17 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new PhanHe2.Update_Assignment());
+            DataGridViewCell cell = dtGrid_assignment.Rows[clickedRow].Cells[0];
+            string lecturerID = cell.Value.ToString();
+            cell = dtGrid_assignment.Rows[clickedRow].Cells[2];
+            string courseID = cell.Value.ToString();
+            cell = dtGrid_assignment.Rows[clickedRow].Cells[4];
+            string semester = cell.Value.ToString();
+            cell = dtGrid_assignment.Rows[clickedRow].Cells[5];
+            string year = cell.Value.ToString();
+            cell = dtGrid_assignment.Rows[clickedRow].Cells[6];
+            string programID = cell.Value.ToString();
+            OpenChildForm(new PhanHe2.Update_Assignment(courseID, lecturerID, semester, year, programID));
         }
 
         private void bt_delete_Click(object sender, EventArgs e)
@@ -107,7 +118,6 @@ namespace ATBM_PhanHe1.PhanHe2
             else if (curRole == "Giao vu")
             {
                 assignmentList.DataSource = AssignmentDAO.Instance.GetRegistrarAssignmentList();
-                dtGrid_assignment.Columns["lecturerName"].Visible = false;
             }
 
             else
@@ -126,13 +136,21 @@ namespace ATBM_PhanHe1.PhanHe2
                 {
                     year = int.Parse(tb_year.Text);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Năm không hợp lệ!", "Lỗi");
                 }
             }
             string programName = cbB_program.SelectedItem.ToString();
             assignmentList.DataSource = AssignmentDAO.Instance.SearchAssignment(semester, year, programName);
+        }
+
+        private void dtGrid_assignment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                clickedRow = e.RowIndex;
+            }
         }
     }
 }
