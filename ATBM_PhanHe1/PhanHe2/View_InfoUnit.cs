@@ -27,7 +27,7 @@ namespace ATBM_PhanHe1.PhanHe2
                 btn_Add.Enabled = false;
                 btn_Update.Enabled = false;
             }
-            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Giao vien")
+            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Giang vien")
             {
                 btn_Add.Enabled = false;
                 btn_Update.Enabled = false;

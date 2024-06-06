@@ -37,7 +37,7 @@
             lb_number_credits = new Label();
             tb_major = new TextBox();
             tb_program = new TextBox();
-            tb_role = new TextBox();
+            tb_addr = new TextBox();
             tb_phone = new TextBox();
             tb_birth = new TextBox();
             tb_gender = new TextBox();
@@ -65,7 +65,7 @@
             pn_parents.Controls.Add(lb_number_credits);
             pn_parents.Controls.Add(tb_major);
             pn_parents.Controls.Add(tb_program);
-            pn_parents.Controls.Add(tb_role);
+            pn_parents.Controls.Add(tb_addr);
             pn_parents.Controls.Add(tb_phone);
             pn_parents.Controls.Add(tb_birth);
             pn_parents.Controls.Add(tb_gender);
@@ -177,15 +177,15 @@
             tb_program.TabIndex = 38;
             tb_program.TabStop = false;
             // 
-            // tb_role
+            // tb_addr
             // 
-            tb_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_role.Location = new Point(617, 80);
-            tb_role.Name = "tb_role";
-            tb_role.ReadOnly = true;
-            tb_role.Size = new Size(213, 34);
-            tb_role.TabIndex = 37;
-            tb_role.TabStop = false;
+            tb_addr.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_addr.Location = new Point(617, 80);
+            tb_addr.Name = "tb_addr";
+            tb_addr.ReadOnly = true;
+            tb_addr.Size = new Size(213, 34);
+            tb_addr.TabIndex = 37;
+            tb_addr.TabStop = false;
             // 
             // tb_phone
             // 
@@ -350,7 +350,7 @@
         private Button btn_Back;
         private TextBox tb_major;
         private TextBox tb_program;
-        private TextBox tb_role;
+        private TextBox tb_addr;
         private TextBox tb_phone;
         private TextBox tb_birth;
         private TextBox tb_gender;

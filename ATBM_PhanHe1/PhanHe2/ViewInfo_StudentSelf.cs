@@ -18,23 +18,22 @@ namespace ATBM_PhanHe1.PhanHe2
         public ViewInfo_StudentSelf()
         {
             InitializeComponent();
-            Load();
+            tb_id.Text = Home_Login.Login.User;
+            Load_Info();
         }
-        private void Load()
+        private void Load_Info()
         {
-            StudentDTO curStudent = StudentDAO.Instance.GetStudentByID(Login.User);
-            ProgramDTO curProgram = ProgramDAO.Instance.GetProgramByID(curStudent.programID);
-            MajorDTO curMajor = MajorDAO.Instance.GetMajorByID(curStudent.majorID);
-            tb_id.Text = curStudent.studentID;
-            tb_name.Text = curStudent.studentName;
-            tb_birth.Text = curStudent.birthday.ToString();
-            tb_credits.Text = curStudent.credits.ToString();
-            tb_gender.Text = curStudent.gender;
-            tb_gpa.Text = curStudent.gpa.ToString();
-            tb_major.Text = curMajor.majorName;
-            tb_phone.Text = curStudent.phone;
-            tb_program.Text = curProgram.programName;
+            tb_name.Text = UserDAO.Instance.GetNameStudent(tb_id.Text);
+            tb_gender.Text = StudentDAO.Instance.GetGenderStudent(tb_id.Text);
+            tb_birth.Text = StudentDAO.Instance.GetBirthStudent(tb_id.Text);
+            tb_phone.Text = StudentDAO.Instance.GetPhoneStudent(tb_id.Text);
+            tb_addr.Text = StudentDAO.Instance.GetAddressStudent(tb_id.Text);
+            tb_program.Text = StudentDAO.Instance.GetProgramStudent(tb_id.Text);
+            tb_major.Text = StudentDAO.Instance.GetMajorStudent(tb_id.Text);
+            tb_credits.Text = StudentDAO.Instance.GetCreditStudent(tb_id.Text);
+            tb_gpa.Text = StudentDAO.Instance.GetGPAStudent(tb_id.Text);
         }
+        
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
         {
