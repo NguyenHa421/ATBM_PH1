@@ -14,9 +14,15 @@ namespace ATBM_PhanHe1.PhanHe2
     public partial class View_InfoUnit : Form
     {
         BindingSource unitList = new BindingSource();
+        private string clickedUnit = "";
         public View_InfoUnit()
         {
             InitializeComponent();
+            Load_Button();
+            Load();
+        }
+        private void Load_Button()
+        {
             if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Nhan vien co ban")
             {
                 btn_Add.Enabled = false;
@@ -37,7 +43,6 @@ namespace ATBM_PhanHe1.PhanHe2
                 btn_Add.Enabled = false;
                 btn_Update.Enabled = false;
             }
-            Load();
         }
         private void Load()
         {
@@ -72,7 +77,12 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Update_Unit());
+            if (clickedUnit != "")
+            {
+                string Unitid = clickedUnit;
+                clickedUnit = "";
+                OpenChildForm(new Update_Unit(Unitid));
+            }
         }
         private void btn_search_Click(object sender, EventArgs e)
         {
@@ -81,6 +91,15 @@ namespace ATBM_PhanHe1.PhanHe2
         private void pic_refresh_U_Click(object sender, EventArgs e)
         {
             unitList.DataSource = UnitDAO.Instance.GetUnitList();
+        }
+
+        private void dtGrid_unit_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell cell = dtGrid_unit.Rows[e.RowIndex].Cells[0];
+                clickedUnit = cell.Value.ToString();
+            }
         }
     }
 }

@@ -22,17 +22,15 @@ namespace ATBM_PhanHe1.PhanHe2
         }
         private void Load()
         {
-            PersonelDTO curPersonel = PersonelDAO.Instance.GetPersonelByID(Login.User);
-            UnitDTO curUnit = UnitDAO.Instance.GetUnitByID(Login.User);
-
-            tb_id.Text = curPersonel.personelID;
-            tb_name.Text = curPersonel.personelName;
-            tb_birth.Text = curPersonel.birthday.ToString();
-            tb_gender.Text = curPersonel.gender;
-            tb_allowance.Text = curPersonel.allowance.ToString();
-            tb_role.Text = curPersonel.role;
-            tb_id_unit.Text = curUnit.unitID;
-            tb_name_unit.Text = curUnit.unitName;
+            tb_id.Text = Home_Login.Login.User;
+            tb_name.Text = UserDAO.Instance.GetNameOther(tb_id.Text);
+            tb_birth.Text = PersonelDAO.Instance.GetBirthStaff(tb_id.Text);
+            tb_gender.Text = PersonelDAO.Instance.GetGenderStaff(tb_id.Text);
+            tb_phone.Text = PersonelDAO.Instance.GetPhoneStaff(tb_id.Text);
+            tb_allowance.Text = PersonelDAO.Instance.GetGenderStaff(tb_id.Text);
+            tb_role.Text = PersonelDAO.Instance.GetRoleStaff(tb_id.Text);
+            tb_id_unit.Text = PersonelDAO.Instance.GetIDUnitStaff(tb_id.Text);
+            tb_name_unit.Text = PersonelDAO.Instance.GetUnitStaff(tb_id.Text);
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -50,7 +48,7 @@ namespace ATBM_PhanHe1.PhanHe2
             childForm.BringToFront();
             childForm.Show();
         }
-        
+
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -59,6 +57,11 @@ namespace ATBM_PhanHe1.PhanHe2
         private void btn_Update_Click(object sender, EventArgs e)
         {
             OpenChildForm(new PhanHe2.Update_Info_Personnel());
+        }
+
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            Load();
         }
     }
 }

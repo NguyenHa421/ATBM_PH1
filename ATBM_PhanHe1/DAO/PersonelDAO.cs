@@ -49,10 +49,58 @@ namespace ATBM_PhanHe1.DAO
 
         public PersonelDTO GetPersonelByID(string personelID)
         {
-            string query = string.Format("select * from admin.tb_nhansu where lower(MANV) like lower('%{0}%')", personelID);
+            string query = string.Format("select * from ADMIN.UV_NVXEMTHONGTIN where lower(MANV) like lower('%{0}%')", personelID);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             PersonelDTO result = new PersonelDTO(data.Rows[0]);
             return result;
+        }
+        public string GetGenderStaff(string id)
+        {
+            string query = $"SELECT PHAI FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetBirthStaff(string id)
+        {
+            string query = $"SELECT NGSINH FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetPhoneStaff(string id)
+        {
+            string query = $"SELECT DT FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetAllowanceStaff(string id)
+        {
+            string query = $"SELECT PHUCAP FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetRoleStaff(string id)
+        {
+            string query = $"SELECT VAITRO FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetIDUnitStaff(string id)
+        {
+            string query = $"SELECT MADV FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetUnitStaff(string id)
+        {
+            string query = $"SELECT n.TENDV FROM ADMIN.UV_NVXEMTHONGTIN nv JOIN ADMIN.TB_DONVI n ON nv.MADV = n.MADV WHERE nv.MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public bool Update_SelfStaff(string phone)
+        {
+            string query = $"BEGIN ADMIN.USP_CHINHSODT('{phone}');END;";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
     }
 }

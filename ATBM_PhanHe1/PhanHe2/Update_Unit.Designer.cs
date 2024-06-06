@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cbB_program = new ComboBox();
+            cbB_unitHead = new ComboBox();
             tb_name = new TextBox();
             tb_id = new TextBox();
             lb_unithead = new Label();
@@ -39,15 +39,15 @@
             btn_Back = new Button();
             SuspendLayout();
             // 
-            // cbB_program
+            // cbB_unitHead
             // 
-            cbB_program.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbB_program.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_program.FormattingEnabled = true;
-            cbB_program.Location = new Point(404, 255);
-            cbB_program.Name = "cbB_program";
-            cbB_program.Size = new Size(229, 36);
-            cbB_program.TabIndex = 95;
+            cbB_unitHead.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbB_unitHead.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbB_unitHead.FormattingEnabled = true;
+            cbB_unitHead.Location = new Point(404, 255);
+            cbB_unitHead.Name = "cbB_unitHead";
+            cbB_unitHead.Size = new Size(229, 36);
+            cbB_unitHead.TabIndex = 95;
             // 
             // tb_name
             // 
@@ -147,7 +147,7 @@
             ClientSize = new Size(895, 425);
             Controls.Add(btn_Update);
             Controls.Add(btn_Back);
-            Controls.Add(cbB_program);
+            Controls.Add(cbB_unitHead);
             Controls.Add(tb_name);
             Controls.Add(tb_id);
             Controls.Add(lb_unithead);
@@ -164,7 +164,7 @@
 
         #endregion
 
-        private ComboBox cbB_program;
+        private ComboBox cbB_unitHead;
         private TextBox tb_name;
         private TextBox tb_id;
         private Label lb_unithead;
