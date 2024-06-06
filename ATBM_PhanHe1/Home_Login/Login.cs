@@ -31,10 +31,23 @@ namespace ATBM_PhanHe1.Home_Login
             try
             {
                 //Interface.Homepage homepage = new Interface.Homepage();
-                PhanHe2.MainBase mainBase = new PhanHe2.MainBase();
-                this.Hide();
-                mainBase.ShowDialog();
-                this.Show();
+                if (User.ToUpper().StartsWith("NV") || User.ToUpper().StartsWith("SV"))
+                {
+                    PhanHe2.MainBase mainBase = new PhanHe2.MainBase();
+                    this.Hide();
+                    mainBase.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    Interface.Homepage homepage = new Interface.Homepage();
+                    this.Hide();
+                    homepage.ShowDialog();
+                    this.Show();
+                }
+                
+                //PhanHe2.Success success = new PhanHe2.Success();
+                //success.ShowDialog();
             }
             catch (OracleException oe)
             {
