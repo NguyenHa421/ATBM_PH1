@@ -15,21 +15,27 @@ namespace ATBM_PhanHe1.PhanHe2
     public partial class View_InfoAssignment : Form
     {
         BindingSource assignmentList = new BindingSource();
+        string curRole;
         public View_InfoAssignment()
         {
             InitializeComponent();
-            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Giang vien")
+            curRole = UserDAO.Instance.GetRole(Home_Login.Login.User);
+            UpdateInterface();
+            LoadComboBox();
+            LoadGrid();
+        }
+        private void UpdateInterface()
+        {
+            if (curRole == "Giang vien")
             {
                 btn_Add.Enabled = false;
                 btn_Update.Enabled = false;
                 bt_delete.Enabled = false;
             }
-            if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Giao vu")
+            if (curRole == "Giao vu")
             {
                 btn_Update.Enabled = false;
             }
-            LoadComboBox();
-            LoadGrid();
         }
         private void LoadComboBox()
         {
@@ -47,7 +53,10 @@ namespace ATBM_PhanHe1.PhanHe2
         private void LoadGrid()
         {
             dtGrid_assignment.DataSource = assignmentList;
-            assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
+            if (curRole == "Giang vien")
+                assignmentList.DataSource = AssignmentDAO.Instance.GetLecturerAssignmentList();
+            else
+                assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -88,7 +97,10 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void pic_refresh_U_Click(object sender, EventArgs e)
         {
-            assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
+            if (curRole == "Giang vien")
+                assignmentList.DataSource = AssignmentDAO.Instance.GetLecturerAssignmentList();
+            else
+                assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
