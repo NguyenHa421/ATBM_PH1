@@ -402,6 +402,7 @@ EXCEPTION
     WHEN OTHERS THEN
         NULL;
 END;
+/
 --Mot so quyen khac
 --Giao vu, sinh vien co the xem bang chuong trinh, bang nganh:
 GRANT SELECT ON ADMIN.TB_CHUONGTRINH TO RL_NHANVIENCOBAN;
