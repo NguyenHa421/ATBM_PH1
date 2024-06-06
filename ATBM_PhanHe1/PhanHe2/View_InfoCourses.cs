@@ -14,6 +14,7 @@ namespace ATBM_PhanHe1.PhanHe2
     public partial class View_InfoCourses : Form
     {
         BindingSource courseList = new BindingSource();
+        string clickedCourse = "";
         public View_InfoCourses()
         {
             InitializeComponent();
@@ -81,7 +82,7 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Update_Courses());
+            OpenChildForm(new Update_Courses(clickedCourse));
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -92,6 +93,15 @@ namespace ATBM_PhanHe1.PhanHe2
         private void pic_refresh_U_Click(object sender, EventArgs e)
         {
             courseList.DataSource = CourseDAO.Instance.GetCourseList();
+        }
+
+        private void dtGrid_course_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell cell = dtGrid_course.Rows[e.RowIndex].Cells[0];
+                clickedCourse = cell.Value.ToString();
+            }
         }
     }
 }

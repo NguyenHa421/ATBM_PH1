@@ -85,6 +85,7 @@
             cbB_unit.Name = "cbB_unit";
             cbB_unit.Size = new Size(229, 36);
             cbB_unit.TabIndex = 106;
+            cbB_unit.SelectedIndexChanged += cbB_unit_SelectedIndexChanged;
             // 
             // cbB_idunit
             // 
@@ -95,6 +96,7 @@
             cbB_idunit.Name = "cbB_idunit";
             cbB_idunit.Size = new Size(229, 36);
             cbB_idunit.TabIndex = 105;
+            cbB_idunit.SelectedIndexChanged += cbB_idunit_SelectedIndexChanged;
             // 
             // btn_Back
             // 
@@ -135,6 +137,7 @@
             tb_id.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tb_id.Location = new Point(191, 88);
             tb_id.Name = "tb_id";
+            tb_id.ReadOnly = true;
             tb_id.Size = new Size(229, 34);
             tb_id.TabIndex = 100;
             tb_id.TabStop = false;

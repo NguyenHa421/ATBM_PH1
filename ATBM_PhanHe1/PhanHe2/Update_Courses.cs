@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using ATBM_PhanHe1.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +14,40 @@ namespace ATBM_PhanHe1.PhanHe2
 {
     public partial class Update_Courses : Form
     {
-        public Update_Courses()
+        public Update_Courses(string courseID)
         {
             InitializeComponent();
+            Load(courseID);
         }
-
+        private void Load(string courseID)
+        {
+            CourseDTO course = CourseDAO.Instance.GetCourseByID(courseID);
+            LoadTextbox(course);
+            LoadComboBox(course.unitID);
+        }
+        private void LoadTextbox(CourseDTO course)
+        {
+            tb_id.Text = course.courseID;
+            tb_name.Text = course.courseName;
+            tb_credit.Text = course.credits.ToString();
+            tb_theory.Text = course.lectureNum.ToString();
+            tb_practice.Text = course.practicalNum.ToString();
+            tb_maxstudent.Text = course.maxStudent.ToString();
+        }
+        private void LoadComboBox(string unitID)
+        {
+            List<UnitDTO> units = UnitDAO.Instance.GetUnitList();
+            for (int i = 0; i < units.Count; i++)
+            {
+                cbB_idunit.Items.Add(units[i].unitID);
+                cbB_unit.Items.Add(units[i].unitName);
+                if (units[i].unitID == unitID)
+                {
+                    cbB_idunit.SelectedIndex = i;
+                    cbB_unit.SelectedIndex = i;
+                }
+            }
+        }
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -24,8 +55,69 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            PhanHe2.Success success = new PhanHe2.Success();
-            success.ShowDialog();
+            if (ExecuteUpdate())
+            {
+                PhanHe2.Success success = new PhanHe2.Success();
+                success.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thất bại!", "Lỗi");
+            }      
+        }
+        private bool ExecuteUpdate()
+        {
+            int credit, theory, practice, maxStudent;
+            try
+            {
+                credit = int.Parse(tb_credit.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Số tín chỉ không hợp lệ!", "Lỗi");
+                return(false);
+            }
+            try
+            {
+                theory = int.Parse(tb_theory.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Số tiết lý thuyết không hợp lệ!", "Lỗi");
+                return(false);
+            }
+            try
+            {
+                practice = int.Parse(tb_practice.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Số tiết thực hành không hợp lệ!", "Lỗi");
+                return(false);
+            }
+            try
+            {
+                maxStudent = int.Parse(tb_maxstudent.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Số sinh viên tối đa không hợp lệ!", "Lỗi");
+                return(false);
+            }
+            if (CourseDAO.Instance.UpdateCourse(tb_id.Text, tb_name.Text, credit, theory, practice, maxStudent, cbB_idunit.SelectedItem.ToString()))
+            {
+                return (true);
+            }
+            return(false);
+        }
+        private void cbB_idunit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbB_unit.SelectedIndex = cbB_idunit.SelectedIndex;
+        }
+
+        private void cbB_unit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbB_idunit.SelectedIndex = cbB_unit.SelectedIndex;
         }
     }
 }

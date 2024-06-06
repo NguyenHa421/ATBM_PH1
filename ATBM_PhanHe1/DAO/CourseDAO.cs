@@ -54,5 +54,11 @@ namespace ATBM_PhanHe1.DAO
             string query = string.Format("insert into admin.tb_HOCPHAN values('{0}','{1}',{2},{3},{4},{5},'{6}')", courseId, courceName, credits, lectureNum, practicalNum, maxStudent, unitID);
             DataProvider.Instance.ExecuteNonQuery(query);
         }
+        public bool UpdateCourse(string id, string name, int credit, int theory, int practice, int maxStudent, string unitID)
+        {
+            string query = string.Format("update tb_hocphan set TENHP = {0}, SOTC = {1}, STLT = {2}, STTH = {3}, SOSVTD = {4}, MADV = '{5}' where MAHP = '{6}'", name, credit, theory, practice, maxStudent, unitID, id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }
