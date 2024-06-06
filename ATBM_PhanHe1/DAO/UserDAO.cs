@@ -175,8 +175,13 @@ namespace ATBM_PhanHe1.DAO
         
         public string GetRole(string id)
         {
-            string query = $"SELECT HOTEN FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')"; 
-            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            string query = $"SELECT HOTEN FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')";
+            object result = null;
+            try
+            {
+                result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            }
+            catch (Exception ex) { }
             if (result == null)
             {
                 query = $"SELECT VAITRO FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";

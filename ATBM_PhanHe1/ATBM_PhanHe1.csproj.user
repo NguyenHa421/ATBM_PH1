@@ -34,12 +34,6 @@
     <Compile Update="PhanHe2\Add_Unit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PhanHe2\Confirm_Delete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="PhanHe2\Confirm_Update.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="PhanHe2\Homepage_Dean.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +47,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="PhanHe2\MainBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhanHe2\Success.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="PhanHe2\Update_Assignment.cs">

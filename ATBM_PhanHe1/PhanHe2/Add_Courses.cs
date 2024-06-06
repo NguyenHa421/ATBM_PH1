@@ -22,15 +22,13 @@ namespace ATBM_PhanHe1.PhanHe2
         private void Load()
         {
             List<UnitDTO> unitList = UnitDAO.Instance.GetUnitList();
-            List<string> unitID = new List<string>();
-            List<string> unitName = new List<string>();
             foreach (UnitDTO unit in unitList)
             {
-                unitID.Add(unit.unitID);
-                unitName.Add(unit.unitName);
+                cbB_idunit.Items.Add(unit.unitID);
+                cbB_unit.Items.Add(unit.unitName);
             }
-            cbB_idunit.DataSource = unitID;
-            cbB_unit.DataSource = unitName;
+            cbB_idunit.SelectedIndex = 0;
+            cbB_unit.SelectedIndex = 0;
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
@@ -50,8 +48,52 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            CourseDAO.Instance.AddCource(tb_id.Text, tb_name.Text, int.Parse(tb_credit.Text), int.Parse(tb_theory.Text), int.Parse(tb_practice.Text), int.Parse(tb_maxstudent.Text), cbB_idunit.SelectedValue.ToString());
-            this.Close();
+            if (tb_id.Text != "" && tb_name.Text != "" && tb_credit.Text != "" && tb_theory.Text != "" && tb_practice.Text != "" && tb_maxstudent.Text != "") 
+            {
+                int credits, theory, practice, maxStudent;
+                try
+                {
+                    credits = int.Parse(tb_credit.Text);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Số tín chỉ không hợp lệ!", "Lỗi");
+                    return;
+                }
+                try
+                {
+                    theory = int.Parse(tb_theory.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Số tiết lý thuyết không hợp lệ!", "Lỗi");
+                    return;
+                }
+                try
+                {
+                    practice = int.Parse(tb_practice.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Số tiết thực hành không hợp lệ!", "Lỗi");
+                    return;
+                }
+                try
+                {
+                    maxStudent = int.Parse(tb_maxstudent.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Số sinh viên tối đa không hợp lệ!", "Lỗi");
+                    return;
+                }
+                CourseDAO.Instance.AddCource(tb_id.Text,tb_name.Text,credits,theory, practice, maxStudent, cbB_idunit.SelectedItem.ToString());
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Hãy điền đầy đủ thông tin!", "Lỗi");
+            }
         }
     }
 }

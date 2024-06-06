@@ -286,7 +286,6 @@
         private ComboBox cbB_idunit;
         private Button btn_Add;
         private Button btn_Back;
-        private TextBox tb_role;
         private TextBox tb_theory;
         private TextBox tb_name;
         private TextBox tb_id;
