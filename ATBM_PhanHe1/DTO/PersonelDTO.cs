@@ -30,11 +30,15 @@ namespace ATBM_PhanHe1.DTO
         {
             this.personelID = row["MANV"].ToString();
             this.personelName = row["HOTEN"].ToString();
-            this.gender = row["PHAI"].ToString();
-            this.birthday = (DateTime)row["NGSINH"];
-            this.allowance = Decimal.ToInt32((decimal)row["PHUCAP"]);
-            this.role = row["VAITRO"].ToString();
-            this.unitID = row["MADV"].ToString();
+            try
+            {
+                this.gender = row["PHAI"].ToString();
+                this.birthday = (DateTime)row["NGSINH"];
+                this.allowance = Decimal.ToInt32((decimal)row["PHUCAP"]);
+                this.role = row["VAITRO"].ToString();
+                this.unitID = row["MADV"].ToString();
+            }
+            catch { }
         }
     }
 }

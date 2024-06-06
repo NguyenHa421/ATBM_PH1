@@ -54,6 +54,18 @@ namespace ATBM_PhanHe1.DAO
             PersonelDTO result = new PersonelDTO(data.Rows[0]);
             return result;
         }
+        public List<PersonelDTO> RegistrarGetListLecturer()
+        {
+            List<PersonelDTO> list = new List<PersonelDTO>();
+            string query = $"SELECT * FROM ADMIN.UV_GIAOVUXEMNHANSU";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow row in data.Rows)
+            {
+                PersonelDTO personel = new PersonelDTO(row);
+                list.Add(personel);
+            }
+            return list;
+        }
         public string GetGenderStaff(string id)
         {
             string query = $"SELECT PHAI FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
