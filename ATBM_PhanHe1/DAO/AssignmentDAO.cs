@@ -42,6 +42,18 @@ namespace ATBM_PhanHe1.DAO
             }
             return list;
         }
+        public List<AssignmentDTO> GetRegistrarAssignmentList()
+        {
+            List<AssignmentDTO> list = new List<AssignmentDTO>();
+            string query = "select pc.*, null as HOTEN, hp.TENHP, ct.TENCT from admin.tb_phancong pc, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where pc.MAHP = hp.MAHP and pc.MACT = ct.MACT";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                AssignmentDTO course = new AssignmentDTO(row);
+                list.Add(course);
+            }
+            return list;
+        }
         public List<AssignmentDTO> SearchAssignment(int semester,int year,string programName)
         {
             List<AssignmentDTO> result = new List<AssignmentDTO>();

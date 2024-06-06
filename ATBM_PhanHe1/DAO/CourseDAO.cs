@@ -56,7 +56,7 @@ namespace ATBM_PhanHe1.DAO
         }
         public bool UpdateCourse(string id, string name, int credit, int theory, int practice, int maxStudent, string unitID)
         {
-            string query = string.Format("update tb_hocphan set TENHP = {0}, SOTC = {1}, STLT = {2}, STTH = {3}, SOSVTD = {4}, MADV = '{5}' where MAHP = '{6}'", name, credit, theory, practice, maxStudent, unitID, id);
+            string query = string.Format("update admin.tb_hocphan set TENHP = '{0}', SOTC = {1}, STLT = {2}, STTH = {3}, SOSVTD = {4}, MADV = '{5}' where MAHP = '{6}'", name, credit, theory, practice, maxStudent, unitID, id);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

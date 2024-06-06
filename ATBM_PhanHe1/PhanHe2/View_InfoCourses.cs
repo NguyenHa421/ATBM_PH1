@@ -82,7 +82,8 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Update_Courses(clickedCourse));
+            if (clickedCourse != "")
+                OpenChildForm(new Update_Courses(clickedCourse));
         }
 
         private void btn_search_Click(object sender, EventArgs e)
