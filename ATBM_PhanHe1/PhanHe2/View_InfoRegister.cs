@@ -16,10 +16,18 @@ namespace ATBM_PhanHe1.PhanHe2
     public partial class View_InfoRegister : Form
     {
         BindingSource registerList = new BindingSource();
+        string curRole;
         private string clickedRegister = "";
         public View_InfoRegister()
         {
             InitializeComponent();
+            curRole = UserDAO.Instance.GetRole(Home_Login.Login.User);
+            UpdateInterface();
+            LoadComboBox();
+            LoadGrid();
+        }
+        private void UpdateInterface()
+        {
             if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Sinh vien")
             {
                 btn_Update.Enabled = false;
@@ -43,8 +51,6 @@ namespace ATBM_PhanHe1.PhanHe2
                 btn_Add.Enabled = false;
                 btn_delete.Enabled = false;
             }
-            LoadComboBox();
-            LoadGrid();
         }
         private void LoadComboBox()
         {
@@ -62,7 +68,24 @@ namespace ATBM_PhanHe1.PhanHe2
         private void LoadGrid()
         {
             dtGrid_register.DataSource = registerList;
-            registerList.DataSource = RegisterDAO.Instance.GetRegisterList();
+            if (curRole == "Giang vien")
+                registerList.DataSource = RegisterDAO.Instance.GetLecturerRegisterList();
+            else if (curRole == "Giao vu")
+            {
+                registerList.DataSource = RegisterDAO.Instance.GetRegistrarRegisterList();
+                dtGrid_register.Columns["lecturerName"].Visible = false;
+            }
+            else if (curRole == "Truong don vi")
+            {
+                registerList.DataSource = RegisterDAO.Instance.GetUnitChiefRegisterList();
+            }  
+            else if (curRole == "Sinh vien")
+            {
+                registerList.DataSource = RegisterDAO.Instance.GetStudentRegisterList();
+                dtGrid_register.Columns["lecturerName"].Visible = false;
+            }
+            else
+                registerList.DataSource = RegisterDAO.Instance.GetRegisterList();
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -147,7 +170,24 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void pic_refresh_U_Click(object sender, EventArgs e)
         {
-            registerList.DataSource = RegisterDAO.Instance.GetRegisterList();
+            if (curRole == "Giang vien")
+                registerList.DataSource = RegisterDAO.Instance.GetLecturerRegisterList();
+            else if (curRole == "Giao vu")
+            {
+                registerList.DataSource = RegisterDAO.Instance.GetRegistrarRegisterList();
+                dtGrid_register.Columns["lecturerName"].Visible = false;
+            }
+            else if (curRole == "Truong don vi")
+            {
+                registerList.DataSource = RegisterDAO.Instance.GetUnitChiefRegisterList();
+            }
+            else if (curRole == "Sinh vien")
+            {
+                registerList.DataSource = RegisterDAO.Instance.GetStudentRegisterList();
+                dtGrid_register.Columns["lecturerName"].Visible = false;
+            }
+            else
+                registerList.DataSource = RegisterDAO.Instance.GetRegisterList();
         }
 
         private void pn_parents_Paint(object sender, PaintEventArgs e)
