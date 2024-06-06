@@ -159,4 +159,11 @@ END;
 --Cap quyen xem, them va xoa tren TB_DANGKY cho RL_GIAOVU
 GRANT SELECT, INSERT, DELETE ON ADMIN.TB_DANGKY TO RL_GIAOVU;
 /
+--Tao view cho giao vu xem ma va ho ten cua nhan su (phuc vu cac quyen cua giao vu)
+CREATE OR REPLACE VIEW UV_GIAOVUXEMNHANSU
+AS
+SELECT MANV, HOTEN FROM ADMIN.TB_NHANSU;
+/
+--Cap view cho giao vu
+GRANT SELECT ON UV_GIAOVUXEMNHANSU TO RL_GIAOVU;
 
