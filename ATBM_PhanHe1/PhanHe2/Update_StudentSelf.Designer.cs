@@ -39,7 +39,7 @@
             lb_name = new Label();
             lb_id = new Label();
             lb_Info = new Label();
-            tb_role = new TextBox();
+            tb_addr = new TextBox();
             lb_address = new Label();
             tb_newaddress = new TextBox();
             lb_newaddress = new Label();
@@ -166,15 +166,15 @@
             lb_Info.TabIndex = 45;
             lb_Info.Text = "Cập nhật thông tin cá nhân";
             // 
-            // tb_role
+            // tb_addr
             // 
-            tb_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_role.Location = new Point(396, 269);
-            tb_role.Name = "tb_role";
-            tb_role.ReadOnly = true;
-            tb_role.Size = new Size(229, 34);
-            tb_role.TabIndex = 57;
-            tb_role.TabStop = false;
+            tb_addr.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_addr.Location = new Point(396, 269);
+            tb_addr.Name = "tb_addr";
+            tb_addr.ReadOnly = true;
+            tb_addr.Size = new Size(229, 34);
+            tb_addr.TabIndex = 57;
+            tb_addr.TabStop = false;
             // 
             // lb_address
             // 
@@ -213,7 +213,7 @@
             ClientSize = new Size(895, 425);
             Controls.Add(tb_newaddress);
             Controls.Add(lb_newaddress);
-            Controls.Add(tb_role);
+            Controls.Add(tb_addr);
             Controls.Add(lb_address);
             Controls.Add(tb_newphone);
             Controls.Add(lb_new_phone);
@@ -247,7 +247,7 @@
         private Label lb_name;
         private Label lb_id;
         private Label lb_Info;
-        private TextBox tb_role;
+        private TextBox tb_addr;
         private Label lb_address;
         private TextBox tb_newaddress;
         private Label lb_newaddress;

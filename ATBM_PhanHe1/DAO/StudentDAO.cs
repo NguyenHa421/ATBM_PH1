@@ -114,5 +114,11 @@ namespace ATBM_PhanHe1.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public bool Update_SelfStudent(string id, string addr, string phone)
+        {
+            string query = $"UPDATE ADMIN.TB_SINHVIEN SET DCHI = ('{addr}'), DT = ('{phone}') WHERE MASV = ('{id}')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }

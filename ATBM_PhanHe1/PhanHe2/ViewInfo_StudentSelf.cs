@@ -18,11 +18,11 @@ namespace ATBM_PhanHe1.PhanHe2
         public ViewInfo_StudentSelf()
         {
             InitializeComponent();
-            tb_id.Text = Home_Login.Login.User;
             Load_Info();
         }
         private void Load_Info()
         {
+            tb_id.Text = Home_Login.Login.User;
             tb_name.Text = UserDAO.Instance.GetNameStudent(tb_id.Text);
             tb_gender.Text = StudentDAO.Instance.GetGenderStudent(tb_id.Text);
             tb_birth.Text = StudentDAO.Instance.GetBirthStudent(tb_id.Text);
@@ -33,7 +33,7 @@ namespace ATBM_PhanHe1.PhanHe2
             tb_credits.Text = StudentDAO.Instance.GetCreditStudent(tb_id.Text);
             tb_gpa.Text = StudentDAO.Instance.GetGPAStudent(tb_id.Text);
         }
-        
+
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
         {
@@ -58,6 +58,11 @@ namespace ATBM_PhanHe1.PhanHe2
         private void btn_Update_Click(object sender, EventArgs e)
         {
             OpenChildForm(new PhanHe2.Update_StudentSelf());
+        }
+
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            Load_Info();
         }
     }
 }

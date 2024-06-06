@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ATBM_PhanHe1.DAO;
+using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +17,15 @@ namespace ATBM_PhanHe1.PhanHe2
         public Update_StudentSelf()
         {
             InitializeComponent();
+            tb_id.Text = Home_Login.Login.User;
+            Load_Info();
         }
-
+        private void Load_Info()
+        {
+            tb_name.Text = UserDAO.Instance.GetNameStudent(tb_id.Text);
+            tb_phone.Text = StudentDAO.Instance.GetPhoneStudent(tb_id.Text);
+            tb_addr.Text = StudentDAO.Instance.GetAddressStudent(tb_id.Text);
+        }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -24,8 +33,29 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            PhanHe2.Success success = new PhanHe2.Success();
-            success.ShowDialog();
+            string id = tb_id.Text;
+            string newaddr = tb_newaddress.Text;
+            string newphone = tb_newphone.Text;
+            string phone = tb_phone.Text;
+            string addr = tb_addr.Text;
+            if (newaddr == "")
+            {
+                newaddr = addr;
+            }
+            if (newphone == "")
+            {
+                newphone = phone;
+            }        
+            try
+            {
+                StudentDAO.Instance.Update_SelfStudent(id, newaddr, newphone);
+                PhanHe2.Success success = new PhanHe2.Success();
+                success.ShowDialog();
+            }
+            catch (OracleException oe)
+            {
+                MessageBox.Show(oe.Message, "Lỗi");
+            }
         }
     }
 }
