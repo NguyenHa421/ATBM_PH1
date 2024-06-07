@@ -141,10 +141,16 @@ namespace ATBM_PhanHe1.PhanHe2
                 catch (Exception ex)
                 {
                     MessageBox.Show("Năm không hợp lệ!", "Lỗi");
+                    return;
                 }
             }
             string programName = cbB_program.SelectedItem.ToString();
-            assignmentList.DataSource = AssignmentDAO.Instance.SearchAssignment(semester, year, programName);
+            if (curRole == "Giang vien")
+                assignmentList.DataSource = AssignmentDAO.Instance.LecturerSearchAssignment(semester, year, programName);
+            else if (curRole == "Giao vu")
+                assignmentList.DataSource = AssignmentDAO.Instance.RegistrarSearchAssignment(semester, year, programName);
+            else
+                assignmentList.DataSource = AssignmentDAO.Instance.SearchAssignment(semester, year, programName);
         }
 
         private void dtGrid_assignment_CellContentClick(object sender, DataGridViewCellEventArgs e)
