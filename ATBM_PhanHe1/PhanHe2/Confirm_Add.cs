@@ -26,8 +26,6 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
-            PhanHe2.Success success = new Success();
-            success.ShowDialog();
         }
     }
 }

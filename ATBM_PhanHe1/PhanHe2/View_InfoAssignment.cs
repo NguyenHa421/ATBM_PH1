@@ -16,7 +16,8 @@ namespace ATBM_PhanHe1.PhanHe2
     {
         BindingSource assignmentList = new BindingSource();
         string curRole;
-        int clickedRow;
+        int clickedRow = -1;
+        List<AssignmentDTO> assignments;
 
         public View_InfoAssignment()
         {
@@ -58,18 +59,19 @@ namespace ATBM_PhanHe1.PhanHe2
             switch(curRole)
             {
                 case "Giang vien":
-                    assignmentList.DataSource = AssignmentDAO.Instance.GetLecturerAssignmentList();
+                    assignments = AssignmentDAO.Instance.GetLecturerAssignmentList();
                     break;
                 case "Giao vu":
-                    assignmentList.DataSource = AssignmentDAO.Instance.GetRegistrarAssignmentList();
+                    assignments = AssignmentDAO.Instance.GetRegistrarAssignmentList();
                     break;
                 case "Truong don vi":
-                    assignmentList.DataSource = AssignmentDAO.Instance.GetUnitChiefAssignmentList();
+                    assignments = AssignmentDAO.Instance.GetUnitChiefAssignmentList();
                     break;
                 default:
-                    assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
+                    assignments = AssignmentDAO.Instance.GetAssignmentList();
                     break;
-            }   
+            }
+            assignmentList.DataSource = assignments;
             dtGrid_assignment.Columns["courseID"].Visible = false;
             dtGrid_assignment.Columns["programID"].Visible = false;
         }
@@ -101,23 +103,38 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            DataGridViewCell cell = dtGrid_assignment.Rows[clickedRow].Cells[0];
-            string lecturerID = cell.Value.ToString();
-            cell = dtGrid_assignment.Rows[clickedRow].Cells[2];
-            string courseID = cell.Value.ToString();
-            cell = dtGrid_assignment.Rows[clickedRow].Cells[4];
-            string semester = cell.Value.ToString();
-            cell = dtGrid_assignment.Rows[clickedRow].Cells[5];
-            string year = cell.Value.ToString();
-            cell = dtGrid_assignment.Rows[clickedRow].Cells[6];
-            string programID = cell.Value.ToString();
-            OpenChildForm(new PhanHe2.Update_Assignment(courseID, lecturerID, semester, year, programID));
+            if (clickedRow < 0)
+                return;
+            OpenChildForm(new PhanHe2.Update_Assignment(assignments[clickedRow].courseID, assignments[clickedRow].semester, assignments[clickedRow].year, assignments[clickedRow].programID, assignments[clickedRow].lecturerID, curRole));
         }
 
         private void bt_delete_Click(object sender, EventArgs e)
         {
-            PhanHe2.Success success = new PhanHe2.Success();
-            success.ShowDialog();
+            if (clickedRow < 0)
+                return;
+            using (Confirm_Delete confirm = new Confirm_Delete())
+            {
+                if (confirm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        if (curRole == "Truong don vi")
+                            AssignmentDAO.Instance.UnitChiefDeleteAssignment(assignments[clickedRow].courseID, assignments[clickedRow].semester, assignments[clickedRow].year, assignments[clickedRow].programID, assignments[clickedRow].lecturerID);
+                        else
+                        {
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Xoá không thành công!", "Lỗi");
+                        return;
+                    }
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
+                }
+            }
+            
         }
 
         private void pic_refresh_U_Click(object sender, EventArgs e)
@@ -125,18 +142,19 @@ namespace ATBM_PhanHe1.PhanHe2
             switch (curRole)
             {
                 case "Giang vien":
-                    assignmentList.DataSource = AssignmentDAO.Instance.GetLecturerAssignmentList();
+                    assignments = AssignmentDAO.Instance.GetLecturerAssignmentList();
                     break;
                 case "Giao vu":
-                    assignmentList.DataSource = AssignmentDAO.Instance.GetRegistrarAssignmentList();
+                    assignments = AssignmentDAO.Instance.GetRegistrarAssignmentList();
                     break;
                 case "Truong don vi":
-                    assignmentList.DataSource = AssignmentDAO.Instance.GetUnitChiefAssignmentList();
+                    assignments = AssignmentDAO.Instance.GetUnitChiefAssignmentList();
                     break;
                 default:
-                    assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
+                    assignments = AssignmentDAO.Instance.GetAssignmentList();
                     break;
             }
+            assignmentList.DataSource = assignments;
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -161,18 +179,19 @@ namespace ATBM_PhanHe1.PhanHe2
             switch (curRole)
             {
                 case "Giang vien":
-                    assignmentList.DataSource = AssignmentDAO.Instance.LecturerSearchAssignment(semester, year, programName);
+                    assignments = AssignmentDAO.Instance.LecturerSearchAssignment(semester, year, programName);
                     break;
                 case "Giao vu":
-                    assignmentList.DataSource = AssignmentDAO.Instance.RegistrarSearchAssignment(semester, year, programName);
+                    assignments = AssignmentDAO.Instance.RegistrarSearchAssignment(semester, year, programName);
                     break;
                 case "Truong don vi":
-                    assignmentList.DataSource = AssignmentDAO.Instance.UnitChiefSearchAssignment(semester, year, programName);
+                    assignments = AssignmentDAO.Instance.UnitChiefSearchAssignment(semester, year, programName);
                     break;
                 default:
-                    assignmentList.DataSource = AssignmentDAO.Instance.SearchAssignment(semester, year, programName);
+                    assignments = AssignmentDAO.Instance.SearchAssignment(semester, year, programName);
                     break;
             }
+            assignmentList.DataSource = assignments;
         }
 
         private void dtGrid_assignment_CellContentClick(object sender, DataGridViewCellEventArgs e)

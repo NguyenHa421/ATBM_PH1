@@ -47,6 +47,7 @@
             btn_Cancel.TabIndex = 51;
             btn_Cancel.Text = "Hủy";
             btn_Cancel.UseVisualStyleBackColor = false;
+            btn_Cancel.Click += btn_Cancel_Click;
             // 
             // lb_Confirm
             // 
@@ -72,6 +73,7 @@
             btn_Confirm.TabIndex = 52;
             btn_Confirm.Text = "Xác nhận";
             btn_Confirm.UseVisualStyleBackColor = false;
+            btn_Confirm.Click += btn_Confirm_Click;
             // 
             // Confirm_Delete
             // 

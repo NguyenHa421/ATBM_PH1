@@ -144,5 +144,16 @@ namespace ATBM_PhanHe1.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public bool UnitChiefUpdateAssignment(string courseID, string semester, string year, string programID, string lecturerID, string newLecturerID)
+        {
+            string query = string.Format("update admin.uv_tdvxemphancong set MAGV = '{0}' where MAHP = '{1}' and HK = {2} and NAM = {3} and MACT = '{4}' and MAGV = '{5}'", newLecturerID, courseID, semester, year, programID, lecturerID);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public void UnitChiefDeleteAssignment(string courseID, int semester, int year, string programID, string lecturerID)
+        {
+            string query = string.Format("begin delete from admin.uv_tdvxemphancong where MAHP = '{0}' and HK = {1} and NAM = {2} and MACT = '{3}' and MAGV = '{4}'; end;", courseID, semester, year, programID, lecturerID);
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
     }
 }

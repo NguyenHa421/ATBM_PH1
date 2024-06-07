@@ -54,10 +54,10 @@ namespace ATBM_PhanHe1.DAO
             PersonelDTO result = new PersonelDTO(data.Rows[0]);
             return result;
         }
-        public List<PersonelDTO> RegistrarGetListLecturer()
+        public List<PersonelDTO> GetListLecturer()
         {
             List<PersonelDTO> list = new List<PersonelDTO>();
-            string query = $"SELECT * FROM ADMIN.UV_GIAOVUXEMNHANSU";
+            string query = $"SELECT * FROM ADMIN.UV_XEMGIANGVIEN";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow row in data.Rows)
             {
