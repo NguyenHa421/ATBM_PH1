@@ -18,6 +18,12 @@ namespace ATBM_PhanHe1.PhanHe2
         public View_InfoPlanCourses()
         {
             InitializeComponent();
+            UpdateInterface();
+            LoadComboBox();
+            LoadGrid();
+        }
+        private void UpdateInterface()
+        {
             if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Sinh vien")
             {
                 btn_Add.Enabled = false;
@@ -43,10 +49,7 @@ namespace ATBM_PhanHe1.PhanHe2
                 btn_Add.Enabled = false;
                 btn_Update.Enabled = false;
             }
-            LoadComboBox();
-            LoadGrid();
         }
-
         private void LoadComboBox()
         {
             cbB_semester.Items.Add("null");
@@ -99,7 +102,7 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void pic_refresh_U_Click(object sender, EventArgs e)
         {
-            planCoursesList.DataSource = RegisterDAO.Instance.GetRegisterList();
+            planCoursesList.DataSource = PlanCoursesDAO.Instance.GetPlanCoursesList();
         }
 
         private void btn_search_Click(object sender, EventArgs e)

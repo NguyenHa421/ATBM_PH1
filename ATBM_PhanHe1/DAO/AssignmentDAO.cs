@@ -54,6 +54,18 @@ namespace ATBM_PhanHe1.DAO
             }
             return list;
         }
+        public List<AssignmentDTO> GetUnitChiefAssignmentList()
+        {
+            List<AssignmentDTO> list = new List<AssignmentDTO>();
+            string query = "select pc.*, hp.TENHP, ct.TENCT, dv.TENDV from admin.uv_tdvxemphancong2 pc, admin.tb_hocphan hp, admin.tb_donvi dv, admin.tb_chuongtrinh ct where pc.MAHP = hp.MAHP and pc.MACT = ct.MACT and hp.MADV = dv.MADV";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                AssignmentDTO course = new AssignmentDTO(row);
+                list.Add(course);
+            }
+            return list;
+        }
         public List<AssignmentDTO> SearchAssignment(int semester,int year,string programName)
         {
             List<AssignmentDTO> result = new List<AssignmentDTO>();
@@ -94,6 +106,24 @@ namespace ATBM_PhanHe1.DAO
         {
             List<AssignmentDTO> result = new List<AssignmentDTO>();
             string query = "select pc.*, dv.TENDV, ns.HOTEN, hp.TENHP, ct.TENCT from admin.tb_phancong pc, admin.uv_giaovuxemnhansu ns, admin.tb_hocphan hp, admin.tb_chuongtrinh ct, admin.tb_donvi dv where pc.MAGV = ns.MANV and pc.MAHP = hp.MAHP and pc.MACT = ct.MACT and hp.MADV = dv.MADV";
+            if (semester > 0)
+                query += string.Format(" and HK = {0}", semester);
+            if (year > 0)
+                query += string.Format(" and NAM = {0}", year);
+            if (programName != "null")
+                query += string.Format(" and TENCT = '{0}'", programName);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                AssignmentDTO assignment = new AssignmentDTO(row);
+                result.Add(assignment);
+            }
+            return result;
+        }
+        public List<AssignmentDTO> UnitChiefSearchAssignment(int semester, int year, string programName)
+        {
+            List<AssignmentDTO> result = new List<AssignmentDTO>();
+            string query = "select pc.*, hp.TENHP, ct.TENCT, dv.TENDV from admin.uv_tdvxemphancong2 pc, admin.tb_hocphan hp, admin.tb_donvi dv, admin.tb_chuongtrinh ct where pc.MAHP = hp.MAHP and pc.MACT = ct.MACT and hp.MADV = dv.MADV";
             if (semester > 0)
                 query += string.Format(" and HK = {0}", semester);
             if (year > 0)
