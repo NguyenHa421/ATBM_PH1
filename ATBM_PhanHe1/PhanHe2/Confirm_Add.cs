@@ -16,7 +16,8 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             InitializeComponent();
         }
-        private void btn_Cancel_Click(object sender, EventArgs e)
+
+        private void btn_Cancel_Click_1(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();

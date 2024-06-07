@@ -61,16 +61,24 @@ namespace ATBM_PhanHe1.PhanHe2
             string major = MajorDAO.Instance.GetIDMajor(cbB_major.Text);
             int credit = 0;
             float GPA = 0;
-            try
+            using (Confirm_Add confirm = new Confirm_Add())
             {
-                StudentDAO.Instance.Add_Student(id, name, gender, birth.Date, addr, phone, program, major, credit, GPA);
-                PhanHe2.Success success = new PhanHe2.Success();
-                success.ShowDialog();
+                if (confirm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        StudentDAO.Instance.Add_Student(id, name, gender, birth.Date, addr, phone, program, major, credit, GPA);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Thêm không thành công!", "Lỗi");
+                        return;
+                    }
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
+                }
             }
-            catch (OracleException oe)
-            {
-                MessageBox.Show(oe.Message, "Lỗi");
-            }
+
         }
     }
 }

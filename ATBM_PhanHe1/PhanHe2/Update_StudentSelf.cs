@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ATBM_PhanHe1.PhanHe2
 {
@@ -45,16 +46,23 @@ namespace ATBM_PhanHe1.PhanHe2
             if (newphone == "")
             {
                 newphone = phone;
-            }        
-            try
-            {
-                StudentDAO.Instance.Update_SelfStudent(id, newaddr, newphone);
-                PhanHe2.Success success = new PhanHe2.Success();
-                success.ShowDialog();
             }
-            catch (OracleException oe)
+            using (Confirm_Update confirm = new Confirm_Update())
             {
-                MessageBox.Show(oe.Message, "Lỗi");
+                if (confirm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        StudentDAO.Instance.Update_SelfStudent(id, newaddr, newphone);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Cập nhật không thành công!", "Lỗi");
+                        return;
+                    }
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
+                }
             }
         }
     }
