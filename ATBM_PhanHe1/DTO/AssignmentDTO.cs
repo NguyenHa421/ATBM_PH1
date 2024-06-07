@@ -13,6 +13,7 @@ namespace ATBM_PhanHe1.DTO
         public string lecturerName { get; set; } = string.Empty;
         public string courseID { get; set; }
         public string courseName { get; set; } = string.Empty;
+        public string unitName { get; set; } = string.Empty;
         public int semester {  get; set; }
         public int year { get; set; }
         public string programID { get; set; }
@@ -38,6 +39,11 @@ namespace ATBM_PhanHe1.DTO
             this.year = Decimal.ToInt32((decimal)row["NAM"]);
             this.programID = row["MACT"].ToString();
             this.programName = row["TENCT"].ToString();
+            try
+            {
+                this.unitName = row["TENDV"].ToString();
+            }
+            catch (Exception ex) { }
         }
     }
 }

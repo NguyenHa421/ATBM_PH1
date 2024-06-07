@@ -34,10 +34,10 @@ namespace ATBM_PhanHe1.PhanHe2
                 btn_Update.Enabled = false;
                 bt_delete.Enabled = false;
             }
-            if (curRole == "Giao vu")
+            /*if (curRole == "Giao vu")
             {
                 btn_Update.Enabled = false;
-            }
+            }*/
         }
         private void LoadComboBox()
         {
@@ -63,6 +63,8 @@ namespace ATBM_PhanHe1.PhanHe2
             }
             else
                 assignmentList.DataSource = AssignmentDAO.Instance.GetAssignmentList();
+            dtGrid_assignment.Columns["courseID"].Visible = false;
+            dtGrid_assignment.Columns["programID"].Visible = false;
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)

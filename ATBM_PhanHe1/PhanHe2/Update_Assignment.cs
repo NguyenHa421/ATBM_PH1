@@ -14,9 +14,11 @@ namespace ATBM_PhanHe1.PhanHe2
 {
     public partial class Update_Assignment : Form
     {
+        string curLecturerID;
         public Update_Assignment(string courseID, string lecturerID, string semester, string year, string programID)
         {
             InitializeComponent();
+            curLecturerID = lecturerID;
             Load(courseID, semester, year, programID);
             LoadComboBox(lecturerID);
         }
@@ -52,8 +54,24 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            PhanHe2.Success success = new PhanHe2.Success();
-            success.ShowDialog();
+            try
+            {
+                if (AssignmentDAO.Instance.UpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.SelectedItem.ToString()))
+                {
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Không có dòng nào được cập nhật!", "Thông báo");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Chỉ được cập nhật dữ liệu do Văn phòng khoa phụ trách!", "Lỗi");
+            }
+            
+            
         }
 
         private void cbB_lecturerID_SelectedIndexChanged(object sender, EventArgs e)

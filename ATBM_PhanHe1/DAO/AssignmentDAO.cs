@@ -45,7 +45,7 @@ namespace ATBM_PhanHe1.DAO
         public List<AssignmentDTO> GetRegistrarAssignmentList()
         {
             List<AssignmentDTO> list = new List<AssignmentDTO>();
-            string query = "select pc.*, ns.HOTEN, hp.TENHP, ct.TENCT from admin.tb_phancong pc, admin.uv_giaovuxemnhansu ns, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where pc.MAGV = ns.MANV and pc.MAHP = hp.MAHP and pc.MACT = ct.MACT";
+            string query = "select pc.*, dv.TENDV, ns.HOTEN, hp.TENHP, ct.TENCT from admin.tb_phancong pc, admin.uv_giaovuxemnhansu ns, admin.tb_hocphan hp, admin.tb_chuongtrinh ct, admin.tb_donvi dv where pc.MAGV = ns.MANV and pc.MAHP = hp.MAHP and pc.MACT = ct.MACT and hp.MADV = dv.MADV";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
@@ -71,6 +71,12 @@ namespace ATBM_PhanHe1.DAO
                 result.Add(assignment);
             }
             return result;
+        }
+        public bool UpdateAssignment(string courseID, string semester, string year, string programID, string lecturerID, string newLecturerID)
+        {
+            string query = string.Format("update admin.tb_phancong set MAGV = '{0}' where MAHP = '{1}' and HK = {2} and NAM = {3} and MACT = '{4}' and MAGV = '{5}'", newLecturerID, courseID, semester, year, programID, lecturerID);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
     }
 }
