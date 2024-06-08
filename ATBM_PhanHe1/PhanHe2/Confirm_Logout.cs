@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ATBM_PhanHe1.PhanHe2
 {
-    public partial class Confirm_Add : Form
+    public partial class Confirm_Logout : Form
     {
-        public Confirm_Add()
+        public Confirm_Logout()
         {
             InitializeComponent();
         }

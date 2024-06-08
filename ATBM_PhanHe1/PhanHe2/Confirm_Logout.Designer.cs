@@ -1,6 +1,6 @@
 ﻿namespace ATBM_PhanHe1.PhanHe2
 {
-    partial class Confirm_Add
+    partial class Confirm_Logout
     {
         /// <summary>
         /// Required designer variable.
@@ -69,11 +69,11 @@
             // 
             lb_Confirm.AutoSize = true;
             lb_Confirm.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Confirm.Location = new Point(87, 60);
+            lb_Confirm.Location = new Point(126, 65);
             lb_Confirm.Name = "lb_Confirm";
-            lb_Confirm.Size = new Size(321, 31);
+            lb_Confirm.Size = new Size(227, 31);
             lb_Confirm.TabIndex = 53;
-            lb_Confirm.Text = "Xác nhận thêm thông tin này?";
+            lb_Confirm.Text = "Xác nhận đăng xuất?";
             // 
             // Confirm_Add
             // 

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.DataFormats;
 
 
@@ -61,7 +62,22 @@ namespace ATBM_PhanHe1.PhanHe2
         }
         private void pic_logout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            using (Confirm_Logout confirm = new Confirm_Logout())
+            {
+                if (confirm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Đăng xuất không thành công!", "Lỗi");
+                        return;
+                    }
+                    
+                }
+            }
         }
     }
 }
