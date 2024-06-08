@@ -60,11 +60,15 @@ namespace ATBM_PhanHe1.PhanHe2
             {
                 if (curRole == "Truong don vi")
                 {
-                    AssignmentDAO.Instance.UnitChiefUpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.SelectedItem.ToString());        
+                    AssignmentDAO.Instance.UnitChiefUpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.Text);        
+                }
+                else if (curRole == "Truong khoa")
+                {
+                    AssignmentDAO.Instance.DepartmentHeadUpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.Text);
                 }
                 else
                 {
-                    AssignmentDAO.Instance.UpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.SelectedItem.ToString());
+                    AssignmentDAO.Instance.UpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.Text);
                 }
             }
             catch (Exception ex)

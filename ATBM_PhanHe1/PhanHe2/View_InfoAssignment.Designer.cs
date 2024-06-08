@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             pn_parents = new Panel();
-            bt_delete = new Button();
+            btn_delete = new Button();
             cbB_program = new ComboBox();
             lb_program = new Label();
             cbB_semester = new ComboBox();
@@ -50,7 +50,7 @@
             // 
             // pn_parents
             // 
-            pn_parents.Controls.Add(bt_delete);
+            pn_parents.Controls.Add(btn_delete);
             pn_parents.Controls.Add(cbB_program);
             pn_parents.Controls.Add(lb_program);
             pn_parents.Controls.Add(cbB_semester);
@@ -69,21 +69,21 @@
             pn_parents.Size = new Size(895, 425);
             pn_parents.TabIndex = 3;
             // 
-            // bt_delete
+            // btn_delete
             // 
-            bt_delete.BackColor = Color.White;
-            bt_delete.BackgroundImage = Properties.Resources.button_round2;
-            bt_delete.FlatAppearance.BorderSize = 0;
-            bt_delete.FlatStyle = FlatStyle.Flat;
-            bt_delete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            bt_delete.ForeColor = SystemColors.Window;
-            bt_delete.Location = new Point(366, 373);
-            bt_delete.Name = "bt_delete";
-            bt_delete.Size = new Size(91, 38);
-            bt_delete.TabIndex = 114;
-            bt_delete.Text = "Xóa";
-            bt_delete.UseVisualStyleBackColor = false;
-            bt_delete.Click += bt_delete_Click;
+            btn_delete.BackColor = Color.White;
+            btn_delete.BackgroundImage = Properties.Resources.button_round2;
+            btn_delete.FlatAppearance.BorderSize = 0;
+            btn_delete.FlatStyle = FlatStyle.Flat;
+            btn_delete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btn_delete.ForeColor = SystemColors.Window;
+            btn_delete.Location = new Point(366, 373);
+            btn_delete.Name = "btn_delete";
+            btn_delete.Size = new Size(91, 38);
+            btn_delete.TabIndex = 114;
+            btn_delete.Text = "Xóa";
+            btn_delete.UseVisualStyleBackColor = false;
+            btn_delete.Click += bt_delete_Click;
             // 
             // cbB_program
             // 
@@ -274,6 +274,6 @@
         private Button btn_Back;
         private Label lb_semester;
         private Label lb_Info;
-        private Button bt_delete;
+        private Button btn_delete;
     }
 }

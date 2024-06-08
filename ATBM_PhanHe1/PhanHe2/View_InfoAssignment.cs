@@ -33,12 +33,12 @@ namespace ATBM_PhanHe1.PhanHe2
             {
                 btn_Add.Enabled = false;
                 btn_Update.Enabled = false;
-                bt_delete.Enabled = false;
+                btn_delete.Enabled = false;
             }
-            /*if (curRole == "Giao vu")
+            else if (curRole == "Giao vu")
             {
-                btn_Update.Enabled = false;
-            }*/
+                btn_delete.Enabled= false;
+            }
         }
         private void LoadComboBox()
         {
@@ -68,7 +68,7 @@ namespace ATBM_PhanHe1.PhanHe2
                     assignments = AssignmentDAO.Instance.GetUnitChiefAssignmentList();
                     break;
                 default:
-                    assignments = AssignmentDAO.Instance.GetAssignmentList();
+                    assignments = AssignmentDAO.Instance.GetDepartmentHeadAssignmentList();
                     break;
             }
             assignmentList.DataSource = assignments;
@@ -105,6 +105,11 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             if (clickedRow < 0)
                 return;
+            if ((curRole == "Giao vu" || curRole == "Truong khoa") && assignments[clickedRow].unitName != "Van phong khoa")
+            {
+                MessageBox.Show("Chỉ được chỉnh sửa phân công của Văn phòng khoa!", "Lỗi");
+                return;
+            }
             OpenChildForm(new PhanHe2.Update_Assignment(assignments[clickedRow].courseID, assignments[clickedRow].semester, assignments[clickedRow].year, assignments[clickedRow].programID, assignments[clickedRow].lecturerID, curRole));
         }
 
@@ -112,6 +117,11 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             if (clickedRow < 0)
                 return;
+            if (curRole == "Truong khoa" && assignments[clickedRow].unitName != "Van phong khoa")
+            {
+                MessageBox.Show("Chỉ được xoá phân công của Văn phòng khoa!", "Lỗi");
+                return;
+            }
             using (Confirm_Delete confirm = new Confirm_Delete())
             {
                 if (confirm.ShowDialog() == DialogResult.OK)
@@ -120,10 +130,8 @@ namespace ATBM_PhanHe1.PhanHe2
                     {
                         if (curRole == "Truong don vi")
                             AssignmentDAO.Instance.UnitChiefDeleteAssignment(assignments[clickedRow].courseID, assignments[clickedRow].semester, assignments[clickedRow].year, assignments[clickedRow].programID, assignments[clickedRow].lecturerID);
-                        else
-                        {
-
-                        }
+                        else if (curRole == "Truong khoa")
+                            AssignmentDAO.Instance.DepartmentHeadDeleteAssignment(assignments[clickedRow].courseID, assignments[clickedRow].semester, assignments[clickedRow].year, assignments[clickedRow].programID, assignments[clickedRow].lecturerID);
                     }
                     catch (Exception ex)
                     {
@@ -138,7 +146,6 @@ namespace ATBM_PhanHe1.PhanHe2
                     success.ShowDialog();
                 }
             }
-            
         }
 
         private void pic_refresh_U_Click(object sender, EventArgs e)
@@ -155,7 +162,7 @@ namespace ATBM_PhanHe1.PhanHe2
                     assignments = AssignmentDAO.Instance.GetUnitChiefAssignmentList();
                     break;
                 default:
-                    assignments = AssignmentDAO.Instance.GetAssignmentList();
+                    assignments = AssignmentDAO.Instance.GetDepartmentHeadAssignmentList();
                     break;
             }
             assignmentList.DataSource = assignments;
@@ -192,7 +199,7 @@ namespace ATBM_PhanHe1.PhanHe2
                     assignments = AssignmentDAO.Instance.UnitChiefSearchAssignment(semester, year, programName);
                     break;
                 default:
-                    assignments = AssignmentDAO.Instance.SearchAssignment(semester, year, programName);
+                    assignments = AssignmentDAO.Instance.DepartmentHeadSearchAssignment(semester, year, programName);
                     break;
             }
             assignmentList.DataSource = assignments;

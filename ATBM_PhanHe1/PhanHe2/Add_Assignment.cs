@@ -115,12 +115,15 @@ namespace ATBM_PhanHe1.PhanHe2
                 }
                 try
                 {
-                    AssignmentDAO.Instance.UnitChiefAddAssignment(cbB_idcourses.Text, cbB_semester.Text, year, cbB_idprogram.Text, cbB_idlecture.Text);
+                    if (unitID == "DV01")
+                        AssignmentDAO.Instance.DepartmentHeadAddAssignment(cbB_idcourses.Text, cbB_semester.Text, year, cbB_idprogram.Text, cbB_idlecture.Text);
+                    else
+                        AssignmentDAO.Instance.UnitChiefAddAssignment(cbB_idcourses.Text, cbB_semester.Text, year, cbB_idprogram.Text, cbB_idlecture.Text);
                 }
                 catch(Exception ex)
                 {
                     string exString = ex.ToString();
-                    if (exString.Contains("fk_KHMO_PHANCONG")) 
+                    if (exString.Contains("FK_KHMO_PHANCONG")) 
                     {
                         MessageBox.Show("Không có lịch mở học phần này!", "Lỗi");
                     }
