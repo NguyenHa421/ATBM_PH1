@@ -33,7 +33,6 @@
             cbB_nameprograme = new ComboBox();
             cbB_idprogram = new ComboBox();
             btn_Add = new Button();
-            cbB_year = new ComboBox();
             cbB_semester = new ComboBox();
             btn_Back = new Button();
             lb_year = new Label();
@@ -47,6 +46,7 @@
             cbB_idlecture = new ComboBox();
             lb_namelecture = new Label();
             lb_idlecture = new Label();
+            tb_year = new TextBox();
             SuspendLayout();
             // 
             // cbB_nameCourses
@@ -58,6 +58,7 @@
             cbB_nameCourses.Name = "cbB_nameCourses";
             cbB_nameCourses.Size = new Size(229, 36);
             cbB_nameCourses.TabIndex = 163;
+            cbB_nameCourses.SelectedIndexChanged += cbB_nameCourses_SelectedIndexChanged;
             // 
             // cbB_idcourses
             // 
@@ -68,6 +69,7 @@
             cbB_idcourses.Name = "cbB_idcourses";
             cbB_idcourses.Size = new Size(229, 36);
             cbB_idcourses.TabIndex = 162;
+            cbB_idcourses.SelectedIndexChanged += cbB_idcourses_SelectedIndexChanged;
             // 
             // cbB_nameprograme
             // 
@@ -78,6 +80,7 @@
             cbB_nameprograme.Name = "cbB_nameprograme";
             cbB_nameprograme.Size = new Size(229, 36);
             cbB_nameprograme.TabIndex = 161;
+            cbB_nameprograme.SelectedIndexChanged += cbB_nameprograme_SelectedIndexChanged;
             // 
             // cbB_idprogram
             // 
@@ -88,6 +91,7 @@
             cbB_idprogram.Name = "cbB_idprogram";
             cbB_idprogram.Size = new Size(229, 36);
             cbB_idprogram.TabIndex = 160;
+            cbB_idprogram.SelectedIndexChanged += cbB_idprogram_SelectedIndexChanged;
             // 
             // btn_Add
             // 
@@ -103,23 +107,13 @@
             btn_Add.TabIndex = 159;
             btn_Add.Text = "Thêm";
             btn_Add.UseVisualStyleBackColor = false;
-            // 
-            // cbB_year
-            // 
-            cbB_year.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbB_year.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_year.FormattingEnabled = true;
-            cbB_year.Location = new Point(191, 292);
-            cbB_year.Name = "cbB_year";
-            cbB_year.Size = new Size(229, 36);
-            cbB_year.TabIndex = 158;
+            btn_Add.Click += btn_Add_Click;
             // 
             // cbB_semester
             // 
             cbB_semester.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_semester.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_semester.FormattingEnabled = true;
-            cbB_semester.Items.AddRange(new object[] { "1", "2", "3" });
             cbB_semester.Location = new Point(191, 221);
             cbB_semester.Name = "cbB_semester";
             cbB_semester.Size = new Size(229, 36);
@@ -220,6 +214,7 @@
             cbB_namelecture.Name = "cbB_namelecture";
             cbB_namelecture.Size = new Size(229, 36);
             cbB_namelecture.TabIndex = 167;
+            cbB_namelecture.SelectedIndexChanged += cbB_namelecture_SelectedIndexChanged;
             // 
             // cbB_idlecture
             // 
@@ -230,6 +225,7 @@
             cbB_idlecture.Name = "cbB_idlecture";
             cbB_idlecture.Size = new Size(229, 36);
             cbB_idlecture.TabIndex = 166;
+            cbB_idlecture.SelectedIndexChanged += cbB_idlecture_SelectedIndexChanged;
             // 
             // lb_namelecture
             // 
@@ -251,12 +247,22 @@
             lb_idlecture.TabIndex = 164;
             lb_idlecture.Text = "Mã giảng viên";
             // 
+            // tb_year
+            // 
+            tb_year.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_year.Location = new Point(191, 292);
+            tb_year.Name = "tb_year";
+            tb_year.Size = new Size(229, 34);
+            tb_year.TabIndex = 168;
+            tb_year.TabStop = false;
+            // 
             // Add_Assignment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(895, 425);
+            Controls.Add(tb_year);
             Controls.Add(cbB_namelecture);
             Controls.Add(cbB_idlecture);
             Controls.Add(lb_namelecture);
@@ -266,7 +272,6 @@
             Controls.Add(cbB_nameprograme);
             Controls.Add(cbB_idprogram);
             Controls.Add(btn_Add);
-            Controls.Add(cbB_year);
             Controls.Add(cbB_semester);
             Controls.Add(btn_Back);
             Controls.Add(lb_year);
@@ -291,7 +296,6 @@
         private ComboBox cbB_nameprograme;
         private ComboBox cbB_idprogram;
         private Button btn_Add;
-        private ComboBox cbB_year;
         private ComboBox cbB_semester;
         private Button btn_Back;
         private Label lb_year;
@@ -305,5 +309,6 @@
         private ComboBox cbB_idlecture;
         private Label lb_namelecture;
         private Label lb_idlecture;
+        private TextBox tb_year;
     }
 }

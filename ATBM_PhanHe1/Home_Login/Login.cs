@@ -22,17 +22,25 @@ namespace ATBM_PhanHe1.Home_Login
         public Login()
         {
             InitializeComponent();
+            Load();
         }
-
+        private void Load()
+        {
+            tB_pass.UseSystemPasswordChar = true;
+            pic_hide.Visible = false;
+            pic_show.Visible = true;
+            tB_name.Text = "";
+            tB_pass.Text = "";
+        }
         private void Login_button_Click(object sender, EventArgs e)
         {
             User = tB_name.Text.ToString();
             Pass = tB_pass.Text.ToString();
             try
             {
-                //Interface.Homepage homepage = new Interface.Homepage();
                 if (User.ToUpper().StartsWith("NV") || User.ToUpper().StartsWith("SV"))
                 {
+                    
                     PhanHe2.MainBase mainBase = new PhanHe2.MainBase();
                     this.Hide();
                     mainBase.ShowDialog();
@@ -45,9 +53,7 @@ namespace ATBM_PhanHe1.Home_Login
                     homepage.ShowDialog();
                     this.Show();
                 }
-                
-                //PhanHe2.Success success = new PhanHe2.Success();
-                //success.ShowDialog();
+                Load();
             }
             catch (OracleException oe)
             {
@@ -58,6 +64,20 @@ namespace ATBM_PhanHe1.Home_Login
         private void pic_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pic_show_Click(object sender, EventArgs e)
+        {
+            tB_pass.UseSystemPasswordChar = false;
+            pic_show.Visible = false;
+            pic_hide.Visible = true;
+        }
+
+        private void pic_hide_Click(object sender, EventArgs e)
+        {
+            tB_pass.UseSystemPasswordChar = true;
+            pic_hide.Visible = false;
+            pic_show.Visible = true;
         }
     }
 }

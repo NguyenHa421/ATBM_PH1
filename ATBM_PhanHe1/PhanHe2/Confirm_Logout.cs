@@ -10,13 +10,14 @@ using System.Windows.Forms;
 
 namespace ATBM_PhanHe1.PhanHe2
 {
-    public partial class Confirm_Add : Form
+    public partial class Confirm_Logout : Form
     {
-        public Confirm_Add()
+        public Confirm_Logout()
         {
             InitializeComponent();
         }
-        private void btn_Cancel_Click(object sender, EventArgs e)
+
+        private void btn_Cancel_Click_1(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();

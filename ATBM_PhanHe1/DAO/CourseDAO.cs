@@ -49,6 +49,18 @@ namespace ATBM_PhanHe1.DAO
             CourseDTO result = new CourseDTO(data.Rows[0]);
             return result;
         }
+        public List<CourseDTO> GetCourseByUnitID(string unitID)
+        {
+            List<CourseDTO> result = new List<CourseDTO>();
+            string query = string.Format("select * from admin.tb_hocphan where MADV = '{0}'", unitID);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                CourseDTO course = new CourseDTO(row);
+                result.Add(course);
+            }
+            return result;
+        }
         public void AddCource(string  courseId, string courceName, int credits, int lectureNum, int practicalNum, int maxStudent, string unitID)
         {
             string query = string.Format("insert into admin.tb_HOCPHAN values('{0}','{1}',{2},{3},{4},{5},'{6}')", courseId, courceName, credits, lectureNum, practicalNum, maxStudent, unitID);

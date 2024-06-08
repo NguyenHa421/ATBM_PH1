@@ -16,6 +16,7 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             InitializeComponent();
         }
+
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -26,8 +27,6 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
-            PhanHe2.Success success = new Success();
-            success.ShowDialog();
         }
     }
 }

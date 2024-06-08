@@ -213,6 +213,16 @@ namespace ATBM_PhanHe1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye {
+            get {
+                object obj = ResourceManager.GetObject("eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap graduated {
             get {
                 object obj = ResourceManager.GetObject("graduated", resourceCulture);
@@ -356,6 +366,16 @@ namespace ATBM_PhanHe1.Properties {
         internal static System.Drawing.Bitmap together1 {
             get {
                 object obj = ResourceManager.GetObject("together1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visual {
+            get {
+                object obj = ResourceManager.GetObject("visual", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -155,5 +155,10 @@ namespace ATBM_PhanHe1.DAO
             string query = string.Format("begin delete from admin.uv_tdvxemphancong where MAHP = '{0}' and HK = {1} and NAM = {2} and MACT = '{3}' and MAGV = '{4}'; end;", courseID, semester, year, programID, lecturerID);
             DataProvider.Instance.ExecuteNonQuery(query);
         }
+        public void UnitChiefAddAssignment(string courseID, string semester, int year, string programID, string lecturerID)
+        {
+            string query = string.Format("insert into admin.uv_tdvxemphancong values('{0}', '{1}', {2}, {3}, '{4}')", lecturerID, courseID, semester, year, programID);
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
     }
 }

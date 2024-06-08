@@ -35,3 +35,6 @@ END CREATE_IDSTUDENT;
 /
 GRANT EXECUTE ON ADMIN.CREATE_IDSTUDENT TO RL_GIAOVU;
 /
+CONN ADMIN/group12;
+
+--Tao user, cap quyen cho sinh vien moi

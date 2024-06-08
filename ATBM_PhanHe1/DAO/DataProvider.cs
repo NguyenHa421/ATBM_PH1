@@ -25,13 +25,12 @@ namespace ATBM_PhanHe1.DAO
             private set { DataProvider.instance = value; }
 
         }
-
         private DataProvider() { }
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
-            if (Home_Login.Login.User.ToUpper().StartsWith("NV") || Home_Login.Login.User.ToUpper().StartsWith("SV"))
+            if (Home_Login.Login.User != "sys")
             {
                 connectionStr = "DATA SOURCE=(DESCRIPTION =" +
             "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))" +
@@ -43,7 +42,7 @@ namespace ATBM_PhanHe1.DAO
             "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))" +
             $"(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME =)));User Id = {Home_Login.Login.User};password = {Home_Login.Login.Pass};DBA Privilege=SYSDBA;";
             }
-            
+
             using (OracleConnection connection = new OracleConnection(connectionStr))
             {
 
@@ -62,19 +61,19 @@ namespace ATBM_PhanHe1.DAO
                             i++;
                         }
                     }
-                    
                 }
-                
                 OracleDataAdapter adapter = new OracleDataAdapter(command);
                 adapter.Fill(data);
                 connection.Close();
+
             }
+            
             return data;
         }
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
-            if (Home_Login.Login.User.ToUpper().StartsWith("NV") || Home_Login.Login.User.ToUpper().StartsWith("SV"))
+            if (Home_Login.Login.User != "sys")
             {
                 connectionStr = "DATA SOURCE=(DESCRIPTION =" +
             "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))" +
@@ -115,7 +114,7 @@ namespace ATBM_PhanHe1.DAO
         public object ExecuteScalar(string query, object[] parameter = null)
         {
             object data = 0;
-            if (Home_Login.Login.User.ToUpper().StartsWith("NV") || Home_Login.Login.User.ToUpper().StartsWith("SV"))
+            if (Home_Login.Login.User != "sys")
             {
                 connectionStr = "DATA SOURCE=(DESCRIPTION =" +
             "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))" +

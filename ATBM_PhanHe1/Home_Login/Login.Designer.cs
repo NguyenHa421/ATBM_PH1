@@ -36,8 +36,12 @@
             tB_pass = new TextBox();
             Login_button = new Button();
             pic_close = new PictureBox();
+            pic_hide = new PictureBox();
+            pic_show = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pic_logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_close).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_hide).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_show).BeginInit();
             SuspendLayout();
             // 
             // pic_logo
@@ -138,6 +142,32 @@
             pic_close.TabStop = false;
             pic_close.Click += pic_close_Click;
             // 
+            // pic_hide
+            // 
+            pic_hide.BackColor = Color.White;
+            pic_hide.Image = Properties.Resources.eye;
+            pic_hide.Location = new Point(811, 369);
+            pic_hide.Margin = new Padding(3, 4, 3, 4);
+            pic_hide.Name = "pic_hide";
+            pic_hide.Size = new Size(37, 34);
+            pic_hide.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_hide.TabIndex = 8;
+            pic_hide.TabStop = false;
+            pic_hide.Click += pic_hide_Click;
+            // 
+            // pic_show
+            // 
+            pic_show.BackColor = Color.White;
+            pic_show.Image = Properties.Resources.visual;
+            pic_show.Location = new Point(811, 369);
+            pic_show.Margin = new Padding(3, 4, 3, 4);
+            pic_show.Name = "pic_show";
+            pic_show.Size = new Size(37, 34);
+            pic_show.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_show.TabIndex = 9;
+            pic_show.TabStop = false;
+            pic_show.Click += pic_show_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -145,6 +175,8 @@
             BackColor = Color.FromArgb(42, 107, 167);
             BackgroundImage = Properties.Resources.Background1;
             ClientSize = new Size(957, 590);
+            Controls.Add(pic_show);
+            Controls.Add(pic_hide);
             Controls.Add(pic_close);
             Controls.Add(Login_button);
             Controls.Add(tB_pass);
@@ -159,6 +191,8 @@
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pic_logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_close).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_hide).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_show).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -173,5 +207,7 @@
         private TextBox tB_pass;
         private Button Login_button;
         private PictureBox pic_close;
+        private PictureBox pic_hide;
+        private PictureBox pic_show;
     }
 }

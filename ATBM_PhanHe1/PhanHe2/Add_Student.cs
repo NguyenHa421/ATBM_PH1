@@ -67,10 +67,16 @@ namespace ATBM_PhanHe1.PhanHe2
                 PhanHe2.Success success = new PhanHe2.Success();
                 success.ShowDialog();
             }
-            catch (OracleException oe)
+            catch (Exception ex)
             {
-                MessageBox.Show(oe.Message, "Lỗi");
+                MessageBox.Show("Thêm không thành công!", "Lỗi");
+                return;
             }
+
         }
     }
 }
+
+        
+    
+

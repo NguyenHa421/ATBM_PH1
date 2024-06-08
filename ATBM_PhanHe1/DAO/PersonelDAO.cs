@@ -57,7 +57,7 @@ namespace ATBM_PhanHe1.DAO
         public List<PersonelDTO> GetListLecturer()
         {
             List<PersonelDTO> list = new List<PersonelDTO>();
-            string query = $"SELECT * FROM ADMIN.UV_XEMGIANGVIEN";
+            string query = "SELECT * FROM ADMIN.UV_XEMGIANGVIEN";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow row in data.Rows)
             {
