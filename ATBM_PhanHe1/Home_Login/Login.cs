@@ -30,7 +30,6 @@ namespace ATBM_PhanHe1.Home_Login
             Pass = tB_pass.Text.ToString();
             try
             {
-                //Interface.Homepage homepage = new Interface.Homepage();
                 if (User.ToUpper().StartsWith("NV") || User.ToUpper().StartsWith("SV"))
                 {
                     PhanHe2.MainBase mainBase = new PhanHe2.MainBase();
@@ -45,9 +44,6 @@ namespace ATBM_PhanHe1.Home_Login
                     homepage.ShowDialog();
                     this.Show();
                 }
-                
-                //PhanHe2.Success success = new PhanHe2.Success();
-                //success.ShowDialog();
             }
             catch (OracleException oe)
             {

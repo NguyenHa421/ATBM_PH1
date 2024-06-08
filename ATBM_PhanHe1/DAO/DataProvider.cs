@@ -31,7 +31,7 @@ namespace ATBM_PhanHe1.DAO
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
-            if (Home_Login.Login.User.ToUpper().StartsWith("NV") || Home_Login.Login.User.ToUpper().StartsWith("SV"))
+            if (Home_Login.Login.User != "sys")
             {
                 connectionStr = "DATA SOURCE=(DESCRIPTION =" +
             "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))" +
@@ -74,7 +74,7 @@ namespace ATBM_PhanHe1.DAO
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
-            if (Home_Login.Login.User.ToUpper().StartsWith("NV") || Home_Login.Login.User.ToUpper().StartsWith("SV"))
+            if (Home_Login.Login.User != "sys")
             {
                 connectionStr = "DATA SOURCE=(DESCRIPTION =" +
             "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))" +
@@ -115,7 +115,7 @@ namespace ATBM_PhanHe1.DAO
         public object ExecuteScalar(string query, object[] parameter = null)
         {
             object data = 0;
-            if (Home_Login.Login.User.ToUpper().StartsWith("NV") || Home_Login.Login.User.ToUpper().StartsWith("SV"))
+            if (Home_Login.Login.User != "sys")
             {
                 connectionStr = "DATA SOURCE=(DESCRIPTION =" +
             "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))" +
