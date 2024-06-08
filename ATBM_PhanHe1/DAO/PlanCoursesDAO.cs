@@ -47,5 +47,16 @@ namespace ATBM_PhanHe1.DAO
             }
             return result;
         }
+        public bool UpdatePlanCourses(string courseID, string semester, string year, string programID)
+        {
+            string query = string.Format("update admin.tb_khmo set HK = '{0}', NAM = '{1}' where MAHP = '{2}' and MACT = '{3}'", semester, year, courseID, programID);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public void AddPlanCourses(string courseID, string semester, string year, string programID)
+        {
+            string query = string.Format("insert into admin.tb_khmo values('{0}','{1}','{2}','{3}')", courseID, semester, year, programID);
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
     }
 }
