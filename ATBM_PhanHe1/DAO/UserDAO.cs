@@ -207,6 +207,11 @@ namespace ATBM_PhanHe1.DAO
             object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
             return result.ToString();
         }
-
+        public string GetUnitChiefUnitID(string id)
+        {
+            string query = $"SELECT MADV FROM ADMIN.TB_DONVI WHERE TRGDV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
     }
 }

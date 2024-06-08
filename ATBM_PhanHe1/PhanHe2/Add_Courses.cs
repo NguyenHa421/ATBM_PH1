@@ -87,7 +87,7 @@ namespace ATBM_PhanHe1.PhanHe2
                     MessageBox.Show("Số sinh viên tối đa không hợp lệ!", "Lỗi");
                     return;
                 }
-                CourseDAO.Instance.AddCource(tb_id.Text,tb_name.Text,credits,theory, practice, maxStudent, cbB_idunit.SelectedItem.ToString());
+                CourseDAO.Instance.AddCource(tb_id.Text,tb_name.Text,credits,theory, practice, maxStudent, cbB_idunit.Text);
                 this.Close();
             }
             else

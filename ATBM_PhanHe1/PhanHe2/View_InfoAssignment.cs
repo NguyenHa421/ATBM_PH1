@@ -98,7 +98,7 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new PhanHe2.Add_Assignment());
+            OpenChildForm(new PhanHe2.Add_Assignment(curRole));
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
@@ -127,7 +127,11 @@ namespace ATBM_PhanHe1.PhanHe2
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Xoá không thành công!", "Lỗi");
+                        string exString = ex.ToString();
+                        if (exString.Contains("14 NGAY"))
+                            MessageBox.Show("Không thể xoá phân công sau 14 ngày!", "Lỗi");
+                        else
+                            MessageBox.Show("Xoá không thành công!", "Lỗi");
                         return;
                     }
                     PhanHe2.Success success = new PhanHe2.Success();
