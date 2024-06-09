@@ -27,7 +27,7 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             tb_name.Text = UserDAO.Instance.GetNameStudent(tb_id.Text);
             cbB_gender.Text = StudentDAO.Instance.GetGenderStudent(tb_id.Text);
-            tb_birth.Text = StudentDAO.Instance.GetBirthStudent(tb_id.Text);
+            tb_birth.Text = StudentDAO.Instance.GetBirthStudent2(tb_id.Text);
             tb_phone.Text = StudentDAO.Instance.GetPhoneStudent(tb_id.Text);
             tb_address.Text = StudentDAO.Instance.GetAddressStudent(tb_id.Text);
             cbB_program.Text = StudentDAO.Instance.GetProgramStudent(tb_id.Text);

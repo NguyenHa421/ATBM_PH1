@@ -66,6 +66,7 @@ namespace ATBM_PhanHe1.DAO
             }
             return list;
         }
+       
         public string GetGenderStaff(string id)
         {
             string query = $"SELECT PHAI FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
@@ -73,6 +74,12 @@ namespace ATBM_PhanHe1.DAO
             return result.ToString();
         }
         public string GetBirthStaff(string id)
+        {
+            string query = $"SELECT TO_CHAR(NGSINH, 'DD/MM/YYYY') FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetBirthStaff2(string id)
         {
             string query = $"SELECT NGSINH FROM ADMIN.UV_NVXEMTHONGTIN WHERE MANV = ('{id}')";
             object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
@@ -114,5 +121,78 @@ namespace ATBM_PhanHe1.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public string GetIDAuto()
+        {
+            string query = $"SELECT ADMIN.CREATE_IDSTAFF FROM DUAL";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { });
+            return result.ToString();
+        }
+        public bool Add_Staff(string id, string name, string gender, DateTime birth, int allowance, string phone, string role, string unit)
+        {
+            string query = $"INSERT INTO ADMIN.TB_NHANSU (MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV) VALUES ('{id}', '{name}', '{gender}', TO_DATE('{birth.ToString("yyyy-MM-dd")}', 'YYYY-MM-DD'), '{allowance}', '{phone}', '{role}', '{unit}')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool Update_Staff(string id, string name, string gender, DateTime birth, int allowance, string phone, string role, string unit)
+        {
+            string query = $"UPDATE ADMIN.TB_NHANSU SET HOTEN = ('{name}'), PHAI = ('{gender}'), NGSINH = TO_DATE('{birth.ToString("yyyy-MM-dd")}', 'YYYY-MM-DD'), PHUCAP = ('{allowance}'), DT = ('{phone}'), VAITRO = ('{role}'), MADV = ('{unit}') WHERE MANV = ('{id}')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public string HeadGetNameStaff(string id)
+        {
+            string query = $"SELECT HOTEN FROM ADMIN.TB_NHANSU WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string HeadGetGenderStaff(string id)
+        {
+            string query = $"SELECT PHAI FROM ADMIN.TB_NHANSU WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string HeadGetBirthStaff(string id)
+        {
+            string query = $"SELECT TO_CHAR(NGSINH, 'DD/MM/YYYY') FROM ADMIN.TB_NHANSU WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string HeadGetBirthStaff2(string id)
+        {
+            string query = $"SELECT NGSINH FROM ADMIN.TB_NHANSU WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string HeadGetPhoneStaff(string id)
+        {
+            string query = $"SELECT DT FROM ADMIN.TB_NHANSU WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string HeadGetAllowanceStaff(string id)
+        {
+            string query = $"SELECT PHUCAP FROM ADMIN.TB_NHANSU WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string HeadGetRoleStaff(string id)
+        {
+            string query = $"SELECT VAITRO FROM ADMIN.TB_NHANSU WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string HeadGetIDUnitStaff(string id)
+        {
+            string query = $"SELECT MADV FROM ADMIN.TB_NHANSU WHERE MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string HeadGetUnitStaff(string id)
+        {
+            string query = $"SELECT n.TENDV FROM ADMIN.TB_NHANSU nv JOIN ADMIN.TB_DONVI n ON nv.MADV = n.MADV WHERE nv.MANV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+       
     }
 }

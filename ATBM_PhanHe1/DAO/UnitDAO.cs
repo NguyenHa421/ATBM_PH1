@@ -55,7 +55,16 @@ namespace ATBM_PhanHe1.DAO
             UnitDTO unit = new UnitDTO(data.Rows[0]);
             return unit;
         }
-        
+        public DataTable GetListUnit()
+        {
+            return DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM ADMIN.TB_DONVI"));
+        }
+        public string GetIDUnit(string name_unit)
+        {
+            string query = $"SELECT MADV FROM ADMIN.TB_DONVI WHERE TENDV = ('{name_unit}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { name_unit });
+            return result.ToString();
+        }
     }
    
 }
