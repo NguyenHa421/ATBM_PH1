@@ -35,6 +35,20 @@ END CREATE_IDSTUDENT;
 /
 GRANT EXECUTE ON ADMIN.CREATE_IDSTUDENT TO RL_GIAOVU;
 /
-CONN ADMIN/group12;
 
 --Tao user, cap quyen cho sinh vien moi
+CREATE OR REPLACE TRIGGER grant_connect_on_insert_student
+AFTER INSERT ON ADMIN.TB_SINHVIEN
+FOR EACH ROW
+DECLARE 
+    v_password NVARCHAR2(10);
+    pragma autonomous_transaction;
+BEGIN
+  -- Dynamically construct password based on student ID (assuming unique)
+    v_password := :NEW.MASV;
+    EXECUTE IMMEDIATE 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE';
+  -- Execute immediate statements to create user and grant privileges
+    EXECUTE IMMEDIATE 'CREATE USER '|| v_password||' IDENTIFIED BY ' || v_password;
+    EXECUTE IMMEDIATE 'GRANT CONNECT TO '||v_password;
+    EXECUTE IMMEDIATE 'GRANT RL_SINHVIEN TO '||v_password;
+END;
