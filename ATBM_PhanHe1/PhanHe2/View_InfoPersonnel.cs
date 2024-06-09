@@ -14,7 +14,7 @@ namespace ATBM_PhanHe1.PhanHe2
     public partial class View_InfoPersonnel : Form
     {
         BindingSource personelList = new BindingSource();
-        private string clickedPersonelID = "";
+        private string clickedPersonnelID = "";
         public View_InfoPersonnel()
         {
             InitializeComponent();
@@ -53,14 +53,19 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Update_Personnel());
+            if (clickedPersonnelID != "")
+            {
+                string Staffid = clickedPersonnelID;
+                clickedPersonnelID = "";
+                OpenChildForm(new PhanHe2.Update_Personnel(Staffid));
+            }
         }
 
         private void bt_delete_Click(object sender, EventArgs e)
         {
             try
             {
-                PersonelDAO.Instance.DeletePersonelByID(clickedPersonelID);
+                PersonelDAO.Instance.DeletePersonelByID(clickedPersonnelID);
                 PhanHe2.Success success = new PhanHe2.Success();
                 success.ShowDialog();
             }
@@ -85,7 +90,7 @@ namespace ATBM_PhanHe1.PhanHe2
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewCell cell = dtGrid_personel.Rows[e.RowIndex].Cells[0];
-                clickedPersonelID = cell.Value.ToString();
+                clickedPersonnelID = cell.Value.ToString();
             }
         }
     }
