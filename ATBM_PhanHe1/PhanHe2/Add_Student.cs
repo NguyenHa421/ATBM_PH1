@@ -20,7 +20,6 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             InitializeComponent();
             Load_Auto_ID("Chinh quy");
-
             Load();
         }
         private void Load_Auto_ID(string program)
