@@ -19,6 +19,11 @@ namespace ATBM_PhanHe1.PhanHe2
         public View_InfoStudent()
         {
             InitializeComponent();
+            Load_info();
+            Load();
+        }
+        private void Load_info()
+        {
             if (UserDAO.Instance.GetRole(Home_Login.Login.User) == "Nhan vien co ban")
             {
                 btn_Add.Enabled = false;
@@ -39,7 +44,6 @@ namespace ATBM_PhanHe1.PhanHe2
                 btn_Add.Enabled = false;
                 btn_Update.Enabled = false;
             }
-            Load();
         }
         private void Load()
         {
