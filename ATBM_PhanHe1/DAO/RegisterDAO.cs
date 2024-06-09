@@ -168,6 +168,13 @@ namespace ATBM_PhanHe1.DAO
             }
             return result;
         }
+        public bool UpdateRegister(string studentID , string courseID, int semester, int year, string programID, int practice, int process, int final, int finalfinal)
+        {
+            string query = string.Format("begin admin.USP_CAPNHATDIEMSV('{0}', '{1}', {2}, {3}, '{4}', {5}, {6}, {7}, {8}); end;",studentID, courseID, semester, year, programID, practice, process, final, finalfinal);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
         public bool DeleteRegisterByID(string id)
         {
             string query = string.Format("begin delete from admin.tb_nhansu where MANV = {0}; end;", id);

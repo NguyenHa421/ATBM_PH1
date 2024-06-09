@@ -218,3 +218,5 @@ D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.Pha
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Confirm_Delete.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Confirm_Update.resources
 D:\Projects\ATBM\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Confirm_Logout.resources
+D:\Bao Di\6\6_ATBM\PH2\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Confirm_Logout.resources
+D:\Bao Di\6\6_ATBM\PH2\ATBM_PH1\ATBM_PhanHe1\obj\Debug\net8.0-windows\ATBM_PhanHe1.PhanHe2.Success.resources

@@ -17,7 +17,8 @@ namespace ATBM_PhanHe1.PhanHe2
     {
         BindingSource registerList = new BindingSource();
         string curRole;
-        private string clickedRegister = "";
+        int clickedRow = 0;
+        List<RegisterDTO> registers;
         public View_InfoRegister()
         {
             InitializeComponent();
@@ -69,23 +70,24 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             dtGrid_register.DataSource = registerList;
             if (curRole == "Giang vien")
-                registerList.DataSource = RegisterDAO.Instance.GetLecturerRegisterList();
+                registers = RegisterDAO.Instance.GetLecturerRegisterList();
             else if (curRole == "Giao vu")
             {
-                registerList.DataSource = RegisterDAO.Instance.GetRegistrarRegisterList();
+                registers = RegisterDAO.Instance.GetRegistrarRegisterList();
                 dtGrid_register.Columns["lecturerName"].Visible = false;
             }
             else if (curRole == "Truong don vi")
             {
-                registerList.DataSource = RegisterDAO.Instance.GetUnitChiefRegisterList();
+                registers = RegisterDAO.Instance.GetUnitChiefRegisterList();
             }  
             else if (curRole == "Sinh vien")
             {
-                registerList.DataSource = RegisterDAO.Instance.GetStudentRegisterList();
+                registers = RegisterDAO.Instance.GetStudentRegisterList();
                 dtGrid_register.Columns["lecturerName"].Visible = false;
             }
             else
-                registerList.DataSource = RegisterDAO.Instance.GetRegisterList();
+                registers = RegisterDAO.Instance.GetRegisterList();
+            registerList.DataSource = registers;
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -115,36 +117,35 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new PhanHe2.Update_Register());
-        }
-        private void dG_Register_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (clickedRow >= 0)
             {
-                DataGridViewCell cell = dtGrid_register.Rows[e.RowIndex].Cells[0];
-                clickedRegister = cell.Value.ToString();
+                OpenChildForm(new PhanHe2.Update_Register(registers[clickedRow].studentID, registers[clickedRow].courseID, registers[clickedRow].semester, registers[clickedRow].year, registers[clickedRow].programID, curRole));
             }
         }
         private void bt_delete_Click(object sender, EventArgs e)
         {
-            if (clickedRegister != "")
-            {
-                string register_id = clickedRegister;
-                clickedRegister = "";
-                try
-                {
-                    PhanHe2.Success success = new PhanHe2.Success();
-                    success.ShowDialog();
-                }
-                catch (OracleException oe)
-                {
-                    MessageBox.Show(oe.Message, "Lỗi");
-                }
-            }
+            //if (clickedRegister != "")
+            //{
+            //    string register_id = clickedRegister;
+            //    clickedRegister = "";
+            //    try
+            //    {
+            //        PhanHe2.Success success = new PhanHe2.Success();
+            //        success.ShowDialog();
+            //    }
+            //    catch (OracleException oe)
+            //    {
+            //        MessageBox.Show(oe.Message, "Lỗi");
+            //    }
+            //}
         }
 
         private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                clickedRow = e.RowIndex;
+            }
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -166,45 +167,49 @@ namespace ATBM_PhanHe1.PhanHe2
             }
             string programName = cbB_program.SelectedItem.ToString();
             if (curRole == "Giang vien")
-                registerList.DataSource = RegisterDAO.Instance.SearchLecturerRegister(semester, year, programName);
+                registers = RegisterDAO.Instance.SearchLecturerRegister(semester, year, programName);
             else if (curRole == "Giao vu")
             {
-                registerList.DataSource = RegisterDAO.Instance.SearchRegistrarRegister(semester, year, programName);
+                registers = RegisterDAO.Instance.SearchRegistrarRegister(semester, year, programName);
                 dtGrid_register.Columns["lecturerName"].Visible = false;
             }
             else if (curRole == "Truong don vi")
             {
-                registerList.DataSource = RegisterDAO.Instance.SearchUnitChiefRegister(semester, year, programName);
+                registers = RegisterDAO.Instance.SearchUnitChiefRegister(semester, year, programName);
             }
             else if (curRole == "Sinh vien")
             {
-                registerList.DataSource = RegisterDAO.Instance.SearchStudentRegister(semester, year, programName);
+                registers = RegisterDAO.Instance.SearchStudentRegister(semester, year, programName);
                 dtGrid_register.Columns["lecturerName"].Visible = false;
             }
             else
-                registerList.DataSource = RegisterDAO.Instance.SearchRegister(semester, year, programName);
+                    registers = RegisterDAO.Instance.SearchRegister(semester, year, programName);
+            registerList.DataSource = registers;
+
         }
 
         private void pic_refresh_U_Click(object sender, EventArgs e)
         {
             if (curRole == "Giang vien")
-                registerList.DataSource = RegisterDAO.Instance.GetLecturerRegisterList();
+                registers = RegisterDAO.Instance.GetLecturerRegisterList();
             else if (curRole == "Giao vu")
             {
-                registerList.DataSource = RegisterDAO.Instance.GetRegistrarRegisterList();
+                registers = RegisterDAO.Instance.GetRegistrarRegisterList();
                 dtGrid_register.Columns["lecturerName"].Visible = false;
             }
             else if (curRole == "Truong don vi")
             {
-                registerList.DataSource = RegisterDAO.Instance.GetUnitChiefRegisterList();
+                registers = RegisterDAO.Instance.GetUnitChiefRegisterList();
             }
             else if (curRole == "Sinh vien")
             {
-                registerList.DataSource = RegisterDAO.Instance.GetStudentRegisterList();
+                registers = RegisterDAO.Instance.GetStudentRegisterList();
                 dtGrid_register.Columns["lecturerName"].Visible = false;
             }
             else
-                registerList.DataSource = RegisterDAO.Instance.GetRegisterList();
+                registers = RegisterDAO.Instance.GetRegisterList();
+            registerList.DataSource = registers;
+
         }
 
         private void pn_parents_Paint(object sender, PaintEventArgs e)
