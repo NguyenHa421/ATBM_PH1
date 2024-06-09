@@ -56,6 +56,12 @@ namespace ATBM_PhanHe1.DAO
         }
         public string GetBirthStudent(string id)
         {
+            string query = $"SELECT TO_CHAR(NGSINH, 'DD/MM/YYYY') FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
+            return result.ToString();
+        }
+        public string GetBirthStudent2(string id)
+        {
             string query = $"SELECT NGSINH FROM ADMIN.TB_SINHVIEN WHERE MASV = ('{id}')";
             object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
             return result.ToString();
