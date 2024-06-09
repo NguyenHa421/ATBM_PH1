@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             cbB_gender = new ComboBox();
-            cbB_major = new ComboBox();
-            cbB_program = new ComboBox();
+            cbB_unit = new ComboBox();
+            cbB_role = new ComboBox();
             tb_birth = new DateTimePicker();
             btn_Update = new Button();
             btn_Back = new Button();
-            tb_role = new TextBox();
+            tb_allowance = new TextBox();
             tb_phone = new TextBox();
             tb_name = new TextBox();
             tb_id = new TextBox();
@@ -54,31 +54,32 @@
             cbB_gender.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_gender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_gender.FormattingEnabled = true;
-            cbB_gender.Items.AddRange(new object[] { "Nam", "Nữ" });
+            cbB_gender.Items.AddRange(new object[] { "Male", "Female" });
             cbB_gender.Location = new Point(183, 227);
             cbB_gender.Name = "cbB_gender";
             cbB_gender.Size = new Size(229, 36);
             cbB_gender.TabIndex = 107;
             // 
-            // cbB_major
+            // cbB_unit
             // 
-            cbB_major.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbB_major.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_major.FormattingEnabled = true;
-            cbB_major.Location = new Point(626, 299);
-            cbB_major.Name = "cbB_major";
-            cbB_major.Size = new Size(229, 36);
-            cbB_major.TabIndex = 106;
+            cbB_unit.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbB_unit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbB_unit.FormattingEnabled = true;
+            cbB_unit.Location = new Point(626, 299);
+            cbB_unit.Name = "cbB_unit";
+            cbB_unit.Size = new Size(229, 36);
+            cbB_unit.TabIndex = 106;
             // 
-            // cbB_program
+            // cbB_role
             // 
-            cbB_program.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbB_program.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_program.FormattingEnabled = true;
-            cbB_program.Location = new Point(626, 227);
-            cbB_program.Name = "cbB_program";
-            cbB_program.Size = new Size(229, 36);
-            cbB_program.TabIndex = 105;
+            cbB_role.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbB_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbB_role.FormattingEnabled = true;
+            cbB_role.Items.AddRange(new object[] { "Nhan vien co ban", "Giao vien", "Giao vu", "Truong don vi" });
+            cbB_role.Location = new Point(626, 227);
+            cbB_role.Name = "cbB_role";
+            cbB_role.Size = new Size(229, 36);
+            cbB_role.TabIndex = 105;
             // 
             // tb_birth
             // 
@@ -125,14 +126,14 @@
             btn_Back.UseVisualStyleBackColor = false;
             btn_Back.Click += btn_Back_Click;
             // 
-            // tb_role
+            // tb_allowance
             // 
-            tb_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_role.Location = new Point(626, 157);
-            tb_role.Name = "tb_role";
-            tb_role.Size = new Size(229, 34);
-            tb_role.TabIndex = 101;
-            tb_role.TabStop = false;
+            tb_allowance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_allowance.Location = new Point(626, 157);
+            tb_allowance.Name = "tb_allowance";
+            tb_allowance.Size = new Size(229, 34);
+            tb_allowance.TabIndex = 101;
+            tb_allowance.TabStop = false;
             // 
             // tb_phone
             // 
@@ -259,12 +260,12 @@
             BackColor = Color.White;
             ClientSize = new Size(895, 425);
             Controls.Add(cbB_gender);
-            Controls.Add(cbB_major);
-            Controls.Add(cbB_program);
+            Controls.Add(cbB_unit);
+            Controls.Add(cbB_role);
             Controls.Add(tb_birth);
             Controls.Add(btn_Update);
             Controls.Add(btn_Back);
-            Controls.Add(tb_role);
+            Controls.Add(tb_allowance);
             Controls.Add(tb_phone);
             Controls.Add(tb_name);
             Controls.Add(tb_id);
@@ -288,12 +289,12 @@
         #endregion
 
         private ComboBox cbB_gender;
-        private ComboBox cbB_major;
-        private ComboBox cbB_program;
+        private ComboBox cbB_unit;
+        private ComboBox cbB_role;
         private DateTimePicker tb_birth;
         private Button btn_Update;
         private Button btn_Back;
-        private TextBox tb_role;
+        private TextBox tb_allowance;
         private TextBox tb_phone;
         private TextBox tb_name;
         private TextBox tb_id;
