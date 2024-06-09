@@ -45,7 +45,7 @@ namespace ATBM_PhanHe1.DAO
         public List<RegisterDTO> GetRegistrarRegisterList()
         {
             List<RegisterDTO> list = new List<RegisterDTO>();
-            string query = "select dk.*, null as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.tb_dangky dk, admin.tb_sinhvien sv, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MASV = sv.MASV and dk.MACT = ct.MACT";
+            string query = "select dk.*, ns.HOTEN as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.tb_dangky dk, admin.uv_nvxemthongtin ns, admin.tb_sinhvien sv, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MASV = sv.MASV and dk.MACT = ct.MACT";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
@@ -117,7 +117,7 @@ namespace ATBM_PhanHe1.DAO
         public List<RegisterDTO> SearchRegistrarRegister(int semester, int year, string programName)
         {
             List<RegisterDTO> result = new List<RegisterDTO>();
-            string query = "select dk.*, null as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.tb_dangky dk, admin.tb_sinhvien sv, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MASV = sv.MASV and dk.MACT = ct.MACT";
+            string query = "select dk.*, ns.HOTEN as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.tb_dangky dk, admin.uv_nvxemthongtin ns, admin.tb_sinhvien sv, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MASV = sv.MASV and dk.MACT = ct.MACT";
             if (semester > 0)
                 query += string.Format(" and HK = {0}", semester);
             if (year > 0)
@@ -174,10 +174,15 @@ namespace ATBM_PhanHe1.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-
-        public bool DeleteRegisterByID(string id)
+        public bool AddRegister(string studentID, string courseID, int semester, int year, string programID)
         {
-            string query = string.Format("begin delete from admin.tb_nhansu where MANV = {0}; end;", id);
+            string query = string.Format(" insert into admin.tb_dangky (MASV, MAHP, HK, NAM, MACT, DIEMTH, DIEMQT, DIEMCK, DIEMTK) values ('{0}', '{1}', {2}, {3}, '{4}', 0, 0, 0, 0)", studentID, courseID, semester, year, programID);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool DeleteRegister(string studentID, string courseID, int semester, int year, string programID, string lecturerID)
+        {
+            string query = string.Format("begin delete from admin.tb_dangky where MASV = '{0}' and MAHP = '{1}' and HK = {2} and NAM = {3} and MACT = '{4}' and MAGV = {5}; end;", studentID, courseID, semester, year, programID, lecturerID);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
             

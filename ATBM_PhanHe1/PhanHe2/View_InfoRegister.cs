@@ -74,7 +74,6 @@ namespace ATBM_PhanHe1.PhanHe2
             else if (curRole == "Giao vu")
             {
                 registers = RegisterDAO.Instance.GetRegistrarRegisterList();
-                dtGrid_register.Columns["lecturerName"].Visible = false;
             }
             else if (curRole == "Truong don vi")
             {
@@ -83,11 +82,13 @@ namespace ATBM_PhanHe1.PhanHe2
             else if (curRole == "Sinh vien")
             {
                 registers = RegisterDAO.Instance.GetStudentRegisterList();
-                dtGrid_register.Columns["lecturerName"].Visible = false;
             }
             else
                 registers = RegisterDAO.Instance.GetRegisterList();
             registerList.DataSource = registers;
+            if (curRole == "Sinh vien")
+                dtGrid_register.Columns["lecturerName"].Visible = false;
+
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
@@ -112,7 +113,7 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new PhanHe2.Add_Register());
+            OpenChildForm(new PhanHe2.Add_Register(registers[clickedRow].studentID));
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
@@ -124,20 +125,27 @@ namespace ATBM_PhanHe1.PhanHe2
         }
         private void bt_delete_Click(object sender, EventArgs e)
         {
-            //if (clickedRegister != "")
-            //{
-            //    string register_id = clickedRegister;
-            //    clickedRegister = "";
-            //    try
-            //    {
-            //        PhanHe2.Success success = new PhanHe2.Success();
-            //        success.ShowDialog();
-            //    }
-            //    catch (OracleException oe)
-            //    {
-            //        MessageBox.Show(oe.Message, "Lỗi");
-            //    }
-            //}
+            using (Confirm_Delete confirm = new Confirm_Delete())
+            {
+                if (confirm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        RegisterDAO.Instance.DeleteRegister(registers[clickedRow].studentID, registers[clickedRow].courseID, registers[clickedRow].semester, registers[clickedRow].year, registers[clickedRow].programID, registers[clickedRow].lecturerID);
+                    }
+                    catch (Exception ex)
+                    {
+                        string exString = ex.ToString();
+                        if (exString.Contains("14 NGAY"))
+                            MessageBox.Show("Không thể xoá phân công sau 14 ngày!", "Lỗi");
+                        else
+                            MessageBox.Show("Xoá không thành công!", "Lỗi");
+                        return;
+                    }
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
+                }
+            }
         }
 
         private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -185,7 +193,8 @@ namespace ATBM_PhanHe1.PhanHe2
             else
                     registers = RegisterDAO.Instance.SearchRegister(semester, year, programName);
             registerList.DataSource = registers;
-
+            if (curRole == "Sinh vien")
+                dtGrid_register.Columns["lecturerName"].Visible = false;
         }
 
         private void pic_refresh_U_Click(object sender, EventArgs e)
@@ -209,7 +218,8 @@ namespace ATBM_PhanHe1.PhanHe2
             else
                 registers = RegisterDAO.Instance.GetRegisterList();
             registerList.DataSource = registers;
-
+            if (curRole == "Sinh vien")
+                dtGrid_register.Columns["lecturerName"].Visible = false;
         }
 
         private void pn_parents_Paint(object sender, PaintEventArgs e)

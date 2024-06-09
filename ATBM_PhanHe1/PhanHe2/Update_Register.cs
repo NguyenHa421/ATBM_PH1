@@ -152,6 +152,8 @@ namespace ATBM_PhanHe1.PhanHe2
             try
             {
                 RegisterDAO.Instance.UpdateRegister(tb_idstudent.Text, cbB_idcourses.Text, semester, year, cbB_idprogram.Text, practice, process, final, finalfinal);
+                PhanHe2.Success success = new PhanHe2.Success();
+                success.ShowDialog();
             }   
             catch (Exception ex)
             {
@@ -159,8 +161,7 @@ namespace ATBM_PhanHe1.PhanHe2
                 return;
             }
 
-            PhanHe2.Success success = new PhanHe2.Success();
-            success.ShowDialog();
+            
         }
     }
 }
