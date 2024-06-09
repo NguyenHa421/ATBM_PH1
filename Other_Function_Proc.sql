@@ -1,4 +1,5 @@
 --Tao id tu dong cho sinh vien
+-- Chay conn den grant exec
 CONN ADMIN/group12;
 CREATE OR REPLACE FUNCTION CREATE_IDSTUDENT(p_MACT IN VARCHAR2)
 RETURN NVARCHAR2
@@ -35,20 +36,34 @@ END CREATE_IDSTUDENT;
 /
 GRANT EXECUTE ON ADMIN.CREATE_IDSTUDENT TO RL_GIAOVU;
 /
+--Dung conn
 
---Tao user, cap quyen cho sinh vien moi
-CREATE OR REPLACE TRIGGER grant_connect_on_insert_student
-AFTER INSERT ON ADMIN.TB_SINHVIEN
-FOR EACH ROW
-DECLARE 
-    v_password NVARCHAR2(10);
-    pragma autonomous_transaction;
+
+--Chay conn
+CONN ADMIN/group12;
+CREATE OR REPLACE FUNCTION CREATE_IDSTAFF
+RETURN NVARCHAR2
+IS
+    ID NVARCHAR2(10);
+    ID_pre NVARCHAR2(6);
+    ID_suff NUMBER(4);
+    last_staff_id NVARCHAR2(10);
 BEGIN
-  -- Dynamically construct password based on student ID (assuming unique)
-    v_password := :NEW.MASV;
-    EXECUTE IMMEDIATE 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE';
-  -- Execute immediate statements to create user and grant privileges
-    EXECUTE IMMEDIATE 'CREATE USER '|| v_password||' IDENTIFIED BY ' || v_password;
-    EXECUTE IMMEDIATE 'GRANT CONNECT TO '||v_password;
-    EXECUTE IMMEDIATE 'GRANT RL_SINHVIEN TO '||v_password;
-END;
+    ID_pre := 'NV';
+    SELECT MANV INTO last_staff_id
+    FROM ADMIN.TB_NHANSU
+    ORDER BY TO_NUMBER(SUBSTR(MANV, -3)) DESC
+    FETCH FIRST 1 ROWS ONLY;
+    
+    IF last_staff_id IS NULL THEN
+        ID_suff := '000';
+    ELSE
+        ID_suff := TO_NUMBER(SUBSTR(last_staff_id, -3)) + 1;
+    END IF;
+    ID := ID_pre || LPAD(TO_CHAR(ID_suff), 3, '0');
+    RETURN ID;
+END CREATE_IDSTAFF;
+/
+GRANT EXECUTE ON ADMIN.CREATE_IDSTAFF TO NV107;
+/
+--Dung conn
