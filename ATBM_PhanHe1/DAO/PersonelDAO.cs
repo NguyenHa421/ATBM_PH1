@@ -41,10 +41,12 @@ namespace ATBM_PhanHe1.DAO
             }
             return result;
         }
-        public void DeletePersonelByID(string id)
+        
+        public bool DeletePersonelByID(string id)
         {
-            string query = string.Format("begin delete from admin.tb_nhansu where MANV = {0}; end;", id);
-            DataProvider.Instance.ExecuteNonQuery(query);
+            string query = $"Delete from admin.tb_nhansu where MANV = ('{id}')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
 
         public PersonelDTO GetPersonelByID(string personelID)

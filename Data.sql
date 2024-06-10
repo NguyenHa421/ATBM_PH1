@@ -1,4 +1,31 @@
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+-- proc tg_XoaUser
+CREATE OR REPLACE PROCEDURE Dropuser_NHANSU
+IS
+    v_exist PLS_INTEGER;
+BEGIN
+    SELECT COUNT(*) INTO v_exist
+    FROM dba_tables WHERE table_name = 'TB_NHANSU' AND owner = 'ADMIN';
+    IF v_exist = 1 THEN
+        EXECUTE IMMEDIATE 'BEGIN USP_XoaUserNhanVien; END;';
+    END IF;
+END;
+/
+EXEC Dropuser_NHANSU;
+
+-- proc tg_XoaUser
+CREATE OR REPLACE PROCEDURE Dropuser_SINHVIEN
+IS
+    v_exist PLS_INTEGER;
+BEGIN
+    SELECT COUNT(*) INTO v_exist 
+    FROM dba_tables WHERE table_name = 'TB_SINHVIEN' AND owner = 'ADMIN';
+    IF v_exist = 1 THEN
+        EXECUTE IMMEDIATE 'BEGIN USP_XoaUserSinhVien; END;';
+    END IF;
+END;
+/
+EXEC Dropuser_SINHVIEN;
 
 --proc xoa user neu ton tai
 create or replace procedure dropUser(usrName in varchar2)
@@ -192,7 +219,67 @@ ALTER TABLE ADMIN.TB_DANGKY
 ADD CONSTRAINT fk_mahp_DANGKY 
 FOREIGN KEY (MAGV, MAHP,HK,NAM,MACT) 
 REFERENCES ADMIN.TB_PHANCONG(MAGV,MAHP,HK,NAM,MACT);
-
+/
+--Xoa user nhan vien cu
+CREATE OR REPLACE PROCEDURE USP_XoaUserNhanVien
+AS
+    CURSOR CUR IS ( SELECT MANV
+                    FROM ADMIN.TB_NHANSU
+                    WHERE MANV IN ( SELECT USERNAME
+                                    FROM ALL_USERS) );
+    USR VARCHAR2(5);
+    v_exist PLS_INTEGER;
+    STRSQL VARCHAR(2000);
+BEGIN
+    OPEN CUR;  
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE';
+    EXECUTE IMMEDIATE(STRSQL);
+    
+    LOOP
+        FETCH CUR INTO USR;
+        EXIT WHEN CUR%NOTFOUND;
+        
+        SELECT COUNT(*) INTO v_exist 
+        FROM dba_users WHERE username = USR;
+        IF v_exist = 1 THEN
+            EXECUTE IMMEDIATE 'DROP USER ' || USR || ' CASCADE';
+        END IF;
+    END LOOP;
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
+    EXECUTE IMMEDIATE(STRSQL);
+    CLOSE CUR;
+END; 
+/
+--Xoa user sinh vien cu
+CREATE OR REPLACE PROCEDURE USP_XoaUserSinhVien
+AS
+    CURSOR CUR IS ( SELECT MASV
+                    FROM ADMIN.TB_SINHVIEN
+                    WHERE MASV IN ( SELECT USERNAME
+                                    FROM ALL_USERS) );
+    USR VARCHAR2(10);
+    v_exist PLS_INTEGER;
+    STRSQL VARCHAR(2000);
+BEGIN
+    OPEN CUR;  
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE';
+    EXECUTE IMMEDIATE(STRSQL);
+    
+    LOOP
+        FETCH CUR INTO USR;
+        EXIT WHEN CUR%NOTFOUND;
+        
+        SELECT COUNT(*) INTO v_exist 
+        FROM dba_users WHERE username = USR;
+        IF v_exist = 1 THEN
+            EXECUTE IMMEDIATE 'DROP USER ' || USR || ' CASCADE';
+        END IF;
+    END LOOP;
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
+    EXECUTE IMMEDIATE(STRSQL);
+    CLOSE CUR;
+END; 
+/
 ----------------------------------------------------------
 -- NHAP DU LIEU
 --BANG TB_NGANH

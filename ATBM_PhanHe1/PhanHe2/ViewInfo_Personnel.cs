@@ -27,7 +27,7 @@ namespace ATBM_PhanHe1.PhanHe2
             tb_birth.Text = PersonelDAO.Instance.GetBirthStaff(tb_id.Text);
             tb_gender.Text = PersonelDAO.Instance.GetGenderStaff(tb_id.Text);
             tb_phone.Text = PersonelDAO.Instance.GetPhoneStaff(tb_id.Text);
-            tb_allowance.Text = PersonelDAO.Instance.GetGenderStaff(tb_id.Text);
+            tb_allowance.Text = PersonelDAO.Instance.GetAllowanceStaff(tb_id.Text);
             tb_role.Text = PersonelDAO.Instance.GetRoleStaff(tb_id.Text);
             tb_id_unit.Text = PersonelDAO.Instance.GetIDUnitStaff(tb_id.Text);
             tb_name_unit.Text = PersonelDAO.Instance.GetUnitStaff(tb_id.Text);

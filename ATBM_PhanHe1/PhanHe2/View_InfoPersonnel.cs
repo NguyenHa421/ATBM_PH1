@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ATBM_PhanHe1.PhanHe2
 {
@@ -63,16 +64,26 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void bt_delete_Click(object sender, EventArgs e)
         {
-            try
+            if (clickedPersonnelID != "")
             {
-                PersonelDAO.Instance.DeletePersonelByID(clickedPersonnelID);
-                PhanHe2.Success success = new PhanHe2.Success();
-                success.ShowDialog();
+                using (Confirm_Update confirm = new Confirm_Update())
+                {
+                    if (confirm.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            PersonelDAO.Instance.DeletePersonelByID(clickedPersonnelID);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Xóa không thành công!", "Lỗi");
+                        }
+                        PhanHe2.Success success = new PhanHe2.Success();
+                        success.ShowDialog();
+                    }
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không thể xoá nhân viên này!", "Lỗi");
-            }
+            else { MessageBox.Show("Chưa chọn nhân sự!", "Lỗi"); }
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -82,7 +93,7 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void pic_refresh_U_Click(object sender, EventArgs e)
         {
-            personelList.DataSource = PersonelDAO.Instance.GetPersonelList();
+            Load();
         }
 
         private void dtGrid_personel_CellContentClick(object sender, DataGridViewCellEventArgs e)

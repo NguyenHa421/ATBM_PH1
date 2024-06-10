@@ -53,18 +53,23 @@ namespace ATBM_PhanHe1.PhanHe2
             int allowance = int.Parse(tb_allowance.Text);
             string role = cbB_role.Text;
             string unit = UnitDAO.Instance.GetIDUnit(cbB_unit.Text);
-            try
+            using (Confirm_Update confirm = new Confirm_Update())
             {
-                PersonelDAO.Instance.Update_Staff(id, name, gender, birth.Date, allowance, phone, role, unit);
-                PhanHe2.Success success = new PhanHe2.Success();
-                success.ShowDialog();
+                if (confirm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        PersonelDAO.Instance.Update_Staff(id, name, gender, birth.Date, allowance, phone, role, unit);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Lỗi");
+                        return;
+                    }
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi");
-                return;
-            }
-            
         }
     }
 }

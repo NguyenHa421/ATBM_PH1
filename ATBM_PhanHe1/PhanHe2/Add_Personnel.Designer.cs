@@ -88,7 +88,7 @@
             tb_birth.Format = DateTimePickerFormat.Custom;
             tb_birth.Location = new Point(183, 297);
             tb_birth.MaxDate = new DateTime(2024, 5, 31, 0, 0, 0, 0);
-            tb_birth.MinDate = new DateTime(1990, 1, 1, 0, 0, 0, 0);
+            tb_birth.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             tb_birth.Name = "tb_birth";
             tb_birth.Size = new Size(229, 34);
             tb_birth.TabIndex = 85;
