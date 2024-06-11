@@ -75,7 +75,7 @@
             cbB_role.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_role.FormattingEnabled = true;
-            cbB_role.Items.AddRange(new object[] { "Nhan vien co ban", "Giao vien", "Giao vu", "Truong don vi" });
+            cbB_role.Items.AddRange(new object[] { "Nhan vien co ban", "Giang vien", "Giao vu", "Truong don vi" });
             cbB_role.Location = new Point(626, 227);
             cbB_role.Name = "cbB_role";
             cbB_role.Size = new Size(229, 36);

@@ -68,7 +68,7 @@ namespace ATBM_PhanHe1.PhanHe2
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Thêm không thành công!", "Lỗi");
+                MessageBox.Show(ex.Message, "Lỗi");
                 return;
             }
 

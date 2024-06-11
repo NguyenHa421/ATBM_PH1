@@ -66,7 +66,7 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             if (clickedPersonnelID != "")
             {
-                using (Confirm_Update confirm = new Confirm_Update())
+                using (Confirm_Delete confirm = new Confirm_Delete())
                 {
                     if (confirm.ShowDialog() == DialogResult.OK)
                     {
