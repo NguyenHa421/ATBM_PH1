@@ -71,7 +71,7 @@ END;
 
 --Doi quyen cho nhan vien khi truong khoa cap nhat
 CREATE OR REPLACE TRIGGER revoke_connect_on_update_staff
-AFTER UPDATE ON ADMIN.TB_NHANSU
+BEFORE UPDATE ON ADMIN.TB_NHANSU
 FOR EACH ROW
 DECLARE 
     v_user NVARCHAR2(10);
@@ -132,11 +132,10 @@ BEGIN
             IF NVL(v_olduser, NULL) IS NOT NULL THEN
           --Update user truong don vi cu thanh giang vien
                 EXECUTE IMMEDIATE 'UPDATE ADMIN.TB_NHANSU SET VAITRO = ''Giang vien'' WHERE MANV = ''' || v_olduser || '''';
-                
                 --Cap quyen lai cho truong don vi cu thanh giang vien
                 EXECUTE IMMEDIATE 'GRANT RL_NHANVIENCOBAN TO '||v_olduser;
                 EXECUTE IMMEDIATE 'GRANT RL_GIANGVIEN TO ' || v_olduser;
-                COMMIT;
+                
             END IF;  
             --Cap quyen lai cho user moi cap nhat
             EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.UV_NVXEMTHONGTIN TO ' || v_user;
@@ -154,31 +153,12 @@ BEGIN
             EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.TB_CHUONGTRINH TO ' || v_user;
             EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.TB_NGANH TO ' || v_user;
             EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.UV_XEMGIANGVIEN TO ' || v_user;
+            EXECUTE IMMEDIATE 'UPDATE ADMIN.TB_DONVI SET TRGDV = '''||v_user || ''' WHERE MADV = '''||v_unit||'''';
+            COMMIT;
         END IF;
     END IF;
     EXECUTE IMMEDIATE 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
-END;
-/
-
---Doi quyen cho nhan vien khi truong khoa cap nhat
-CREATE OR REPLACE TRIGGER change_connect_on_update_staff
-BEFORE UPDATE ON ADMIN.TB_NHANSU
-FOR EACH ROW
-DECLARE 
-    v_user NVARCHAR2(10);
-    v_olduser NVARCHAR2(50);
-    v_unit NVARCHAR2(5);
-    pragma autonomous_transaction;
-BEGIN
-  -- Dynamically construct password based on student ID (assuming unique)
-    EXECUTE IMMEDIATE 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE';
-    v_user := :NEW.MANV;
-    v_unit := :NEW.MADV;
-    SELECT TRGDV INTO v_olduser FROM ADMIN.TB_DONVI WHERE MADV = v_unit;
-    IF v_olduser != v_user THEN
-        UPDATE ADMIN.TB_DONVI SET TRGDV = v_user WHERE MADV = v_unit;
-        COMMIT;
-    END IF;
+    COMMIT;
 END;
 /
 
@@ -196,7 +176,7 @@ UPDATE ADMIN.TB_DONVI SET TRGDV = 'NV101' WHERE MADV = 'DV02';
 SELECT * FROM ADMIN.TB_SINHVIEN WHERE MASV = 'SV120238';
 -- Thay doi role cua NV108
 CONN NV107/NV107;
-UPDATE ADMIN.TB_NHANSU SET VAITRO = 'Truong don vi' WHERE MANV = 'NV108';
+UPDATE ADMIN.TB_NHANSU SET VAITRO = 'Truong don vi' WHERE MANV = 'NV101';
 SELECT * FROM ADMIN.TB_NHANSU WHERE MANV = 'NV108';
 SELECT * FROM ADMIN.TB_NHANSU WHERE MANV = 'NV101';
 
