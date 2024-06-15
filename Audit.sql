@@ -33,7 +33,7 @@ BEGIN
     object_schema   => 'ADMIN',
     object_name     => 'TB_DANGKY',
     policy_name     => 'FGA_CHECK_SCORE_UPDATE',
-    audit_condition => 'SYS_CONTEXT(''USERENV'', ''SESSION_USER'') NOT IN (SELECT MANV FROM ADMIN.TB_NHANSU WHERE VAITRO = ''Giang vien'')',
+    audit_condition => 'SYS_CONTEXT(''USERENV'', ''SESSION_USER'') NOT IN (SELECT MANV FROM ADMIN.UV_XEMGIANGVIEN)',
     statement_types => 'UPDATE',
     audit_column    => 'DIEMTH, DIEMQT, DIEMCK, DIEMTK'
   );
@@ -76,6 +76,3 @@ SELECT * FROM ADMIN.TB_NHANSU WHERE MANV = 'NV053';
 /
 
 SELECT * FROM DBA_FGA_AUDIT_TRAIL;
-SELECT * FROM DBA_AUDIT_TRAIL;
-
-select * from ALL_AUDIT_POLICIES
