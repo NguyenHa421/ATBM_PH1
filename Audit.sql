@@ -39,13 +39,13 @@ BEGIN
   );
 END;
 /
-conn NV052/NV052;
+
+conn NV107/NV107;
 BEGIN
-    admin.USP_CAPNHATDIEMSV('SV127123', 'HP21', 3, 2024, 'CLC', 9, 9, 9, 9);
+    admin.USP_CAPNHATDIEMSV('SV127123', 'HP21', 3, 2024, 'CLC', 8, 8, 8, 8);
 END;
 /
-conn NV052/NV052;
-select * from admin.uv_gvxemdangky;
+SELECT * FROM DBA_FGA_AUDIT_TRAIL;
 
 /
 BEGIN

@@ -79,8 +79,7 @@ IS
 BEGIN
     UPDATE ADMIN.TB_DANGKY
     SET DIEMTH = p_diemTH, DIEMQT = p_diemQT, DIEMCK = p_diemCK, DIEMTK = p_diemTK
-    WHERE MAGV = SYS_CONTEXT('USERENV','SESSION_USER')
-        AND MASV = p_masv 
+    WHERE MASV = p_masv 
         AND MAHP = p_mahp 
         AND HK = p_hk 
         AND NAM = p_nam 
