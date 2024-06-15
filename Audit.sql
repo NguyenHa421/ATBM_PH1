@@ -16,8 +16,9 @@ SELECT * FROM ADMIN.TB_HOCPHAN;
 --xem nhat ky audit
 SELECT * FROM DBA_AUDIT_TRAIL WHERE obj_name = 'TB_HOCPHAN';
 /
-CREATE OR REPLACE FUNCTION CHECK_USER IS
-RETURN NUMBER IS
+
+CREATE OR REPLACE FUNCTION CHECK_USER RETURN NUMBER
+AS
   v_count NUMBER;
 BEGIN
   SELECT COUNT(*)
@@ -50,7 +51,7 @@ BEGIN
     object_schema   => 'ADMIN',
     object_name     => 'TB_DANGKY',
     policy_name     => 'FGA_CHECK_SCORE_UPDATE',
-    audit_condition => 'CHECK_USER() = 1',
+    audit_condition => 'CHECK_USER = 1',
     statement_types => 'UPDATE',
     audit_column    => 'DIEMTH, DIEMQT, DIEMCK, DIEMTK'
   );
