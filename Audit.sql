@@ -15,6 +15,23 @@ CONN NV107/NV107
 SELECT * FROM ADMIN.TB_HOCPHAN;
 --xem nhat ky audit
 SELECT * FROM DBA_AUDIT_TRAIL WHERE obj_name = 'TB_HOCPHAN';
+/
+CREATE OR REPLACE FUNCTION CHECK_USER IS
+RETURN NUMBER IS
+  v_count NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO v_count
+  FROM ADMIN.UV_XEMGIANGVIEN
+  WHERE MANV = SYS_CONTEXT('USERENV', 'SESSION_USER');
+  
+  IF v_count = 0 THEN
+    RETURN 1;
+  ELSE
+    RETURN 0;
+  END IF;
+END;
+
 
 /
 BEGIN
@@ -33,7 +50,7 @@ BEGIN
     object_schema   => 'ADMIN',
     object_name     => 'TB_DANGKY',
     policy_name     => 'FGA_CHECK_SCORE_UPDATE',
-    audit_condition => 'SYS_CONTEXT(''USERENV'', ''SESSION_USER'') NOT IN (SELECT MANV FROM ADMIN.UV_XEMGIANGVIEN)',
+    audit_condition => 'CHECK_USER() = 1',
     statement_types => 'UPDATE',
     audit_column    => 'DIEMTH, DIEMQT, DIEMCK, DIEMTK'
   );
