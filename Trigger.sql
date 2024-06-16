@@ -55,20 +55,6 @@ BEGIN
     EXECUTE IMMEDIATE 'DROP USER ' || v_user || ' CASCADE';
 END;
 /
---Thay doi truong don vi trong bang don vi
-CREATE OR REPLACE TRIGGER update_unithead_null
-BEFORE UPDATE ON ADMIN.TB_NHANSU
-FOR EACH ROW
-DECLARE 
-    v_role NVARCHAR2(50);
-BEGIN
-    v_role := :NEW.VAITRO;
-    IF v_role = 'Truong don vi' THEN
-        EXECUTE IMMEDIATE 'UPDATE ADMIN.TB_DONVI SET TRGDV = NULL WHERE MADV = ''' || :NEW.MADV || '''';
-    END IF;
-END;
-/
-
 --Doi quyen cho nhan vien khi truong khoa cap nhat
 CREATE OR REPLACE TRIGGER revoke_connect_on_update_staff
 BEFORE UPDATE ON ADMIN.TB_NHANSU
@@ -82,7 +68,7 @@ DECLARE
     pragma autonomous_transaction;
 BEGIN
     EXECUTE IMMEDIATE 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE';
-  -- Dynamically construct password based on student ID (assuming unique)
+    -- Dynamically construct password based on student ID (assuming unique)
     v_user := :NEW.MANV;
     v_oldrole := :OLD.VAITRO;
     v_role := :NEW.VAITRO;
@@ -92,6 +78,7 @@ BEGIN
         IF v_oldrole = 'Nhan vien co ban' THEN
             EXECUTE IMMEDIATE 'REVOKE RL_NHANVIENCOBAN FROM ' || v_user;
         ELSIF v_oldrole = 'Giang vien' THEN
+            DBMS_OUTPUT.PUT_LINE('5');
             EXECUTE IMMEDIATE 'REVOKE RL_NHANVIENCOBAN FROM ' || v_user;
             EXECUTE IMMEDIATE 'REVOKE RL_GIANGVIEN FROM ' || v_user;
         ELSIF v_oldrole = 'Giao vu' THEN
@@ -132,10 +119,10 @@ BEGIN
             IF NVL(v_olduser, NULL) IS NOT NULL THEN
           --Update user truong don vi cu thanh giang vien
                 EXECUTE IMMEDIATE 'UPDATE ADMIN.TB_NHANSU SET VAITRO = ''Giang vien'' WHERE MANV = ''' || v_olduser || '''';
+                COMMIT;
                 --Cap quyen lai cho truong don vi cu thanh giang vien
                 EXECUTE IMMEDIATE 'GRANT RL_NHANVIENCOBAN TO '||v_olduser;
                 EXECUTE IMMEDIATE 'GRANT RL_GIANGVIEN TO ' || v_olduser;
-                
             END IF;  
             --Cap quyen lai cho user moi cap nhat
             EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.UV_NVXEMTHONGTIN TO ' || v_user;
@@ -158,66 +145,5 @@ BEGIN
         END IF;
     END IF;
     EXECUTE IMMEDIATE 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
-    COMMIT;
 END;
 /
-
---Tao nhan vien moi
-CONN NV107/NV107;
-INSERT INTO ADMIN.TB_NHANSU (MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV) 
-VALUES ('NV108', 'Nguyen An', 'Male', TO_DATE('1970-1-1', 'YYYY-MM-DD'), 20000, '0144016021', 'Giao vu', 'DV02');
---Kiem tra kha nang xem thong tin cua rl_nhan vien co ban
-CONN NV108/NV108;
-SELECT * FROM ADMIN.UV_NVXEMTHONGTIN;
-
-UPDATE ADMIN.TB_DONVI SET TRGDV = 'NV101' WHERE MADV = 'DV02';
-
--- Kiem tra cap nhat
-SELECT * FROM ADMIN.TB_SINHVIEN WHERE MASV = 'SV120238';
--- Thay doi role cua NV108
-CONN NV107/NV107;
-UPDATE ADMIN.TB_NHANSU SET VAITRO = 'Truong don vi' WHERE MANV = 'NV101';
-SELECT * FROM ADMIN.TB_NHANSU WHERE MANV = 'NV108';
-SELECT * FROM ADMIN.TB_NHANSU WHERE MANV = 'NV101';
-
-SELECT * FROM ADMIN.TB_DONVI WHERE MADV = 'DV02';
-select * from DBA_TAB_PRIVS where grantee = 'NV101';
-select * from DBA_ROLE_PRIVS where grantee = 'NV108';
-select * from DBA_TAB_PRIVS where grantee = 'NV108';
-select * from DBA_ROLE_PRIVS where grantee = 'NV101';
-CONN ADMIN/group12;
-REVOKE SELECT ON ADMIN.TB_SINHVIEN FROM NV101;
---Kiem tra vai tro moi
-CONN NV108/NV108;
-SELECT * FROM ADMIN.UV_NVXEMTHONGTIN;
--- Kiem tra lai kha nang cap nhat sinh vien cua rl_giao vu
-CONN NV108/NV108;
-UPDATE ADMIN.TB_SINHVIEN SET HOTEN = 'Nguyen Thu Ha' WHERE MASV = 'SV120238';
--- Kiem tra cap nhat
-SELECT * FROM ADMIN.TB_SINHVIEN WHERE MASV = 'SV120238';
---Thu hoi thu cong
-REVOKE RL_GIAOVU FROM NV108;
-REVOKE RL_NHANVIENCOBAN FROM NV108;
---Xoa nhan vien NV108, tu dong xoa user
-CONN NV107/NV107;
-DELETE FROM ADMIN.TB_NHANSU WHERE MANV = 'NV108';
---Xoa thu cong user 108
-DROP USER NV108;
-
-CONN ADMIN/group12;
-
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
-SELECT * FROM dba_triggers;
-DROP TRIGGER ADMIN.grant_connect_on_insert_student;
-DROP TRIGGER ADMIN.grant_connect_on_insert_staff;
-DROP TRIGGER ADMIN.employee_login_delete;
-DROP TRIGGER ADMIN.update_unithead_null;
-DROP TRIGGER ADMIN.revoke_connect_on_update_staff;
-DROP TRIGGER ADMIN.change_connect_on_update_staff;
-
-DROP TRIGGER grant_connect_on_insert_student;
-DROP TRIGGER grant_connect_on_insert_staff;
-DROP TRIGGER employee_login_delete;
-DROP TRIGGER update_unithead_null;
-DROP TRIGGER revoke_connect_on_update_staff;
-DROP TRIGGER change_connect_on_update_staff;
