@@ -15,7 +15,43 @@ CONN NV107/NV107
 SELECT * FROM ADMIN.TB_HOCPHAN;
 --xem nhat ky audit
 SELECT * FROM DBA_AUDIT_TRAIL WHERE obj_name = 'TB_HOCPHAN';
-/
+
+
+--su dung standard audit ghi nhat ky insert, delete cua moi user tren bang tb_nhansu
+AUDIT INSERT, DELETE, UPDATE ON ADMIN.TB_SINHVIEN BY ACCESS;
+--thuc hien cau lenh update bang nhieu user khac nhau
+CONN NV091/NV091
+UPDATE ADMIN.TB_SINHVIEN
+SET DT = '0392748534'
+WHERE MASV = 'SV120221';
+--xem nhat ky audit
+SELECT * FROM DBA_AUDIT_TRAIL WHERE obj_name = 'TB_SINHVIEN';
+
+
+--su dung standard audit ghi nhat ky insert, delete cua moi user tren view UV_TKXEMPHANCONG
+AUDIT INSERT, DELETE, UPDATE ON ADMIN.UV_TKXEMPHANCONG BY ACCESS;
+--thuc hien cau lenh update bang nhieu user khac nhau
+CONN NV107/NV107
+UPDATE ADMIN.UV_TKXEMPHANCONG
+SET MAGV = 'NV053'
+WHERE MAHP = 'HP08'
+AND HK = '1';
+--xem nhat ky audit
+SELECT * FROM DBA_AUDIT_TRAIL WHERE obj_name = 'UV_TKXEMPHANCONG';
+
+
+--su dung standard audit ghi nhat ky insert, delete cua moi user tren procedure USP_CHINHSODT
+AUDIT EXECUTE ON ADMIN.USP_CHINHSODT BY ACCESS;
+--thuc hien cau lenh update bang nhieu user khac nhau
+CONN NV011/NV011
+BEGIN
+    admin.USP_CHINHSODT('0393456932');
+END;
+
+--xem nhat ky audit
+SELECT * FROM DBA_AUDIT_TRAIL WHERE obj_name = 'USP_CHINHSODT';
+
+
 
 CREATE OR REPLACE FUNCTION CHECK_USER RETURN NUMBER
 AS
@@ -76,7 +112,7 @@ EXCEPTION
         NULL;
 END;
 /
---su dung fine-grained audit ghi nhat ky ??c phu cap nguoi khac tren bang TB_NHANSU
+--su dung fine-grained audit ghi nhat ky doc phu cap nguoi khac tren bang TB_NHANSU
 BEGIN
   DBMS_FGA.ADD_POLICY(
     object_schema   => 'ADMIN',
@@ -95,3 +131,4 @@ SELECT * FROM ADMIN.TB_NHANSU WHERE MANV = 'NV053';
 /
 
 SELECT * FROM DBA_FGA_AUDIT_TRAIL;
+
