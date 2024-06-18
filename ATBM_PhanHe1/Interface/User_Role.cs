@@ -145,5 +145,13 @@ namespace ATBM_PhanHe1.Interface
                 SelectedDeleteName = name;
             }
         }
+
+        private void btn_xnk_Click(object sender, EventArgs e)
+        {
+            Interface.Audit audit = new Interface.Audit();
+            this.Hide();
+            audit.ShowDialog();
+            this.Show();
+        }
     }
 }
