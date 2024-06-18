@@ -30,7 +30,6 @@
         {
             cbB_gender = new ComboBox();
             cbB_unit = new ComboBox();
-            cbB_role = new ComboBox();
             tb_birth = new DateTimePicker();
             btn_Update = new Button();
             btn_Back = new Button();
@@ -47,6 +46,7 @@
             lb_name = new Label();
             lb_id = new Label();
             lb_Info = new Label();
+            tb_role = new TextBox();
             SuspendLayout();
             // 
             // cbB_gender
@@ -69,17 +69,6 @@
             cbB_unit.Name = "cbB_unit";
             cbB_unit.Size = new Size(229, 36);
             cbB_unit.TabIndex = 106;
-            // 
-            // cbB_role
-            // 
-            cbB_role.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbB_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_role.FormattingEnabled = true;
-            cbB_role.Items.AddRange(new object[] { "Nhan vien co ban", "Giang vien", "Giao vu", "Truong don vi" });
-            cbB_role.Location = new Point(626, 227);
-            cbB_role.Name = "cbB_role";
-            cbB_role.Size = new Size(229, 36);
-            cbB_role.TabIndex = 105;
             // 
             // tb_birth
             // 
@@ -253,15 +242,25 @@
             lb_Info.TabIndex = 89;
             lb_Info.Text = "Cập nhật nhân sự";
             // 
+            // tb_role
+            // 
+            tb_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_role.Location = new Point(626, 227);
+            tb_role.Name = "tb_role";
+            tb_role.ReadOnly = true;
+            tb_role.Size = new Size(229, 34);
+            tb_role.TabIndex = 108;
+            tb_role.TabStop = false;
+            // 
             // Update_Personnel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(895, 425);
+            Controls.Add(tb_role);
             Controls.Add(cbB_gender);
             Controls.Add(cbB_unit);
-            Controls.Add(cbB_role);
             Controls.Add(tb_birth);
             Controls.Add(btn_Update);
             Controls.Add(btn_Back);
@@ -290,7 +289,6 @@
 
         private ComboBox cbB_gender;
         private ComboBox cbB_unit;
-        private ComboBox cbB_role;
         private DateTimePicker tb_birth;
         private Button btn_Update;
         private Button btn_Back;
@@ -307,5 +305,6 @@
         private Label lb_name;
         private Label lb_id;
         private Label lb_Info;
+        private TextBox tb_role;
     }
 }
