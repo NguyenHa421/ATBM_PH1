@@ -1,5 +1,7 @@
 ﻿using ATBM_PhanHe1.DAO;
+using ATBM_PhanHe1.DTO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,18 +13,40 @@ using System.Windows.Forms;
 
 namespace ATBM_PhanHe1.Interface
 {
-    public partial class Homepage : Form
+    public partial class Audit : Form
     {
         BindingSource userList = new BindingSource();
-        public Homepage()
+        BindingSource tableList = new BindingSource();
+        public Audit()
         {
             InitializeComponent();
             Load();
+            LoadcbB();
         }
         private void Load()
         {
             dtGrid_user.DataSource = userList;
-            userList.DataSource = UserDAO.Instance.GetUserList();
+            userList.DataSource = AuditDAO.Instance.GetAuditList();
+        }
+
+        private void LoadcbB()
+        {
+            //cbB_table.Items.Add("Chọn bảng");
+            //cbB_table.SelectedIndex = 0;
+            cbB_table.DataSource = tableList;
+            tableList.DataSource = Table_ColumnDAO.Instance.GetListTable();
+            cbB_table.DisplayMember = "TABLE_NAME";
+
+        }
+
+        private void pic_refresh_U_Click(object sender, EventArgs e)
+        {
+            userList.DataSource = AuditDAO.Instance.GetAuditList();
+        }
+
+        private void btn_search_user_Click(object sender, EventArgs e)
+        {
+            userList.DataSource = AuditDAO.Instance.SearchAudit(tb_search_user.Text, cbB_table.Text);
         }
         private void CloseAllFormsExceptFirst()
         {
@@ -32,6 +56,14 @@ namespace ATBM_PhanHe1.Interface
                 forms[i].Close();
             }
         }
+        private void btn_dstk_Click(object sender, EventArgs e)
+        {
+            Interface.Homepage hompage = new Interface.Homepage();
+            this.Hide();
+            hompage.ShowDialog();
+            this.Show();
+        }
+
         private void btn_qlur_Click(object sender, EventArgs e)
         {
             Interface.User_Role user_Role = new Interface.User_Role();
@@ -47,27 +79,10 @@ namespace ATBM_PhanHe1.Interface
             permission.ShowDialog();
             this.Show();
         }
+
         private void pic_logout_Click(object sender, EventArgs e)
         {
             CloseAllFormsExceptFirst();
-        }
-
-        private void btn_search_user_Click(object sender, EventArgs e)
-        {
-            userList.DataSource = UserDAO.Instance.SearchUser(tb_search_user.Text);
-        }
-
-        private void pic_refresh_U_Click(object sender, EventArgs e)
-        {
-            userList.DataSource = UserDAO.Instance.GetUserList();
-        }
-
-        private void btn_xnk_Click(object sender, EventArgs e)
-        {
-            Interface.Audit audit = new Interface.Audit();
-            this.Hide();
-            audit.ShowDialog();
-            this.Show();
         }
     }
 }
