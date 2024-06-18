@@ -35,7 +35,7 @@ namespace ATBM_PhanHe1.PhanHe2
             cbB_gender.Text = PersonelDAO.Instance.HeadGetGenderStaff(tb_id.Text);
             tb_phone.Text = PersonelDAO.Instance.HeadGetPhoneStaff(tb_id.Text);
             tb_allowance.Text = PersonelDAO.Instance.HeadGetAllowanceStaff(tb_id.Text);
-            cbB_role.Text = PersonelDAO.Instance.HeadGetRoleStaff(tb_id.Text);
+            tb_role.Text = PersonelDAO.Instance.HeadGetRoleStaff(tb_id.Text);
             cbB_unit.Text = PersonelDAO.Instance.HeadGetUnitStaff(tb_id.Text);
         }
         private void btn_Back_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace ATBM_PhanHe1.PhanHe2
             DateTime birth = tb_birth.Value;
             string phone = tb_phone.Text;
             int allowance = int.Parse(tb_allowance.Text);
-            string role = cbB_role.Text;
+            string role = tb_role.Text;
             string unit = UnitDAO.Instance.GetIDUnit(cbB_unit.Text);
             using (Confirm_Update confirm = new Confirm_Update())
             {
