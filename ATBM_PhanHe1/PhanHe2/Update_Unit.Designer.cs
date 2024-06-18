@@ -44,7 +44,7 @@
             cbB_unitHead.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_unitHead.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_unitHead.FormattingEnabled = true;
-            cbB_unitHead.Location = new Point(404, 255);
+            cbB_unitHead.Location = new Point(387, 255);
             cbB_unitHead.Name = "cbB_unitHead";
             cbB_unitHead.Size = new Size(229, 36);
             cbB_unitHead.TabIndex = 95;
@@ -52,7 +52,7 @@
             // tb_name
             // 
             tb_name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_name.Location = new Point(404, 188);
+            tb_name.Location = new Point(387, 188);
             tb_name.Name = "tb_name";
             tb_name.Size = new Size(229, 34);
             tb_name.TabIndex = 92;
@@ -61,7 +61,7 @@
             // tb_id
             // 
             tb_id.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_id.Location = new Point(404, 119);
+            tb_id.Location = new Point(387, 119);
             tb_id.Name = "tb_id";
             tb_id.Size = new Size(229, 34);
             tb_id.TabIndex = 91;
@@ -71,7 +71,7 @@
             // 
             lb_unithead.AutoSize = true;
             lb_unithead.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_unithead.Location = new Point(261, 258);
+            lb_unithead.Location = new Point(244, 258);
             lb_unithead.Name = "lb_unithead";
             lb_unithead.Size = new Size(134, 28);
             lb_unithead.TabIndex = 90;
@@ -81,7 +81,7 @@
             // 
             lb_name.AutoSize = true;
             lb_name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_name.Location = new Point(261, 191);
+            lb_name.Location = new Point(244, 191);
             lb_name.Name = "lb_name";
             lb_name.Size = new Size(101, 28);
             lb_name.TabIndex = 89;
@@ -91,7 +91,7 @@
             // 
             lb_id.AutoSize = true;
             lb_id.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_id.Location = new Point(261, 122);
+            lb_id.Location = new Point(244, 122);
             lb_id.Name = "lb_id";
             lb_id.Size = new Size(100, 28);
             lb_id.TabIndex = 88;
@@ -101,7 +101,7 @@
             // 
             lb_Info.AutoSize = true;
             lb_Info.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_Info.Location = new Point(384, 54);
+            lb_Info.Location = new Point(344, 37);
             lb_Info.Name = "lb_Info";
             lb_Info.Size = new Size(177, 31);
             lb_Info.TabIndex = 87;
@@ -115,7 +115,7 @@
             btn_Update.FlatStyle = FlatStyle.Flat;
             btn_Update.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_Update.ForeColor = SystemColors.Window;
-            btn_Update.Location = new Point(482, 330);
+            btn_Update.Location = new Point(460, 341);
             btn_Update.Name = "btn_Update";
             btn_Update.Size = new Size(91, 38);
             btn_Update.TabIndex = 97;
@@ -131,7 +131,7 @@
             btn_Back.FlatStyle = FlatStyle.Flat;
             btn_Back.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btn_Back.ForeColor = SystemColors.Window;
-            btn_Back.Location = new Point(361, 330);
+            btn_Back.Location = new Point(339, 341);
             btn_Back.Name = "btn_Back";
             btn_Back.Size = new Size(91, 38);
             btn_Back.TabIndex = 96;
