@@ -19,21 +19,22 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             InitializeComponent();
             tb_id.Text = UnitID;
-            Load_Info();
             Load();
+            Load_Info();
         }
         private void Load_Info()
         {
-            tb_name.Text = UserDAO.Instance.GetNameStudent(tb_id.Text);
-            cbB_unitHead.Text = StudentDAO.Instance.GetProgramStudent(tb_id.Text);
+            tb_name.Text = UnitDAO.Instance.GetNameUnitByID(tb_id.Text);
+            tb_nameheadUnit.Text = UnitDAO.Instance.GetNameHeadByID(tb_id.Text);
+            cbB_unitHead.Text = UnitDAO.Instance.GetIDHeadByID(tb_id.Text);
         }
         private void Load()
         {
-            //cbB_unitHead.DataSource = headList;
-            //headList.DataSource = ProgramDAO.Instance.GetListProgram();
-            //cbB_unitHead.DisplayMember = "TENCT";
+            cbB_unitHead.DataSource = headList;
+            headList.DataSource = PersonelDAO.Instance.GetListBecomeHead();
+            cbB_unitHead.DisplayMember = "MANV";
         }
-            private void btn_Back_Click(object sender, EventArgs e)
+        private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -43,15 +44,28 @@ namespace ATBM_PhanHe1.PhanHe2
             string id = tb_id.Text;
             string name = tb_name.Text;
             string unitHead = cbB_unitHead.Text;
-            try
+            using (Confirm_Update confirm = new Confirm_Update())
             {
-                PhanHe2.Success success = new PhanHe2.Success();
-                success.ShowDialog();
+                if (confirm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        UnitDAO.Instance.Update_Unit(id, name, unitHead);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Không thể cập nhật!", "Lỗi");
+                        return;
+                    }
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
+                }
             }
-            catch (OracleException oe)
-            {
-                MessageBox.Show(oe.Message, "Lỗi");
-            }
+        }
+
+        private void cbB_unitHead_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tb_nameheadUnit.Text = PersonelDAO.Instance.GetNameHeadByIDHead(cbB_unitHead.Text);
         }
     }
 }

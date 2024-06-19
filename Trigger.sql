@@ -61,11 +61,13 @@ AFTER INSERT ON ADMIN.TB_DONVI
 FOR EACH ROW
 DECLARE 
     v_user NVARCHAR2(10);
+    v_unit NVARCHAR2(10);
     pragma autonomous_transaction;
 BEGIN 
     EXECUTE IMMEDIATE 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE';
 -- Dynamically construct password based on student ID (assuming unique)
     v_user := :NEW.TRGDV;
+    v_unit := :NEW.MADV;
     EXECUTE IMMEDIATE 'REVOKE RL_NHANVIENCOBAN FROM ' || v_user;
     EXECUTE IMMEDIATE 'REVOKE RL_GIANGVIEN FROM ' || v_user;
     EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.UV_NVXEMTHONGTIN TO ' || v_user;
@@ -83,6 +85,10 @@ BEGIN
     EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.TB_CHUONGTRINH TO ' || v_user;
     EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.TB_NGANH TO ' || v_user;
     EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.UV_XEMGIANGVIEN TO ' || v_user;
+    UPDATE ADMIN.UV_XEMGIANGVIEN SET VAITRO = 'Truong don vi' WHERE MANV = v_user;
+    COMMIT;
+    UPDATE ADMIN.UV_XEMGIANGVIEN SET MADV = v_unit WHERE MANV = v_user;
+    COMMIT;
 END;
 /
 --Doi quyen cho nhan vien khi truong khoa cap nhat
@@ -92,12 +98,14 @@ FOR EACH ROW
 DECLARE 
     v_user NVARCHAR2(10);
     v_olduser NVARCHAR2(10);
+    v_unit NVARCHAR2(10);
     pragma autonomous_transaction;
 BEGIN
     EXECUTE IMMEDIATE 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE';
     -- Dynamically construct password based on student ID (assuming unique)
     v_user := :NEW.TRGDV;
     v_olduser := :OLD.TRGDV;
+    v_unit := :NEW.MADV;
     IF v_user != v_olduser THEN
         EXECUTE IMMEDIATE 'REVOKE RL_NHANVIENCOBAN FROM ' || v_user;
         EXECUTE IMMEDIATE 'REVOKE RL_GIANGVIEN FROM ' || v_user;
@@ -136,6 +144,12 @@ BEGIN
         
         EXECUTE IMMEDIATE 'GRANT RL_NHANVIENCOBAN TO ' || v_olduser;
         EXECUTE IMMEDIATE 'GRANT RL_GIANGVIEN TO ' || v_olduser;
+        UPDATE ADMIN.UV_XEMGIANGVIEN SET VAITRO = 'Giang vien' WHERE MANV = v_olduser;
+        COMMIT;
+        UPDATE ADMIN.UV_XEMGIANGVIEN SET VAITRO = 'Truong don vi' WHERE MANV = v_user;
+        COMMIT;
+        UPDATE ADMIN.UV_XEMGIANGVIEN SET MADV = v_unit WHERE MANV = v_user;
+        COMMIT;
     END IF;
 END;
 /

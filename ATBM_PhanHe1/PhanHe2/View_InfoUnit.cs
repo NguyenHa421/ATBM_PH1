@@ -77,7 +77,12 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            if (clickedUnit != "")
+            if (clickedUnit == "DV01")
+            {
+                MessageBox.Show("Không có thẩm quyền cập nhật đơn vị văn phòng khoa!", "Lỗi");
+                return;
+            }
+            if (clickedUnit != "" && clickedUnit != "DV01")
             {
                 string Unitid = clickedUnit;
                 clickedUnit = "";

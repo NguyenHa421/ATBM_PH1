@@ -195,6 +195,15 @@ namespace ATBM_PhanHe1.DAO
             object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
             return result.ToString();
         }
-       
+        public DataTable GetListBecomeHead()
+        {
+            return DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM ADMIN.UV_XEMGIANGVIEN"));
+        }
+        public string GetNameHeadByIDHead(string id_head)
+        {
+            string query = $"SELECT HOTEN FROM ADMIN.UV_XEMGIANGVIEN WHERE MANV = ('{id_head}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id_head });
+            return result.ToString();
+        }
     }
 }

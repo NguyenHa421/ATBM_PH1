@@ -172,7 +172,7 @@ GRANT SELECT, INSERT, DELETE ON ADMIN.TB_DANGKY TO RL_GIAOVU;
 --Tao view cho phep xem ma va ho ten cua nhan su (phuc vu cac quyen cua giao vu)
 CREATE OR REPLACE VIEW UV_XEMGIANGVIEN
 AS
-SELECT MANV, HOTEN FROM ADMIN.TB_NHANSU WHERE VAITRO = 'Giang vien';
+SELECT MANV, HOTEN, VAITRO, MADV FROM ADMIN.TB_NHANSU WHERE VAITRO = 'Giang vien' OR VAITRO = 'Truong don vi';
 /
 --Cap view cho giao vu va truong don vi
 GRANT SELECT ON UV_XEMGIANGVIEN TO RL_GIAOVU;

@@ -65,6 +65,36 @@ namespace ATBM_PhanHe1.DAO
             object result = DataProvider.Instance.ExecuteScalar(query, new object[] { name_unit });
             return result.ToString();
         }
+        public string GetNameUnitByID(string id_unit)
+        {
+            string query = $"SELECT TENDV FROM ADMIN.TB_DONVI WHERE MADV = ('{id_unit}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id_unit });
+            return result.ToString();
+        }
+        public string GetNameHeadByID(string id_unit)
+        {
+            string query = $"SELECT n.HOTEN FROM ADMIN.TB_DONVI tb JOIN ADMIN.UV_XEMGIANGVIEN n ON tb.TRGDV = n.MANV WHERE tb.MADV = ('{id_unit}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id_unit });
+            return result.ToString();
+        }
+        public string GetIDHeadByID(string id_unit)
+        {
+            string query = $"SELECT n.MANV FROM ADMIN.TB_DONVI tb JOIN ADMIN.UV_XEMGIANGVIEN n ON tb.TRGDV = n.MANV WHERE tb.MADV = ('{id_unit}')";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id_unit });
+            return result.ToString();
+        }
+        public bool Update_Unit(string id, string name, string head)
+        {
+            string query = $"UPDATE ADMIN.TB_DONVI SET TENDV = ('{name}'), TRGDV = ('{head}') WHERE MADV = ('{id}')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool Add_Unit(string id, string name, string head)
+        {
+            string query = $"INSERT INTO ADMIN.TB_DONVI (MADV, TENDV, TRGDV) VALUES ('{id}', '{name}', '{head}')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
    
 }
