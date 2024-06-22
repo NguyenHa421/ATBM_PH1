@@ -1,5 +1,6 @@
 ﻿using ATBM_PhanHe1.DAO;
 using ATBM_PhanHe1.DTO;
+using System.Linq;
 
 namespace ATBM_PhanHe1.PhanHe2
 {
@@ -67,7 +68,12 @@ namespace ATBM_PhanHe1.PhanHe2
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cập nhật không thành công!", "Lỗi");
+                if (e.ToString().Contains("FK_ KHMO_PHANCONG"))
+                {
+                    MessageBox.Show("Kế hoạch môn học này đang được phân công, không thể cập nhật!", "Lỗi");
+                    return;
+                }
+                MessageBox.Show("Cập nhật không thành công", "Lỗi");
                 return;
             }
             PhanHe2.Success success = new PhanHe2.Success();
