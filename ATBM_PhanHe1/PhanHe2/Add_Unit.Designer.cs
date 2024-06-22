@@ -83,7 +83,7 @@
             btn_Update.Name = "btn_Update";
             btn_Update.Size = new Size(91, 38);
             btn_Update.TabIndex = 108;
-            btn_Update.Text = "Cập nhật";
+            btn_Update.Text = "Tạo mới";
             btn_Update.UseVisualStyleBackColor = false;
             btn_Update.Click += btn_Update_Click;
             // 
