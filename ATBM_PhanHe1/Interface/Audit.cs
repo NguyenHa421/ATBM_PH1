@@ -16,14 +16,13 @@ namespace ATBM_PhanHe1.Interface
     public partial class Audit : Form
     {
         BindingSource userList = new BindingSource();
-        BindingSource tableList = new BindingSource();
         public Audit()
         {
             InitializeComponent();
-            Load();
+            LoadGrid();
             LoadcbB();
         }
-        private void Load()
+        private void LoadGrid()
         {
             dtGrid_user.DataSource = userList;
             userList.DataSource = AuditDAO.Instance.GetAuditList();
@@ -33,9 +32,13 @@ namespace ATBM_PhanHe1.Interface
         {
             //cbB_table.Items.Add("Chọn bảng");
             //cbB_table.SelectedIndex = 0;
-            cbB_table.DataSource = tableList;
-            tableList.DataSource = Table_ColumnDAO.Instance.GetListTable();
-            cbB_table.DisplayMember = "TABLE_NAME";
+            cbB_table.Items.Add("Null");
+            DataTable tables = Table_ColumnDAO.Instance.GetListTable();
+            foreach (DataRow table in tables.Rows)
+            {
+                cbB_table.Items.Add(table["TABLE_NAME"].ToString());
+            }
+            cbB_table.SelectedIndex = 0;
 
         }
 
