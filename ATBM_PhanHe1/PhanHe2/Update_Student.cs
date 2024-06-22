@@ -58,11 +58,16 @@ namespace ATBM_PhanHe1.PhanHe2
             string gender = cbB_gender.Text;
             DateTime birth = tb_birth.Value;
             string addr = tb_address.Text;
-            string phone = tb_phone.Text;
             string program = ProgramDAO.Instance.GetIDProgram(cbB_program.Text);
             string major = MajorDAO.Instance.GetIDMajor(cbB_major.Text);
             int credit = int.Parse(tb_credit.Text);
             float GPA = float.Parse(tb_GPA.Text);
+
+            if (tb_phone.Text.Length != 10 || !tb_phone.Text.StartsWith("0"))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi");
+                return;
+            }
 
             using (Confirm_Update confirm = new Confirm_Update())
             {
@@ -70,7 +75,7 @@ namespace ATBM_PhanHe1.PhanHe2
                 {
                     try
                     {
-                        StudentDAO.Instance.Update_Student(id, name, gender, birth.Date, addr, phone, program, major, credit, GPA);
+                        StudentDAO.Instance.Update_Student(id, name, gender, birth.Date, addr, tb_phone.Text, program, major, credit, GPA);
                     }
                     catch (Exception ex)
                     {

@@ -35,6 +35,11 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             string newphone = tb_newphone.Text;
             string phone = tb_phone.Text;
+            if (tb_newphone.Text.Length != 10 || !tb_newphone.Text.StartsWith("0"))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi");
+                return;
+            }
             if (newphone == "")
             {
                 newphone = phone;

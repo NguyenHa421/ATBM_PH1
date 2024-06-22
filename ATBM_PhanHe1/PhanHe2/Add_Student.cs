@@ -55,14 +55,20 @@ namespace ATBM_PhanHe1.PhanHe2
             string gender = cbB_gender.Text;
             DateTime birth = tb_birth.Value;
             string addr = tb_addr.Text;
-            string phone = tb_phone.Text;
             string program = ProgramDAO.Instance.GetIDProgram(cbB_program.Text);
             string major = MajorDAO.Instance.GetIDMajor(cbB_major.Text);
             int credit = 0;
             float GPA = 0;
+
+            if (tb_phone.Text.Length != 10 || !tb_phone.Text.StartsWith("0"))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi");
+                return;
+            }
+               
             try
             {
-                StudentDAO.Instance.Add_Student(id, name, gender, birth.Date, addr, phone, program, major, credit, GPA);
+                StudentDAO.Instance.Add_Student(id, name, gender, birth.Date, addr, tb_phone.Text, program, major, credit, GPA);
                 PhanHe2.Success success = new PhanHe2.Success();
                 success.ShowDialog();
             }

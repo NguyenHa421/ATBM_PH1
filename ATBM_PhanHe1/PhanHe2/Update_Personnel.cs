@@ -53,6 +53,11 @@ namespace ATBM_PhanHe1.PhanHe2
             int allowance = int.Parse(tb_allowance.Text);
             string role = tb_role.Text;
             string unit = UnitDAO.Instance.GetIDUnit(cbB_unit.Text);
+            if (tb_phone.Text.Length != 10 || !tb_phone.Text.StartsWith("0"))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi");
+                return;
+            }
             using (Confirm_Update confirm = new Confirm_Update())
             {
                 if (confirm.ShowDialog() == DialogResult.OK)
