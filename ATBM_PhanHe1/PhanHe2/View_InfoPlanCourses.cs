@@ -15,6 +15,8 @@ namespace ATBM_PhanHe1.PhanHe2
     public partial class View_InfoPlanCourses : Form
     {
         BindingSource planCoursesList = new BindingSource();
+        int clickedRow = -1;
+        List<PlanCoursesDTO> planCourses = PlanCoursesDAO.Instance.GetPlanCoursesList();
         public View_InfoPlanCourses()
         {
             InitializeComponent();
@@ -97,7 +99,9 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new PhanHe2.Update_PlanCourses());
+            if (clickedRow < 0)
+                return;
+            OpenChildForm(new PhanHe2.Update_PlanCourses(planCourses[clickedRow].courseID, planCourses[clickedRow].semester, planCourses[clickedRow].year, planCourses[clickedRow].programID));
         }
 
         private void pic_refresh_U_Click(object sender, EventArgs e)
@@ -124,6 +128,13 @@ namespace ATBM_PhanHe1.PhanHe2
             }
             string programName = cbB_program.SelectedItem.ToString();
             planCoursesList.DataSource = PlanCoursesDAO.Instance.SearchPlanCourses(semester, year, programName);
+        }
+        private void dtGrid_planCourses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                clickedRow = e.RowIndex;
+            }
         }
     }
 }

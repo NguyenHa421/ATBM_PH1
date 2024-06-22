@@ -1,14 +1,5 @@
 ﻿using ATBM_PhanHe1.DAO;
 using ATBM_PhanHe1.DTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ATBM_PhanHe1.PhanHe2
 {
@@ -16,10 +7,11 @@ namespace ATBM_PhanHe1.PhanHe2
     {
         List<CourseDTO> listC = CourseDAO.Instance.GetCourseList();
         List<ProgramDTO> listP = ProgramDAO.Instance.GetProgramList();
-        public Update_PlanCourses()
+        public Update_PlanCourses(string courseID, int semester, int year, string programID)
         {
             InitializeComponent();
             LoadComboBox();
+            Load(courseID, semester, year, programID);
             cbB_idcourses.SelectedIndexChanged += cbB_idcourses_SelectedIndexChanged;
             cbB_nameCourses.SelectedIndexChanged += cbB_nameCourses_SelectedIndexChanged;
             cbB_idprogram.SelectedIndexChanged += cbB_idprogram_SelectedIndexChanged;
@@ -43,6 +35,24 @@ namespace ATBM_PhanHe1.PhanHe2
                 cbB_idprogram.Items.Add(listP[i].programID);
                 cbB_nameprogram.Items.Add(listP[i].programName);
             }
+        }
+        private void Load(string courseID, int semester, int year, string programID)
+        {
+            CourseDTO course = CourseDAO.Instance.GetCourseByID(courseID);
+            ProgramDTO program = ProgramDAO.Instance.GetProgramByID(programID);
+            int idx = -1;
+            idx = cbB_idcourses.FindString(courseID);
+            cbB_idcourses.SelectedIndex = idx;
+            idx = cbB_nameCourses.FindString(course.courseName);
+            cbB_nameCourses.SelectedIndex = idx;
+            idx = cbB_semester.FindString(semester.ToString());
+            cbB_semester.SelectedIndex = idx;
+            idx = cbB_year.FindString(year.ToString());
+            cbB_year.SelectedIndex = idx;
+            idx = cbB_idprogram.FindString(programID);
+            cbB_idprogram.SelectedIndex = idx;
+            idx = cbB_nameprogram.FindString(program.programName);
+            cbB_nameprogram.SelectedIndex = idx;
         }
         private void btn_Back_Click(object sender, EventArgs e)
         {
@@ -73,7 +83,7 @@ namespace ATBM_PhanHe1.PhanHe2
                 {
                     cbB_idcourses.Text = selectedCourse.courseID;
                 }
-            }  
+            }
         }
         private void cbB_idcourses_SelectedIndexChanged(object sender, EventArgs e)
         {
