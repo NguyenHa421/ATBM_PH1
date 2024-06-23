@@ -203,7 +203,7 @@ namespace ATBM_PhanHe1.DAO
         {
             string query = $"SELECT HOTEN FROM ADMIN.UV_XEMGIANGVIEN WHERE MANV = ('{id_head}')";
             object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id_head });
-            return result.ToString();
+            return result != null ? result.ToString() : null;
         }
     }
 }

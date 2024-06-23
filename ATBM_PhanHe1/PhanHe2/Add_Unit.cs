@@ -18,36 +18,19 @@ namespace ATBM_PhanHe1.PhanHe2
         public Add_Unit()
         {
             InitializeComponent();
-            Load();
         }
-        private void Load()
-        {
-            cbB_unitHead.DataSource = headList;
-            headList.DataSource = PersonelDAO.Instance.GetListBecomeHead();
-            cbB_unitHead.DisplayMember = "MANV";
-        }
-        private void Add_Unit_Load(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void cbB_unitHead_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            tb_nameheadUnit.Text = PersonelDAO.Instance.GetNameHeadByIDHead(cbB_unitHead.Text);
-        }
-
+       
         private void btn_Update_Click(object sender, EventArgs e)
         {
             string id = tb_id.Text;
             string name = tb_name.Text;
-            string unitHead = cbB_unitHead.Text;
             try
             {
-                UnitDAO.Instance.Add_Unit(id, name, unitHead);
+                UnitDAO.Instance.Add_Unit(id, name);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không thể thêm!", "Lỗi");
+                MessageBox.Show(ex.Message, "Lỗi");
                 return;
             }
             PhanHe2.Success success = new PhanHe2.Success();

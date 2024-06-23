@@ -55,42 +55,6 @@ BEGIN
     EXECUTE IMMEDIATE 'DROP USER ' || v_user || ' CASCADE';
 END;
 /
---Cap quyen cho giang vien duoc de bat len lam truong don vi moi khi tao don vi moi
-CREATE OR REPLACE TRIGGER grant_connect_on_insert_unit
-AFTER INSERT ON ADMIN.TB_DONVI
-FOR EACH ROW
-DECLARE 
-    v_user NVARCHAR2(10);
-    v_unit NVARCHAR2(10);
-    pragma autonomous_transaction;
-BEGIN 
-    EXECUTE IMMEDIATE 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE';
--- Dynamically construct password based on student ID (assuming unique)
-    v_user := :NEW.TRGDV;
-    v_unit := :NEW.MADV;
-    EXECUTE IMMEDIATE 'REVOKE RL_NHANVIENCOBAN FROM ' || v_user;
-    EXECUTE IMMEDIATE 'REVOKE RL_GIANGVIEN FROM ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.UV_NVXEMTHONGTIN TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT EXECUTE ON ADMIN.USP_CHINHSODT TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.TB_SINHVIEN TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.TB_DONVI TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.TB_HOCPHAN TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.TB_KHMO TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.UV_GVXEMPHANCONG TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.UV_GVXEMDANGKY TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT EXECUTE ON ADMIN.USP_CAPNHATDIEMSV TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, DELETE, UPDATE ON ADMIN.UV_TDVXEMPHANCONG TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.UV_TDVXEMPHANCONG2 TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.UV_XEMDANGKY TO ' ||v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.TB_CHUONGTRINH TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.TB_NGANH TO ' || v_user;
-    EXECUTE IMMEDIATE 'GRANT SELECT ON ADMIN.UV_XEMGIANGVIEN TO ' || v_user;
-    UPDATE ADMIN.UV_XEMGIANGVIEN SET VAITRO = 'Truong don vi' WHERE MANV = v_user;
-    COMMIT;
-    UPDATE ADMIN.UV_XEMGIANGVIEN SET MADV = v_unit WHERE MANV = v_user;
-    COMMIT;
-END;
-/
 --Khi cap nhat truong don vi cua mot don vi, truong don vi cu se tro thanh giang vien, giang vien duoc 
 --de bat len lam truong don vi, cap quyen va thu hoi quyen cho 2 user tren
 CREATE OR REPLACE TRIGGER grant_TDV_on_update_unit
