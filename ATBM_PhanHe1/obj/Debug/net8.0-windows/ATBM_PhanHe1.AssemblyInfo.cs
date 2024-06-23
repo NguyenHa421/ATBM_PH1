@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ATBM_PhanHe1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48b235cfb6eef9a0e4e5300e3a504b616fbf80be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3cd0d8f567ebfce424c3831973e9da43355bcb1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ATBM_PhanHe1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ATBM_PhanHe1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
