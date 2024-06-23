@@ -44,15 +44,22 @@ namespace ATBM_PhanHe1.PhanHe2
             {
                 newphone = phone;
             }
-            try
+            using (Confirm_Update confirm = new Confirm_Update())
             {
-                PersonelDAO.Instance.Update_SelfStaff(newphone);
-                PhanHe2.Success success = new PhanHe2.Success();
-                success.ShowDialog();
-            }
-            catch (OracleException oe)
-            {
-                MessageBox.Show(oe.Message, "Lỗi");
+                if (confirm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        PersonelDAO.Instance.Update_SelfStaff(newphone);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Cập nhật không thành công!", "Lỗi");
+                        return;
+                    }
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
+                }
             }
         }
 
