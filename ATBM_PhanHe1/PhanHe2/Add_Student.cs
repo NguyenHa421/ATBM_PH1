@@ -62,7 +62,7 @@ namespace ATBM_PhanHe1.PhanHe2
 
             if (tb_phone.Text.Length != 10 || !tb_phone.Text.StartsWith("0"))
             {
-                MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi");
+                MessageBox.Show("Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0!", "Lỗi");
                 return;
             }
                

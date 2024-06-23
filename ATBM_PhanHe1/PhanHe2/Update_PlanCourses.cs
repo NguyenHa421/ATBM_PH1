@@ -13,10 +13,6 @@ namespace ATBM_PhanHe1.PhanHe2
             InitializeComponent();
             LoadComboBox();
             Load(courseID, semester, year, programID);
-            cbB_idcourses.SelectedIndexChanged += cbB_idcourses_SelectedIndexChanged;
-            cbB_nameCourses.SelectedIndexChanged += cbB_nameCourses_SelectedIndexChanged;
-            cbB_idprogram.SelectedIndexChanged += cbB_idprogram_SelectedIndexChanged;
-            cbB_nameprogram.SelectedIndexChanged += cbB_nameprogram_SelectedIndexChanged;
         }
         private void LoadComboBox()
         {
@@ -41,19 +37,12 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             CourseDTO course = CourseDAO.Instance.GetCourseByID(courseID);
             ProgramDTO program = ProgramDAO.Instance.GetProgramByID(programID);
-            int idx = -1;
-            idx = cbB_idcourses.FindString(courseID);
-            cbB_idcourses.SelectedIndex = idx;
-            idx = cbB_nameCourses.FindString(course.courseName);
-            cbB_nameCourses.SelectedIndex = idx;
-            idx = cbB_semester.FindString(semester.ToString());
-            cbB_semester.SelectedIndex = idx;
-            idx = cbB_year.FindString(year.ToString());
-            cbB_year.SelectedIndex = idx;
-            idx = cbB_idprogram.FindString(programID);
-            cbB_idprogram.SelectedIndex = idx;
-            idx = cbB_nameprogram.FindString(program.programName);
-            cbB_nameprogram.SelectedIndex = idx;
+            cbB_idcourses.Text = courseID;
+            cbB_nameCourses.Text = course.courseName;
+            cbB_semester.Text = semester.ToString();
+            cbB_year.Text = year.ToString();
+            cbB_idprogram.Text = programID;
+            cbB_nameprogram.Text = program.programName;
         }
         private void btn_Back_Click(object sender, EventArgs e)
         {

@@ -16,7 +16,7 @@ namespace ATBM_PhanHe1.PhanHe2
     {
         BindingSource planCoursesList = new BindingSource();
         int clickedRow = 0;
-        List<PlanCoursesDTO> planCourses = PlanCoursesDAO.Instance.GetPlanCoursesList();
+        List<PlanCoursesDTO> planCourses;
         public View_InfoPlanCourses()
         {
             InitializeComponent();
@@ -69,6 +69,7 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             dtGrid_planCourses.DataSource = planCoursesList;
             planCoursesList.DataSource = PlanCoursesDAO.Instance.GetPlanCoursesList();
+            planCourses = PlanCoursesDAO.Instance.GetPlanCoursesList(); 
         }
 
         private Form currentFormChild;
@@ -99,14 +100,16 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            if (clickedRow < 0)
-                return;
-            OpenChildForm(new PhanHe2.Update_PlanCourses(planCourses[clickedRow].courseID, planCourses[clickedRow].semester, planCourses[clickedRow].year, planCourses[clickedRow].programID));
+            if (clickedRow >= 0)
+            {
+                OpenChildForm(new PhanHe2.Update_PlanCourses(planCourses[clickedRow].courseID, planCourses[clickedRow].semester, planCourses[clickedRow].year, planCourses[clickedRow].programID));
+            }
         }
 
         private void pic_refresh_U_Click(object sender, EventArgs e)
         {
             planCoursesList.DataSource = PlanCoursesDAO.Instance.GetPlanCoursesList();
+            planCourses = PlanCoursesDAO.Instance.GetPlanCoursesList();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -124,13 +127,15 @@ namespace ATBM_PhanHe1.PhanHe2
                 catch (Exception ex)
                 {
                     MessageBox.Show("Năm không hợp lệ!", "Lỗi");
+                    return;
                 }
             }
             string programName = cbB_program.SelectedItem.ToString();
             planCoursesList.DataSource = PlanCoursesDAO.Instance.SearchPlanCourses(semester, year, programName);
+            planCourses = PlanCoursesDAO.Instance.GetPlanCoursesList();
         }
         private void dtGrid_planCourses_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        { 
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 clickedRow = e.RowIndex;

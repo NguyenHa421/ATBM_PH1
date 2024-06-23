@@ -46,6 +46,12 @@ namespace ATBM_PhanHe1.PhanHe2
             int allowance = int.Parse(tb_allowance.Text);
             string role = cbB_role.Text;
             string unit = UnitDAO.Instance.GetIDUnit(cbB_unit.Text);
+
+            if (tb_phone.Text.Length != 10 || !tb_phone.Text.StartsWith("0"))
+            {
+                MessageBox.Show("Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0!", "Lỗi");
+                return;
+            }
             try
             {
                 PersonelDAO.Instance.Add_Staff(id, name, gender, birth, allowance, phone, role, unit);
@@ -54,7 +60,7 @@ namespace ATBM_PhanHe1.PhanHe2
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Lỗi");
+                MessageBox.Show("Không thể thêm", "Lỗi");
                 return;
             }
         }
