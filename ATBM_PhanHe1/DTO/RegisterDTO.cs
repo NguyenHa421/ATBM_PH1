@@ -19,12 +19,12 @@ namespace ATBM_PhanHe1.DTO
         public int year { get; set; }
         public string programID { get; set; }
         public string programName { get; set; } = string.Empty;
-        public int practice { get; set; }
-        public int process { get; set; }
-        public int final { get; set; }
-        public int finalfinal { get; set; }
+        public double practice { get; set; }
+        public double process { get; set; }
+        public double final { get; set; }
+        public double finalfinal { get; set; }
 
-        public RegisterDTO(string studentID, string studentName, string lecturerID, string lecturerName, string courseID, string courseName, int semester, int year, string programID, string programName, int practice, int process, int final, int finalfinal)
+        public RegisterDTO(string studentID, string studentName, string lecturerID, string lecturerName, string courseID, string courseName, int semester, int year, string programID, string programName, double practice, double process, double final, double finalfinal)
         {
             this.studentID = studentID;
             this.studentName = studentName;
@@ -53,10 +53,10 @@ namespace ATBM_PhanHe1.DTO
             this.year = Decimal.ToInt32((decimal)row["NAM"]);
             this.programID = row["MACT"].ToString();
             this.programName = row["TENCT"].ToString();
-            this.practice = Decimal.ToInt32((decimal)row["DIEMTH"]);
-            this.process = Decimal.ToInt32((decimal)row["DIEMQT"]);
-            this.final = Decimal.ToInt32((decimal)row["DIEMCK"]);
-            this.finalfinal = Decimal.ToInt32((decimal)row["DIEMTK"]);
+            this.practice = Decimal.ToDouble((decimal)row["DIEMTH"]);
+            this.process = Decimal.ToDouble((decimal)row["DIEMQT"]);
+            this.final = Decimal.ToDouble((decimal)row["DIEMCK"]);
+            this.finalfinal = Decimal.ToDouble((decimal)row["DIEMTK"]);
 
         }
     }

@@ -120,7 +120,7 @@ namespace ATBM_PhanHe1.PhanHe2
         {
             if (clickedRow >= 0)
             {
-                OpenChildForm(new PhanHe2.Update_Register(registers[clickedRow].studentID, registers[clickedRow].courseID, registers[clickedRow].semester, registers[clickedRow].year, registers[clickedRow].programID, curRole));
+                OpenChildForm(new PhanHe2.Update_Register(registers[clickedRow].studentID, registers[clickedRow].courseID, registers[clickedRow].semester, registers[clickedRow].year, registers[clickedRow].programID, curRole, registers[clickedRow].practice , registers[clickedRow].process, registers[clickedRow].final, registers[clickedRow].finalfinal ));
             }
         }
         private void bt_delete_Click(object sender, EventArgs e)

@@ -168,7 +168,7 @@ namespace ATBM_PhanHe1.DAO
             }
             return result;
         }
-        public bool UpdateRegister(string studentID , string courseID, int semester, int year, string programID, int practice, int process, int final, int finalfinal)
+        public bool UpdateRegister(string studentID , string courseID, int semester, int year, string programID, double practice, double process, double final, double finalfinal)
         {
             string query = string.Format("begin admin.USP_CAPNHATDIEMSV('{0}', '{1}', {2}, {3}, '{4}', {5}, {6}, {7}, {8}); end;",studentID, courseID, semester, year, programID, practice, process, final, finalfinal);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
