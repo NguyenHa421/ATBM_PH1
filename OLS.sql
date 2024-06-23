@@ -275,10 +275,12 @@ BEGIN
     table_optionS => 'READ_CONTROL');
 END;
 /
+
 --xoa user truoc khi tao
-DROP USER truongkhoa CASCADE;
-DROP USER truongdonvi CASCADE;
-DROP USER giaovu CASCADE;
+CALL dropUser('svcs2');
+CALL dropUser('truongkhoa');
+CALL dropUser('truongdonvi');
+CALL dropUser('giaovu');
 
 --tao user de test
 CONN admin/group12@//localhost:1521/XEPDB1
