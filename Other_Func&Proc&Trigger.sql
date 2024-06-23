@@ -154,6 +154,7 @@ BEGIN
     END IF;
 END;
 /
+
 --Tao id tu dong tang cho sinh vien
 CONN ADMIN/group12;
 CREATE OR REPLACE FUNCTION CREATE_IDSTUDENT(p_MACT IN VARCHAR2)
