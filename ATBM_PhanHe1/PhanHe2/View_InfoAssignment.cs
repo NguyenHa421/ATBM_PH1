@@ -37,6 +37,7 @@ namespace ATBM_PhanHe1.PhanHe2
             }
             else if (curRole == "Giao vu")
             {
+                btn_Add.Enabled = false;
                 btn_delete.Enabled= false;
             }
         }
