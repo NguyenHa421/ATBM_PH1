@@ -39,6 +39,7 @@ namespace ATBM_PhanHe1.PhanHe2
             {
                 btn_Add.Enabled = false;
                 btn_delete.Enabled= false;
+                btn_Add.Enabled = false;
             }
         }
         private void LoadComboBox()
