@@ -1,4 +1,5 @@
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+
 --Tao user nhan vien
 CREATE OR REPLACE PROCEDURE USP_CREATEUSER
 AS
@@ -50,8 +51,11 @@ BEGIN
 END;
 /
 
+--Xoa role sinh vien neu ton tai truoc khi tao moi
 CALL Drop_OldRole('RL_SINHVIEN');
+--Tao role sinh vien
 CREATE ROLE RL_SINHVIEN;
+
 --Tao user sinhvien
 CREATE OR REPLACE PROCEDURE USP_CREATEUSER2
 AS
@@ -74,9 +78,12 @@ BEGIN
     CLOSE CUR;
 END;
 /
---Tao user
+
+--Tao user nhan vien hang loat 
 EXEC USP_CREATEUSER;
+--Tao user sinh vien hang loat
 EXEC USP_CREATEUSER2;
+
 --Gan role cho sinh vien
 CREATE OR REPLACE PROCEDURE USP_GRANTROLESTUDENT
 AS
@@ -96,5 +103,4 @@ BEGIN
     CLOSE CUR;
 END;
 /
-
 EXEC USP_GRANTROLESTUDENT;
