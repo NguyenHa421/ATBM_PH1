@@ -10,6 +10,21 @@ ALTER SESSION SET CONTAINER = XEPDB1;
 EXEC LBACSYS.CONFIGURE_OLS;
 EXEC LBACSYS.OLS_ENFORCEMENT.ENABLE_OLS;
 
+--nhap mat khau user sys cua ban
+ACCEPT sys_password CHAR PROMPT 'Nhap mat khau cho user SYS: '
+--Drop user admin truoc
+DROP USER admin CASCADE;
+--Gan quyen can thiet cho lbacsys
+GRANT CREATE USER TO lbacsys;
+--tao user admin
+CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
+CREATE USER admin IDENTIFIED BY group12;
+
+--grant cac quyen can thiet cho user admin
+CONNECT sys/&sys_password as SYSDBA
+GRANT CREATE SESSION TO admin;
+GRANT ALL PRIVILEGES TO admin;
+
 --xoa policy truoc khi tao
 CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
@@ -185,17 +200,6 @@ BEGIN
     label_value => 'TK::CS1,CS2');
 END;
 /
---Drop user admin truoc
-DROP USER admin CASCADE;
---Gan quyen can thiet cho lbacsys
-GRANT CREATE USER TO lbacsys;
---tao user admin
-CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
-CREATE USER admin IDENTIFIED BY group12;
-
---grant cac quyen can thiet cho user admin
-GRANT CREATE SESSION TO admin;
-GRANT ALL PRIVILEGES TO admin;
 
 CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
@@ -332,4 +336,6 @@ BEGIN
     row_label => 'GVu:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
 END;
 /
+CONNECT sys/&sys_password as SYSDBA
+ALTER SESSION SET CONTAINER = CDB$ROOT;
 ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE;
