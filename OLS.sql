@@ -9,6 +9,7 @@ ALTER SESSION SET CONTAINER = XEPDB1;
 --cau hinh va kich hoat OLS
 EXEC LBACSYS.CONFIGURE_OLS;
 EXEC LBACSYS.OLS_ENFORCEMENT.ENABLE_OLS;
+
 --xoa policy truoc khi tao
 CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
@@ -184,17 +185,18 @@ BEGIN
     label_value => 'TK::CS1,CS2');
 END;
 /
-
---tao user admin
+--Drop user admin truoc
 DROP USER admin CASCADE;
-
+--Gan quyen can thiet cho lbacsys
 GRANT CREATE USER TO lbacsys;
+--tao user admin
 CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 CREATE USER admin IDENTIFIED BY group12;
 
 --grant cac quyen can thiet cho user admin
 GRANT CREATE SESSION TO admin;
 GRANT ALL PRIVILEGES TO admin;
+
 CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
     SA_USER_ADMIN.SET_USER_PRIVS
@@ -232,9 +234,7 @@ INSERT INTO admin.THONGBAO(MaTB,NoiDung) VALUES('T4','Thong bao danh cho truong 
 INSERT INTO admin.THONGBAO(MaTB,NoiDung) VALUES('T5','Thong bao danh cho giang vien bo mon HTTT o co so 1 va co so 2');
 INSERT INTO admin.THONGBAO(MaTB,NoiDung) VALUES('T6','Thong bao danh cho toan bo sinh vien o co so 2');
 INSERT INTO admin.THONGBAO(MaTB,NoiDung) VALUES('T7','Thong bao danh cho truong khoa o co so 2');
---xem du lieu
-CONN admin/group12@//localhost:1521/XEPDB1;
-SELECT * FROM admin.THONGBAO;
+
 --them label cho cac dong du lieu
 CONN admin/group12@//localhost:1521/XEPDB1;
 UPDATE admin.THONGBAO
@@ -330,17 +330,4 @@ BEGIN
     row_label => 'GVu:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2');
 END;
 /
---test
-CONN svcs2/svcs2@//localhost:1521/XEPDB1
-SELECT * FROM admin.THONGBAO;
-
-CONN truongkhoa/truongkhoa@//localhost:1521/XEPDB1
-SELECT * FROM admin.THONGBAO;
-
-CONN truongdonvi/truongdonvi@//localhost:1521/XEPDB1
-SELECT * FROM admin.THONGBAO;
-
-CONN giaovu/giaovu@//localhost:1521/XEPDB1
-SELECT * FROM admin.THONGBAO;
-
 ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE;
