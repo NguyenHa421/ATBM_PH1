@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ATBM_PhanHe1.PhanHe2
 {
@@ -161,19 +162,23 @@ namespace ATBM_PhanHe1.PhanHe2
                     return;
                 }
             }
-            try
+            using (Confirm_Update confirm = new Confirm_Update())
             {
-                RegisterDAO.Instance.UpdateRegister(tb_idstudent.Text, cbB_idcourses.Text, semester, year, cbB_idprogram.Text, practice, process, final, finalfinal);
-                PhanHe2.Success success = new PhanHe2.Success();
-                success.ShowDialog();
-            }   
-            catch (Exception ex)
-            {
-                MessageBox.Show("Cập nhật không thành công!", "Lỗi");
-                return;
+                if (confirm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        RegisterDAO.Instance.UpdateRegister(tb_idstudent.Text, cbB_idcourses.Text, semester, year, cbB_idprogram.Text, practice, process, final, finalfinal);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Cập nhật không thành công!", "Lỗi");
+                        return;
+                    }
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
+                }
             }
-
-            
         }
     }
 }
