@@ -1,5 +1,6 @@
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
--- proc tg_XoaUser
+
+-- Proc xoa tai khoan nhan su hang loat khi chay lai file Data.sql
 CREATE OR REPLACE PROCEDURE Dropuser_NHANSU
 IS
     v_exist PLS_INTEGER;
@@ -13,7 +14,7 @@ END;
 /
 EXEC Dropuser_NHANSU;
 
--- proc tg_XoaUser
+-- proc xoa tai khoan sinh vien hang loat khi chay lai file Data.sql
 CREATE OR REPLACE PROCEDURE Dropuser_SINHVIEN
 IS
     v_exist PLS_INTEGER;
@@ -27,7 +28,7 @@ END;
 /
 EXEC Dropuser_SINHVIEN;
 
---proc xoa user neu ton tai
+--Proc xoa user cu the neu ton tai user do
 create or replace procedure dropUser(usrName in varchar2)
 as
 cursor usr is
@@ -44,6 +45,7 @@ begin
     close usr;
 end;
 /
+--Goi proc xoa user admin
 CALL dropUser('ADMIN');
 
 --proc xoa role neu ton tai
@@ -60,7 +62,7 @@ BEGIN
 END;
 /
 
---tao schema
+--Tao scema (user ADMIN)
 CREATE USER ADMIN IDENTIFIED BY group12;
 ALTER USER ADMIN QUOTA 10M ON users;
 GRANT DBA TO ADMIN; 
@@ -68,6 +70,7 @@ GRANT EXECUTE ANY PROCEDURE TO ADMIN;
 GRANT CREATE SESSION TO ADMIN CONTAINER = ALL; 
 GRANT CONNECT TO ADMIN;
 
+--Xoa cac bang neu chung da ton tai truoc khi chay lai file Data.sql
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE ADMIN.TB_DANGKY';
     EXECUTE IMMEDIATE 'DROP TABLE ADMIN.TB_PHANCONG';
@@ -85,6 +88,7 @@ EXCEPTION
         END IF;
 END;
 /
+-- Tao cac bang trong he thong
 CREATE TABLE ADMIN.TB_NHANSU (
     MANV NVARCHAR2(5) PRIMARY KEY,
     HOTEN NVARCHAR2(100),
@@ -165,6 +169,7 @@ CREATE TABLE ADMIN.TB_CHUONGTRINH(
     MACT NVARCHAR2(5) PRIMARY KEY,
     TENCT NVARCHAR2(50)
 );
+--Tao khoa ngoai cho cac bang tren
 ALTER TABLE ADMIN.TB_NHANSU 
 ADD CONSTRAINT fk_madv_NHANSU 
 FOREIGN KEY (MADV) 
