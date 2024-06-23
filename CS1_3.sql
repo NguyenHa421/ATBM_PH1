@@ -1,10 +1,12 @@
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
+--Gan mot so quyen can thiet cho user admin
 GRANT CREATE VIEW TO ADMIN; 
 GRANT CREATE ANY PROCEDURE TO ADMIN; 
 GRANT EXECUTE ANY PROCEDURE TO ADMIN; 
---Thuc thi tren sys
 
+--Thuc thi tren sys
+--Xoa cac role sau neu nhu chung da ton tai truoc khi tao moi
 CALL Drop_OldRole('RL_NHANVIENCOBAN');
 CALL Drop_OldRole('RL_GIANGVIEN');
 CALL Drop_OldRole('RL_GIAOVU');
@@ -12,7 +14,7 @@ CALL Drop_OldRole('RL_GIAOVU');
 --Tao role RL_NHANVIENCOBAN va them user vao role
 CREATE ROLE RL_NHANVIENCOBAN;
 EXEC USP_ADDUSRMEM ('RL_NHANVIENCOBAN', 'Nhan vien co ban');
-
+/
 --Tao role RL_GIANGVIEN
 CREATE ROLE RL_GIANGVIEN;
 --Them user vao role: Giang vien co quyen nhu Nhan vien co ban va quyen cua rieng minh
