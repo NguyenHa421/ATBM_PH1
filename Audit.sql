@@ -7,52 +7,17 @@ SHOW PARAMETER AUDIT_TRAIL;
 -------------------------------------------------
 --su dung standard audit ghi nhat ky select, insert cua moi user tren bang tb_hocphan
 AUDIT SELECT, INSERT ON ADMIN.TB_HOCPHAN BY ACCESS;
---thuc hien cau lenh select bang nhieu user khac nhau
-CONN NV091/NV091
-SELECT * FROM ADMIN.TB_HOCPHAN;
---
-CONN NV107/NV107
-SELECT * FROM ADMIN.TB_HOCPHAN;
---xem nhat ky audit
-SELECT * FROM DBA_AUDIT_TRAIL WHERE obj_name = 'TB_HOCPHAN';
-
 
 --su dung standard audit ghi nhat ky insert, delete cua moi user tren bang tb_nhansu
 AUDIT INSERT, DELETE, UPDATE ON ADMIN.TB_SINHVIEN BY ACCESS;
---thuc hien cau lenh update bang nhieu user khac nhau
-CONN NV091/NV091
-UPDATE ADMIN.TB_SINHVIEN
-SET DT = '0392748534'
-WHERE MASV = 'SV120221';
---xem nhat ky audit
-SELECT * FROM DBA_AUDIT_TRAIL WHERE obj_name = 'TB_SINHVIEN';
-
 
 --su dung standard audit ghi nhat ky insert, delete cua moi user tren view UV_TKXEMPHANCONG
 AUDIT INSERT, DELETE, UPDATE ON ADMIN.UV_TKXEMPHANCONG BY ACCESS;
---thuc hien cau lenh update bang nhieu user khac nhau
-CONN NV107/NV107
-UPDATE ADMIN.UV_TKXEMPHANCONG
-SET MAGV = 'NV053'
-WHERE MAHP = 'HP08'
-AND HK = '1';
---xem nhat ky audit
-SELECT * FROM DBA_AUDIT_TRAIL WHERE obj_name = 'UV_TKXEMPHANCONG';
-
 
 --su dung standard audit ghi nhat ky insert, delete cua moi user tren procedure USP_CHINHSODT
 AUDIT EXECUTE ON ADMIN.USP_CHINHSODT BY ACCESS;
---thuc hien cau lenh update bang nhieu user khac nhau
-CONN NV011/NV011
-BEGIN
-    admin.USP_CHINHSODT('0393456932');
-END;
 
---xem nhat ky audit
-SELECT * FROM DBA_AUDIT_TRAIL WHERE obj_name = 'USP_CHINHSODT';
-
-
-
+-- Proc kiem tra nguoi dung phai la Giang vien khong
 CREATE OR REPLACE FUNCTION CHECK_USER RETURN NUMBER
 AS
   v_count NUMBER;
@@ -68,8 +33,7 @@ BEGIN
     RETURN 0;
   END IF;
 END;
-
-
+-- Xoa chinh sach neu ton tai
 /
 BEGIN
      DBMS_FGA.DROP_POLICY(
@@ -92,15 +56,8 @@ BEGIN
     audit_column    => 'DIEMTH, DIEMQT, DIEMCK, DIEMTK'
   );
 END;
-/
 
-conn NV107/NV107;
-BEGIN
-    admin.USP_CAPNHATDIEMSV('SV127123', 'HP21', 3, 2024, 'CLC', 8, 8, 8, 8);
-END;
-/
-SELECT * FROM DBA_FGA_AUDIT_TRAIL;
-
+-- Xoa chinh sach neu ton tai
 /
 BEGIN
      DBMS_FGA.DROP_POLICY(
@@ -124,11 +81,4 @@ BEGIN
     enable =>TRUE
 );
 END;
-/
-
-conn NV107/NV107;
-SELECT * FROM ADMIN.TB_NHANSU WHERE MANV = 'NV053';
-/
-
-SELECT * FROM DBA_FGA_AUDIT_TRAIL;
 
