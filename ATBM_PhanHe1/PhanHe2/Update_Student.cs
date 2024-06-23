@@ -65,10 +65,26 @@ namespace ATBM_PhanHe1.PhanHe2
 
             if (tb_phone.Text.Length != 10 || !tb_phone.Text.StartsWith("0"))
             {
-                MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi");
+                MessageBox.Show("Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0!", "Lỗi");
                 return;
             }
-
+            if (tb_GPA.Text != "")
+            {
+                try
+                {
+                    GPA = float.Parse(tb_GPA.Text);
+                    if (GPA < 0 || GPA > 10)
+                    {
+                        MessageBox.Show("Điểm phải nằm trong khoảng từ 0 đến 10!", "Lỗi");
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Điểm không hợp lệ!", "Lỗi");
+                    return;
+                }
+            }
             using (Confirm_Update confirm = new Confirm_Update())
             {
                 if (confirm.ShowDialog() == DialogResult.OK)
