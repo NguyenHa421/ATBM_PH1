@@ -161,8 +161,6 @@ namespace ATBM_PhanHe1.PhanHe2
                     return;
                 }
             }
-
-
             try
             {
                 RegisterDAO.Instance.UpdateRegister(tb_idstudent.Text, cbB_idcourses.Text, semester, year, cbB_idprogram.Text, practice, process, final, finalfinal);
