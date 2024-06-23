@@ -136,10 +136,7 @@ namespace ATBM_PhanHe1.PhanHe2
                     catch (Exception ex)
                     {
                         string exString = ex.ToString();
-                        if (exString.Contains("14 NGAY"))
                             MessageBox.Show("Không thể xoá phân công sau 14 ngày!", "Lỗi");
-                        else
-                            MessageBox.Show("Xoá không thành công!", "Lỗi");
                         return;
                     }
                     PhanHe2.Success success = new PhanHe2.Success();
