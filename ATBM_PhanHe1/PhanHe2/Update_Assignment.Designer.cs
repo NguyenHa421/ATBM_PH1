@@ -51,9 +51,11 @@
             // 
             // cbB_lecturerName
             // 
+            cbB_lecturerName.DropDownHeight = 150;
             cbB_lecturerName.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_lecturerName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_lecturerName.FormattingEnabled = true;
+            cbB_lecturerName.IntegralHeight = false;
             cbB_lecturerName.Location = new Point(626, 290);
             cbB_lecturerName.Name = "cbB_lecturerName";
             cbB_lecturerName.Size = new Size(229, 36);
@@ -62,9 +64,11 @@
             // 
             // cbB_lecturerID
             // 
+            cbB_lecturerID.DropDownHeight = 150;
             cbB_lecturerID.DropDownStyle = ComboBoxStyle.DropDownList;
             cbB_lecturerID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbB_lecturerID.FormattingEnabled = true;
+            cbB_lecturerID.IntegralHeight = false;
             cbB_lecturerID.Location = new Point(626, 222);
             cbB_lecturerID.Name = "cbB_lecturerID";
             cbB_lecturerID.Size = new Size(229, 36);
