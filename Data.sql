@@ -45,6 +45,8 @@ begin
     close usr;
 end;
 /
+--Goi proc xoa user admin
+CALL dropUser('ADMIN');
 
 --proc xoa role neu ton tai
 CREATE OR REPLACE PROCEDURE Drop_OldRole 

@@ -13,7 +13,6 @@ AUDIT INSERT, DELETE, UPDATE ON ADMIN.TB_SINHVIEN BY ACCESS;
 
 --su dung standard audit ghi nhat ky insert, delete cua moi user tren view UV_TKXEMPHANCONG
 AUDIT INSERT, DELETE, UPDATE ON ADMIN.UV_TKXEMPHANCONG BY ACCESS;
-
 --su dung standard audit ghi nhat ky insert, delete cua moi user tren procedure USP_CHINHSODT
 AUDIT EXECUTE ON ADMIN.USP_CHINHSODT BY ACCESS;
 
