@@ -1,7 +1,6 @@
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 --chuyen container
 ALTER SESSION SET CONTAINER = CDB$ROOT;
---SHOW CON_NAME
 --default user cua OLS
 ALTER USER lbacsys IDENTIFIED BY lbacsys ACCOUNT UNLOCK;
 --chuyen container
@@ -24,7 +23,23 @@ CREATE USER admin IDENTIFIED BY group12;
 CONNECT sys/&sys_password as SYSDBA
 GRANT CREATE SESSION TO admin;
 GRANT ALL PRIVILEGES TO admin;
-
+--Proc xoa user cu the neu ton tai user do
+create or replace procedure dropUser(usrName in varchar2)
+as
+cursor usr is
+        select count(*) as numberOfRow
+        from dba_users
+        where dba_users.username = UPPER(usrName);
+userExist number;
+begin
+    open usr;
+    fetch usr into userExist;
+    if userExist > 0 then
+        execute immediate 'DROP USER ' ||usrName || ' CASCADE';
+    end if;
+    close usr;
+end;
+/
 --xoa policy truoc khi tao
 CONN lbacsys/lbacsys@//localhost:1521/XEPDB1
 BEGIN
