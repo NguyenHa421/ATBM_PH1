@@ -1,8 +1,8 @@
 Thứ tự chạy file sql:
-1. Data.sql
-2. CreateUser.sql
-3. CS1_3.sql
-4. CS4_6.sql
-5. Other_Func&Proc&Trigger.sql
-6. Audit.sql
-7. OLS.sql
+1. OLS.sql
+2. Data.sql
+3. CreateUser.sql
+4. CS1_3.sql
+5. CS4_6.sql
+6. Other_Func&Proc&Trigger.sql
+7. Audit.sql
