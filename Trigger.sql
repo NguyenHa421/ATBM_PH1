@@ -1,4 +1,4 @@
---Tao user, cap quyen cho sinh vien moi
+--Tao tai khoan, cap quyen cho sinh vien khi tao mot sinh vien moi
 CREATE OR REPLACE TRIGGER grant_connect_on_insert_student
 AFTER INSERT ON ADMIN.TB_SINHVIEN
 FOR EACH ROW
@@ -15,7 +15,7 @@ BEGIN
     EXECUTE IMMEDIATE 'GRANT RL_SINHVIEN TO '||v_password;
 END;
 /
---Tao user, cap quyen cho nhan vien moi
+--Tao tai khoan, cap quyen cho nhan vien khi tao mot nhan vien moi
 CREATE OR REPLACE TRIGGER grant_connect_on_insert_staff
 AFTER INSERT ON ADMIN.TB_NHANSU
 FOR EACH ROW
@@ -42,7 +42,7 @@ BEGIN
     END IF;
 END;
 /
---Xoa user cua nhan vien neu xoa nhan vien do
+--Xoa tai khoan cua nhan vien neu xoa nhan vien do
 CREATE OR REPLACE TRIGGER employee_login_delete
 AFTER DELETE ON ADMIN.TB_NHANSU
 FOR EACH ROW
@@ -55,7 +55,7 @@ BEGIN
     EXECUTE IMMEDIATE 'DROP USER ' || v_user || ' CASCADE';
 END;
 /
---Cap quyen cho truong don vi moi khi tao don vi moi
+--Cap quyen cho giang vien duoc de bat len lam truong don vi moi khi tao don vi moi
 CREATE OR REPLACE TRIGGER grant_connect_on_insert_unit
 AFTER INSERT ON ADMIN.TB_DONVI
 FOR EACH ROW
@@ -91,7 +91,8 @@ BEGIN
     COMMIT;
 END;
 /
---Doi quyen cho nhan vien khi truong khoa cap nhat
+--Khi cap nhat truong don vi cua mot don vi, truong don vi cu se tro thanh giang vien, giang vien duoc 
+--de bat len lam truong don vi, cap quyen va thu hoi quyen cho 2 user tren
 CREATE OR REPLACE TRIGGER grant_TDV_on_update_unit
 AFTER UPDATE ON ADMIN.TB_DONVI
 FOR EACH ROW
