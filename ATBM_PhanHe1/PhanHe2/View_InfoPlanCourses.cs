@@ -15,7 +15,7 @@ namespace ATBM_PhanHe1.PhanHe2
     public partial class View_InfoPlanCourses : Form
     {
         BindingSource planCoursesList = new BindingSource();
-        int clickedRow = -1;
+        int clickedRow = 0;
         List<PlanCoursesDTO> planCourses = PlanCoursesDAO.Instance.GetPlanCoursesList();
         public View_InfoPlanCourses()
         {

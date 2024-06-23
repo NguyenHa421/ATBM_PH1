@@ -56,28 +56,34 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            try
+            using (Confirm_Delete confirm = new Confirm_Delete())
             {
-                if (curRole == "Truong don vi")
+                if (confirm.ShowDialog() == DialogResult.OK)
                 {
-                    AssignmentDAO.Instance.UnitChiefUpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.Text);        
-                }
-                else if (curRole == "Truong khoa")
-                {
-                    AssignmentDAO.Instance.DepartmentHeadUpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.Text);
-                }
-                else
-                {
-                    AssignmentDAO.Instance.UpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.Text);
+                    try
+                    {
+                        if (curRole == "Truong don vi")
+                        {
+                            AssignmentDAO.Instance.UnitChiefUpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.Text);
+                        }
+                        else if (curRole == "Truong khoa")
+                        {
+                            AssignmentDAO.Instance.DepartmentHeadUpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.Text);
+                        }
+                        else
+                        {
+                            AssignmentDAO.Instance.UpdateAssignment(tb_courseID.Text, tb_semester.Text, tb_year.Text, tb_programID.Text, curLecturerID, cbB_lecturerID.Text);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Cập nhật không thành công!", "Lỗi");
+                        return;
+                    }
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Cập nhật không thành công!", "Lỗi");
-                return;
-            }
-            PhanHe2.Success success = new PhanHe2.Success();
-            success.ShowDialog();
         }
 
         private void cbB_lecturerID_SelectedIndexChanged(object sender, EventArgs e)

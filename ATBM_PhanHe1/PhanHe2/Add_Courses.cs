@@ -88,12 +88,14 @@ namespace ATBM_PhanHe1.PhanHe2
                     return;
                 }
                 CourseDAO.Instance.AddCource(tb_id.Text,tb_name.Text,credits,theory, practice, maxStudent, cbB_idunit.Text);
-                this.Close();
             }
             else
             {
                 MessageBox.Show("Hãy điền đầy đủ thông tin!", "Lỗi");
+                return;
             }
+            PhanHe2.Success success = new PhanHe2.Success();
+            success.ShowDialog();
         }
     }
 }

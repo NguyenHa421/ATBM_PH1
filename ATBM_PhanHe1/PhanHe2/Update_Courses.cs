@@ -55,18 +55,6 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            if (ExecuteUpdate())
-            {
-                PhanHe2.Success success = new PhanHe2.Success();
-                success.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại!", "Lỗi");
-            }      
-        }
-        private bool ExecuteUpdate()
-        {
             int credit, theory, practice, maxStudent;
             try
             {
@@ -75,7 +63,7 @@ namespace ATBM_PhanHe1.PhanHe2
             catch (Exception ex)
             {
                 MessageBox.Show("Số tín chỉ không hợp lệ!", "Lỗi");
-                return(false);
+                return;
             }
             try
             {
@@ -84,7 +72,7 @@ namespace ATBM_PhanHe1.PhanHe2
             catch (Exception ex)
             {
                 MessageBox.Show("Số tiết lý thuyết không hợp lệ!", "Lỗi");
-                return(false);
+                return;
             }
             try
             {
@@ -93,7 +81,7 @@ namespace ATBM_PhanHe1.PhanHe2
             catch (Exception ex)
             {
                 MessageBox.Show("Số tiết thực hành không hợp lệ!", "Lỗi");
-                return(false);
+                return;
             }
             try
             {
@@ -102,14 +90,26 @@ namespace ATBM_PhanHe1.PhanHe2
             catch (Exception ex)
             {
                 MessageBox.Show("Số sinh viên tối đa không hợp lệ!", "Lỗi");
-                return(false);
+                return;
             }
-            if (CourseDAO.Instance.UpdateCourse(tb_id.Text, tb_name.Text, credit, theory, practice, maxStudent, cbB_idunit.SelectedItem.ToString()))
+            using (Confirm_Update confirm = new Confirm_Update())
             {
-                return (true);
+                if (confirm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        CourseDAO.Instance.UpdateCourse(tb_id.Text, tb_name.Text, credit, theory, practice, maxStudent, cbB_idunit.SelectedItem.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Cập nhật không thành công!", "Lỗi");
+                        return;
+                    }
+                    PhanHe2.Success success = new PhanHe2.Success();
+                    success.ShowDialog();
+                }
             }
-            return(false);
-        }
+        } 
         private void cbB_idunit_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbB_unit.SelectedIndex = cbB_idunit.SelectedIndex;
