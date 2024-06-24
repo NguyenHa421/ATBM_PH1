@@ -76,14 +76,15 @@ namespace ATBM_PhanHe1.PhanHe2
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Xóa không thành công!", "Lỗi");
+                            MessageBox.Show(ex.Message, "Lỗi");
+                            return;
                         }
                         PhanHe2.Success success = new PhanHe2.Success();
                         success.ShowDialog();
                     }
                 }
             }
-            else { MessageBox.Show("Chưa chọn nhân sự!", "Lỗi"); }
+            else { MessageBox.Show("Chưa chọn nhân sự!", "Lỗi"); return; }
         }
 
         private void btn_search_Click(object sender, EventArgs e)
