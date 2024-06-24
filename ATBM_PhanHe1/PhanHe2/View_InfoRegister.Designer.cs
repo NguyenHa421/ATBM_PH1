@@ -68,7 +68,6 @@
             pn_parents.Name = "pn_parents";
             pn_parents.Size = new Size(895, 425);
             pn_parents.TabIndex = 4;
-            pn_parents.Paint += pn_parents_Paint;
             // 
             // btn_delete
             // 

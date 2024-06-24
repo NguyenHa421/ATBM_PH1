@@ -58,5 +58,16 @@ namespace ATBM_PhanHe1.DAO
             string query = string.Format("insert into admin.tb_khmo values('{0}','{1}','{2}','{3}')", courseID, semester, year, programID);
             DataProvider.Instance.ExecuteNonQuery(query);
         }
+        public List<string> GetPlanCourseIDByProgram(string programID)
+        {
+            List<string> result = new List<string>();
+            string query = string.Format("select distinct mahp from admin.tb_khmo where mact = '{0}'", programID);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                result.Add(row["MAHP"].ToString());
+            }
+            return result;
+        }
     }
 }

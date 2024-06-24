@@ -17,12 +17,14 @@ namespace ATBM_PhanHe1.PhanHe2
     {
         BindingSource registerList = new BindingSource();
         string curRole;
+        string curUser;
         int clickedRow = 0;
         List<RegisterDTO> registers;
         public View_InfoRegister()
         {
             InitializeComponent();
             curRole = UserDAO.Instance.GetRole(Home_Login.Login.User);
+            curUser = Home_Login.Login.User;
             UpdateInterface();
             LoadComboBox();
             LoadGrid();
@@ -113,7 +115,7 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new PhanHe2.Add_Register(registers[clickedRow].studentID));
+            OpenChildForm(new PhanHe2.Add_Register(curUser));
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
@@ -217,11 +219,6 @@ namespace ATBM_PhanHe1.PhanHe2
             registerList.DataSource = registers;
             if (curRole == "Sinh vien")
                 dtGrid_register.Columns["lecturerName"].Visible = false;
-        }
-
-        private void pn_parents_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

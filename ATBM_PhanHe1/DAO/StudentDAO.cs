@@ -80,7 +80,7 @@ namespace ATBM_PhanHe1.DAO
         }
         public string GetProgramStudent(string id)
         {
-            string query = $"SELECT ct.TENCT FROM ADMIN.TB_SINHVIEN sv JOIN ADMIN.TB_CHUONGTRINH ct ON sv.MACT = ct.MACT WHERE sv.MASV = ('{id}')";
+            string query = $"SELECT ct.TENCT FROM ADMIN.TB_SINHVIEN sv JOIN ADMIN.TB_CHUONGTRINH ct ON sv.MACT = ct.MACT WHERE sv.MASV = '{id}'";
             object result = DataProvider.Instance.ExecuteScalar(query, new object[] { id });
             return result.ToString();
         }
