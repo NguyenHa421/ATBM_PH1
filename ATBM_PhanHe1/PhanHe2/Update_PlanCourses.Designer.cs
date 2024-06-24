@@ -39,10 +39,10 @@
             lb_name = new Label();
             lb_id = new Label();
             lb_Info = new Label();
-            tb_idprogram = new TextBox();
-            tb_nameprogram = new TextBox();
             tb_idcourse = new TextBox();
             tb_namecourse = new TextBox();
+            cbB_nameprogram = new ComboBox();
+            cbB_idprogram = new ComboBox();
             SuspendLayout();
             // 
             // btn_Update
@@ -172,26 +172,6 @@
             lb_Info.TabIndex = 111;
             lb_Info.Text = "Cập nhật kế hoạch mở môn";
             // 
-            // tb_idprogram
-            // 
-            tb_idprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_idprogram.Location = new Point(417, 278);
-            tb_idprogram.Name = "tb_idprogram";
-            tb_idprogram.ReadOnly = true;
-            tb_idprogram.Size = new Size(229, 34);
-            tb_idprogram.TabIndex = 134;
-            tb_idprogram.TabStop = false;
-            // 
-            // tb_nameprogram
-            // 
-            tb_nameprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_nameprogram.Location = new Point(417, 330);
-            tb_nameprogram.Name = "tb_nameprogram";
-            tb_nameprogram.ReadOnly = true;
-            tb_nameprogram.Size = new Size(229, 34);
-            tb_nameprogram.TabIndex = 135;
-            tb_nameprogram.TabStop = false;
-            // 
             // tb_idcourse
             // 
             tb_idcourse.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -212,16 +192,42 @@
             tb_namecourse.TabIndex = 137;
             tb_namecourse.TabStop = false;
             // 
+            // cbB_nameprogram
+            // 
+            cbB_nameprogram.DropDownHeight = 120;
+            cbB_nameprogram.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbB_nameprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbB_nameprogram.FormattingEnabled = true;
+            cbB_nameprogram.IntegralHeight = false;
+            cbB_nameprogram.Location = new Point(417, 330);
+            cbB_nameprogram.Name = "cbB_nameprogram";
+            cbB_nameprogram.Size = new Size(229, 36);
+            cbB_nameprogram.TabIndex = 148;
+            cbB_nameprogram.SelectedIndexChanged += cbB_nameprogram_SelectedIndexChanged;
+            // 
+            // cbB_idprogram
+            // 
+            cbB_idprogram.DropDownHeight = 120;
+            cbB_idprogram.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbB_idprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbB_idprogram.FormattingEnabled = true;
+            cbB_idprogram.IntegralHeight = false;
+            cbB_idprogram.Location = new Point(417, 278);
+            cbB_idprogram.Name = "cbB_idprogram";
+            cbB_idprogram.Size = new Size(229, 36);
+            cbB_idprogram.TabIndex = 147;
+            cbB_idprogram.SelectedIndexChanged += cbB_idprogram_SelectedIndexChanged;
+            // 
             // Update_PlanCourses
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(895, 425);
+            Controls.Add(cbB_nameprogram);
+            Controls.Add(cbB_idprogram);
             Controls.Add(tb_namecourse);
             Controls.Add(tb_idcourse);
-            Controls.Add(tb_nameprogram);
-            Controls.Add(tb_idprogram);
             Controls.Add(btn_Update);
             Controls.Add(cbB_year);
             Controls.Add(cbB_semester);
@@ -254,9 +260,9 @@
         private Label lb_name;
         private Label lb_id;
         private Label lb_Info;
-        private TextBox tb_idprogram;
-        private TextBox tb_nameprogram;
         private TextBox tb_idcourse;
         private TextBox tb_namecourse;
+        private ComboBox cbB_nameprogram;
+        private ComboBox cbB_idprogram;
     }
 }

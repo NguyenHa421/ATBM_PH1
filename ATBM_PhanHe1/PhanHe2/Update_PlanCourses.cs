@@ -6,7 +6,7 @@ namespace ATBM_PhanHe1.PhanHe2
 {
     public partial class Update_PlanCourses : Form
     {
-       
+        List<ProgramDTO> listP = ProgramDAO.Instance.GetProgramList();
         public Update_PlanCourses(string courseID, int semester, int year, string programID)
         {
             InitializeComponent();
@@ -19,7 +19,13 @@ namespace ATBM_PhanHe1.PhanHe2
             cbB_year.Items.Add("2023");
             cbB_year.Items.Add("2024");
             cbB_year.Items.Add("2025");
+            for (int i = 0; i < listP.Count; i++)
+            {
+                cbB_idprogram.Items.Add(listP[i].programID);
+                cbB_nameprogram.Items.Add(listP[i].programName);
+            }
         }
+        string oldsemester, oldyear, oldprogram;
         private void Load(string courseID, int semester, int year, string programID)
         {
             CourseDTO course = CourseDAO.Instance.GetCourseByID(courseID);
@@ -27,9 +33,12 @@ namespace ATBM_PhanHe1.PhanHe2
             tb_idcourse.Text = courseID;
             tb_namecourse.Text = course.courseName;
             cbB_semester.Text = semester.ToString();
+            oldsemester = semester.ToString();
             cbB_year.Text = year.ToString();
-            tb_idprogram.Text = programID;
-            tb_nameprogram.Text = program.programName;
+            oldyear = year.ToString();
+            cbB_idprogram.Text = programID;
+            oldprogram = programID.ToString();
+            cbB_nameprogram.Text = program.programName;
         }
         private void btn_Back_Click(object sender, EventArgs e)
         {
@@ -44,18 +53,18 @@ namespace ATBM_PhanHe1.PhanHe2
                 {
                     try
                     {
-                        PlanCoursesDAO.Instance.UpdatePlanCourses(tb_idcourse.Text, cbB_semester.Text, cbB_year.Text, tb_idprogram.Text);
+                        PlanCoursesDAO.Instance.UpdatePlanCourses(tb_idcourse.Text, cbB_semester.Text, cbB_year.Text, cbB_idprogram.Text, oldsemester, oldyear, oldprogram);
                     }
                     catch (Exception ex)
                     {
-                        if (e.ToString().Contains("FK_ KHMO_PHANCONG"))
+                        if (ex.ToString().Contains("ADMIN.FK_KHMO_PHANCONG"))
                         {
                             MessageBox.Show("Kế hoạch môn học này đang được phân công, không thể cập nhật!", "Lỗi");
                             return;
                         }
                         else
                         {
-                            MessageBox.Show("Cập nhật không thành công", "Lỗi");
+                            MessageBox.Show(ex.Message, "Lỗi");
                             return;
                         }
                     }
@@ -64,6 +73,32 @@ namespace ATBM_PhanHe1.PhanHe2
                 }
             }
         }
-       
+
+        private void cbB_idprogram_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbB_idprogram.SelectedItem != null)
+            {
+                var selectedID = cbB_idprogram.Text;
+                var selectedProgram = listP.FirstOrDefault(s => s.programID == selectedID);
+                if (selectedProgram != null)
+                {
+                    cbB_nameprogram.Text = selectedProgram.programName;
+                }
+            }
+            
+        }
+
+        private void cbB_nameprogram_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbB_nameprogram.SelectedItem != null)
+            {
+                var selectedName = cbB_nameprogram.Text;
+                var selectedProgram = listP.FirstOrDefault(s => s.programName == selectedName);
+                if (selectedProgram != null)
+                {
+                    cbB_idprogram.Text = selectedProgram.programID;
+                }
+            }
+        }
     }
 }

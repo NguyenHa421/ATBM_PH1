@@ -45,7 +45,7 @@ namespace ATBM_PhanHe1.DAO
         public List<RegisterDTO> GetRegistrarRegisterList()
         {
             List<RegisterDTO> list = new List<RegisterDTO>();
-            string query = "select dk.*, ns.HOTEN as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.tb_dangky dk, admin.uv_xemgiangvien ns, admin.tb_sinhvien sv, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MASV = sv.MASV and dk.MACT = ct.MACT";
+            string query = "select dk.*, ns.HOTEN as HOTENGV, sv.HOTEN as HOTENSV, hp.TENHP, ct.TENCT from admin.tb_dangky dk, admin.uv_xemgiangvien ns, admin.tb_sinhvien sv, admin.tb_hocphan hp, admin.tb_chuongtrinh ct where dk.MAHP = hp.MAHP and dk.MASV = sv.MASV and dk.MACT = ct.MACT and ns.MANV = dk.MAGV";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
@@ -176,7 +176,7 @@ namespace ATBM_PhanHe1.DAO
         }
         public bool AddRegister(string studentID, string courseID, int semester, int year, string programID)
         {
-            string query = string.Format(" insert into admin.tb_dangky (MASV, MAHP, HK, NAM, MACT, DIEMTH, DIEMQT, DIEMCK, DIEMTK) values ('{0}', '{1}', {2}, {3}, '{4}', 0, 0, 0, 0)", studentID, courseID, semester, year, programID);
+            string query = string.Format("insert into admin.tb_dangky (MASV, MAHP, HK, NAM, MACT, DIEMTH, DIEMQT, DIEMCK, DIEMTK) values ('{0}', '{1}', {2}, {3}, '{4}', 0, 0, 0, 0)", studentID, courseID, semester, year, programID);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
