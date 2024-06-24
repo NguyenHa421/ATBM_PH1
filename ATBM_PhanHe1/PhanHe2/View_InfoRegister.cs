@@ -138,7 +138,7 @@ namespace ATBM_PhanHe1.PhanHe2
                     catch (Exception ex)
                     {
                         string exString = ex.ToString();
-                            MessageBox.Show("Hết thời gian hiệu chỉnh!", "Lỗi");
+                            MessageBox.Show("Không trong thời gian hiệu chỉnh!", "Lỗi");
                         return;
                     }
                     PhanHe2.Success success = new PhanHe2.Success();
