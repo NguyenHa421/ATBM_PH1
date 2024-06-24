@@ -39,10 +39,10 @@
             lb_name = new Label();
             lb_id = new Label();
             lb_Info = new Label();
-            cbB_idprogram = new ComboBox();
-            cbB_nameprogram = new ComboBox();
-            cbB_nameCourses = new ComboBox();
-            cbB_idcourses = new ComboBox();
+            tb_idprogram = new TextBox();
+            tb_nameprogram = new TextBox();
+            tb_idcourse = new TextBox();
+            tb_namecourse = new TextBox();
             SuspendLayout();
             // 
             // btn_Update
@@ -172,53 +172,45 @@
             lb_Info.TabIndex = 111;
             lb_Info.Text = "Cập nhật kế hoạch mở môn";
             // 
-            // cbB_idprogram
+            // tb_idprogram
             // 
-            cbB_idprogram.DropDownHeight = 120;
-            cbB_idprogram.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbB_idprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_idprogram.FormattingEnabled = true;
-            cbB_idprogram.IntegralHeight = false;
-            cbB_idprogram.Location = new Point(417, 278);
-            cbB_idprogram.Name = "cbB_idprogram";
-            cbB_idprogram.Size = new Size(229, 36);
-            cbB_idprogram.TabIndex = 130;
+            tb_idprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_idprogram.Location = new Point(417, 278);
+            tb_idprogram.Name = "tb_idprogram";
+            tb_idprogram.ReadOnly = true;
+            tb_idprogram.Size = new Size(229, 34);
+            tb_idprogram.TabIndex = 134;
+            tb_idprogram.TabStop = false;
             // 
-            // cbB_nameprogram
+            // tb_nameprogram
             // 
-            cbB_nameprogram.DropDownHeight = 120;
-            cbB_nameprogram.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbB_nameprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_nameprogram.FormattingEnabled = true;
-            cbB_nameprogram.IntegralHeight = false;
-            cbB_nameprogram.Location = new Point(417, 330);
-            cbB_nameprogram.Name = "cbB_nameprogram";
-            cbB_nameprogram.Size = new Size(229, 36);
-            cbB_nameprogram.TabIndex = 131;
+            tb_nameprogram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_nameprogram.Location = new Point(417, 330);
+            tb_nameprogram.Name = "tb_nameprogram";
+            tb_nameprogram.ReadOnly = true;
+            tb_nameprogram.Size = new Size(229, 34);
+            tb_nameprogram.TabIndex = 135;
+            tb_nameprogram.TabStop = false;
             // 
-            // cbB_nameCourses
+            // tb_idcourse
             // 
-            cbB_nameCourses.DropDownHeight = 120;
-            cbB_nameCourses.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbB_nameCourses.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_nameCourses.FormattingEnabled = true;
-            cbB_nameCourses.IntegralHeight = false;
-            cbB_nameCourses.Location = new Point(417, 113);
-            cbB_nameCourses.Name = "cbB_nameCourses";
-            cbB_nameCourses.Size = new Size(229, 36);
-            cbB_nameCourses.TabIndex = 133;
+            tb_idcourse.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_idcourse.Location = new Point(417, 61);
+            tb_idcourse.Name = "tb_idcourse";
+            tb_idcourse.ReadOnly = true;
+            tb_idcourse.Size = new Size(229, 34);
+            tb_idcourse.TabIndex = 136;
+            tb_idcourse.TabStop = false;
             // 
-            // cbB_idcourses
+            // tb_namecourse
             // 
-            cbB_idcourses.DropDownHeight = 120;
-            cbB_idcourses.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbB_idcourses.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbB_idcourses.FormattingEnabled = true;
-            cbB_idcourses.IntegralHeight = false;
-            cbB_idcourses.Location = new Point(417, 61);
-            cbB_idcourses.Name = "cbB_idcourses";
-            cbB_idcourses.Size = new Size(229, 36);
-            cbB_idcourses.TabIndex = 132;
+            tb_namecourse.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_namecourse.Location = new Point(417, 113);
+            tb_namecourse.Name = "tb_namecourse";
+            tb_namecourse.ReadOnly = true;
+            tb_namecourse.Size = new Size(229, 34);
+            tb_namecourse.TabIndex = 137;
+            tb_namecourse.TabStop = false;
             // 
             // Update_PlanCourses
             // 
@@ -226,10 +218,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(895, 425);
-            Controls.Add(cbB_nameCourses);
-            Controls.Add(cbB_idcourses);
-            Controls.Add(cbB_nameprogram);
-            Controls.Add(cbB_idprogram);
+            Controls.Add(tb_namecourse);
+            Controls.Add(tb_idcourse);
+            Controls.Add(tb_nameprogram);
+            Controls.Add(tb_idprogram);
             Controls.Add(btn_Update);
             Controls.Add(cbB_year);
             Controls.Add(cbB_semester);
@@ -262,9 +254,9 @@
         private Label lb_name;
         private Label lb_id;
         private Label lb_Info;
-        private ComboBox cbB_idprogram;
-        private ComboBox cbB_nameprogram;
-        private ComboBox cbB_nameCourses;
-        private ComboBox cbB_idcourses;
+        private TextBox tb_idprogram;
+        private TextBox tb_nameprogram;
+        private TextBox tb_idcourse;
+        private TextBox tb_namecourse;
     }
 }
