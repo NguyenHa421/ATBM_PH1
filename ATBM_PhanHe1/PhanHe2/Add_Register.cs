@@ -111,28 +111,36 @@ namespace ATBM_PhanHe1.PhanHe2
                 }
                 try
                 {
-                    if (RegisterDAO.Instance.AddRegister(cbB_studentId.Text, cbB_idcourses.Text, semester, year, tb_programId.Text))
-                    {
-                        PhanHe2.Success success = new PhanHe2.Success();
-                        success.ShowDialog();
-                    }                
+                    RegisterDAO.Instance.AddRegister(cbB_studentId.Text, cbB_idcourses.Text, semester, year, tb_programId.Text);
+                    
                 }
+
                 catch (Exception ex)
                 {
                     string exString = ex.ToString();
-                    if (exString.Contains("FK_MAHP_DANGKY"))
+                    if (exString.Contains("FK_KHMO_DANGKY"))
                     {
                         MessageBox.Show("Không có lịch mở học phần này!", "Lỗi");
+                        return;
                     }
                     else if (exString.Contains("14 NGAY"))
                     {
                         MessageBox.Show("Không thể hiệu chỉnh đăng ký học phần sau 14 ngày kể từ ngày bắt đầu học kỳ!", "Lỗi");
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show(ex.Message, "Lỗi");
+                        return;
                     }
                 }
+                PhanHe2.Success success = new PhanHe2.Success();
+                success.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Năm không thể bỏ trống!", "Lỗi");
+                return;
             }
 
         }

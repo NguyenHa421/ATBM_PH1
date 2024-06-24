@@ -39,20 +39,22 @@ namespace ATBM_PhanHe1.PhanHe2
             string newphone = tb_newphone.Text;
             string phone = tb_phone.Text;
             string addr = tb_addr.Text;
-
-            if (tb_newphone.Text.Length != 10 || !tb_newphone.Text.StartsWith("0"))
+            if (newphone == "")
             {
-                MessageBox.Show("Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0!", "Lỗi");
-                return;
+                newphone = phone;
+            }
+            else
+            {
+                if (tb_newphone.Text.Length != 10 || !tb_newphone.Text.StartsWith("0"))
+                {
+                    MessageBox.Show("Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0!", "Lỗi");
+                    return;
+                }
             }
 
             if (newaddr == "")
             {
                 newaddr = addr;
-            }
-            if (newphone == "")
-            {
-                newphone = phone;
             }
 
             using (Confirm_Update confirm = new Confirm_Update())
