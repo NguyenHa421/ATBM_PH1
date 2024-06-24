@@ -126,12 +126,16 @@ namespace ATBM_PhanHe1.PhanHe2
                     if (exString.Contains("FK_KHMO_PHANCONG")) 
                     {
                         MessageBox.Show("Không có lịch mở học phần này!", "Lỗi");
+                        return;
                     }
                 }
+                PhanHe2.Success success = new PhanHe2.Success();
+                success.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Năm không thể bỏ trống!", "Lỗi");
+                return;
             }
         }
     }
