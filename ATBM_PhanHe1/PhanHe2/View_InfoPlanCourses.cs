@@ -132,7 +132,7 @@ namespace ATBM_PhanHe1.PhanHe2
             }
             string programName = cbB_program.SelectedItem.ToString();
             planCoursesList.DataSource = PlanCoursesDAO.Instance.SearchPlanCourses(semester, year, programName);
-            planCourses = PlanCoursesDAO.Instance.GetPlanCoursesList();
+            planCourses = PlanCoursesDAO.Instance.SearchPlanCourses(semester, year, programName);
         }
         private void dtGrid_planCourses_CellContentClick(object sender, DataGridViewCellEventArgs e)
         { 

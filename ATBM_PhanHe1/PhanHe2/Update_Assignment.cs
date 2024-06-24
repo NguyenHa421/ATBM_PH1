@@ -56,7 +56,7 @@ namespace ATBM_PhanHe1.PhanHe2
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            using (Confirm_Delete confirm = new Confirm_Delete())
+            using (Confirm_Update confirm = new Confirm_Update())
             {
                 if (confirm.ShowDialog() == DialogResult.OK)
                 {
@@ -77,7 +77,7 @@ namespace ATBM_PhanHe1.PhanHe2
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Cập nhật không thành công!", "Lỗi");
+                        MessageBox.Show("Không thể cập nhật!", "Lỗi");
                         return;
                     }
                     PhanHe2.Success success = new PhanHe2.Success();
